@@ -1,3 +1,5 @@
+from typing import Union
+
 from ThreadPackage import Thread
 
 
@@ -13,7 +15,7 @@ class ThreadPool:
 
     def __init__(self) -> None:
         """
-        Initialize the thread pool
+        Initialize the thread targetPoolName
         """
 
     def classify(self) -> None:
@@ -24,21 +26,21 @@ class ThreadPool:
 
     def add(self, thread: Thread) -> None:
         """
-        Join new thread into pool
+        Join new thread into targetPoolName
         :return: None
         """
 
-    def remove(self, pid: int, level: str = None) -> bool:
+    def remove(self, pid: int or Thread, level: str = None) -> bool:
         """
-        Delete thread from the pool
+        Delete thread from the targetPoolName
         :param pid: the process' id of the thread
         :param level: the level of the threadObject
         :return: bool
         """
 
-    def finding(self, pid: int, level: str = None) -> Thread:
+    def finding(self, pid: str, level: str = None) -> Union[Thread, ...]:
         """
-        Find thread from pool
+        Find thread from targetPoolName
         :return: ThreadObject
         """
 
@@ -56,7 +58,7 @@ class ThreadPool:
 
     def extract(self) -> Thread:
         """
-        return the first ThreadPackage and delete it from the pool
+        return the first ThreadPackage and delete it from the targetPoolName
         :return: The ThreadPackage
         """
 
@@ -76,13 +78,13 @@ class ThreadPool:
 
     def display(self, **format_kwargs):
         """
-        Display the info of this pool
+        Display the info of this targetPoolName
         :return:
         """
 
     def info(self):
         """
-        Return the info of this pool
+        Return the info of this targetPoolName
         :return:
         """
 

@@ -49,12 +49,16 @@ class ThreadRunningMachine:
 
     def run(self):
         self.runningStatus = 1
+        # self.loop()
         self.loopProcess.start()
 
     def once(self) -> None:
         kwargs = {"TRMachine": self, "ThreadManager": self.ThreadManager}
         self.runningStatus = 1
-        self.MainThreadPool.merge(self.LoopThreadPool)
+        # Put Loop into Main
+        loopThreadPackage = tuple(thread for threads in self.LoopThreadPool.threads.values() for thread in threads)
+        self.ThreadManager.move_threads(loopThreadPackage, 'Main', create_new_thread=False, remove_from_old_pool=False)
+        # Run Function
         while self.runningStatus == 1:
             while self.ImmeThreadPool.isEmpty() and not self.MainThreadPool.isEmpty():
                 RunThread = self.MainThreadPool.extract()
@@ -70,6 +74,8 @@ class ThreadRunningMachine:
             self.once()
             if self.runningStatus == 0 and self.LoopThreadPool.isEmpty():
                 return None
+            else:
+                self.runningStatus = 1
 
     def info(self):
         info = dict()

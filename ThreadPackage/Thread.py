@@ -12,10 +12,10 @@ class Thread:
         self.pid = '0000000'
 
     def start(self, **kwargs) -> None:
-        print("Default ThreadPackage Running----")
+        print("Default ThreadPackage Running----", self.pid)
 
     def info(self):
-        return {"threadLevel": self.threadLevel, "kwargs": self.kwargs, 'pid': self.pid}
+        return {"threadLevel": self.threadLevel, "kwargs": self.kwargs, 'removeThread': self.pid}
 
     def result(self):
         return self.kwargs.get("result")
@@ -71,4 +71,3 @@ class FunctionThread(Thread):
                 return self.kwargs.get(item)
             except AttributeError:
                 return None
-

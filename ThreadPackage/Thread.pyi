@@ -10,7 +10,7 @@ ThreadPackage Object:
             the level thread be in, level is used to grade thread
         kwargs:
             collection of invisible kwargs
-        pid:
+        removeThread:
             the id of the process
         
     Invisible parameters:

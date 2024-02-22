@@ -27,7 +27,11 @@ class ThreadPool:
             self.threads[thread.threadLevel] = list()
             self.threads[thread.threadLevel].append(thread)
 
-    def remove(self, pid: int, level: str = None) -> bool:
+    def remove(self, removeThread: str, level: str = None) -> bool:
+        if isinstance(removeThread, Thread):
+            pid = removeThread.pid
+        else:
+            pid = removeThread
         if level:
             for thread in self.threads.get(level):
                 # Search Each ThreadPackage
@@ -51,13 +55,21 @@ class ThreadPool:
                             self.threads.pop(thread.threadLevel)
                         return True
 
-    def finding(self, pid, level=None) -> Thread:
+    def finding(self, findThread, level=None):
+        if isinstance(findThread, Thread):
+            pid = findThread.pid
+        else:
+            pid = findThread
         if level:
-            for thread in self.threads.get(level):
-                # Search Each ThreadPackage
-                if pid == thread.pid:
-                    # if id is the same one
-                    return thread
+            get_val = self.threads.get(level)
+            if get_val is not None:
+                for thread in get_val:
+                    # Search Each ThreadPackage
+                    if pid == thread.pid:
+                        # if id is the same one
+                        return thread
+            else:
+                return None
         else:
             for threads in self.threads.values():
                 # Search Each Type of Threads
