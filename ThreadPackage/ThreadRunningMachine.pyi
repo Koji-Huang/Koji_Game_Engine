@@ -6,11 +6,22 @@ class ThreadRunningMachine:
     This class is responsible for run and stop looping
     """
 
-    mainThreadPool: ThreadPool
+    # Main ThreadPackage Pool
+    MainThreadPool: ThreadPool
+    # Loop ThreadPackage Pool
     LoopThreadPool: ThreadPool
+    # Immediately ThreadPackage Pool
+    ImmeThreadPool: ThreadPool
+    # Stopped ThreadPackage Pool
+    StopThreadPool: ThreadPool
+    # Exception ThreadPackage Pool
+    ExceThreadPool: ThreadPool
+    # Loop function in processThread
     loopProcess: processThread
+
     runningStatus: int
     recordMode: bool
+    ThreadManager: ThreadManager
 
     def __init__(self):
         """
@@ -51,4 +62,16 @@ class ThreadRunningMachine:
         """
         Main Loop Function
         :return: any
+        """
+
+    def info(self):
+        """
+        return the info of this machine
+        :return:
+        """
+
+    def set_pool_id(self):
+        """
+        Set Pools' id info
+        :return: None
         """

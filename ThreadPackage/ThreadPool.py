@@ -1,13 +1,17 @@
-from Thread.Thread import Thread
+from ThreadPackage.Thread import Thread
 
 
 class ThreadPool:
     threads: dict[str: list[Thread], ...]
     threadLevel: tuple[str, ...]
+    name: str
+    id: str
 
     def __init__(self) -> None:
         self.threads = dict()
         self.threadLevel = tuple()
+        self.name = 'undefined'
+        self.id = '000'
 
     def classify(self) -> None:
         """
@@ -19,14 +23,14 @@ class ThreadPool:
         if self.threads.get(thread.threadLevel):
             self.threads[thread.threadLevel].append(thread)
         else:
-            self.threadLevel += (thread.threadLevel, )
+            self.threadLevel += (thread.threadLevel,)
             self.threads[thread.threadLevel] = list()
             self.threads[thread.threadLevel].append(thread)
 
     def remove(self, pid: int, level: str = None) -> bool:
         if level:
             for thread in self.threads.get(level):
-                # Search Each Thread
+                # Search Each ThreadPackage
                 if pid == thread.pid:
                     # if id is the same one
                     self.threads[level].remove(thread)
@@ -38,7 +42,7 @@ class ThreadPool:
             for threads in self.threads.values():
                 # Search Each Type of Threads
                 for thread in threads:
-                    # Search Each Thread
+                    # Search Each ThreadPackage
                     if pid == thread.pid:
                         # if id is the same one
                         threads.remove(thread)
@@ -47,10 +51,10 @@ class ThreadPool:
                             self.threads.pop(thread.threadLevel)
                         return True
 
-    def finding(self, pid, level) -> Thread:
+    def finding(self, pid, level=None) -> Thread:
         if level:
             for thread in self.threads.get(level):
-                # Search Each Thread
+                # Search Each ThreadPackage
                 if pid == thread.pid:
                     # if id is the same one
                     return thread
@@ -58,26 +62,16 @@ class ThreadPool:
             for threads in self.threads.values():
                 # Search Each Type of Threads
                 for thread in threads:
-                    # Search Each Thread
+                    # Search Each ThreadPackage
                     if pid == thread.pid:
                         # if id is the same one
                         return thread
+        return None
 
     def show(self) -> None:
         for threads in self.threads.values():
             for thread in threads:
                 print(thread.info())
-
-    def merge(self, another):
-        for key, value in another.threads.items():
-            if self.threads.get(key):
-                self.threads[key].extend(value)
-            else:
-                self.threadLevel += (key, )
-                self.threads[key] = value
-
-    def record(self) -> dict:
-        return self.threads
 
     def isEmpty(self) -> bool:
         for value in self.threads.values():
@@ -87,19 +81,45 @@ class ThreadPool:
 
     def extract(self) -> Thread:
         if self.isEmpty():
-            raise 'No Thread Remain'
+            raise 'No ThreadPackage Remain'
         for level in self.threadLevel:
             for threads in self.threads.get(level):
                 return self.threads[level].pop(0)
 
     def insert(self, thread: Thread, index: int = 0):
         if self.threads.get(thread.threadLevel):
+            if index == -1:
+                self.threads[thread.threadLevel].append(thread)
             self.threads[thread.threadLevel].insert(index, thread)
         else:
             if index != 0:
                 raise IndexError('list is Empty, but index set%d' % index)
             self.threads[thread.threadLevel] = [thread, ]
-            self.threadLevel += (thread.threadLevel, )
+            self.threadLevel += (thread.threadLevel,)
+
+    def clean(self):
+        PassState = list()
+        for key in self.threadLevel:
+            get = self.threads.get(key)
+            if get == [] or get is None:
+                self.threads.pop(key)
+            else:
+                PassState.append(key)
+        self.threadLevel = tuple(PassState)
+
+    def display(self, **format_kwargs):
+        print(**format_kwargs)
+        print("ID: ", self.id, **format_kwargs)
+        print("Length': ", self.__len__(), **format_kwargs)
+        print("Threads ID:", **format_kwargs)
+        for level in self.threadLevel:
+            print("| ", level, "[%s]" % len(self.threadLevel), ": ", **format_kwargs)
+            for thread, index in enumerate(self.threads[level]):
+                thread: Thread
+                print("| %s - " % index, thread.pid, **format_kwargs)
+
+    def info(self):
+        return {"ID": self.id, "Length": len(self), "Threads": {key: value.pid for key, value in self.threads.items()}}
 
     def __iter__(self) -> tuple[Thread]:
         return iter(self.threads.values())

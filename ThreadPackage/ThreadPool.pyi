@@ -1,4 +1,4 @@
-from Thread import Thread
+from ThreadPackage import Thread
 
 
 class ThreadPool:
@@ -8,6 +8,8 @@ class ThreadPool:
     """
     threads: dict[str: list[Thread], ...]
     threadLevel: tuple[str, ...]
+    name: str
+    id: str
 
     def __init__(self) -> None:
         """
@@ -26,14 +28,6 @@ class ThreadPool:
         :return: None
         """
 
-    def merge(self, another: ThreadPool) -> None:
-        """
-        Merge this and another ThreadPool
-        Only self change
-        :param another: Another Threadpool
-        :return: None
-        """
-
     def remove(self, pid: int, level: str = None) -> bool:
         """
         Delete thread from the pool
@@ -42,7 +36,7 @@ class ThreadPool:
         :return: bool
         """
 
-    def finding(self, pid: int, level: str) -> Thread:
+    def finding(self, pid: int, level: str = None) -> Thread:
         """
         Find thread from pool
         :return: ThreadObject
@@ -54,12 +48,6 @@ class ThreadPool:
         :return: None
         """
 
-    def record(self) -> dict:
-        """
-        Output all threads to record
-        :return: the record
-        """
-
     def isEmpty(self) -> bool:
         """
         Return if the line is Empty
@@ -68,16 +56,34 @@ class ThreadPool:
 
     def extract(self) -> Thread:
         """
-        return the first Thread and delete it from the pool
-        :return: The Thread
+        return the first ThreadPackage and delete it from the pool
+        :return: The ThreadPackage
         """
 
     def insert(self, thread: Thread, index: int = 0):
         """
-        Insert a Thread Object into Pool
-        :param thread: Thread object
-        :param index: the index
+        Insert a ThreadPackage Object into Pool
+        :param thread: ThreadPackage object
+        :param index: the index, -1  mean bottom, 0 mean top, other mean else, out of limit mean bottom
         :return: None
+        """
+
+    def clean(self):
+        """
+        Remove excess key values
+        :return: None
+        """
+
+    def display(self, **format_kwargs):
+        """
+        Display the info of this pool
+        :return:
+        """
+
+    def info(self):
+        """
+        Return the info of this pool
+        :return:
         """
 
     def __iter__(self) -> tuple[Thread]:
