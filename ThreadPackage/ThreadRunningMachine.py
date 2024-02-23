@@ -38,7 +38,7 @@ class ThreadRunningMachine:
     def start(self) -> None:
         self.runningStatus = 1
         self.recordMode = False
-        self.loopProcess = processThread(target=ThreadPool)
+        self.loopProcess = processThread(target=self.loop)
         self.run()
 
     def stop(self) -> None:

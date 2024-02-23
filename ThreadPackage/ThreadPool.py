@@ -3,13 +3,13 @@ from ThreadPackage.Thread import Thread
 
 class ThreadPool:
     threads: dict[str: list[Thread], ...]
-    threadLevel: tuple[str, ...]
+    threadLevel: set[str]
     name: str
     id: str
 
     def __init__(self) -> None:
         self.threads = dict()
-        self.threadLevel = tuple()
+        self.threadLevel = set()
         self.name = 'undefined'
         self.id = '000'
 
@@ -23,7 +23,7 @@ class ThreadPool:
         if self.threads.get(thread.threadLevel):
             self.threads[thread.threadLevel].append(thread)
         else:
-            self.threadLevel += (thread.threadLevel,)
+            self.threadLevel.add(thread.threadLevel)
             self.threads[thread.threadLevel] = list()
             self.threads[thread.threadLevel].append(thread)
 
@@ -117,7 +117,7 @@ class ThreadPool:
                 self.threads.pop(key)
             else:
                 PassState.append(key)
-        self.threadLevel = tuple(PassState)
+        self.threadLevel = set(PassState)
 
     def display(self, **format_kwargs):
         print(**format_kwargs)

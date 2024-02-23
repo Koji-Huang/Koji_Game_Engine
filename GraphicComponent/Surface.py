@@ -9,7 +9,7 @@ class Surface(Root):
     h: int
     rel_x: int
 
-    def __init__(self, pos, size, **kwargs):
+    def __init__(self, pos, size, *args, **kwargs):
         """
         Input position
         :param pos: the position of rect   x, y

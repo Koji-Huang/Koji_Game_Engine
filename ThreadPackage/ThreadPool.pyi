@@ -9,7 +9,7 @@ class ThreadPool:
     Include classify, find, join, delete, and other thing.
     """
     threads: dict[str: list[Thread], ...]
-    threadLevel: tuple[str, ...]
+    threadLevel: set[str]
     name: str
     id: str
 

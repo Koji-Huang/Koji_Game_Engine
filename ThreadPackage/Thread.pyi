@@ -1,5 +1,3 @@
-from types import FunctionType
-
 """
 ThreadPackage Object:
 
@@ -18,10 +16,10 @@ ThreadPackage Object:
              if the thread got error, it will be putted into ExecThreadPool 
              and Record Error Info to analysis
         OriginalOwner:
-            when the ThreadPackage is be putted into StopThreadPool,
+            when the ThreadPackage is being putted into StopThreadPool,
             it will record the original Pool Name to recovery
         RecyclingOrNot:
-            When a ThreadPackage run. It might not run twice, so it should be recycle.
+            When a ThreadPackage run. It might not run twice, so it should be recycled.
             This object  is used to tell the system if it should be recycled. 
 """
 class Thread:
@@ -60,7 +58,7 @@ class Thread:
     def __call__(self, **kwargs) -> any:
         ...
 
-    def __copy__(self) -> Thread:
+    def __copy__(self, another: Thread = None) -> Thread:
         ...
 
     def __getattr__(self, item):
@@ -82,11 +80,11 @@ FunctionThread
         None
 """
 class FunctionThread(Thread):
-    function: FunctionType
+    function: ()
     function_kwargs: dict
     function_return: any
 
-    def __init__(self, function: FunctionType, function_kwargs: dict, threadLevel: str = 'undefined', **kwargs):
+    def __init__(self, function: (), function_kwargs: dict = None, threadLevel: str = 'undefined', **kwargs):
         """
         This ThreadPackage can receive a function to run
         :param function: the run function
@@ -102,7 +100,7 @@ class FunctionThread(Thread):
     def info(self):
         ...
 
-    def __copy__(self):
+    def __copy__(self, another: FunctionThread = None):
         ...
 
     def __getattr__(self, item):

@@ -18,7 +18,13 @@ class MainWindows(Graphic):
 
     def update(self):
         self.graph_update()
+        self.event_update()
+
+    def graph_update(self, *args, **kwargs):
+        super().graph_update()
         self.windows_surface.blit(self.graph_surface, (0, 0))
         pygame.display.update()
+
+    def event_update(self, **kwargs):
         for event in pygame.event.get():
             self.event_spread(event.type, event=event)

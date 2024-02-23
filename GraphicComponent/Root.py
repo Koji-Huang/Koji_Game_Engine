@@ -1,4 +1,5 @@
 import Functions as F
+from GraphicComponent.Event import Event
 
 ID_Index = 0
 ID_Receive = set()
@@ -20,7 +21,7 @@ class Root:
     Root of the Object System
     """
     father: None
-    event: dict
+    event: dict[str:list[Event]]
     event_track_type: set
     son: set
     ID: str
@@ -61,6 +62,7 @@ class Root:
     def tree_add_son(self, son):
         self.son.add(son)
         son.father = self
+        self.event_tree_update(son.event_track_type)
         pass
 
     def tree_remove_son(self, son):
@@ -80,7 +82,7 @@ class Root:
             return self
 
     def tree_bind_father(self, father):
-        self.father = father
+        father.tree_add_son(self)
 
     def event_spread(self, event_name, **event_args):
         """
@@ -119,19 +121,18 @@ class Root:
         Up to down to build the event tree
         :return:
         """
-        event_type = set()
+        event_type = set(self.event.keys())
         for i in self.son:
             event_type.update(i.event_tree_build())
         self.event_track_type = event_type
         return event_type
 
-    def event_tree_update(self, another_set):
+    def event_tree_update(self, event_track_collection):
         """
         Down to Up to update event
         :return:
         """
-
-        self.event_track_type.update(another_set)
+        self.event_track_type.update(event_track_collection)
         if self.father:
             self.father.event_tree_update(self.event_track_type)
 

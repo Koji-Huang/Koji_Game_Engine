@@ -1,4 +1,3 @@
-from types import FunctionType
 
 
 class Thread:
@@ -26,8 +25,11 @@ class Thread:
     def __call__(self, **kwargs):
         return self.start(**kwargs)
 
-    def __copy__(self):
-        copied = Thread()
+    def __copy__(self, another=None):
+        if another is None:
+            copied = Thread()
+        else:
+            copied = another
         copied.threadLevel = self.threadLevel
         copied.kwargs = self.kwargs.copy()
         return copied
@@ -41,10 +43,10 @@ class Thread:
 
 class FunctionThread(Thread):
 
-    def __init__(self, function: FunctionType, function_kwargs: dict, threadLevel: str = 'undefined', **kwargs):
+    def __init__(self, function: (), function_kwargs: dict = None, threadLevel: str = 'undefined', **kwargs):
         super().__init__(threadLevel, **kwargs)
         self.function = function
-        self.function_kwargs = function_kwargs
+        self.function_kwargs = function_kwargs if function_kwargs else dict()
         self.function_return = None
 
     def start(self, **kwargs) -> None:
@@ -56,8 +58,13 @@ class FunctionThread(Thread):
         info['result'] = self.kwargs['result']
         return info
 
-    def __copy__(self):
-        copied = super().__copy__()
+    def __copy__(self, another=None):
+        if another is None:
+            copied = Thread()
+        else:
+            copied = another
+        copied = FunctionThread(function=self.function)
+        super().__copy__(copied)
         copied.function = self.function
         copied.function_kwargs = self.function_kwargs.copy()
         copied.function_return = self.function_return

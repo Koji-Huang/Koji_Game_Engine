@@ -30,7 +30,6 @@ class Event:
     def track_check(self, *args, **kwargs):
         ...
 
-
     def track_run(self, *args, **kwargs):
         return self.__track_run(*args, **kwargs)
 
