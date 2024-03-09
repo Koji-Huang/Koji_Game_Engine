@@ -22,3 +22,5 @@ class EventConstant:
     MouseClickEvent: int = pygame.MOUSEBUTTONDOWN
     MouseMoveEvent: int = pygame.MOUSEMOTION
     MouseWheelEvent: int = pygame.MOUSEWHEEL
+    MouseButtonUp: int = pygame.MOUSEBUTTONUP
+    MouseWheel: int = pygame.MOUSEWHEEL
