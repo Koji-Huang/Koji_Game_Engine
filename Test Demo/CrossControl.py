@@ -28,13 +28,12 @@ drawSquareBorder(InfoMap.graph_primer_surface, 3, 3)
 MainScreen.event_tree_build()
 
 
-# GraphicDrawUpdateThread = FunctionThread(something, {'name': 'draw'}, threadLevel='system')
-
 GraphicDrawUpdateThread = FunctionThread(MainScreen.graph_update, {'name': 'draw'}, threadLevel='system')
 
 GraphicEventUpdateThread = FunctionThread(MainScreen.event_update, {'name': 'event'}, threadLevel='system')
 
 MainThreadManager.add_thread(GraphicDrawUpdateThread, pool='Loop')
 MainThreadManager.add_thread(GraphicEventUpdateThread, pool='Loop')
+
 
 MainThreadManager.TRMachine.start()
