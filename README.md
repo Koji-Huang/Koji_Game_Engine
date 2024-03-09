@@ -10,9 +10,7 @@ This Project:
 
 - A Middle High School Student made
 
-- Update at 2023.10.29
-
-- How can I do this
+- Update at 2024.3.9
 
 ---
 
@@ -25,19 +23,40 @@ This Project:
 ---
 
 ##### Version 1.X
-
     This is the first version of this engine. Actually it can't be called as a game engine. In the early version it's more like a GUI model. This version I make some function to easy make the pygame windows create easy and how to due with event.
-
     This version only have a work -- The competition work. 
 
 ---
 
 ##### Version 2.x
-
     This Version compare to the first version had a great improvment. That's Tree Struct. After learning algorithms my code had a unbelivable improvment. That I can use a lot of different struct to due with different problem.
 
-    This version didn't have any new work now. But it will coming soon.
+- **Version 2.0** - Build Frame
+- **Version 2.1** - Make Graphic object
+- **Version 2.2** - Version 2.2 fix and add more UI support, and let Event object libre
+- **Version 2.3** - Add ThreadPackage to manager System Thread
+  
+  
 
-    And, This version is still developing.
+---
 
+### Update Plans
 
+- **Version 2.4**
+  - Rebuild **Graphic** Function **<u>graphic_update</u>** logic
+  - Rebuild Graphic Event System
+  - Update Graphic Camera Object
+  - Fix Graphic BesselCurve Object
+
+- **Version 2.5**
+  
+  - Rebuild System Core: make it easy
+  - Update ThreadPackage: make it more easy and standard
+
+- **Version 3.x**
+  
+  - Add Game Asset Explorer
+
+- **Version 4.x**
+  
+  - Add World Environment Editor
