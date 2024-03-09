@@ -14,7 +14,7 @@ class Surface(Root):
         Input position
         :param pos: the position of rect   x, y
         :param size: the size of the object
-        :param kwargs: x, y, w, h, size, pos
+        :param kwargs: x, y, w, h, size, rel_pos
         """
         super().__init__(kwargs)
         self.set_pos(pos)

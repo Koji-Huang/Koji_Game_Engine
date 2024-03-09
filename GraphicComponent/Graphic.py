@@ -52,3 +52,11 @@ class Graphic(Surface):
     def __graph_update(self, *args,
                        **kwargs):
         ...
+
+    def set_size(self, size):
+        super().set_size(size)
+        if self.graph_primer_surface:
+            self.graph_primer_surface = pygame.transform.scale(self.graph_primer_surface, size)
+        if self.graph_surface:
+            self.graph_surface = pygame.transform.scale(self.graph_surface, size)
+        self.graph_active = True

@@ -1,2 +1,0 @@
-class EventConstant:
-    MousePressEvent: int
