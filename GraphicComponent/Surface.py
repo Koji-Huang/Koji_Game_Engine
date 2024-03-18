@@ -7,7 +7,6 @@ class Surface(Root):
     y: int
     w: int
     h: int
-    rel_x: int
 
     def __init__(self, pos, size, *args, **kwargs):
         """
@@ -16,7 +15,7 @@ class Surface(Root):
         :param size: the size of the object
         :param kwargs: x, y, w, h, size, rel_pos
         """
-        super().__init__(kwargs)
+        super().__init__(*args, **kwargs)
         self.set_pos(pos)
         self.set_size(size)
 

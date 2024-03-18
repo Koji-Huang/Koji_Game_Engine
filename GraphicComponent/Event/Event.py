@@ -1,5 +1,3 @@
-
-
 ID_Index = 0
 ID_Receive = set()
 
@@ -28,12 +26,9 @@ class Event:
         self.id = give_id()
 
     def track_check(self, *args, **kwargs):
-        ...
+        return True
 
     def track_run(self, *args, **kwargs):
-        return self.__track_run(*args, **kwargs)
-
-    def __track_run(self, *args, **kwargs):
         return self.track_function(*args, *self.track_args, **kwargs)
 
     def update_info(self, **kwargs):

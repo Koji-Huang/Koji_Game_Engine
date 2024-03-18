@@ -5,8 +5,8 @@ class Surface(Root):
     y: int
     w: int
     h: int
-    rel_x: int
-    def __init__(self, pos:tuple or list, size: tuple or list, **kwargs):...
+
+    def __init__(self, pos:tuple or list, size: tuple or list, *args, **kwargs):...
 
     def pos(self) -> tuple[int, ...]:...
 
