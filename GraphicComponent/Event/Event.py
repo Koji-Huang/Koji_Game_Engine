@@ -16,12 +16,13 @@ def give_id() -> str:
 class Event:
     event_name: any
     track_function: any
-    track_index: int
     track_args: dict
     event_id: int or any
+    graphic_object: any
     id: str
 
-    def __init__(self):
+    def __init__(self, graphic_object: any):
+        self.graphic_object = graphic_object
         self.track_args = dict()
         self.id = give_id()
 
@@ -29,8 +30,13 @@ class Event:
         return True
 
     def track_run(self, *args, **kwargs):
-        return self.track_function(*args, *self.track_args, **kwargs)
+        return self.track_function(graphic_object=self.graphic_object, *args, *self.track_args, **kwargs)
 
     def update_info(self, **kwargs):
         for update_name, update_value in kwargs.items():
             self.track_args.update({update_name: update_value})
+
+    def delete(self):
+        ID_Receive.add(self.id)
+        del self
+        return self.id

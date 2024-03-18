@@ -1,4 +1,3 @@
-import Functions as F
 from GraphicComponent.Event import Event
 
 ID_Index = 0
@@ -39,7 +38,7 @@ class Root:
         self.ID = give_id()
         for name, value in kwargs.items():
             if name == "father":
-                self.tree_bind_father(value)
+                value.tree_add_son(self)
 
     def update(self):
         """
@@ -81,62 +80,32 @@ class Root:
         else:
             return self
 
-    def tree_bind_father(self, father):
-        father.tree_add_son(self)
+    def event_check(self, event: Event) -> bool:
+        return event.track_check()
 
-    def event_spread(self, event_name, **event_args):
+    def event_run(self, event: Event) -> any:
+        return event.track_run()
+
+    def event_clean(self) -> None:
         """
-        This function is used to spread event and turn to next level.
-        Nothing will be return
+        clean useless event type
         :return: None
-        """
-        if event_name in self.event_track_type:
-            temp_args = self.event_receive(event_name, **event_args)
-
-            for name, value in self.event.items():
-                if name == "OverSpread" and value:
-                    return None
-                if name == "Fix_args":
-                    for name, values in value.items():
-                        event_args[name] = values
-
-            for son in self.son:
-                son.event_spread(event_name, **F.Mix_Kwargs(event_args, temp_args))
-            return None
-
-    def event_receive(self, event_name, **event_args):
-        """
-        This function is used to receive event argument
-        :return:
-        """
-        if event_name in self.event_track_type:
-            if event_name in self.event.keys():
-                for i in self.event[event_name]:
-                    if i.track_check(**event_args):
-                        return i.track_run(**event_args)
-        return event_args
-
-    def event_tree_build(self):
-        """
-        Up to down to build the event tree
-        :return:
         """
         event_type = set(self.event.keys())
         for i in self.son:
-            event_type.update(i.event_tree_build())
+            event_type.update(i.event.keys())
         self.event_track_type = event_type
-        return event_type
 
-    def event_tree_update(self, event_track_collection):
-        """
-        Down to Up to update event
-        :return:
-        """
-        self.event_track_type.update(event_track_collection)
-        if self.father:
-            self.father.event_tree_update(self.event_track_type)
+    def event_tree(self) -> list:
+        return list((self.event_track_type, ( i.event_tree() for i in self.son)))
 
-    def event_add_event(self, event_type, event, **kwargs):
+    def event_type(self) -> set:
+        return self.event_track_type
+
+    def event_value(self) -> list:
+        return [i for i in self.event.items()]
+
+    def event_add(self, event_type, event, **kwargs):
         self.event: dict
         if event_type in self.event.keys():
             self.event[event_type].append(event)
@@ -145,11 +114,16 @@ class Root:
         event.update_info(**kwargs)
         self.event_tree_update({event_type})
 
-    def event_remove_event(self, event_type: int, event_id: str):
+    def event_remove(self, event_type: int, event_id: str):
         if event_type in self.event_track_type:
             for event in self.event[event_type]:
                 if event.id == event_id:
                     self.event[event_type].pop(event)
+
+    def event_tree_update(self, another_set):
+        self.event_track_type.update(another_set)
+        if self.father:
+            self.father.event_tree_update(self.event_track_type)
 
     def delete(self) -> str:
         """
@@ -157,13 +131,17 @@ class Root:
         Warming It Might Make Trouble
         :return: self. ID
         """
+        # Event Object
+        for i in self.event.items():
+            for event in i:
+                event.delete()
+        # Root Object
         if self.father:
             self.father.son.remove(self)
-            self.father.event_tree_build()
-            self.father.event_tree_update(set())
+            self.father.event_clean()
         tmp = self.ID
-        del self
         ID_Receive.add(tmp)
+        del self
         return tmp
 
     def delete_with_son(self):
@@ -171,7 +149,4 @@ class Root:
             for son in self.son:
                 if son != self:
                     son.delete_with_son()
-        self.delete()
-
-    def __del__(self):
         self.delete()

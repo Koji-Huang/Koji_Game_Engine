@@ -37,7 +37,7 @@ class Camera(Label):
         self.originPoint = (0, 0)
         self.allScaleRatio: float = 1
         rollEvent = MouseButtonWheel(scale, pygame.MOUSEWHEEL, self)
-        self.event_add_event(pygame.MOUSEWHEEL, rollEvent)
+        self.event_add(pygame.MOUSEWHEEL, rollEvent)
 
     def scale(self, rel_ratio=None, rel_pos=None):
         if rel_ratio and rel_pos:
