@@ -2,6 +2,7 @@ from math import sin
 
 import pygame.font
 
+from GraphicComponent.Effect.MarkBorder import EdgeType, TextType, mark_component
 from GraphicComponent.UI import *
 from GraphicComponent import MainWindows
 
@@ -152,6 +153,14 @@ Main.tree_add_son(text)
 
 Clock = pygame.time.Clock()
 
+
+edge = EdgeType(1, color=(255, 0, 0,  86))
+textType = TextType(14, "Hello World")
+
+MarkSurface = Label((0, 0),  (1200, 500))
+MarkSurface.graph_surface.set_colorkey((0, 0, 0))
+Main.tree_add_son(MarkSurface)
+
 for i in range(1000000):
     A1.graph_active = True
 
@@ -168,3 +177,12 @@ for i in range(1000000):
     A.x += 1
     if pygame.time.get_ticks() > 12000:
         quit()
+
+    MarkSurface.graph_primer_surface.fill((0, 0, 0, 255))
+    MarkSurface.graph_active = True
+
+    for i in ['A', 'B', 'C', 'D', 'E', 'F']:
+        for k in ['1', '2', '3', '4']:
+            exec('textType.change_text(\'%s%s\')' % (i,  k))
+            exec("mark_component(MarkSurface, edge, textType, %s%s.rect())" % (i,  k))
+
