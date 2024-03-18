@@ -72,3 +72,16 @@ class Graphic(Surface):
             copied.graph_kwargs = self.graph_kwargs.copy()
         super().__copy__(copied)
         return copied
+
+    def graph_scale_self(self, w: int, h: int, anti_aliasing: bool = False):
+        self.graph_active = True
+        self.w = w
+        self.h = h
+        if anti_aliasing:
+            self.graph_primer_surface = pygame.transform.smoothscale(self.graph_primer_surface, (w, h))
+            self.graph_surface = pygame.transform.smoothscale(self.graph_surface, (w, h))
+        else:
+            self.graph_primer_surface = pygame.transform.scale(self.graph_primer_surface, (w, h))
+            self.graph_surface = pygame.transform.scale(self.graph_surface, (w, h))
+        return None
+

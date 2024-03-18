@@ -80,11 +80,11 @@ class Root:
         else:
             return self
 
-    def event_check(self, event: Event, *args, **kwargs) -> bool:
-        return event.track_check(*args, **kwargs)
+    def event_check(self, eventObject: Event, *args, **kwargs) -> bool:
+        return eventObject.track_check(*args, **kwargs)
 
-    def event_run(self, event: Event) -> any:
-        return event.track_run()
+    def event_run(self, eventObject: Event, *args, **kwargs) -> any:
+        return eventObject.track_run(*args, **kwargs)
 
     def event_clean(self) -> None:
         """
@@ -106,13 +106,14 @@ class Root:
         return [i for i in self.event.items()]
 
     def event_add(self, event_type, event, **kwargs):
-        self.event: dict
         if event_type in self.event.keys():
             self.event[event_type].append(event)
         else:
             self.event.__setitem__(event_type, [event, ])
-        event.update_info(**kwargs)
+        if kwargs:
+            event.update_info(**kwargs)
         self.event_tree_update({event_type})
+        event.graphic_object = self
 
     def event_remove(self, event_type: int, event_id: str):
         if event_type in self.event_track_type:
@@ -126,10 +127,10 @@ class Root:
         Nothing will be return
         :return: None
         """
-        if event_name in self.event_track_type:
+        if event_name in self.event.keys():
             for event in self.event[event_name]:
-                if self.event_check(event):
-                    self.event_run(event)
+                if self.event_check(event, **event_args):
+                    self.event_run(event, **event_args)
         for son in self.son:
             son.event_spread(event_name, **event_args)
         return None
@@ -171,5 +172,6 @@ class Root:
             copied.ID = give_id()
         for event_type in self.event.keys():
             for event in self.event[event_type]:
-                copied.event_add(event_type, event)
+                copy_event = event.__copy__()
+                copied.event_add(event_type, copy_event)
         return copied

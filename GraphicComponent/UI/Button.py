@@ -26,3 +26,9 @@ class Button(Label):
                 if i.event_name == button:
                     ret.append(i)
         return tuple(ret)
+
+    def __copy__(self, copied: any = None):
+        if copied is None:
+            copied = Button(self.pos(), self.size())
+        super().__copy__(copied)
+        return copied

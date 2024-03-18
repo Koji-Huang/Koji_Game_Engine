@@ -9,8 +9,7 @@ def In_Rect(x, w, n):
 
 
 def Point_in_Rect(point, rect):
-    return bool(In_Rect(rect[0], rect[2], point[0])
-        and In_Rect(rect[1], rect[3], point[1]))
+    return rect[0] < point[0] < rect[2] + rect[0] and rect[1] < point[1] < rect[1] + rect[3]
 
 
 def Fix_Kwargs(kwargs, mix_in: dict):

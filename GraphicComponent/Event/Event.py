@@ -37,6 +37,18 @@ class Event:
             self.track_args.update({update_name: update_value})
 
     def delete(self):
+        tmp = self.id
         ID_Receive.add(self.id)
         del self
-        return self.id
+        return tmp
+
+    def __copy__(self, copied: any = None):
+        if copied is None:
+            copied = Event(self.graphic_object)
+
+        copied.event_name = self.event_name
+        copied.track_function = self.track_function
+        copied.track_args = self.track_args
+        copied.event_id = give_id()
+
+        return copied

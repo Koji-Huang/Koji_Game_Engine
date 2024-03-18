@@ -20,3 +20,6 @@ class Event:
 
     def delete(self):
         ...
+
+    def __copy__(self, copied: any = None):
+        ...
