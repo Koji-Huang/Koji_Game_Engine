@@ -164,3 +164,11 @@ class Root:
                 if son != self:
                     son.delete_with_son()
         self.delete()
+
+    def __copy__(self):
+        copied = Root()
+        copied.ID = give_id()
+        for event_type, items in self.event:
+            for event in items:
+                copied.event_add(event_type, event)
+        return copied
