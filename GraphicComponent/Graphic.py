@@ -17,8 +17,8 @@ class Graphic(Surface):
         self.graph_active = True
         self.graph_update()
 
-    def graph_update_check(self):
-        result = bool(True in [son.graph_update_check() for son in self.son if isinstance(son, Graphic)])
+    def graph_check(self):
+        result = bool(True in [son.graph_check() for son in self.son if isinstance(son, Graphic)])
         self.graph_active = result if not self.graph_active else True
         return self.graph_active
 
@@ -38,7 +38,7 @@ class Graphic(Surface):
         self.graph_active = bool(active_son) if not self.graph_active else True
 
         if self.graph_active:
-            self.__graph_update()
+            self.graph_draw()
 
             # F.Surface.cleaning_surface(self.graph_surface)
             # self.graph_surface.blit(self.graph_primer_surface, (0, 0))
@@ -49,8 +49,8 @@ class Graphic(Surface):
                 self.graph_surface.blit(son.graph_surface, son.pos())
                 son.graph_active = False
 
-    def __graph_update(self, *args,
-                       **kwargs):
+    def graph_draw(self, *args,
+                   **kwargs):
         ...
 
     def set_size(self, size):

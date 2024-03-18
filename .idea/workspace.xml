@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="Root 的 event 更新">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Root.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Root.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Root.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Root.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/Mouse_test_main_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test Demo/Mouse_test_main_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/run_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test Demo/run_test_1.py" afterDir="false" />
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="Root 的 surface 更新">
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/Graphic.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Graphic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/Graphic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Graphic.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/MainWindows.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/MainWindows.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/MainWindows.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/MainWindows.pyi" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +152,7 @@
       <workItem from="1709999306488" duration="32000" />
       <workItem from="1710587371033" duration="356000" />
       <workItem from="1710591845614" duration="1209000" />
-      <workItem from="1710748308518" duration="8290000" />
+      <workItem from="1710748308518" duration="8710000" />
     </task>
     <task id="LOCAL-00002" summary="2.3 版本最后一个提交">
       <option name="closed" value="true" />
@@ -179,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710772831536</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Root 的 surface 更新">
+      <option name="closed" value="true" />
+      <created>1710773667927</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710773667927</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,10 +209,11 @@
     <MESSAGE value="2.3 版本最后一个提交" />
     <MESSAGE value="2.4 初始化" />
     <MESSAGE value="Root 的 event 更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="Root 的 event 更新" />
+    <MESSAGE value="Root 的 surface 更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="Root 的 surface 更新" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Koji_Game_Engine$run_test_1.coverage" NAME="run_test_1 覆盖结果" MODIFIED="1710773367791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
+    <SUITE FILE_PATH="coverage/Koji_Game_Engine$run_test_1.coverage" NAME="run_test_1 覆盖结果" MODIFIED="1710773790570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$Graphic_copy_test_1.coverage" NAME="Graphic_copy_test_1 覆盖结果" MODIFIED="1710772896614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$Mouse_test_main_1.coverage" NAME="Mouse_test_main_1 覆盖结果" MODIFIED="1710772962732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
   </component>

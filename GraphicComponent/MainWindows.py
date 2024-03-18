@@ -12,8 +12,8 @@ class MainWindows(Graphic):
         self.y = 0
         pygame.font.init()
 
-    def __graph_update(self, *args,
-                       **kwargs):
+    def graph_draw(self, *args,
+                   **kwargs):
         ...
 
     def update(self):
