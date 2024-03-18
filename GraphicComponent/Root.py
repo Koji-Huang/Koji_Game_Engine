@@ -165,10 +165,11 @@ class Root:
                     son.delete_with_son()
         self.delete()
 
-    def __copy__(self):
-        copied = Root()
-        copied.ID = give_id()
-        for event_type, items in self.event:
-            for event in items:
+    def __copy__(self, copied: any = None):
+        if copied is None:
+            copied = Root()
+            copied.ID = give_id()
+        for event_type in self.event.keys():
+            for event in self.event[event_type]:
                 copied.event_add(event_type, event)
         return copied

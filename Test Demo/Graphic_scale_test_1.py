@@ -23,7 +23,6 @@ Scale.set_pos((200, 200))
 
 Main.tree_add_son(Scale)
 
-Main.event_tree_build()
 
 
 while True:

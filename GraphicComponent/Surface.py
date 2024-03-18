@@ -94,3 +94,12 @@ class Surface(Root):
                         )
         else:
             return False
+
+    def __copy__(self, copied: any = None):
+        if copied is None:
+            copied = Surface(self.pos(), self.size())
+        else:
+            copied: Surface
+            copied.set_rect(self.rect())
+        super().__copy__(copied)
+        return copied

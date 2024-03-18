@@ -12,3 +12,13 @@ class Label(Graphic):
 
     def set_color(self, color: tuple[int, ...] or list[int, ...]):
         self.graph_primer_surface.fill(color)
+
+    def __copy__(self, copied: any = None):
+        if copied is None:
+            copied = Label(self.pos(), self.size())
+        else:
+            copied.graph_primer_surface = self.graph_primer_surface.copy()
+            copied.graph_surface = self.graph_primer_surface.copy()
+        super().__copy__(copied)
+        return copied
+

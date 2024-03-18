@@ -1,4 +1,7 @@
 
+from GraphicComponent.UI import Label
+
+
 class Event:
     event_name: any
     track_function: any
@@ -7,7 +10,7 @@ class Event:
     graphic_object: any
     id: str
 
-    def __init__(self) -> None:...
+    def __init__(self, graphic_object: Label):...
 
     def track_check(self,  *args, **kwargs) -> any:...
 

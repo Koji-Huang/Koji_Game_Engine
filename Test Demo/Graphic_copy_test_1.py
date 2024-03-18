@@ -17,8 +17,10 @@ Main.tree_add_son(A)
 Main.tree_add_son(B)
 
 for i in range(1000000):
-    A.graph_active = True
     Main.update()
+    A.graph_active = True
+    B.graph_active = True
 
     A.set_color((255, i % 255, 0, 100))
     A.x = math.sin(i / 100) * 500 + 500
+

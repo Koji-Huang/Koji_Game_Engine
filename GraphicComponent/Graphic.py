@@ -60,3 +60,15 @@ class Graphic(Surface):
         if self.graph_surface:
             self.graph_surface = pygame.transform.scale(self.graph_surface, size)
         self.graph_active = True
+
+    def __copy__(self, copied: any = None):
+        if copied is None:
+            copied = Graphic(self.pos(), self.size())
+        else:
+            copied: Graphic
+            copied.graph_active = self.graph_active
+            copied.graph_surface = self.graph_surface.copy()
+            copied.graph_primer_surface = self.graph_primer_surface.copy()
+            copied.graph_kwargs = self.graph_kwargs.copy()
+        super().__copy__(copied)
+        return copied
