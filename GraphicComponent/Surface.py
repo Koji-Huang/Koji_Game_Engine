@@ -79,7 +79,7 @@ class Surface(Root):
         else:
             return False
 
-    def is_mix(self, another=None):
+    def is_crash(self, another=None):
         """
         self ∪ another != ∅
         Is self and another have any union position

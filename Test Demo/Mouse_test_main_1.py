@@ -16,8 +16,6 @@ G = Button((100, 100), (200, 200))
 G.graph_primer_surface.fill((255, 255, 255))
 Main.tree_add_son(G)
 
-Main.event_tree_build()
-
 G.bind_press_function(say_hello, pygame.MOUSEBUTTONDOWN)
 
 Clock = pygame.time.Clock()

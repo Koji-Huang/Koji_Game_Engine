@@ -11,7 +11,7 @@ def main():
 
     Main = MainWindows((1600, 800), pygame.NOFRAME)
 
-    image = Image((0, 0), (1600, 900), r"C:\Users\Administrator\OneDrive\图片\屏幕快照\屏幕截图 2023-12-24 122050.png")
+    image = Image((0, 0), (1600, 900), r"C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\TestInfo\__klee_nahida_qiqi_diona_sayu_and_2_more_genshin_impact_drawn_by_neko_sake1__44cf20a2d68da284b66568fdf5a6972d.png")
     A = Label((100, 100), (120, 50))
     B = Label((200, 100), (120, 50))
     C = Label((300, 100), (100, 50))

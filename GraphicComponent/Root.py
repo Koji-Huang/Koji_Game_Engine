@@ -80,8 +80,8 @@ class Root:
         else:
             return self
 
-    def event_check(self, event: Event) -> bool:
-        return event.track_check()
+    def event_check(self, event: Event, *args, **kwargs) -> bool:
+        return event.track_check(*args, **kwargs)
 
     def event_run(self, event: Event) -> any:
         return event.track_run()
@@ -119,6 +119,20 @@ class Root:
             for event in self.event[event_type]:
                 if event.id == event_id:
                     self.event[event_type].pop(event)
+
+    def event_spread(self, event_name, **event_args):
+        """
+        This function is used to spread event and turn to next level.
+        Nothing will be return
+        :return: None
+        """
+        if event_name in self.event_track_type:
+            for event in self.event[event_name]:
+                if self.event_check(event):
+                    self.event_run(event)
+        for son in self.son:
+            son.event_spread(event_name, **event_args)
+        return None
 
     def event_tree_update(self, another_set):
         self.event_track_type.update(another_set)
