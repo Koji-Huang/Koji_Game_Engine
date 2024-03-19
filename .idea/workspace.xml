@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="2.4 第一个补丁完成:&#10;修改了 Graphic, Surface, Root, Event 的代码, 更改了 Graphic 对于 Event 的引用, 以及把被破坏的代码修复到了 2.3 水平">
-      <change afterPath="$PROJECT_DIR$/GraphicComponent/Effect/MarkBorder.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphicComponent/Effect/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphicComponent/Effect/frame.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphicComponentManager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphicComponentManager.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test Demo/MarkBorder_test_1.py" afterDir="false" />
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="2.4 第二个补丁完成:&#10;增加了一个特效组件: MarkBorder 并规范了 Effect 的文件夹调用, 初始定义了 GraphicComponentManager.py 的 API">
+      <change afterPath="$PROJECT_DIR$/Test Demo/GraphicManager_test_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Effect.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Effect/MarkBorder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Event/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Event/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/Graphic_test_main_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test Demo/Graphic_test_main_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/Effect/MarkBorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Effect/MarkBorder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/Effect/MarkBorder.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Effect/MarkBorder.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/MainWindows.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/MainWindows.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponentManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponentManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponentManager.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponentManager.pyi" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +47,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.GraphicManager_test_1.executor": "Debug",
     "Python.Graphic_copy_test_1.executor": "Run",
     "Python.Graphic_scale_test_1.executor": "Run",
     "Python.Graphic_test_main_1.executor": "Run",
@@ -63,7 +61,8 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -71,8 +70,8 @@
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\GraphicComponent\Effect" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Graphic_test_main_1">
-    <configuration name="Graphic_scale_test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.GraphicManager_test_1">
+    <configuration name="GraphicManager_test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Koji_Game_Engine" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -86,7 +85,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test Demo/Graphic_scale_test_1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test Demo/GraphicManager_test_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Graphic_test_main_1" />
+        <item itemvalue="Python.GraphicManager_test_1" />
         <item itemvalue="Python.MarkBorder_test_1" />
+        <item itemvalue="Python.Graphic_test_main_1" />
         <item itemvalue="Python.run_test_1" />
         <item itemvalue="Python.Mouse_test_main_1" />
-        <item itemvalue="Python.Graphic_scale_test_1" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +224,9 @@
       <workItem from="1710591845614" duration="1209000" />
       <workItem from="1710748308518" duration="14629000" />
       <workItem from="1710779768801" duration="1988000" />
-      <workItem from="1710781871887" duration="7713000" />
+      <workItem from="1710781871887" duration="7818000" />
+      <workItem from="1710789752704" duration="129000" />
+      <workItem from="1710833407207" duration="5007000" />
     </task>
     <task id="LOCAL-00002" summary="2.3 版本最后一个提交">
       <option name="closed" value="true" />
@@ -291,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710779679711</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="2.4 第二个补丁完成:&#10;增加了一个特效组件: MarkBorder 并规范了 Effect 的文件夹调用, 初始定义了 GraphicComponentManager.py 的 API">
+      <option name="closed" value="true" />
+      <created>1710789704742</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710789704742</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +328,8 @@
     <MESSAGE value="Root 的 __copy__ 修复" />
     <MESSAGE value="所有 的 __copy__ 修复, MouseEvent 重组完成" />
     <MESSAGE value="2.4 第一个补丁完成:&#10;修改了 Graphic, Surface, Root, Event 的代码, 更改了 Graphic 对于 Event 的引用, 以及把被破坏的代码修复到了 2.3 水平" />
-    <option name="LAST_COMMIT_MESSAGE" value="2.4 第一个补丁完成:&#10;修改了 Graphic, Surface, Root, Event 的代码, 更改了 Graphic 对于 Event 的引用, 以及把被破坏的代码修复到了 2.3 水平" />
+    <MESSAGE value="2.4 第二个补丁完成:&#10;增加了一个特效组件: MarkBorder 并规范了 Effect 的文件夹调用, 初始定义了 GraphicComponentManager.py 的 API" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.4 第二个补丁完成:&#10;增加了一个特效组件: MarkBorder 并规范了 Effect 的文件夹调用, 初始定义了 GraphicComponentManager.py 的 API" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -334,6 +344,6 @@
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$Graphic_copy_test_1.coverage" NAME="Graphic_copy_test_1 覆盖结果" MODIFIED="1710775214306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$Graphic_scale_test_1.coverage" NAME="Graphic_scale_test_1 覆盖结果" MODIFIED="1710779432536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$Mouse_test_main_1.coverage" NAME="Mouse_test_main_1 覆盖结果" MODIFIED="1710779510433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
-    <SUITE FILE_PATH="coverage/Koji_Game_Engine$MarkBorder_test_1.coverage" NAME="MarkBorder_test_1 覆盖结果" MODIFIED="1710788182384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
+    <SUITE FILE_PATH="coverage/Koji_Game_Engine$MarkBorder_test_1.coverage" NAME="MarkBorder_test_1 覆盖结果" MODIFIED="1710789874233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
   </component>
 </project>

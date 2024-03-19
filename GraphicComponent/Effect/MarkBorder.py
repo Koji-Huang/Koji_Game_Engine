@@ -62,7 +62,7 @@ class TextType:
     surface: pygame.Surface
     color: tuple = (255, 0, 0, 255)
 
-    def __init__(self, size: int, text: str, font: pygame.font.Font = None, color: tuple = (255, 0, 0, 255)):
+    def __init__(self, size: int = 15, text: str = '', font: pygame.font.Font = None, color: tuple = (255, 0, 0, 255)):
         self.size = size
         self.text = text
         self.color = color
@@ -78,7 +78,7 @@ class TextType:
         self.surface = self.font.render(self.text, False, self.color, (0, 0, 0, 0))
 
 
-def mark_component(component, edge_type=None, text_type=None, area: tuple[int, int] = None):
+def mark_component(component, edge_type=None, text_type=None, area: tuple[int, ...] = None):
     if text_type is not None:
         text_type.draw(component.graph_primer_surface, (area[0], area[1] - text_type.size))
     if area is None:
