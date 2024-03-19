@@ -35,4 +35,3 @@ for i in range(1, 1000000):
     Label_3.set_pos(((int(sin(i / 500) * 100) + 100), int(sin(i / 400) * 100) + 100))
     Manager.graphic_update()
     Manager.event_update()
-

@@ -10,13 +10,17 @@ class EdgeType:
 
     def draw_border(self, surface: pygame.Surface, area: tuple[int, ...], alpha=255):
         # top
-        self.draw_single_edge(surface, (area[0] + self.width, area[1]), (area[0] + area[2], area[1]), alpha)
+        self.draw_single_edge(surface, (area[0] + self.width, area[1]),
+                              (area[0] + area[2], area[1]), alpha)
         # left
-        self.draw_single_edge(surface, (area[0], area[1]), (area[0], area[1] + area[3]), alpha)
+        self.draw_single_edge(surface, (area[0], area[1]),
+                              (area[0], area[1] + area[3]), alpha)
         # right
-        self.draw_single_edge(surface, (area[0] + area[2], area[1]), (area[0] + area[2], area[1] + area[3]), alpha)
+        self.draw_single_edge(surface, (area[0] + area[2], area[1]),
+                              (area[0] + area[2], area[1] + area[3]), alpha)
         # button
-        self.draw_single_edge(surface, (area[0], area[1] + area[3]), (area[0] + area[2] + self.width, area[1] + area[3]), alpha)
+        self.draw_single_edge(surface, (area[0], area[1] + area[3]),
+                              (area[0] + area[2] + self.width, area[1] + area[3]), alpha)
 
     def draw_single_edge(self, surface: pygame.Surface, start: tuple, end: tuple, alpha=255):
         inverse_color = list(255 - i for i in self.color)
@@ -52,7 +56,8 @@ class EdgeType:
 
 
 class TextType:
-    def __init__(self, size: int = 15, text: str = '', font: pygame.font.Font = None, color: tuple = (0, 255, 230, 255)):
+    def __init__(self, size: int = 15, text: str = '', font: pygame.font.Font = None,
+                 color: tuple = (0, 255, 230, 255)):
         self.size = size
         self.text = text
         self.color = color
@@ -65,7 +70,8 @@ class TextType:
         self.surface = self.font.render(self.text, False, self.color).convert_alpha()
 
 
-def mark_component(component, edge_type=None, text_type=None, area: tuple[int, ...] = None, text_inside: bool = True, alpha: int = 255):
+def mark_component(component, edge_type=None, text_type=None,
+                   area: tuple[int, ...] = None, text_inside: bool = True, alpha: int = 255):
 
     if area is None:
         area = (1, 1, component.graph_surface.get_width() - 2, component.graph_surface.get_height() - 2)
@@ -79,4 +85,3 @@ def mark_component(component, edge_type=None, text_type=None, area: tuple[int, .
         if edge_type is None:
             edge_type = EdgeType()
         edge_type.draw_border(component.graph_surface, area, alpha)
-

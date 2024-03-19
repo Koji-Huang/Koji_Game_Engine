@@ -84,4 +84,3 @@ class Graphic(Surface):
             self.graph_primer_surface = pygame.transform.scale(self.graph_primer_surface, (w, h))
             self.graph_surface = pygame.transform.scale(self.graph_surface, (w, h))
         return None
-

@@ -13,7 +13,7 @@ class GraphicComponentManager:
     def general_info(self) -> dict:
         ...
 
-    def component_type(self, start_component: Root = None) -> set[str, ...]:
+    def component_type(self, start_component: Root = None) -> set[str | ...]:
         ...
 
     def components_tree(self, start_component: Root = None) -> dict[set, ...]:
@@ -73,10 +73,12 @@ class GraphicComponentDebug:
     def graphic_debug(self):
         ...
 
-    def overwrite_add_graphic_function(self, function):(self, function):
+    def overwrite_add_graphic_function(self, function):
+        ...
 
     def graphic_update(self):
         ...
+
     def graphic_debug_component(self, component: Graphic):
         ...
 

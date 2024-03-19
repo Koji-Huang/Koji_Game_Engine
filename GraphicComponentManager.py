@@ -1,7 +1,4 @@
-import builtins
-
 import pygame.display
-
 from GraphicComponent import *
 from GraphicComponent.Effect.MarkBorder import TextType, EdgeType, mark_component
 from GraphicComponent.UI import Label
@@ -36,7 +33,9 @@ class GraphicComponentDebug:
 
                 def draw_board(component, *args, **kwargs):
                     self.textType.change_text(f'{type(component).__name__}:{component.ID}')
-                    mark_component(component, self.edgeType, self.textType, (0, 0, component.w - self.edgeType.width, component.h - self.edgeType.width), alpha=self.info_alpha)
+                    mark_component(component, self.edgeType, self.textType,
+                                   (0, 0, component.w - self.edgeType.width, component.h - self.edgeType.width),
+                                   alpha=self.info_alpha)
 
                 self.overwrite_add_graphic_function(draw_board)
             else:
@@ -55,6 +54,7 @@ class GraphicComponentDebug:
     def overwrite_graphic_core(debug, enable: bool = True):
         if enable:
             debug.__graphic_update_function = Graphic.graph_update
+
             def overwrite_graph_update(self, *args, **kwargs):
                 debug.__graphic_update_function(self, *args, **kwargs)
                 for insert in debug.__graphic_insert_function:
@@ -76,7 +76,7 @@ class GraphicComponentDebug:
 
 
 class GraphicComponentManager:
-    def __init__(self, mainWindowsObject: MainWindows = None, size: tuple[int, ...] = (800, 600), ):
+    def __init__(self, mainWindowsObject: MainWindows = None, size: tuple[int, int] = (800, 600), ):
         self.__debug_mode = False
         self.debug = None
         if mainWindowsObject:
@@ -87,7 +87,7 @@ class GraphicComponentManager:
     def general_info(self):
         ...
 
-    def component_type(self, start_component: Root = None) -> set[str, any]:
+    def component_type(self, start_component: Root = None) -> set[str | ...]:
         if start_component is None:
             start_component = self.windows
         ret = set()
