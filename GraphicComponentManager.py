@@ -1,3 +1,5 @@
+import builtins
+
 import pygame.display
 
 from GraphicComponent import *
@@ -7,19 +9,38 @@ from GraphicComponent.UI import Label
 
 class GraphicComponentDebug:
     def __init__(self, component, windows: MainWindows):
+        self.__graphic_update_function = None
+        self.__graphic_insert_function = list()
         self.__debug_component = component
         self.__debug_Label = Label((0, 0), component.size())
+        self.one_layer: bool = True
+        self.info_alpha = 125
         self.textType = TextType()
         self.edgeType = EdgeType()
         self.windows = windows
 
     def graphic_debug(self):
-        self.graphic_debug_component(self.__debug_component)
+        self.__debug_Label.graph_surface.fill((0, 0, 0, 0))
+        if self.one_layer:
+            self.graphic_debug_component(self.__debug_component)
         self.graphic_update()
 
     def graphic_update(self):
-        self.windows.windows_surface.blit(self.__debug_Label.graph_surface, (0, 0))
-        pygame.display.flip()
+        if self.one_layer:
+            self.__debug_Label.graph_surface.set_alpha(self.info_alpha)
+            self.windows.windows_surface.blit(self.__debug_Label.graph_surface, (0, 0))
+            pygame.display.flip()
+        else:
+            if self.__graphic_update_function is None:
+                self.overwrite_graphic_core()
+
+                def draw_board(component, *args, **kwargs):
+                    self.textType.change_text(f'{type(component).__name__}:{component.ID}')
+                    mark_component(component, self.edgeType, self.textType, (0, 0, component.w - self.edgeType.width, component.h - self.edgeType.width), alpha=self.info_alpha)
+
+                self.overwrite_add_graphic_function(draw_board)
+            else:
+                self.windows.graph_update()
 
     def graphic_debug_component(self, component):
         self.graphic_debug_single(component)
@@ -28,7 +49,23 @@ class GraphicComponentDebug:
                 self.graphic_debug_component(son)
 
     def graphic_debug_single(self, component):
+        self.textType.change_text(f'{type(component).__name__}:{component.ID}')
         mark_component(self.__debug_Label, self.edgeType, self.textType, component.real_rect())
+
+    def overwrite_graphic_core(debug, enable: bool = True):
+        if enable:
+            debug.__graphic_update_function = Graphic.graph_update
+            def overwrite_graph_update(self, *args, **kwargs):
+                debug.__graphic_update_function(self, *args, **kwargs)
+                for insert in debug.__graphic_insert_function:
+                    insert(self, *args, **kwargs)
+            Graphic.graph_update = overwrite_graph_update
+        else:
+            Graphic.graph_update = debug.__graphic_update_function
+            debug.__graphic_update_function = None
+
+    def overwrite_add_graphic_function(self, function):
+        self.__graphic_insert_function.append(function)
 
     def event_debug(self):
         pass
@@ -119,15 +156,22 @@ class GraphicComponentManager:
             self.remove_component(i)
 
     def graphic_update(self):
-        self.windows.graph_update()
+        if self.__debug_mode:
+            Graphic.graph_update(self.windows)
+            self.windows.windows_surface.blit(self.windows.graph_surface, (0, 0))
+            self.debug.graphic_debug()
+        else:
+            self.windows.graph_update()
 
     def event_update(self):
         self.windows.event_update()
+        if self.__debug_mode:
+            self.debug.event_debug()
 
     def set_debug(self, enable: bool = None):
         if enable:
             self.__debug_mode = True
-            if self.__debug_mode is None:
+            if self.debug is None:
                 self.debug = GraphicComponentDebug(self.windows, self.windows)
         else:
             self.__debug_mode = False
@@ -136,12 +180,8 @@ class GraphicComponentManager:
         if component is None:
             component = self.windows
         component.event_spread(event_type, event=event, **kwargs)
-        if self.__debug_mode:
-            self.debug.event_debug()
 
     def update_component_graphic(self, component: Root, *args, **kwargs):
         if component is not None:
             component = self.windows
         component.graph_update()
-        if self.__debug_mode:
-            self.debug.graphic_debug()

@@ -43,7 +43,7 @@ class Graphic(Surface):
             # F.Surface.cleaning_surface(self.graph_surface)
             # self.graph_surface.blit(self.graph_primer_surface, (0, 0))
 
-            self.graph_surface = self.graph_primer_surface.copy()
+            self.graph_surface = self.graph_primer_surface.copy().convert_alpha()
 
             for son in graph_son:
                 self.graph_surface.blit(son.graph_surface, son.pos())

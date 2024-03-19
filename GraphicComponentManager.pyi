@@ -1,4 +1,5 @@
 from GraphicComponent import *
+from GraphicComponent.Effect.MarkBorder import TextType, EdgeType
 from GraphicComponent.UI import Label
 
 
@@ -45,7 +46,7 @@ class GraphicComponentManager:
     def event_update(self) -> None:
         ...
 
-    def set_debug(self) -> None:
+    def set_debug(self, enable: bool = None):
         ...
 
     def update_component_event(self, component: Root, event_type: int, event: Event, *args, **kwargs) -> any:
@@ -56,11 +57,15 @@ class GraphicComponentManager:
 
 
 class GraphicComponentDebug:
+    __graphic_update_function: any
+    __graphic_insert_function: list
     __debug_component: Graphic
     __debug_Label: Label
-    textType: any
-    edgeType: any
+    one_layer: bool = True
+    textType: TextType
+    edgeType: EdgeType
     windows: MainWindows
+    info_alpha: int
 
     def __init__(self, component: Graphic, windows: MainWindows):
         ...
@@ -68,12 +73,17 @@ class GraphicComponentDebug:
     def graphic_debug(self):
         ...
 
+    def overwrite_add_graphic_function(self, function):(self, function):
+
     def graphic_update(self):
         ...
     def graphic_debug_component(self, component: Graphic):
         ...
 
     def graphic_debug_single(self, component: Graphic):
+        ...
+
+    def overwrite_graphic_core(debug, enable: bool = True):
         ...
 
     def event_debug(self):

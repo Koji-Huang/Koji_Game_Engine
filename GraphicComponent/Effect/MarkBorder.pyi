@@ -36,7 +36,7 @@ class TextType:
         ...
 
 
-def mark_component(component: Graphic, edge_type=None, text_type=None, area: tuple[int, ...] = None):
+def mark_component(component: Graphic, edge_type: EdgeType, text_type: TextType, area: tuple[int, ...] = None):
     ...
 
 
