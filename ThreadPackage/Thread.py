@@ -1,5 +1,3 @@
-
-
 class Thread:
     threadLevel: str
     kwargs: dict

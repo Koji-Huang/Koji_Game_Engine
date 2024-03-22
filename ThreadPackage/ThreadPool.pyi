@@ -1,5 +1,6 @@
 from typing import Union
 
+from CustomDataType import LinkedList
 from ThreadPackage import Thread
 
 
@@ -8,7 +9,7 @@ class ThreadPool:
     This class is responsible for manager thread
     Include classify, find, join, delete, and other thing.
     """
-    threads: dict[str: list[Thread], ...]
+    threads: dict[str: LinkedList[Thread], ...]
     threadLevel: set[str]
     name: str
     id: str
@@ -88,7 +89,7 @@ class ThreadPool:
         :return:
         """
 
-    def __iter__(self) -> tuple[Thread]:
+    def __iter__(self) -> iter:
         """
         return the iterator object of all threads
         :return: iterable object

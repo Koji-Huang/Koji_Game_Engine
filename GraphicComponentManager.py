@@ -87,7 +87,7 @@ class GraphicComponentManager:
     def general_info(self):
         ...
 
-    def component_type(self, start_component: Root = None) -> set[str | ...]:
+    def component_type(self, start_component: Root = None):
         if start_component is None:
             start_component = self.windows
         ret = set()

@@ -1,12 +1,7 @@
 from ThreadPackage.Thread import Thread
-
+from CustomDataType import LinkedList
 
 class ThreadPool:
-    threads: dict[str: list[Thread], ...]
-    threadLevel: set[str]
-    name: str
-    id: str
-
     def __init__(self) -> None:
         self.threads = dict()
         self.threadLevel = set()
@@ -24,7 +19,7 @@ class ThreadPool:
             self.threads[thread.threadLevel].append(thread)
         else:
             self.threadLevel.add(thread.threadLevel)
-            self.threads[thread.threadLevel] = list()
+            self.threads[thread.threadLevel] = LinkedList()
             self.threads[thread.threadLevel].append(thread)
 
     def remove(self, removeThread: str, level: str = None) -> bool:
@@ -95,8 +90,9 @@ class ThreadPool:
         if self.isEmpty():
             raise 'No ThreadPackage Remain'
         for level in self.threadLevel:
-            for threads in self.threads.get(level):
-                return self.threads[level].pop(0)
+            if self.threads.get(level):
+                # May Cause Error
+                return self.threads[level].extract(0)
 
     def insert(self, thread: Thread, index: int = 0):
         if self.threads.get(thread.threadLevel):
@@ -106,7 +102,8 @@ class ThreadPool:
         else:
             if index != 0:
                 raise IndexError('list is Empty, but index set%d' % index)
-            self.threads[thread.threadLevel] = [thread, ]
+            self.threads[thread.threadLevel] = LinkedList()
+            self.threads[thread.threadLevel].append(thread)
             self.threadLevel += (thread.threadLevel,)
 
     def clean(self):
@@ -133,7 +130,7 @@ class ThreadPool:
     def info(self):
         return {"ID": self.id, "Length": len(self), "Threads": {key: value.pid for key, value in self.threads.items()}}
 
-    def __iter__(self) -> tuple[Thread]:
+    def __iter__(self) -> iter:
         return iter(self.threads.values())
 
     def __len__(self):

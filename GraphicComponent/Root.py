@@ -1,7 +1,7 @@
 from GraphicComponent.Event import Event
-
+from CustomDataType import LinkedList
 ID_Index = 0
-ID_Receive = set()
+ID_Receive = LinkedList()
 
 
 def give_id() -> str:
@@ -16,23 +16,15 @@ def give_id() -> str:
 
 
 class Root:
-    """
-    Root of the Object System
-    """
     father: None
     event: dict[str:list[Event]]
     event_track_type: set
-    son: set
+    son: LinkedList
     ID: str
 
     def __init__(self, father=None, *args, **kwargs):
-        """
-        Init root.
-        :param father: the father of this object
-        :return: None
-        """
         self.father = father
-        self.son = set()
+        self.son = LinkedList()
         self.event_track_type = set()
         self.event = dict()
         self.ID = give_id()
@@ -41,25 +33,15 @@ class Root:
                 value.tree_add_son(self)
 
     def update(self):
-        """
-        Basic Update Function.
-        Used customized each object's characteristic
-        :return:
-        """
         pass
 
     def __update__(self):
-        """
-        Real Update Function
-        Used to spread update info into depth
-        :return:
-        """
         self.update()
         for i in self.son:
             i.__update__()
 
     def tree_add_son(self, son):
-        self.son.add(son)
+        self.son.append(son)
         son.father = self
         self.event_tree_update(son.event_track_type)
         pass
@@ -87,17 +69,13 @@ class Root:
         return eventObject.track_run(*args, **kwargs)
 
     def event_clean(self) -> None:
-        """
-        clean useless event type
-        :return: None
-        """
         event_type = set(self.event.keys())
         for i in self.son:
             event_type.update(i.event.keys())
         self.event_track_type = event_type
 
     def event_tree(self) -> list:
-        return list((self.event_track_type, ( i.event_tree() for i in self.son)))
+        return list((self.event_track_type, (i.event_tree() for i in self.son)))
 
     def event_type(self) -> set:
         return self.event_track_type
@@ -122,11 +100,6 @@ class Root:
                     self.event[event_type].pop(event)
 
     def event_spread(self, event_name, **event_args):
-        """
-        This function is used to spread event and turn to next level.
-        Nothing will be return
-        :return: None
-        """
         if event_name in self.event.keys():
             for event in self.event[event_name]:
                 if self.event_check(event, **event_args):
@@ -141,11 +114,6 @@ class Root:
             self.father.event_tree_update(self.event_track_type)
 
     def delete(self) -> str:
-        """
-        Return ID and Delete the Object
-        Warming It Might Make Trouble
-        :return: self. ID
-        """
         # Event Object
         for i in self.event.items():
             for event in i:
@@ -155,7 +123,7 @@ class Root:
             self.father.son.remove(self)
             self.father.event_clean()
         tmp = self.ID
-        ID_Receive.add(tmp)
+        ID_Receive.append(tmp)
         del self
         return tmp
 

@@ -70,9 +70,15 @@ class ThreadRunningMachine:
                 self.runningStatus = 0
 
     def loop(self):
+        self.runningStatus = 1
         while self.runningStatus == 1:
             self.once()
-            if self.runningStatus == 0 and self.LoopThreadPool.isEmpty():
+            if self.runningStatus == 0 or False not in [
+                self.MainThreadPool.isEmpty(),
+                self.LoopThreadPool.isEmpty(),
+                self.ImmeThreadPool.isEmpty()
+                                                       ]:
+                self.runningStatus = 0
                 return None
             else:
                 self.runningStatus = 1

@@ -11,16 +11,6 @@ class ThreadManager:
     This class is responsible for creating and managing threads
     But looping is done in a new separate object named Looper
     """
-
-    # the machine, ThreadPackage Running Machine
-    TRMachine: ThreadRunningMachine
-
-    # ID Machine
-    ID_Data: dict[str: int, ...]
-
-    # Recycled ID
-    Recycled_ID: dict[str: list, ...]
-
     def __init__(self):
         self.ID_Data = dict()
         self.Recycled_ID = dict()

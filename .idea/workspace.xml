@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="GraphicComponentDebug 完成">
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Effect/MarkBorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Effect/MarkBorder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Effect/MarkBorder.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Effect/MarkBorder.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Surface.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Surface.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponentManager.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponentManager.pyi" afterDir="false" />
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="修改代码，确保格式工整">
+      <change afterPath="$PROJECT_DIR$/CustomDataType/LinkedList.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomDataType/LinkedList.py" beforeDir="false" afterPath="$PROJECT_DIR$/CustomDataType/LinkedList.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThreadPackage/ThreadManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadPackage/ThreadManager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,14 +19,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Unit Test" />
-        <option value="Python Stub" />
         <option value="Python Script" />
+        <option value="Python Stub" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -59,7 +60,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings"
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -196,7 +197,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
+        <option value="bundled-python-sdk-307d694b6c95-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.122" />
       </set>
     </attachedChunks>
   </component>
@@ -223,7 +224,10 @@
       <workItem from="1710779768801" duration="1988000" />
       <workItem from="1710781871887" duration="7818000" />
       <workItem from="1710789752704" duration="129000" />
-      <workItem from="1710833407207" duration="11385000" />
+      <workItem from="1710833407207" duration="12386000" />
+      <workItem from="1710855499229" duration="1848000" />
+      <workItem from="1711119327715" duration="325000" />
+      <workItem from="1711120444329" duration="5258000" />
     </task>
     <task id="LOCAL-00002" summary="2.3 版本最后一个提交">
       <option name="closed" value="true" />
@@ -313,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710844651482</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="修改代码，确保格式工整">
+      <option name="closed" value="true" />
+      <created>1710845025443</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1710845025443</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +356,8 @@
     <MESSAGE value="2.4 第二个补丁完成:&#10;增加了一个特效组件: MarkBorder 并规范了 Effect 的文件夹调用, 初始定义了 GraphicComponentManager.py 的 API" />
     <MESSAGE value="GraphicComponentManager 完成" />
     <MESSAGE value="GraphicComponentDebug 完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="GraphicComponentDebug 完成" />
+    <MESSAGE value="修改代码，确保格式工整" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改代码，确保格式工整" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

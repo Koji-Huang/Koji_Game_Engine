@@ -1,11 +1,12 @@
 from GraphicComponent import Event
+from CustomDataType import LinkedList
 
 
 class Root:
     father: Root
     event: dict[str:list[Event], ...]
     event_track_type: set[any]
-    son: set[Root]
+    son: LinkedList[Root]
     ID: str
 
     def __init__(self, *args, **kwargs) -> None:...
@@ -13,7 +14,6 @@ class Root:
     def update(self, *args) -> None:...
 
     def __update__(self) -> None:...
-
 
     def tree_add_son(self, son: Root) -> None:...
 
