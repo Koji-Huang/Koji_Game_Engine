@@ -41,8 +41,8 @@ class Press(Event):
 class Scrolling(Event):
     event_name = EventConstant.MouseWheel
 
-    def __init__(self, function: any, button: int, Component: any):
-        super().__init__()
+    def __init__(self, function: any, Component: any):
+        super().__init__(Component)
         self.track_function = function
         self.Label = Component
 

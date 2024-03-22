@@ -1,71 +1,61 @@
-import math
-
 import pygame
 
-import GlobalConstant
 from GraphicComponent.UI.Label import Label
-from GraphicComponent.UI.Button import MouseButtonWheel
+from GraphicComponent.Event.MouseEvent import Scrolling
 
 
 def scale(**kwargs):
-    camera = kwargs['camera']
-    event = kwargs['event']
+    camera = kwargs['graphic_object']
+    precise = kwargs['event'].precise_y
+    camera.scale(camera.scaleRatio * (1 + 0.1 * precise))
 
-    if event.y > 0:
-        scale_num = 1.1
-    elif event.y < 0:
-        scale_num = 0.9
-    else:
-        return
-
-    print(event)
-    pos = pygame.mouse.get_pos()
-    object_click_surface = tuple((pos[i] - camera.pos()[i] for i in [0, 1]))
-    object_click_inside_map = tuple(object_click_surface[i] / camera.allScaleRatio + camera.originPoint[i] for i in [0, 1])
-    inside_map_origin_point = camera.originPoint
-    click_origin_cost_x = inside_map_origin_point[0] + object_click_inside_map[0]
-    click_origin_cost_y = inside_map_origin_point[1] + object_click_inside_map[1]
-    reserve_x = click_origin_cost_x - click_origin_cost_x * scale_num
-    reserve_y = click_origin_cost_y - click_origin_cost_y * scale_num
-
-    camera.scale(scale_num, (reserve_x, reserve_y))
 
 
 class Camera(Label):
     def __init__(self, pos, size, *args, **kwargs):
+        self.scaleRatio = 1
+        self.virtualLabel = Label((0, 0), size)
+        self.virtualLabel_size = size
+        self.virtualLabel.virtualFather = self
+        self.virtualLabel.graph_active = True
+        self.relative_pos = (0, 0)
         super().__init__(pos, size, *args, **kwargs)
-        self.originPoint = (0, 0)
-        self.allScaleRatio: float = 1
-        rollEvent = MouseButtonWheel(scale, pygame.MOUSEWHEEL, self)
+        self.son.append(self.virtualLabel)
+        rollEvent = Scrolling(scale, self)
         self.event_add(pygame.MOUSEWHEEL, rollEvent)
 
-    def scale(self, rel_ratio=None, rel_pos=None):
-        if rel_ratio and rel_pos:
-            for i in self.son:
-                self.scale_son(i, rel_ratio, rel_pos)
-        elif rel_ratio:
-            for i in self.son:
-                self.scale_son(i, rel_ratio, (0, 0))
-        elif rel_pos:
-            for i in self.son:
-                self.scale_son(i, 1, rel_pos)
-        self.allScaleRatio *= rel_ratio
-        self.originPoint = tuple((self.originPoint[0] + rel_pos[0], self.originPoint[1] + rel_pos[1]))
+    def tree_add_son(self, son) -> None:
+        return self.virtualLabel.tree_add_son(son)
 
-    def scale_son(self, son: Label, rel_ratio: float, rel_pos: tuple):
-        # set default value
-        if self.allScaleRatio == 1:
-            son.origin_pos = son.pos()
-            son.origin_size = son.size()
-        # Reset Surface
-        self.graph_primer_surface.fill((0, 0, 0, 255))
-        # operate
-        son.set_pos(tuple(rel_pos[i] + son.pos()[i] * rel_ratio for i in [0, 1]))
-        son.set_size(tuple(i * rel_ratio for i in son.size()))
-        son.graph_active = True
-        # Spread
-        for grandson in son.son:
-            self.scale_son(grandson, rel_ratio, rel_pos)
+    def tree_remove_son(self, son) -> None:
+        return self.virtualLabel.tree_remove_son(son)
 
-    def event_receive(self, evnet_name, **kwargs):
-        super().event_receive(evnet_name, camera=self, **kwargs)
+    def graph_update(self, *args, **kwargs):
+        super().graph_update(*args, **kwargs)
+        self.graph_surface.fill((0, 0, 0))
+
+        copied_pos = tuple(int(self.scaleRatio * i) for i in self.relative_pos)
+
+        copied_rect = [copied_pos[0], copied_pos[1],
+                       self.virtualLabel_size[0], self.virtualLabel_size[1]]
+
+        if copied_rect[2] > self.virtualLabel_size[0]: copied_rect[2] = self.virtualLabel_size[0]
+        if copied_rect[3] > self.virtualLabel_size[1]: copied_rect[3] = self.virtualLabel_size[1]
+        if copied_rect[0] < 0: copied_rect[0] = 0
+        if copied_rect[1] < 0: copied_rect[1] = 0
+
+        mapping_size = tuple(i * self.scaleRatio for i in self.virtualLabel_size)
+        mapping_pos = tuple(i * self.scaleRatio for i in self.relative_pos)
+
+        copied_surface = pygame.transform.smoothscale(
+            self.virtualLabel.graph_surface.subsurface(copied_rect), mapping_size)
+
+        self.graph_surface.blit(copied_surface, mapping_pos)
+
+    def scale(self, multiple: float):
+        self.scaleRatio = multiple
+        self.graph_draw()
+
+    def move(self, relative: tuple[int, int]):
+        self.relative_pos = tuple(int(relative[i] + self.relative_pos()[i]) for i in [0, 1])
+        self.graph_draw()

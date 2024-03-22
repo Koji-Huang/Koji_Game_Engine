@@ -20,11 +20,10 @@ class Press(Event):
         """
 
 class Scrolling(Event):
-    def __init__(self, function: any, button: int, Component: Label):
+    def __init__(self, function: any, Component: Label):
         """
 
         :param function:
-        :param button:
         :param Component:
         """
 

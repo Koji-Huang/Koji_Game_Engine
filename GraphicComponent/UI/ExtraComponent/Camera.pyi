@@ -4,22 +4,30 @@ from GraphicComponent.UI import Label
 class Camera(Label):
     son: list[Label, ...]
     scaleRatio: float
-    allScaleRatio: float
+    relative_pos: tuple[int, int]
+    virtualLabel: Label
 
     def __init__(self, pos, size, *args, **kwargs):
         """
 
-        :param pos:
-        :param size:
-        :param args:
-        :param kwargs:
         """
 
-    def scale_son(self, son: Label, ratio: float, pos: tuple):
+    def tree_add_son(self, son) -> None:
         """
 
-        :param son:
-        :param ratio:
-        :param pos:
-        :return:
+        """
+
+    def tree_remove_son(self, son) -> None:
+        """
+
+        """
+
+    def scale(self, multiple: float):
+        """
+
+        """
+
+    def move(self, relative: tuple[int, int]):
+        """
+
         """
