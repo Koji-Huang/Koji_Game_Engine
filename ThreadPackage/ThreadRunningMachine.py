@@ -61,11 +61,11 @@ class ThreadRunningMachine:
         # Run Function
         while self.runningStatus == 1:
             while self.ImmeThreadPool.isEmpty() and not self.MainThreadPool.isEmpty():
-                RunThread = self.MainThreadPool.extract()
-                RunThread(**kwargs)
+                run_thread = self.MainThreadPool.extract()
+                run_thread(**kwargs)
             while not self.ImmeThreadPool.isEmpty():
-                RunThread = self.ImmeThreadPool.extract()
-                RunThread(**kwargs)
+                run_thread = self.ImmeThreadPool.extract()
+                run_thread(**kwargs)
             if self.ImmeThreadPool.isEmpty() and self.MainThreadPool.isEmpty():
                 self.runningStatus = 0
 
@@ -73,12 +73,11 @@ class ThreadRunningMachine:
         self.runningStatus = 1
         while self.runningStatus == 1:
             self.once()
-            if self.runningStatus == 0 or False not in [
+            if self.runningStatus == 0 and False not in [
                 self.MainThreadPool.isEmpty(),
                 self.LoopThreadPool.isEmpty(),
                 self.ImmeThreadPool.isEmpty()
                                                        ]:
-                self.runningStatus = 0
                 return None
             else:
                 self.runningStatus = 1
@@ -88,6 +87,8 @@ class ThreadRunningMachine:
         info["MainThreadPool"] = self.MainThreadPool
         info["LoopThreadPool"] = self.LoopThreadPool
         info["ImmeThreadPool"] = self.ImmeThreadPool
+        info["StopThreadPool"] = self.StopThreadPool
+        info["ExceThreadPool"] = self.ExceThreadPool
         info["RunningStatus"] = self.runningStatus
         info["RecordMode"] = self.recordMode
         return info

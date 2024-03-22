@@ -11,8 +11,8 @@ def hello_world(*args, **kwargs):
 add = FunctionThread(hello_world)
 
 
-Manager.add_thread(add)
+Manager.add_thread(add, pool='Main')
 
 
-Manager.TRMachine.loop()
+Manager.TRMachine.run()
 

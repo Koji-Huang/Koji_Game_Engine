@@ -1,6 +1,7 @@
 from ThreadPackage.Thread import Thread
 from CustomDataType import LinkedList
 
+
 class ThreadPool:
     def __init__(self) -> None:
         self.threads = dict()
