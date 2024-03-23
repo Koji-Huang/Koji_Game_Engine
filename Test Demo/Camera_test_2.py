@@ -9,7 +9,7 @@ Root = Manager()
 Root.set_debug(True)
 Root.debug.textType.color = (255, 0, 0, 255)
 
-image = Image((0, 0), (400, 300),
+image = Image((0, 0), (400, 600),
               r"C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\TestInfo\__klee_nahida_qiqi_diona_sayu_and_2_more_genshin_impact_drawn_by_neko_sake1__44cf20a2d68da284b66568fdf5a6972d.png")
 
 Camera_1 = Camera((450, 50), (300, 500), image)
@@ -22,7 +22,7 @@ Direct.graph_active = True
 image.tree_add_son(Direct)
 
 Root.add_component(Camera_1)
-Root.add_component(image)
+Root.add_component(Direct)
 
 
 def scrolling_event(event, *args, **kwargs):
@@ -52,6 +52,10 @@ def follow_mouse(event, *args, **kwargs):
     Camera_1.move_to(pos)
     Camera_1.graph_active = True
     image.graph_active = True
+    # # Very Strange Graphic
+    # scale = pygame.transform.scale(Camera_1.graph_surface, Direct.size())
+    # scale.set_alpha(255)
+    # Direct.graph_surface.blit(scale, (0, 0))
 
 
 scrolling_event = Scrolling(scrolling_event, Camera_1)
