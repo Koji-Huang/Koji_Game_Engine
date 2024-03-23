@@ -25,58 +25,38 @@ class Camera(Label):
         return self.virtualLabel.tree_remove_son(son)
 
     def graph_update(self, mapping_pos: tuple[int, int] = None, mapping_size: tuple[int, int] = None, *args, **kwargs):
+
         if mapping_pos is None:
             mapping_pos = [0, 0]
+
         label_size = self.virtualLabel.size()
-        size = list(int(i * self.camera_ratio) for i in self.size())
-        pos = list([self.camera_pos[i] - (self.size()[i] / 2) / self.camera_ratio for i in [0, 1]])
+        primer_surface_size = [i / self.camera_ratio for i in self.size()]
+        primer_surface_pos = list(self.camera_pos[i] - primer_surface_size[i] / 2 for i in [0, 1])
 
-        if pos[0] < 0:
-            if pos[0] + size[0] > 0:
-                size[0] += pos[0]
-                mapping_pos[0] += -1 * pos[0]
-                pos[0] = 0
-        if pos[1] < 0:
-            if pos[1] + size[1] > 0:
-                size[1] += pos[1]
-                mapping_pos[1] += -1 * pos[1]
-                pos[1] = 0
+        if primer_surface_pos[0] < 0:
+            if primer_surface_pos[0] + primer_surface_size[0] > 0:
+                primer_surface_size[0] += primer_surface_pos[0]
+                mapping_pos[0] += -1 * primer_surface_pos[0]
+                primer_surface_pos[0] = 0
+        if primer_surface_pos[1] < 0:
+            if primer_surface_pos[1] + primer_surface_size[1] > 0:
+                primer_surface_size[1] += primer_surface_pos[1]
+                mapping_pos[1] += -1 * primer_surface_pos[1]
+                primer_surface_pos[1] = 0
 
-        if pos[0] >= label_size[0] or pos[1] >= label_size[1] or 0 in size or pos[0] < 0 or pos[1] < 0:
+        if primer_surface_pos[0] >= label_size[0] or primer_surface_pos[1] >= label_size[1] or 0 in primer_surface_size or primer_surface_pos[0] < 0 or primer_surface_pos[1] < 0:
             # area out of label's right, not render
             pass
         else:
             # if size is out of range of subsurface
-            if pos[0] + size[0] >= label_size[0]:
-                size[0] = label_size[0] - pos[0]
-            if pos[1] + size[1] >= label_size[1]:
-                size[1] = label_size[1] - pos[1]
+            if primer_surface_pos[0] + primer_surface_size[0] >= label_size[0]:
+                primer_surface_size[0] = label_size[0] - primer_surface_pos[0]
+            if primer_surface_pos[1] + primer_surface_size[1] >= label_size[1]:
+                primer_surface_size[1] = label_size[1] - primer_surface_pos[1]
 
-            scale_size = list(int(i * self.camera_ratio) for i in size)
+            primer_surface = self.virtualLabel.graph_surface.subsurface(primer_surface_pos + primer_surface_size).copy()
 
-            copied_surface = self.virtualLabel.graph_surface.subsurface(pos + size).copy()
-
-            # # Scale to max range
-            # A_k = self.size()[0] / self.size()[1]
-            # B_k = scale_size[0] / scale_size[1]
-            # if A_k > B_k:
-            #     scale_size[0] *= self.size()[1] / scale_size[1]
-            #     scale_size[1] = self.size()[1]
-            # if A_k < B_k:
-            #     scale_size[1] *= self.size()[0] / scale_size[0]
-            #     scale_size[0] = self.size()[0]
-            # if A_k == B_k:
-            #     scale_size[1] = self.size()[1]
-            #     scale_size[0] = self.size()[0]
-
-            # # Keep in Center
-            # if scale_size[0] < self.size()[0]:
-            #     mapping_pos[0] = (self.size()[0] - scale_size[0]) / 2
-            #
-            # if scale_size[1] < self.size()[1]:
-            #     mapping_pos[1] = (self.size()[1] - scale_size[1]) / 2
-
-            scale_surface = pygame.transform.scale(copied_surface, scale_size)
+            scale_surface = pygame.transform.scale(primer_surface, primer_surface_size)
 
             super().graph_update(*args, **kwargs)
             self.graph_surface.fill((0, 0, 0))
