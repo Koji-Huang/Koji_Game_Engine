@@ -3,9 +3,10 @@ from GraphicComponent.UI import Label
 
 class Camera(Label):
     son: list[Label, ...]
-    scaleRatio: float
-    relative_pos: tuple[int, int]
     virtualLabel: Label
+    camera_pos: tuple[int, int]
+    camera_size: tuple[int, int]
+    camera_ratio: float
 
     def __init__(self, pos, size, *args, **kwargs):
         """
