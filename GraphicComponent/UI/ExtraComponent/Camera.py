@@ -32,6 +32,7 @@ class Camera(Label):
         label_size = self.virtualLabel.size()
         primer_surface_size = [i / self.camera_ratio for i in self.size()]
         primer_surface_pos = list(self.camera_pos[i] - primer_surface_size[i] / 2 for i in [0, 1])
+        render_size = list(self.size())
 
         if primer_surface_pos[0] < 0:
             if primer_surface_pos[0] + primer_surface_size[0] > 0:
@@ -46,11 +47,12 @@ class Camera(Label):
 
         if primer_surface_pos[0] >= label_size[0] or primer_surface_pos[1] >= label_size[1] or 0 in primer_surface_size or primer_surface_pos[0] < 0 or primer_surface_pos[1] < 0:
             # area out of label's right, not render
-            pass
+            self.graph_surface.fill((50, 50, 50))
         else:
             # if size is out of range of subsurface
             if primer_surface_pos[0] + primer_surface_size[0] >= label_size[0]:
                 primer_surface_size[0] = label_size[0] - primer_surface_pos[0]
+
             if primer_surface_pos[1] + primer_surface_size[1] >= label_size[1]:
                 primer_surface_size[1] = label_size[1] - primer_surface_pos[1]
 
@@ -59,7 +61,7 @@ class Camera(Label):
             scale_surface = pygame.transform.scale(primer_surface, primer_surface_size)
 
             super().graph_update(*args, **kwargs)
-            self.graph_surface.fill((0, 0, 0))
+            self.graph_surface.fill((50, 50, 50))
             self.graph_surface.blit(scale_surface, mapping_pos)
 
     def scale(self, multiple: float):
@@ -70,7 +72,7 @@ class Camera(Label):
         self.camera_pos = tuple(int(relative[i] + self.camera_pos[i]) for i in [0, 1])
         self.graph_draw()
 
-    def focus_on(self, position: tuple[int, int]):
+    def move_to(self, position: tuple[int, int]):
         self.camera_pos = position
         self.graph_draw()
 

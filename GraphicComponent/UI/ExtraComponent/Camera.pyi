@@ -32,7 +32,7 @@ class Camera(Label):
 
         """
 
-    def focus_on(self, position: tuple[int, int]):
+    def move_to(self, position: tuple[int, int]):
         """
 
         """

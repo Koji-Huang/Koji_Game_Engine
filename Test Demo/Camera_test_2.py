@@ -1,11 +1,10 @@
 import pygame
-
-from GraphicComponent import MainWindows
 from GraphicComponent.UI import Image, Label
 from GraphicComponent.UI.ExtraComponent import Camera
 from GraphicComponent.Event.MouseEvent import Scrolling
+from GraphicComponentManager import GraphicComponentManager as Manager
 
-Main = MainWindows((800, 600))
+Root = Manager()
 
 image = Image((0, 0), (400, 600),
               r"C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\TestInfo\__klee_nahida_qiqi_diona_sayu_and_2_more_genshin_impact_drawn_by_neko_sake1__44cf20a2d68da284b66568fdf5a6972d.png")
@@ -19,8 +18,9 @@ Direct.graph_active = True
 
 image.tree_add_son(Direct)
 
-Main.tree_add_son(Camera_1)
-Main.tree_add_son(image)
+Root.add_component(Camera_1)
+Root.add_component(Direct)
+Root.add_component(image)
 
 
 def scrolling_event(event, *args, **kwargs):
@@ -46,4 +46,5 @@ Camera_1.event_add(pygame.MOUSEWHEEL, scrolling_event)
 
 while True:
     Camera_1.graph_active = True
-    Main.update()
+    Root.graphic_update()
+    Root.event_update()
