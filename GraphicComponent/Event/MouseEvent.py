@@ -64,3 +64,9 @@ class Scrolling(Event):
             y: int
         """
         return True
+
+    def __copy__(self, copied: any = None):
+        if copied is None:
+            copied = Press(self.track_function, 0, self.graphic_object)
+        super().__copy__(copied)
+        return copied

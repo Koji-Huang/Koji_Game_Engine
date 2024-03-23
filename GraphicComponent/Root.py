@@ -100,6 +100,7 @@ class Root:
                     self.event[event_type].pop(event)
 
     def event_spread(self, event_name, **event_args):
+        from pygame import MOUSEWHEEL;
         if event_name in self.event.keys():
             for event in self.event[event_name]:
                 if self.event_check(event, **event_args):

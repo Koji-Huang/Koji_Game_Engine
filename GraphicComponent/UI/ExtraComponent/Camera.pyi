@@ -5,10 +5,9 @@ class Camera(Label):
     son: list[Label, ...]
     virtualLabel: Label
     camera_pos: tuple[int, int]
-    camera_size: tuple[int, int]
     camera_ratio: float
 
-    def __init__(self, pos, size, *args, **kwargs):
+    def __init__(self, pos, size, bind_component: any = None, *args, **kwargs):
         """
 
         """
@@ -29,6 +28,11 @@ class Camera(Label):
         """
 
     def move(self, relative: tuple[int, int]):
+        """
+
+        """
+
+    def focus_on(self, position: tuple[int, int]):
         """
 
         """
