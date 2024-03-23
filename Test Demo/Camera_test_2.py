@@ -2,14 +2,17 @@ import pygame
 from GraphicComponent.UI import Image, Label
 from GraphicComponent.UI.ExtraComponent import Camera
 from GraphicComponent.Event.MouseEvent import Scrolling
+from GraphicComponent.Event.Event import Event
 from GraphicComponentManager import GraphicComponentManager as Manager
 
 Root = Manager()
+Root.set_debug(True)
+Root.debug.textType.color = (255, 0, 0, 255)
 
-image = Image((0, 0), (400, 600),
+image = Image((0, 0), (400, 300),
               r"C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\TestInfo\__klee_nahida_qiqi_diona_sayu_and_2_more_genshin_impact_drawn_by_neko_sake1__44cf20a2d68da284b66568fdf5a6972d.png")
 
-Camera_1 = Camera((500, 200), (200, 300), image)
+Camera_1 = Camera((450, 50), (300, 500), image)
 
 
 Direct = Label((0, 0), Camera_1.size())
@@ -19,7 +22,6 @@ Direct.graph_active = True
 image.tree_add_son(Direct)
 
 Root.add_component(Camera_1)
-Root.add_component(Direct)
 Root.add_component(image)
 
 
@@ -40,9 +42,24 @@ def scrolling_event(event, *args, **kwargs):
     Direct.set_size(primer_surface_size)
 
 
+def follow_mouse(event, *args, **kwargs):
+    object = kwargs['graphic_object']
+    rel_pos = object.real_pos()
+    pos = list([int(event.pos[i]) for i in [0, 1]])
+    object: Label
+    center_pos = list([pos[i] - object.size()[i] / 2 for i in [0, 1]])
+    object.set_pos(center_pos)
+    Camera_1.move_to(pos)
+    Camera_1.graph_active = True
+    image.graph_active = True
+
+
 scrolling_event = Scrolling(scrolling_event, Camera_1)
+follow_event = Event(Camera_1)
+follow_event.track_function = follow_mouse
 
 Camera_1.event_add(pygame.MOUSEWHEEL, scrolling_event)
+Direct.event_add(pygame.MOUSEMOTION, follow_event)
 
 while True:
     Camera_1.graph_active = True

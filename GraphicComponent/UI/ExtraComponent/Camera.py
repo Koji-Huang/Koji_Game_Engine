@@ -58,7 +58,7 @@ class Camera(Label):
 
             primer_surface = self.virtualLabel.graph_surface.subsurface(primer_surface_pos + primer_surface_size).copy()
 
-            scale_surface = pygame.transform.scale(primer_surface, primer_surface_size)
+            scale_surface = pygame.transform.smoothscale(primer_surface, [i * self.camera_ratio for i in primer_surface_size])
 
             super().graph_update(*args, **kwargs)
             self.graph_surface.fill((50, 50, 50))
