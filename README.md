@@ -10,7 +10,7 @@ This Project:
 
 - A Middle High School Student made
 
-- Update at 2024.3.9
+- Update at 2024.3.25
 
 ---
 
@@ -31,25 +31,31 @@ This Project:
 ##### Version 2.x
     This Version compare to the first version had a great improvment. That's Tree Struct. After learning algorithms my code had a unbelivable improvment. That I can use a lot of different struct to due with different problem.
 
-- **Version 2.0** - Build Frame
-- **Version 2.1** - Make Graphic object
-- **Version 2.2** - Version 2.2 fix and add more UI support, and let Event object libre
-- **Version 2.3** - Add ThreadPackage to manager System Thread
-
----
-
-### Update Plans
-
-- **Version 2.4**
+- **Version 2.0**
+  - Build Frame
+- **Version 2.1**
+  - Make Graphic object
+- **Version 2.2**
+  - Version 2.2 fix and add more UI support, and let Event object libre
+- **Version 2.3**
+  - Add ThreadPackage to manager System Thread
+- **Version 2.4** | (2024.3.9 - 2024.3.25)
   - Rebuild **Graphic** Function **<u>graphic_update</u>** logic
   - Rebuild Graphic Event System
   - Update Graphic Camera Object
   - Fix Graphic BesselCurve Object
 
+---
+
+### Update Plans
+
 - **Version 2.5**
-  
   - Rebuild System Core: make it easy
   - Update ThreadPackage: make it more easy and standard
+
+- **Version 2.6**
+  - make event system api on component system
+  - make a position system to deal with pygame event
 
 - **Version 3.x**
   

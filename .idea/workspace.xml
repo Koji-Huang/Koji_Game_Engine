@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="Camera 修复存档">
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="常规提交">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,35 +40,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Camera_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.GraphicManager_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Graphic_copy_test_1.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.Graphic_scale_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Graphic_test_main_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.LinkList_Test_Demo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.MarkBorder_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Mouse_test_main_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ThreadRunningMachine_test_1.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.run_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Camera_test_1.executor": "Run",
+    "Python.Camera_test_2.executor": "Run",
+    "Python.GraphicManager_test_1.executor": "Run",
+    "Python.Graphic_copy_test_1.executor": "Debug",
+    "Python.Graphic_scale_test_1.executor": "Run",
+    "Python.Graphic_test_main_1.executor": "Run",
+    "Python.LinkList_Test_Demo.executor": "Run",
+    "Python.MarkBorder_test_1.executor": "Run",
+    "Python.Mouse_test_main_1.executor": "Run",
+    "Python.ThreadRunningMachine_test_1.executor": "Debug",
+    "Python.run_test_1.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/14473/PycharmProjects/Koji_Game_Engine",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\GraphicComponent\Effect" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Camera_test_1">
+  <component name="RunManager" selected="Python.Camera_test_2">
     <configuration name="Camera_test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Koji_Game_Engine" />
       <option name="ENV_FILES" value="" />
@@ -84,6 +86,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test Demo/Camera_test_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Camera_test_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Koji_Game_Engine" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test Demo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test Demo/Camera_test_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -138,29 +163,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Graphic_test_main_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Koji_Game_Engine" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test Demo" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test Demo/Graphic_test_main_1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="ThreadRunningMachine_test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Koji_Game_Engine" />
       <option name="ENV_FILES" value="" />
@@ -186,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Camera_test_2" />
         <item itemvalue="Python.Camera_test_1" />
         <item itemvalue="Python.ThreadRunningMachine_test_1" />
         <item itemvalue="Python.GraphicManager_test_1" />
         <item itemvalue="Python.Graphic_copy_test_1" />
-        <item itemvalue="Python.Graphic_test_main_1" />
       </list>
     </recent_temporary>
   </component>
@@ -230,6 +232,9 @@
       <workItem from="1711120444329" duration="5258000" />
       <workItem from="1711125761620" duration="14747000" />
       <workItem from="1711201607020" duration="428000" />
+      <workItem from="1711202051133" duration="19569000" />
+      <workItem from="1711297441245" duration="143000" />
+      <workItem from="1711323025512" duration="72000" />
     </task>
     <task id="LOCAL-00002" summary="2.3 版本最后一个提交">
       <option name="closed" value="true" />
@@ -351,7 +356,55 @@
       <option name="project" value="LOCAL" />
       <updated>1711140614409</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Camera 编写完毕">
+      <option name="closed" value="true" />
+      <created>1711206765776</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1711206765776</updated>
+    </task>
+    <task id="LOCAL-00018" summary="存档 - Camera">
+      <option name="closed" value="true" />
+      <created>1711214489732</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1711214489732</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Camera 以中心为坐标写好并通过测试">
+      <option name="closed" value="true" />
+      <created>1711216167734</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1711216167734</updated>
+    </task>
+    <task id="LOCAL-00020" summary="存档">
+      <option name="closed" value="true" />
+      <created>1711217119715</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1711217119715</updated>
+    </task>
+    <task id="LOCAL-00021" summary="CAMERA 大彻大悟了 - Camera_test_2.py">
+      <option name="closed" value="true" />
+      <created>1711220216992</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1711220216992</updated>
+    </task>
+    <task id="LOCAL-00022" summary="常规提交">
+      <option name="closed" value="true" />
+      <created>1711220910663</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1711220910663</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,7 +439,13 @@
     <MESSAGE value="完成了链表对象并整合进 Root 里的 son, 和 ThreadPool.py 的 thread 中替换了 list 之类的对象" />
     <MESSAGE value="ThreadPackage 验证没问题" />
     <MESSAGE value="Camera 修复存档" />
-    <option name="LAST_COMMIT_MESSAGE" value="Camera 修复存档" />
+    <MESSAGE value="Camera 编写完毕" />
+    <MESSAGE value="存档 - Camera" />
+    <MESSAGE value="Camera 以中心为坐标写好并通过测试" />
+    <MESSAGE value="存档" />
+    <MESSAGE value="CAMERA 大彻大悟了 - Camera_test_2.py" />
+    <MESSAGE value="常规提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="常规提交" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -404,7 +463,8 @@
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$MarkBorder_test_1.coverage" NAME="MarkBorder_test_1 覆盖结果" MODIFIED="1710789874233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$LinkList_Test_Demo.coverage" NAME="LinkList_Test_Demo 覆盖结果" MODIFIED="1711129434771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$Graphic_copy_test_1.coverage" NAME="Graphic_copy_test_1 覆盖结果" MODIFIED="1711130116528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
+    <SUITE FILE_PATH="coverage/Koji_Game_Engine$Camera_test_2.coverage" NAME="Camera_test_2 覆盖结果" MODIFIED="1711221909293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$Graphic_scale_test_1.coverage" NAME="Graphic_scale_test_1 覆盖结果" MODIFIED="1710779432536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
-    <SUITE FILE_PATH="coverage/Koji_Game_Engine$Camera_test_1.coverage" NAME="Camera_test_1 覆盖结果" MODIFIED="1711140213526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
+    <SUITE FILE_PATH="coverage/Koji_Game_Engine$Camera_test_1.coverage" NAME="Camera_test_1 覆盖结果" MODIFIED="1711216106621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
   </component>
 </project>
