@@ -1,10 +1,7 @@
 class Thread:
-    threadLevel: str
-    kwargs: dict
-    pid: str
-
-    def __init__(self, threadLevel: str = 'undefined', **kwargs):
+    def __init__(self, threadLevel: str = 'undefined', threadName: str = 'undefined', **kwargs):
         self.kwargs = kwargs
+        self.threadName = threadName
         self.threadLevel = threadLevel
         self.pid = '0000000'
 
@@ -12,7 +9,7 @@ class Thread:
         print("Default ThreadPackage Running----", self.pid)
 
     def info(self):
-        return {"threadLevel": self.threadLevel, "kwargs": self.kwargs, 'removeThread': self.pid}
+        return {"threadLevel": self.threadLevel, "threadName": self.threadName, "kwargs": self.kwargs, 'removeThread': self.pid}
 
     def result(self):
         return self.kwargs.get("result")
@@ -58,10 +55,9 @@ class FunctionThread(Thread):
 
     def __copy__(self, another=None):
         if another is None:
-            copied = Thread()
+            copied = FunctionThread(function=self.function)
         else:
             copied = another
-        copied = FunctionThread(function=self.function)
         super().__copy__(copied)
         copied.function = self.function
         copied.function_kwargs = self.function_kwargs.copy()

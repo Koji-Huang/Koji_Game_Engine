@@ -1,4 +1,5 @@
 from ThreadPackage import *
+from ThreadManager import ThreadManager
 
 
 Manager = ThreadManager()

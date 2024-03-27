@@ -4,8 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="常规提交">
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="Update Readme">
+      <change afterPath="$PROJECT_DIR$/ExternalSources/Flow.vsdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ThreadPackage/SystemThread/File.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ThreadPackage/SystemThread/Graphic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ThreadPackage/SystemThread/Sound.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ThreadPackage/SystemThread/UserInput.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ThreadPackage/SystemThread/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/CustomDataType/Data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/CustomDataType/Data.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/Root.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Root.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/Root.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Root.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponentManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponentManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/Camera_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Camera_test_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/Camera_test_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Camera_test_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/GraphicManager_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/GraphicManager_test_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/Graphic_copy_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Graphic_copy_test_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/Graphic_scale_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Graphic_scale_test_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/Graphic_test_main_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Graphic_test_main_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/GuessNumber.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/GuessNumber.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/LinkList_Test_Demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/LinkList_Test_Demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/MarkBorder_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/MarkBorder_test_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/Mouse_test_main_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Mouse_test_main_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/ThreadRunningMachine_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/ThreadRunningMachine_test_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/run_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/run_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Demo/run_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/run_test_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestInfo/__klee_nahida_qiqi_diona_sayu_and_2_more_genshin_impact_drawn_by_neko_sake1__44cf20a2d68da284b66568fdf5a6972d.png" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalSources/picture_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestInfo/image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalSources/picture_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestInfo/zh-cn.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalSources/font.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThreadPackage/Thread.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadPackage/Thread.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThreadPackage/Thread.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadPackage/Thread.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThreadPackage/ThreadManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThreadPackage/ThreadManager.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadManager.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThreadPackage/ThreadRunningMachine.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadPackage/ThreadRunningMachine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThreadPackage/ThreadRunningMachine.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadPackage/ThreadRunningMachine.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThreadPackage/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadPackage/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,33 +74,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Camera_test_1.executor": "Run",
-    "Python.Camera_test_2.executor": "Run",
-    "Python.GraphicManager_test_1.executor": "Run",
-    "Python.Graphic_copy_test_1.executor": "Debug",
-    "Python.Graphic_scale_test_1.executor": "Run",
-    "Python.Graphic_test_main_1.executor": "Run",
-    "Python.LinkList_Test_Demo.executor": "Run",
-    "Python.MarkBorder_test_1.executor": "Run",
-    "Python.Mouse_test_main_1.executor": "Run",
-    "Python.ThreadRunningMachine_test_1.executor": "Debug",
-    "Python.run_test_1.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/14473/PycharmProjects/Koji_Game_Engine",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Camera_test_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Camera_test_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.GraphicManager_test_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Graphic_copy_test_1.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.Graphic_scale_test_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Graphic_test_main_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.LinkList_Test_Demo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MarkBorder_test_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Mouse_test_main_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ThreadRunningMachine_test_1.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.run_test_1.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/14473/PycharmProjects/Koji_Game_Engine&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;application.passwordSafe&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\CustomDataType" />
+      <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine" />
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\GraphicComponent\Effect" />
     </key>
   </component>
@@ -235,6 +271,10 @@
       <workItem from="1711202051133" duration="19569000" />
       <workItem from="1711297441245" duration="143000" />
       <workItem from="1711323025512" duration="72000" />
+      <workItem from="1711323117952" duration="1346000" />
+      <workItem from="1711470900985" duration="1036000" />
+      <workItem from="1711490810509" duration="483000" />
+      <workItem from="1711520328621" duration="2032000" />
     </task>
     <task id="LOCAL-00002" summary="2.3 版本最后一个提交">
       <option name="closed" value="true" />
@@ -404,7 +444,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711220910663</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Update Readme">
+      <option name="closed" value="true" />
+      <created>1711323159814</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1711323159814</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +493,8 @@
     <MESSAGE value="存档" />
     <MESSAGE value="CAMERA 大彻大悟了 - Camera_test_2.py" />
     <MESSAGE value="常规提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="常规提交" />
+    <MESSAGE value="Update Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Readme" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -463,7 +512,7 @@
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$MarkBorder_test_1.coverage" NAME="MarkBorder_test_1 覆盖结果" MODIFIED="1710789874233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$LinkList_Test_Demo.coverage" NAME="LinkList_Test_Demo 覆盖结果" MODIFIED="1711129434771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$Graphic_copy_test_1.coverage" NAME="Graphic_copy_test_1 覆盖结果" MODIFIED="1711130116528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
-    <SUITE FILE_PATH="coverage/Koji_Game_Engine$Camera_test_2.coverage" NAME="Camera_test_2 覆盖结果" MODIFIED="1711221909293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
+    <SUITE FILE_PATH="coverage/Koji_Game_Engine$Camera_test_2.coverage" NAME="Camera_test_2 覆盖结果" MODIFIED="1711323243016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$Graphic_scale_test_1.coverage" NAME="Graphic_scale_test_1 覆盖结果" MODIFIED="1710779432536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
     <SUITE FILE_PATH="coverage/Koji_Game_Engine$Camera_test_1.coverage" NAME="Camera_test_1 覆盖结果" MODIFIED="1711216106621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test Demo" />
   </component>

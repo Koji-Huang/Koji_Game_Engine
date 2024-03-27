@@ -7,7 +7,7 @@ class Root:
     event: dict[str:list[Event], ...]
     event_track_type: set[any]
     son: LinkedList[Root]
-    ID: str
+    id: str
 
     def __init__(self, *args, **kwargs) -> None:...
 

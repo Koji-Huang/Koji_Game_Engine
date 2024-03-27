@@ -23,11 +23,13 @@ ThreadPackage Object:
             This object  is used to tell the system if it should be recycled. 
 """
 class Thread:
+    threadName: str
     threadLevel: str
     kwargs: dict
     pid: str
 
-    def __init__(self, threadLevel: str = 'undefined', **kwargs):
+
+    def __init__(self, threadLevel: str = 'undefined', threadName: str = 'undefined', **kwargs):
         """
         Initialize the threadObject
         :param threadLevel: the process' level

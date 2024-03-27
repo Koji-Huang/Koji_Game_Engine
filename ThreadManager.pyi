@@ -18,9 +18,9 @@ class ThreadManager:
     # the machine
     TRMachine: ThreadRunningMachine
     # ID Machine
-    ID_Data: dict[str: int, ...]
+    ID_DATA: dict[str: int, ...]
     # Recycled ID
-    Recycled_ID: dict[str: list, ...]
+    RECYCLED_ID: dict[str: list, ...]
 
     def __init__(self):
         """
@@ -156,7 +156,7 @@ class ThreadManager:
         :return: threadObjects
         """
 
-    def get_ID(self, objectType: str = 'undefined') -> str:
+    def get_id(self, objectType: str = 'undefined') -> str:
         """
         control objects id
         :param objectType:
@@ -192,7 +192,7 @@ class ThreadManager:
         :return: threadPoolObject
         """
 
-    def AllThreadPool(self) -> dict[str: ThreadPool, ...]:
+    def all_thread_pool(self) -> dict[str: ThreadPool, ...]:
         """
         Return all the {str: threadPoolObject, ...} in dict
         :return:

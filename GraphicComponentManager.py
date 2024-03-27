@@ -32,7 +32,7 @@ class GraphicComponentDebug:
                 self.overwrite_graphic_core()
 
                 def draw_board(component, *args, **kwargs):
-                    self.textType.change_text(f'{type(component).__name__}:{component.ID}')
+                    self.textType.change_text(f'{type(component).__name__}:{component.id}')
                     mark_component(component, self.edgeType, self.textType,
                                    (0, 0, component.w - self.edgeType.width, component.h - self.edgeType.width),
                                    alpha=self.info_alpha)
@@ -48,7 +48,7 @@ class GraphicComponentDebug:
                 self.graphic_debug_component(son)
 
     def graphic_debug_single(self, component):
-        self.textType.change_text(f'{type(component).__name__}:{component.ID}')
+        self.textType.change_text(f'{type(component).__name__}:{component.id}')
         mark_component(self.__debug_Label, self.edgeType, self.textType, component.real_rect())
 
     def overwrite_graphic_core(debug, enable: bool = True):
@@ -109,7 +109,7 @@ class GraphicComponentManager:
     def find_component(self, ID: str, start_component: Root = None) -> Root | None:
         if start_component is None:
             start_component = self.windows
-        if start_component.ID == ID:
+        if start_component.id == ID:
             return start_component
         else:
             for son in start_component.son:

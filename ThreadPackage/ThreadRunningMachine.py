@@ -39,18 +39,13 @@ class ThreadRunningMachine:
         self.runningStatus = 1
         self.recordMode = False
         self.loopProcess = processThread(target=self.loop)
-        self.run()
+        self.loopProcess.start()
 
     def stop(self) -> None:
         self.runningStatus = 0
 
     def pause(self) -> None:
         self.runningStatus = 2
-
-    def run(self):
-        self.runningStatus = 1
-        # self.loop()
-        self.loopProcess.start()
 
     def once(self) -> None:
         kwargs = {"TRMachine": self, "ThreadManager": self.ThreadManager}
@@ -67,20 +62,35 @@ class ThreadRunningMachine:
                 run_thread = self.ImmeThreadPool.extract()
                 run_thread(**kwargs)
             if self.ImmeThreadPool.isEmpty() and self.MainThreadPool.isEmpty():
-                self.runningStatus = 0
+                return
 
     def loop(self):
         self.runningStatus = 1
-        while self.runningStatus == 1:
-            self.once()
-            if self.runningStatus == 0 and False not in [
+        while True:
+            # Check if ThreadPool is Empty
+            if False not in [
                 self.MainThreadPool.isEmpty(),
                 self.LoopThreadPool.isEmpty(),
                 self.ImmeThreadPool.isEmpty()
-                                                       ]:
-                return None
+            ]:
+                self.runningStatus = 0
+                return 0
+            # Running State is Running
+            if self.runningStatus == 1:
+                self.once()
+            # Running State if Over
+            elif self.runningStatus == 0:
+                self.ThreadManager.clean_threadpool()
+                return 0
+            # Running State is Pause
+            elif self.runningStatus == 2:
+                continue
+            # Running State is Error
+            elif self.runningStatus == 3:
+                # Fix in Future
+                return 3
             else:
-                self.runningStatus = 1
+                self.runningStatus = 3
 
     def info(self):
         info = dict()
@@ -94,8 +104,8 @@ class ThreadRunningMachine:
         return info
 
     def set_pool_id(self):
-        self.MainThreadPool.id = self.ThreadManager.get_ID("poolObject")
-        self.LoopThreadPool.id = self.ThreadManager.get_ID("poolObject")
-        self.ImmeThreadPool.id = self.ThreadManager.get_ID("poolObject")
-        self.StopThreadPool.id = self.ThreadManager.get_ID("poolObject")
-        self.ExceThreadPool.id = self.ThreadManager.get_ID("poolObject")
+        self.MainThreadPool.id = self.ThreadManager.get_id("poolObject")
+        self.LoopThreadPool.id = self.ThreadManager.get_id("poolObject")
+        self.ImmeThreadPool.id = self.ThreadManager.get_id("poolObject")
+        self.StopThreadPool.id = self.ThreadManager.get_id("poolObject")
+        self.ExceThreadPool.id = self.ThreadManager.get_id("poolObject")

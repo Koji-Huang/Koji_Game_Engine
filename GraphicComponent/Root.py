@@ -27,7 +27,7 @@ class Root:
         self.son = LinkedList()
         self.event_track_type = set()
         self.event = dict()
-        self.ID = give_id()
+        self.id = give_id()
         for name, value in kwargs.items():
             if name == "father":
                 value.tree_add_son(self)
@@ -100,7 +100,6 @@ class Root:
                     self.event[event_type].pop(event)
 
     def event_spread(self, event_name, **event_args):
-        from pygame import MOUSEWHEEL;
         if event_name in self.event.keys():
             for event in self.event[event_name]:
                 if self.event_check(event, **event_args):
@@ -123,7 +122,7 @@ class Root:
         if self.father:
             self.father.son.remove(self)
             self.father.event_clean()
-        tmp = self.ID
+        tmp = self.id
         ID_Receive.append(tmp)
         del self
         return tmp
@@ -138,7 +137,7 @@ class Root:
     def __copy__(self, copied: any = None):
         if copied is None:
             copied = Root()
-            copied.ID = give_id()
+            copied.id = give_id()
         for event_type in self.event.keys():
             for event in self.event[event_type]:
                 copy_event = event.__copy__()

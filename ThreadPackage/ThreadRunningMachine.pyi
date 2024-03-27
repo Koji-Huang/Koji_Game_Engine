@@ -41,12 +41,6 @@ class ThreadRunningMachine:
         :return: None
         """
 
-    def run(self):
-        """
-        a function to run a single thread
-        :return: any
-        """
-
     def pause(self) -> None:
         """
         Pause the running

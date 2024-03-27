@@ -24,7 +24,7 @@ Manager.add_component(Label_2)
 
 
 def insert_function(self, *args, **kwargs):
-    print(self.ID)
+    print(self.id)
 
 
 Manager.debug.one_layer = True
