@@ -16,16 +16,10 @@ def give_id() -> str:
 
 
 class Root:
-    father: None
-    event: dict[str:list[Event]]
-    event_track_type: set
-    son: LinkedList
-    ID: str
-
     def __init__(self, father=None, *args, **kwargs):
         self.father = father
         self.son = LinkedList()
-        self.event_track_type = set()
+        self.event_type = set()
         self.event = dict()
         self.id = give_id()
         for name, value in kwargs.items():
@@ -43,7 +37,7 @@ class Root:
     def tree_add_son(self, son):
         self.son.append(son)
         son.father = self
-        self.event_tree_update(son.event_track_type)
+        self.event_tree_update(son.event_type)
         pass
 
     def tree_remove_son(self, son):
@@ -72,13 +66,10 @@ class Root:
         event_type = set(self.event.keys())
         for i in self.son:
             event_type.update(i.event.keys())
-        self.event_track_type = event_type
+        self.event_type = event_type
 
     def event_tree(self) -> list:
-        return list((self.event_track_type, (i.event_tree() for i in self.son)))
-
-    def event_type(self) -> set:
-        return self.event_track_type
+        return list((self.event_type, (i.event_tree() for i in self.son)))
 
     def event_value(self) -> list:
         return [i for i in self.event.items()]
@@ -88,16 +79,20 @@ class Root:
             self.event[event_type].append(event)
         else:
             self.event.__setitem__(event_type, [event, ])
+            self.event_type.add(event_type)
         if kwargs:
             event.update_info(**kwargs)
         self.event_tree_update({event_type})
         event.graphic_object = self
 
     def event_remove(self, event_type: int, event_id: str):
-        if event_type in self.event_track_type:
+        if event_type in self.event_type:
             for event in self.event[event_type]:
                 if event.id == event_id:
                     self.event[event_type].pop(event)
+                    if len(self.event[event_type]) == 0:
+                        self.event_type.remove(event_type)
+                        self.event.pop(event_type)
 
     def event_spread(self, event_name, **event_args):
         if event_name in self.event.keys():
@@ -109,9 +104,9 @@ class Root:
         return None
 
     def event_tree_update(self, another_set):
-        self.event_track_type.update(another_set)
+        self.event_type.update(another_set)
         if self.father:
-            self.father.event_tree_update(self.event_track_type)
+            self.father.event_tree_update(self.event_type)
 
     def delete(self) -> str:
         # Event Object

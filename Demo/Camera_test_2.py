@@ -21,8 +21,8 @@ Direct.graph_active = True
 
 image.tree_add_son(Direct)
 
-Root.add_component(Camera_1)
-Root.add_component(Direct)
+Root.component_add(Camera_1)
+Root.component_add(Direct)
 
 
 def scrolling_event(event, *args, **kwargs):

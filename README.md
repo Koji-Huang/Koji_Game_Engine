@@ -44,15 +44,13 @@ This Project:
   - Rebuild Graphic Event System
   - Update Graphic Camera Object
   - Fix Graphic BesselCurve Object
-
----
-
-### Update Plans
-
 - **Version 2.5**
   - Rebuild System Core: make it easy
   - Update ThreadPackage: make it more easy and standard
 
+---
+
+### Update Plans
 - **Version 2.6**
   - make event system api on component system
   - make a position system to deal with pygame event

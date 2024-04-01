@@ -12,7 +12,7 @@ class Button(Label):
         self.event_add(EventConstant.MouseButtonUp, make_event, **kwargs)
 
     def unbind_press_function(self, button) -> None:
-        if EventConstant.MouseButtonPress in self.event_track_type:
+        if EventConstant.MouseButtonPress in self.event_type:
             for i in self.event[EventConstant.MouseButtonUp]:
                 i: Press
                 if i.event_name == button:
@@ -20,7 +20,7 @@ class Button(Label):
 
     def search_press_function(self, button) -> tuple[Press, ...]:
         ret = []
-        if EventConstant.MouseButtonUp in self.event_track_type:
+        if EventConstant.MouseButtonUp in self.event_type:
             for i in self.event[EventConstant.MouseButtonUp]:
                 i: Press
                 if i.event_name == button:

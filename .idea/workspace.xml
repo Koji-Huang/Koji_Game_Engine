@@ -4,42 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="Update Readme">
-      <change afterPath="$PROJECT_DIR$/ExternalSources/Flow.vsdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ThreadPackage/SystemThread/File.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ThreadPackage/SystemThread/Graphic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ThreadPackage/SystemThread/Sound.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ThreadPackage/SystemThread/UserInput.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ThreadPackage/SystemThread/__init__.py" afterDir="false" />
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="2.5 Update:&#10;Rebuild File Struct&#10;Fix Bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/CustomDataType/Data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/CustomDataType/Data.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/Camera_test_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Camera_test_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/GraphicManager_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/GraphicManager_test_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalSources/~$$Flow.~vsdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/Event/Event.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Event/Event.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GraphicComponent/Root.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Root.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GraphicComponent/Root.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Root.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/UI/Button.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/UI/Button.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GraphicComponentManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponentManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/Camera_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Camera_test_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/Camera_test_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Camera_test_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/GraphicManager_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/GraphicManager_test_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/Graphic_copy_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Graphic_copy_test_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/Graphic_scale_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Graphic_scale_test_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/Graphic_test_main_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Graphic_test_main_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/GuessNumber.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/GuessNumber.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/LinkList_Test_Demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/LinkList_Test_Demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/MarkBorder_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/MarkBorder_test_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/Mouse_test_main_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Mouse_test_main_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/ThreadRunningMachine_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/ThreadRunningMachine_test_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/run_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/run_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Demo/run_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/run_test_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestInfo/__klee_nahida_qiqi_diona_sayu_and_2_more_genshin_impact_drawn_by_neko_sake1__44cf20a2d68da284b66568fdf5a6972d.png" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalSources/picture_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestInfo/image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalSources/picture_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestInfo/zh-cn.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalSources/font.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThreadPackage/Thread.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadPackage/Thread.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThreadPackage/Thread.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadPackage/Thread.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThreadPackage/ThreadManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThreadPackage/ThreadManager.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadManager.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThreadPackage/ThreadRunningMachine.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadPackage/ThreadRunningMachine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThreadPackage/ThreadRunningMachine.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadPackage/ThreadRunningMachine.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThreadPackage/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThreadPackage/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponentManager.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponentManager.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,13 +66,13 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/14473/PycharmProjects/Koji_Game_Engine&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/PycharmProjects/Koji_Game_Engine&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;application.passwordSafe&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -235,7 +211,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-307d694b6c95-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.122" />
+        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
       </set>
     </attachedChunks>
   </component>
@@ -274,7 +250,8 @@
       <workItem from="1711323117952" duration="1346000" />
       <workItem from="1711470900985" duration="1036000" />
       <workItem from="1711490810509" duration="483000" />
-      <workItem from="1711520328621" duration="2032000" />
+      <workItem from="1711520328621" duration="2469000" />
+      <workItem from="1711522927069" duration="3894000" />
     </task>
     <task id="LOCAL-00002" summary="2.3 版本最后一个提交">
       <option name="closed" value="true" />
@@ -452,7 +429,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711323159814</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="2.5 Update:&#10;Rebuild File Struct&#10;Fix Bug">
+      <option name="closed" value="true" />
+      <created>1711522719503</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1711522719503</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +448,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -494,7 +491,8 @@
     <MESSAGE value="CAMERA 大彻大悟了 - Camera_test_2.py" />
     <MESSAGE value="常规提交" />
     <MESSAGE value="Update Readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Readme" />
+    <MESSAGE value="2.5 Update:&#10;Rebuild File Struct&#10;Fix Bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.5 Update:&#10;Rebuild File Struct&#10;Fix Bug" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

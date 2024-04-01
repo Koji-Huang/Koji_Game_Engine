@@ -18,9 +18,9 @@ Label_2.set_color((0, 255, 0))
 Label_3 = Label((400, 100), (100, 100))
 Label_3.set_color((0, 0, 255))
 
-Manager.add_component(Label_1)
-Manager.add_component(Label_3)
-Manager.add_component(Label_2)
+Manager.component_add(Label_1)
+Manager.component_add(Label_3)
+Manager.component_add(Label_2)
 
 
 def insert_function(self, *args, **kwargs):

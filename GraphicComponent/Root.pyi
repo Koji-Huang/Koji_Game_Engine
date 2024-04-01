@@ -5,8 +5,8 @@ from CustomDataType import LinkedList
 class Root:
     father: Root
     event: dict[str:list[Event], ...]
-    event_track_type: set[any]
-    son: LinkedList[Root]
+    event_type: set[any]
+    son: LinkedList
     id: str
 
     def __init__(self, *args, **kwargs) -> None:...
@@ -36,8 +36,6 @@ class Root:
     def event_clean(self) -> None:...
 
     def event_tree(self) -> list:...
-
-    def event_type(self) -> set:...
 
     def event_value(self) -> list:...
 

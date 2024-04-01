@@ -14,13 +14,6 @@ def give_id() -> str:
 
 
 class Event:
-    event_name: any
-    track_function: any
-    track_args: dict
-    event_id: int or any
-    graphic_object: any
-    id: str
-
     def __init__(self, graphic_object: any):
         self.graphic_object = graphic_object
         self.track_args = dict()
