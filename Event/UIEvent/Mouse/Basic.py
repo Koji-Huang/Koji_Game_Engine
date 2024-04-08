@@ -1,3 +1,5 @@
+import pygame.mouse
+
 from ..Basic import Basic as BasicUIEvent, Inspector as FatherInspector
 from Functions import Point_in_Rect
 
@@ -25,31 +27,30 @@ class Basic(BasicUIEvent):
         super().__copy__(copied)
         return copied
 
-    def component_spread_args(self, args: dict, component: any = None):
-        args = super().component_spread_args(args, component)
-        if component is None:
-            click_pos: tuple[int, int] = args['pos']
-            cost_size = self.graphic_object.size()
-            args['pos'] = (click_pos[0] - cost_size[0], click_pos[1] - cost_size[1])
-        return args
-
 
 class Inspector(FatherInspector):
     def __init__(self, target: Basic):
-        """
-        Inspector is used to trigger event object with args. (args won't come from space)
-        :param target: the target event to trigger
-        """
-        pass
+        super().__init__(target)
 
-    def check(self):
-        """
-        check if event can be trigger
-        """
-        pass
+    def check(self, **kwargs):
+        super().check(pos=self.get_click_pos())
 
-    def trigger(self):
-        """
-        trigger event.
-        """
-        pass
+    def trigger(self, **kwargs):
+        super().trigger(pos=self.get_click_pos())
+
+    def component_spread_args(self, args: dict, component: any = None):
+        args = super().component_spread_args(args, component)
+        if component is None:
+            if args.get('pos') is None:
+                click_pos = pygame.mouse.get_pos()
+                cost_size = self.target_event.graphic_object.real_pos()
+            else:
+                click_pos: tuple[int, int] = args['pos']
+                cost_size = self.target_event.graphic_object.pos()
+            args['pos'] = (click_pos[0] - cost_size[0], click_pos[1] - cost_size[1])
+        return args
+
+    def get_click_pos(self):
+        click_pos = pygame.mouse.get_pos()
+        cost_size = self.target_event.graphic_object.real_pos()
+        return tuple((click_pos[0] - cost_size[0], click_pos[1] - cost_size[1]))

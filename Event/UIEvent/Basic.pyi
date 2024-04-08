@@ -43,7 +43,35 @@ class Basic(BasicEventObject):
         """
         pass
 
-    def component_spread_args(self, args: dict, component: Label = None):
+
+
+class Inspector(FatherInspector):
+    target_event: Basic
+    def __init__(self, *args, **kwargs):
+        """
+        Inspector is used to trigger event object with args. (args won't come from space)
+        :param target: the target event to trigger
+        """
+        pass
+
+    def check(self, **kwargs):
+        """
+        check if event can be trigger
+        """
+        pass
+
+    def trigger(self, **kwargs):
+        """
+        trigger event.
+        """
+        pass
+
+    def spread(self, **kwargs):
+        """
+        Spread event check to son graphic component.
+        """
+
+    def component_spread_args(self, args: dict, component: Label = None) -> dict:
         """
         When the Event spread to another new component, it will call this function.
         Main used for effect and mouse event.
@@ -52,26 +80,5 @@ class Basic(BasicEventObject):
         :param component: if you want to specify a component to spread.
         :param args: the args to fix.
         :return: fix args.
-        """
-        pass
-
-
-class Inspector(FatherInspector):
-    def __init__(self, target: Basic):
-        """
-        Inspector is used to trigger event object with args. (args won't come from space)
-        :param target: the target event to trigger
-        """
-        pass
-
-    def check(self):
-        """
-        check if event can be trigger
-        """
-        pass
-
-    def trigger(self):
-        """
-        trigger event.
         """
         pass

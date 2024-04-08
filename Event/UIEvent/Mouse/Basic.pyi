@@ -37,14 +37,17 @@ class Inspector(FatherInspector):
         """
         pass
 
-    def check(self):
+    def check(self, **kwargs):
         """
         check if event can be trigger
         """
         pass
 
-    def trigger(self):
+    def trigger(self, **kwargs):
         """
         trigger event.
         """
         pass
+
+    def get_click_pos(self):
+        ...

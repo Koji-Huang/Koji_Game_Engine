@@ -18,7 +18,7 @@ This Project:
 
     Well, Actually I don't know is it need an introduction. Because I just like to write software, That's Enough! But, a good introduction is a part of good software. So There's it. Here we go.
 
-    This package include a basic game engine logiction. Such as render, game object, world editor. All of them is opened to you in a simple way. I try to make the code as easy as I can. So let's see what will happen next. 
+    This package include a basic game engine logic. Such as render, game object, world editor. All of them is opened to you in a simple way. I try to make the code as easy as I can. So let's see what will happen next. 
 
 ---
 

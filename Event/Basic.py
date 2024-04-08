@@ -56,8 +56,10 @@ class Inspector:
         else:
             raise f"Error Event Type for inspect\nTarget Event: {self.target_event_class}\nInput Event: {target}\n"
 
-    def check(self):
-        return self.target_event.track_check()
+    def check(self, **kwargs):
+        if kwargs is not None:
+            self.target_event.update_info(**kwargs)
+        return self.target_event.track_check(**kwargs)
 
-    def trigger(self):
-        return self.target_event.track_run()
+    def trigger(self, **kwargs):
+        return self.target_event.track_run(**kwargs)

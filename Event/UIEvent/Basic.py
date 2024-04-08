@@ -1,4 +1,4 @@
-from ..Basic import BasicEvent as BasicEventObject
+from ..Basic import BasicEvent as BasicEventObject, Inspector as FatherInspector
 
 
 class Basic(BasicEventObject):
@@ -32,5 +32,24 @@ class Basic(BasicEventObject):
         super().__copy__(copied)
         return copied
 
-    def component_spread_args(self, args: dict, component=None):
-        return args.copy()
+
+class Inspector(FatherInspector):
+    def __init__(self, target: Basic):
+        super().__init__(target)
+
+    def check(self, **kwargs):
+        return super().check(**kwargs)
+
+    def trigger(self, **kwargs):
+        self.target_event.track_run(**kwargs)
+        self.spread(**kwargs)
+
+    def spread(self, **kwargs):
+        if kwargs:
+            kwargs = self.component_spread_args(kwargs)
+        self.target_event.graphic_object.event_spread(self.target_event.event_type, **kwargs)
+
+    def component_spread_args(self, args: dict = None, component=None):
+        if args is None:
+            return dict()
+        return args

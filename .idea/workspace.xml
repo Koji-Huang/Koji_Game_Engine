@@ -4,36 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="2.5 Final Fix">
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Keyboard/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Move.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Move.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Press.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Press.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Scroll.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Scroll.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Screen/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ThreadPackage/SystemThread/Event.py" afterDir="false" />
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="2.5 Update:&#10;Rebuild File Struct&#10;Fix Bug">
+      <change afterPath="$PROJECT_DIR$/Event/Event.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Event/UIEvent/UI Event.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demo/Camera_test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Camera_test_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demo/Camera_test_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Camera_test_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Event/Event.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Event/Event.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Basic.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Event/MouseEvent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Event/MouseEvent.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Event/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Root.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Root.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Root.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Root.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/UI/Button.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/UI/Button.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/UI/Button.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/UI/Button.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Basic.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,28 +25,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Unit Test" />
-        <option value="Python Script" />
         <option value="Python Stub" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Koji-Huang&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="24b44ab8-9c3a-43b4-b9ee-078e433dba45" />
-        <option name="url" value="https://github.com/Koji-Huang/Koji_Game_Engine.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -103,16 +71,14 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\Event\UIEvent" />
-      <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\Event\UIEvent\Mouse" />
-      <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\Event\GraphicEvent" />
-      <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine" />
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\CustomDataType" />
+      <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine" />
+      <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\GraphicComponent\Effect" />
     </key>
   </component>
   <component name="RunManager" selected="Python.Camera_test_2">
@@ -470,15 +436,7 @@
       <option name="project" value="LOCAL" />
       <updated>1711522719503</updated>
     </task>
-    <task id="LOCAL-00025" summary="2.5 Final Fix">
-      <option name="closed" value="true" />
-      <created>1711985787877</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1711985787877</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,6 +466,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="README.md FIX" />
     <MESSAGE value="Strange IDE error, so I push" />
     <MESSAGE value="2.3 版本最后一个提交" />
     <MESSAGE value="2.4 初始化" />
@@ -532,8 +491,7 @@
     <MESSAGE value="常规提交" />
     <MESSAGE value="Update Readme" />
     <MESSAGE value="2.5 Update:&#10;Rebuild File Struct&#10;Fix Bug" />
-    <MESSAGE value="2.5 Final Fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="2.5 Final Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.5 Update:&#10;Rebuild File Struct&#10;Fix Bug" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
