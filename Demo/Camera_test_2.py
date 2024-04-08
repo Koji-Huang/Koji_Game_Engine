@@ -1,8 +1,8 @@
 import pygame
 from GraphicComponent.UI import Image, Label
 from GraphicComponent.UI.ExtraComponent import Camera
-from GraphicComponent.Event.MouseEvent import Scrolling
-from GraphicComponent.Event.Event import Event
+from Event import Scrolling
+from Event import Basic
 from GraphicComponentManager import GraphicComponentManager as Manager
 
 Root = Manager()
@@ -45,7 +45,7 @@ def scrolling_event(event, *args, **kwargs):
 def follow_mouse(event, *args, **kwargs):
     object = kwargs['graphic_object']
     rel_pos = object.real_pos()
-    pos = list([int(event.pos[i]) for i in [0, 1]])
+    pos = list([int(event.graphic_object[i]) for i in [0, 1]])
     object: Label
     center_pos = list([pos[i] - object.size()[i] / 2 for i in [0, 1]])
     object.set_pos(center_pos)

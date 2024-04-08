@@ -1,5 +1,5 @@
 from GraphicComponent.UI.Label import Label
-from GraphicComponent.Event import Event
+from Event import Basic
 
 
 class Button(Label):

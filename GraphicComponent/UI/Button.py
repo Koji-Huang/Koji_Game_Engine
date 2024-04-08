@@ -1,6 +1,6 @@
 from GlobalConstant import EventConstant
 from GraphicComponent.UI.Label import Label
-from GraphicComponent.Event.MouseEvent import *
+from Event import *
 
 
 class Button(Label):

@@ -3,7 +3,7 @@ import pygame
 from GraphicComponent import MainWindows
 from GraphicComponent.UI import Image, Label
 from GraphicComponent.UI.ExtraComponent import Camera
-from GraphicComponent.Event.MouseEvent import Scrolling
+from Event import Scrolling
 
 Main = MainWindows((800, 600))
 

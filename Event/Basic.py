@@ -13,9 +13,10 @@ def give_id() -> str:
         return str(ID_Index)
 
 
-class Event:
-    def __init__(self, graphic_object: any):
-        self.graphic_object = graphic_object
+class BasicEvent:
+    def __init__(self, *args, **kwargs):
+        self.event_type_name = "Event_Basic"
+        self.event_name = 'undefined'
         self.track_args = dict()
         self.id = give_id()
 
@@ -23,7 +24,7 @@ class Event:
         return True
 
     def track_run(self, *args, **kwargs):
-        return self.track_function(graphic_object=self.graphic_object, *args, *self.track_args, **kwargs)
+        return self.track_function(*args, *self.track_args, **kwargs)
 
     def update_info(self, **kwargs):
         for update_name, update_value in kwargs.items():
@@ -37,11 +38,26 @@ class Event:
 
     def __copy__(self, copied: any = None):
         if copied is None:
-            copied = Event(self.graphic_object)
-
+            copied = BasicEvent()
         copied.event_name = self.event_name
         copied.track_function = self.track_function
         copied.track_args = self.track_args
-        copied.event_id = give_id()
+        copied.event_type = give_id()
 
         return copied
+
+
+class Inspector:
+    target_event_class = BasicEvent
+
+    def __init__(self, target: BasicEvent):
+        if isinstance(target, self.target_event_class):
+            self.target_event = target
+        else:
+            raise f"Error Event Type for inspect\nTarget Event: {self.target_event_class}\nInput Event: {target}\n"
+
+    def check(self):
+        return self.target_event.track_check()
+
+    def trigger(self):
+        return self.target_event.track_run()

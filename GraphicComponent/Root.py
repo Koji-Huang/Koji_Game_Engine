@@ -1,4 +1,4 @@
-from GraphicComponent.Event import Event
+
 from CustomDataType import LinkedList
 ID_Index = 0
 ID_Receive = LinkedList()
@@ -56,11 +56,11 @@ class Root:
         else:
             return self
 
-    def event_check(self, eventObject: Event, *args, **kwargs) -> bool:
-        return eventObject.track_check(*args, **kwargs)
+    def event_check(self, event_object, *args, **kwargs) -> bool:
+        return event_object.track_check(*args, **kwargs)
 
-    def event_run(self, eventObject: Event, *args, **kwargs) -> any:
-        return eventObject.track_run(*args, **kwargs)
+    def event_run(self, event_object, *args, **kwargs) -> any:
+        return event_object.track_run(*args, **kwargs)
 
     def event_clean(self) -> None:
         event_type = set(self.event.keys())
@@ -85,14 +85,20 @@ class Root:
         self.event_tree_update({event_type})
         event.graphic_object = self
 
-    def event_remove(self, event_type: int, event_id: str):
+    def event_remove(self, event_type, event):
+        from Event.UIEvent.Basic import Basic as Event
         if event_type in self.event_type:
-            for event in self.event[event_type]:
-                if event.id == event_id:
-                    self.event[event_type].pop(event)
-                    if len(self.event[event_type]) == 0:
-                        self.event_type.remove(event_type)
-                        self.event.pop(event_type)
+            if isinstance(event, str):
+                for event in self.event[event_type]:
+                    if event.id == event:
+                        self.event[event_type].pop(event)
+            elif isinstance(event, Event):
+                self.event[event_type].pop(event)
+            else:
+                pass
+            if len(self.event[event_type]) == 0:
+                self.event_type.remove(event_type)
+                self.event.pop(event_type)
 
     def event_spread(self, event_name, **event_args):
         if event_name in self.event.keys():
@@ -109,7 +115,6 @@ class Root:
             self.father.event_tree_update(self.event_type)
 
     def delete(self) -> str:
-        # Event Object
         for i in self.event.items():
             for event in i:
                 event.delete()
