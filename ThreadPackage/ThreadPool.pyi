@@ -19,12 +19,6 @@ class ThreadPool:
         Initialize the thread targetPoolName
         """
 
-    def classify(self) -> None:
-        """
-        classify for all threads
-        :return: None
-        """
-
     def add(self, thread: Thread) -> None:
         """
         Join new thread into targetPoolName

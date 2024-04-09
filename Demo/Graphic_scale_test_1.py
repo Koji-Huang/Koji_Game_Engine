@@ -18,7 +18,7 @@ Main.tree_add_son(Button)
 Button.bind_press_function(func, pygame.MOUSEBUTTONDOWN)
 
 Scale = Button.__copy__()
-Scale.graph_scale_self(400, 400, True)
+Scale.camera_scale(400, 400, True)
 Scale.set_pos((200, 200))
 
 Main.tree_add_son(Scale)

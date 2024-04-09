@@ -95,6 +95,12 @@ class Surface(Root):
         else:
             return False
 
+    def scale(self, w: int, h: int):
+        self.w = w
+        self.h = h
+        return None
+
+
     def __copy__(self, copied: any = None):
         if copied is None:
             copied = Surface(self.pos(), self.size())

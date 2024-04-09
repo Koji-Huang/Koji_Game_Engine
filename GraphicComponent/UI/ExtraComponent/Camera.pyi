@@ -22,17 +22,17 @@ class Camera(Label):
 
         """
 
-    def scale(self, multiple: float):
+    def camera_scale(self, multiple: float):
         """
 
         """
 
-    def move(self, relative: tuple[int, int]):
+    def camera_move(self, relative: tuple[int, int]):
         """
 
         """
 
-    def move_to(self, position: tuple[int, int]):
+    def camera_move_to(self, position: tuple[int, int]):
         """
 
         """

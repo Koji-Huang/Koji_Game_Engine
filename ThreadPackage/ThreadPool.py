@@ -9,12 +9,6 @@ class ThreadPool:
         self.name = 'undefined'
         self.id = '000'
 
-    def classify(self) -> None:
-        """
-        classify for all threads
-        :return: None
-        """
-
     def add(self, thread: Thread) -> None:
         if self.threads.get(thread.threadLevel):
             self.threads[thread.threadLevel].append(thread)
@@ -50,6 +44,7 @@ class ThreadPool:
                             # if no such type of thread remain, delete the type from the dict
                             self.threads.pop(thread.threadLevel)
                         return True
+        return False
 
     def finding(self, findThread, level=None):
         if isinstance(findThread, Thread):
@@ -135,4 +130,7 @@ class ThreadPool:
         return iter(self.threads.values())
 
     def __len__(self):
-        return len(self.threads)
+        length = 0
+        for i in self.threads.values():
+            length += i.size
+        return length

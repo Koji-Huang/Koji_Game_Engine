@@ -3,7 +3,6 @@ import pygame
 from GraphicComponent import MainWindows
 from GraphicComponent.UI import Image, Label
 from GraphicComponent.UI.ExtraComponent import Camera
-from Event import Scrolling
 
 Main = MainWindows((800, 600))
 
@@ -26,12 +25,12 @@ Main.tree_add_son(image)
 def scrolling_event(event, *args, **kwargs):
     if pygame.key.get_pressed()[pygame.K_LCTRL]:
 
-        Camera_1.scale(Camera_1.camera_ratio * (1 + event.precise_y * 0.1))
+        Camera_1.camera_scale(Camera_1.camera_ratio * (1 + event.precise_y * 0.1))
     else:
         if pygame.key.get_pressed()[pygame.K_LSHIFT]:
-            Camera_1.move((event.precise_y * 10, event.precise_x * 10))
+            Camera_1.camera_move((event.precise_y * 10, event.precise_x * 10))
         else:
-            Camera_1.move((event.precise_x * 10, event.precise_y * 10))
+            Camera_1.camera_move((event.precise_x * 10, event.precise_y * 10))
 
     primer_surface_size = [i / Camera_1.camera_ratio for i in Camera_1.size()]
     primer_surface_pos = list(Camera_1.camera_pos[i] - primer_surface_size[i] / 2 for i in [0, 1])
@@ -39,10 +38,6 @@ def scrolling_event(event, *args, **kwargs):
     Direct.set_pos(primer_surface_pos)
     Direct.set_size(primer_surface_size)
 
-
-scrolling_event = Scrolling(scrolling_event, Camera_1)
-
-Camera_1.event_add(pygame.MOUSEWHEEL, scrolling_event)
 
 while True:
     Camera_1.graph_active = True

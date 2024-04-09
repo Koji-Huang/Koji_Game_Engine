@@ -173,7 +173,7 @@ for i in range(1000000):
     Clock.tick_busy_loop(1000)
     Main.update()
     if not (i % 60):
-        text.change_text(str(Clock.get_fps()))
+        text.change_text_text(str(Clock.get_fps()))
     A.x += 1
     if pygame.time.get_ticks() > 12000:
         quit()

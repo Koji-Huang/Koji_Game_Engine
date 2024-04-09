@@ -73,7 +73,7 @@ class Graphic(Surface):
         super().__copy__(copied)
         return copied
 
-    def graph_scale_self(self, w: int, h: int, anti_aliasing: bool = False):
+    def scale(self, w: int, h: int, anti_aliasing: bool = False):
         self.graph_active = True
         self.w = w
         self.h = h

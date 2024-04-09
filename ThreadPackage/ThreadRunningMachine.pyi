@@ -35,7 +35,7 @@ class ThreadRunningMachine:
         :return: None
         """
 
-    def stop(self):
+    def over(self):
         """
         stop the loop
         :return: None
@@ -65,8 +65,13 @@ class ThreadRunningMachine:
         :return:
         """
 
-    def set_pool_id(self):
+    def clean_pool(self):
         """
-        Set Pools' id info
-        :return: None
+        Clean Thread Pool
+        """
+
+    def get_all_pool(self):
+        """
+        Get dict of All Thread Pool
+        :return: dict
         """

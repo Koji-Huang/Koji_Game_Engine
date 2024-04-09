@@ -67,20 +67,23 @@ class ThreadManager:
         :return:
         """
 
-    def add_thread(self, threadObject: Thread, place: int = -1, pool: str = "Main") -> Thread:
+    def add_thread(self, threadObject, pool="Imme", place=-1, create_new_thread: bool = True):
         """
         Add thread into the targetPoolName.
         :param threadObject: the object to add
         :param place: the place to put, 0 is the head, -1 is the bottom, other is the place
         :param pool: Main, Loop, Imme
+        :param create_new_thread: Is it need to create new thread
         :return: threadObject
         """
 
-    def add_threads(self, threadObjects: Union[list[Thread], tuple[Thread]], places: intLT) -> None:
+    def add_threads(self, threadObjects, places=None, pools=None, create_new_thread: bool = True) -> tuple:
         """
         Add thread into the targetPoolName.
         :param threadObjects: the objects to add
         :param places: the places to put, 0 is the head, -1 is the bottom, other is the place
+        :param pools: Main, Loop, Imme
+        :param create_new_thread: Is it need to create new thread
         :return: None
         """
 
@@ -118,17 +121,17 @@ class ThreadManager:
 
     def clean_threadpool(self) -> None:
         """
-        check the thread targetPoolName
+        clean all thread
         :return: None
         """
 
-    def display_threadpool(self) -> None:
+    def display_threadpool(self, pool=None):
         """
         show the info about thread
         :return: None
         """
 
-    def info_threadpool(self) -> dict:
+    def info_threadpool(self, pool=None):
         """
         return the info of thread targetPoolName
         :return:  dict of information

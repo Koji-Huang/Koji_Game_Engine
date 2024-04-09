@@ -9,7 +9,8 @@ class Thread:
         print("Default ThreadPackage Running----", self.pid)
 
     def info(self):
-        return {"threadLevel": self.threadLevel, "threadName": self.threadName, "kwargs": self.kwargs, 'removeThread': self.pid}
+        return {"threadLevel": self.threadLevel, "threadName": self.threadName,
+                "kwargs": self.kwargs, 'removeThread': self.pid}
 
     def result(self):
         return self.kwargs.get("result")
@@ -63,6 +64,9 @@ class FunctionThread(Thread):
         copied.function_kwargs = self.function_kwargs.copy()
         copied.function_return = self.function_return
         return copied
+
+    def result(self):
+        return self.function_return
 
     def __getattr__(self, item):
         try:

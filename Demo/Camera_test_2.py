@@ -3,7 +3,7 @@ from GraphicComponent.UI import Image, Label
 from GraphicComponent.UI.ExtraComponent import Camera
 from Event import Scrolling
 from Event import Basic
-from GraphicComponentManager import GraphicComponentManager as Manager
+from GraphicManager import GraphicComponentManager as Manager
 
 Root = Manager()
 Root.set_debug(True)
@@ -28,12 +28,12 @@ Root.component_add(Direct)
 def scrolling_event(event, *args, **kwargs):
     if pygame.key.get_pressed()[pygame.K_LCTRL]:
 
-        Camera_1.scale(Camera_1.camera_ratio * (1 + event.precise_y * 0.1))
+        Camera_1.camera_scale(Camera_1.camera_ratio * (1 + event.precise_y * 0.1))
     else:
         if pygame.key.get_pressed()[pygame.K_LSHIFT]:
-            Camera_1.move((event.precise_y * 10, event.precise_x * 10))
+            Camera_1.camera_move((event.precise_y * 10, event.precise_x * 10))
         else:
-            Camera_1.move((event.precise_x * 10, event.precise_y * 10))
+            Camera_1.camera_move((event.precise_x * 10, event.precise_y * 10))
 
     primer_surface_size = [i / Camera_1.camera_ratio for i in Camera_1.size()]
     primer_surface_pos = list(Camera_1.camera_pos[i] - primer_surface_size[i] / 2 for i in [0, 1])
@@ -49,7 +49,7 @@ def follow_mouse(event, *args, **kwargs):
     object: Label
     center_pos = list([pos[i] - object.size()[i] / 2 for i in [0, 1]])
     object.set_pos(center_pos)
-    Camera_1.move_to(pos)
+    Camera_1.camera_move_to(pos)
     Camera_1.graph_active = True
     image.graph_active = True
     # # Very Strange Graphic

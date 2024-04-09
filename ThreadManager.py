@@ -10,12 +10,12 @@ class ThreadManager:
     This class is responsible for creating and managing threads
     But looping is done in a new separate object named Looper
     """
+
     def __init__(self):
         self.ID_DATA = dict()
         self.RECYCLED_ID = dict()
         self.TRMachine = ThreadRunningMachine()
         self.TRMachine.ThreadManager = self
-        self.TRMachine.set_pool_id()
 
     def move_thread(self, thread, targetPoolName, create_new_thread=False, remove_from_old_pool=True):
         if isinstance(thread, Thread):
@@ -38,6 +38,7 @@ class ThreadManager:
             oldPool.remove(thread)
         if create_new_thread:
             thread = thread.__copy__()
+            thread.pid = self.get_id('threadObject')
         # add thread
         targetPool.add(thread)
         return True
@@ -62,11 +63,12 @@ class ThreadManager:
     def move_threads(self, threads, targetPoolName, create_new_thread=False, remove_from_old_pool=True):
         return [self.move_thread(thread, targetPoolName, create_new_thread, remove_from_old_pool) for thread in threads]
 
-    def add_thread(self, threadObject, place=-1, pool="Imme"):
+    def add_thread(self, threadObject, pool="Imme", place=-1, create_new_thread: bool = True):
         if threadObject is not None:
             # copy the thread object
-            threadObject = threadObject.__copy__()
-            threadObject.pid = self.get_id('threadObject')
+            if create_new_thread:
+                threadObject = threadObject.__copy__()
+                threadObject.pid = self.get_id('threadObject')
             # match thread targetPoolName
             matchThreadPool = self.match_threadpool(pool)
             if matchThreadPool is None:
@@ -82,13 +84,15 @@ class ThreadManager:
         else:
             return None
 
-    def add_threads(self, threadObjects, places=None, pools=None) -> None:
+    def add_threads(self, threadObjects, places=None, pools=None, create_new_thread=True):
+        ret = []
         if places is None:
             places = [-1 for _ in range(len(threadObjects))]
         if pools is None:
             pools = ["Stop" for _ in range(len(threadObjects))]
         for threadObject, place, pool in zip(threadObjects, places, pools):
-            self.add_thread(threadObject, place, pool)
+            ret.append(self.add_thread(threadObject, place, pool, create_new_thread))
+        return tuple(ret)
 
     def remove_thread(self, removeThread, targetPoolName=None, level=None):
         if isinstance(removeThread, Thread):
@@ -120,18 +124,20 @@ class ThreadManager:
             return False
 
     def remove_threads(self, pids, pools, levels):
+        ret = []
         if pools is None:
             pools = [None for _ in range(len(pids))]
         if levels is None:
             levels = [None for _ in range(len(pids))]
         for pid, pools, levels in zip(pids, pools, levels):
-            self.remove_thread(pid)
+            ret.append(self.remove_thread(pid))
+        return tuple(ret)
 
     def get_thread(self, pid, level=None, limit=None, eliminate=None):
         if limit is not None:
             search_range = {i: self.all_thread_pool().get(i) for i in limit}
         else:
-            search_range = self.all_thread_pool().copy()
+            search_range = self.all_thread_pool().value()
         if eliminate is not None:
             [search_range.pop(i) for i in eliminate]
         for threadPool in search_range:
@@ -184,43 +190,38 @@ class ThreadManager:
             return None
 
     def clean_threadpool(self):
-        self.TRMachine.MainThreadPool.clean()
-        self.TRMachine.LoopThreadPool.clean()
-        self.TRMachine.ImmeThreadPool.clean()
-        self.TRMachine.StopThreadPool.clean()
-        self.TRMachine.ExceThreadPool.clean()
+        self.TRMachine.clean_pool()
 
-    def display_threadpool(self):
-        print("Main ThreadPackage Pool:")
-        self.TRMachine.MainThreadPool.display(end="\n|   ")
-        print("\nLoop ThreadPackage Pool:")
-        self.TRMachine.LoopThreadPool.display(end="\n|   ")
-        print("\nImme ThreadPackage Pool:")
-        self.TRMachine.ImmeThreadPool.display(end="\n|   ")
-        print("\nStop ThreadPackage Pool:")
-        self.TRMachine.StopThreadPool.display(end="\n|   ")
-        print("\nExce ThreadPackage Pool:")
-        self.TRMachine.ExceThreadPool.display(end="\n|   ")
-        print("\n")
+    def display_threadpool(self, pool=None):
+        if pool:
+            self.match_threadpool(pool).display()
+        else:
+            print("Main ThreadPackage Pool:")
+            self.TRMachine.MainThreadPool.display(end="\n|   ")
+            print("\nLoop ThreadPackage Pool:")
+            self.TRMachine.LoopThreadPool.display(end="\n|   ")
+            print("\nImme ThreadPackage Pool:")
+            self.TRMachine.ImmeThreadPool.display(end="\n|   ")
+            print("\nStop ThreadPackage Pool:")
+            self.TRMachine.StopThreadPool.display(end="\n|   ")
+            print("\nExce ThreadPackage Pool:")
+            self.TRMachine.ExceThreadPool.display(end="\n|   ")
+            print("\n")
 
-    def info_threadpool(self):
-        info = dict()
-        info["MainThreadPool"] = self.TRMachine.MainThreadPool.info()
-        info["LoopThreadPool"] = self.TRMachine.LoopThreadPool.info()
-        info["ImmeThreadPool"] = self.TRMachine.ImmeThreadPool.info()
-        info["StopThreadPool"] = self.TRMachine.StopThreadPool.info()
-        info["ExceThreadPool"] = self.TRMachine.ExceThreadPool.info()
-        info['ID Data'] = self.ID_DATA
-        info['Recycled_ID'] = self.RECYCLED_ID
-        info['ThreadRunningMachine'] = self.TRMachine.info()
-        return info
+    def info_threadpool(self, pool=None):
+        if pool:
+            return self.match_threadpool(pool).info()
+        else:
+            info = dict()
+            info["MainThreadPool"] = self.TRMachine.MainThreadPool.info()
+            info["LoopThreadPool"] = self.TRMachine.LoopThreadPool.info()
+            info["ImmeThreadPool"] = self.TRMachine.ImmeThreadPool.info()
+            info["StopThreadPool"] = self.TRMachine.StopThreadPool.info()
+            info["ExceThreadPool"] = self.TRMachine.ExceThreadPool.info()
+            return info
 
     def all_thread_pool(self):
-        return {'Main': self.TRMachine.MainThreadPool,
-                'Loop': self.TRMachine.LoopThreadPool,
-                'Imme': self.TRMachine.ImmeThreadPool,
-                'Stop': self.TRMachine.StopThreadPool,
-                'Exce': self.TRMachine.ExceThreadPool}
+        return self.TRMachine.get_all_pool()
 
     def __del__(self):
         ...

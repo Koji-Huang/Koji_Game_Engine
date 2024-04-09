@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="2.5 Update:&#10;Rebuild File Struct&#10;Fix Bug">
-      <change afterPath="$PROJECT_DIR$/Event/Event.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/UI Event.md" afterDir="false" />
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="更新了几个碎碎念文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Basic.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReadmeRelease/2.6.3 - Event System.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadmeRelease/2.6.3 - Event System.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +68,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\CustomDataType" />
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine" />
+      <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\CustomDataType" />
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\GraphicComponent\Effect" />
     </key>
   </component>
@@ -436,7 +428,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711522719503</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="添加了Readme文件 (没写完)">
+      <option name="closed" value="true" />
+      <created>1712567750115</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1712567750115</updated>
+    </task>
+    <task id="LOCAL-00026" summary="更新了几个碎碎念文件">
+      <option name="closed" value="true" />
+      <created>1712568966947</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1712568966947</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,8 +474,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="README.md FIX" />
-    <MESSAGE value="Strange IDE error, so I push" />
     <MESSAGE value="2.3 版本最后一个提交" />
     <MESSAGE value="2.4 初始化" />
     <MESSAGE value="Root 的 event 更新" />
@@ -491,7 +497,9 @@
     <MESSAGE value="常规提交" />
     <MESSAGE value="Update Readme" />
     <MESSAGE value="2.5 Update:&#10;Rebuild File Struct&#10;Fix Bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="2.5 Update:&#10;Rebuild File Struct&#10;Fix Bug" />
+    <MESSAGE value="添加了Readme文件 (没写完)" />
+    <MESSAGE value="更新了几个碎碎念文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了几个碎碎念文件" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

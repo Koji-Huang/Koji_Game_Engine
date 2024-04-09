@@ -82,11 +82,11 @@ FunctionThread
         None
 """
 class FunctionThread(Thread):
-    function: ()
+    function: any
     function_kwargs: dict
     function_return: any
 
-    def __init__(self, function: (), function_kwargs: dict = None, threadLevel: str = 'undefined', **kwargs):
+    def __init__(self, function: any, function_kwargs: dict = None, threadLevel: str = 'undefined', **kwargs):
         """
         This ThreadPackage can receive a function to run
         :param function: the run function
@@ -103,6 +103,9 @@ class FunctionThread(Thread):
         ...
 
     def __copy__(self, another: FunctionThread = None):
+        ...
+
+    def result(self):
         ...
 
     def __getattr__(self, item):

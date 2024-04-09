@@ -2,7 +2,7 @@ from math import sin
 
 import pygame.time
 
-import GraphicComponentManager
+import GraphicManager
 from GraphicComponent.UI import *
 
 Manager = GraphicComponentManager.GraphicComponentManager()

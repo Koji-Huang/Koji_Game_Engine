@@ -4,35 +4,33 @@ from GraphicComponent.UI.Label import Label
 
 
 class Text(Label):
-    def __init__(self, pos, size, text: str, font: pygame.font.Font, antialias: bool = True,
+    def __init__(self, pos, size, text: str, font: pygame.font.Font, antialiasing: bool = True,
                  color: tuple[int, ...] or list[int, ...] = (255, 255, 255), *args, **kwargs):
         super().__init__(pos, size, *args, **kwargs)
         self.text = text
         self.font = font
-        self.antialias = antialias
+        self.text_antialiasing = antialiasing
         self.color = color
-        self.render()
+        self.graph_draw()
 
-    def change_text(self, text: str):
+    def change_text_text(self, text: str):
         self.graph_active = True
         self.text = text
-        self.render()
 
-    def change_font(self, font: pygame.font.Font):
+    def change_text_font(self, font: pygame.font.Font):
         self.graph_active = True
         self.font = font
-        self.render()
 
-    def change_color(self, color: tuple[int, ...] or list[int, ...] = (255, 255, 255)):
+    def change_text_color(self, color: tuple[int, ...] or list[int, ...] = (255, 255, 255)):
         self.graph_active = True
         self.color = color
-        self.render()
 
-    def change_antialias(self, antialias: bool):
+    def change_text_antialiasing(self, antialiasing: bool):
         self.graph_active = True
-        self.antialias = antialias
-        self.render()
+        self.text_antialiasing = antialiasing
 
-    def render(self) -> None:
-        Surface.cleaning_surface(self.graph_primer_surface)
-        self.graph_primer_surface.blit(self.font.render(self.text, self.antialias, self.color), (0, 0))
+    def graph_draw(self) -> None:
+        super().graph_draw()
+        if self.graph_active:
+            Surface.cleaning_surface(self.graph_primer_surface)
+            self.graph_primer_surface.blit(self.font.render(self.text, self.text_antialiasing, self.color), (0, 0))

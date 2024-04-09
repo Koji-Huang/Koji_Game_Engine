@@ -1,6 +1,5 @@
 from pygame import Surface as _Surface
 
-
 In_Range = lambda start, end, n: start <= n <= end
 
 
@@ -26,11 +25,14 @@ def Mix_Kwargs(kwargs, mix_in: dict):
     return a
 
 
-
-
 class Surface:
     @staticmethod
     def cleaning_surface(i: _Surface) -> None:
         i.fill((0, 0, 0, 0))
         i.set_colorkey((0, 0, 0, 0))
 
+
+def lock_ratio_limit(primer: tuple[int | float, ...], limit: tuple[int | float, ...]) -> tuple[int | float, ...]:
+    proportion = (primer[i] / limit[i] for i in range(len(primer)))
+    scale_num = 1 / max(proportion)
+    return tuple((i * scale_num for i in proportion))

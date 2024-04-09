@@ -32,7 +32,6 @@ class Camera(Label):
         label_size = self.virtualLabel.size()
         primer_surface_size = [i / self.camera_ratio for i in self.size()]
         primer_surface_pos = list(self.camera_pos[i] - primer_surface_size[i] / 2 for i in [0, 1])
-        render_size = list(self.size())
 
         if primer_surface_pos[0] < 0:
             if primer_surface_pos[0] + primer_surface_size[0] > 0:
@@ -64,15 +63,15 @@ class Camera(Label):
             self.graph_surface.fill((50, 50, 50))
             self.graph_surface.blit(scale_surface, mapping_pos)
 
-    def scale(self, multiple: float):
+    def camera_scale(self, multiple: float):
         self.camera_ratio = multiple
         self.graph_draw()
 
-    def move(self, relative: tuple[int, int]):
-        self.camera_pos = tuple(int(relative[i] + self.camera_pos[i]) for i in [0, 1])
+    def camera_move(self, relative: tuple[int, int]):
+        self.camera_pos = (int(relative[0] + self.camera_pos[0]), int(relative[1] + self.camera_pos[1]))
         self.graph_draw()
 
-    def move_to(self, position: tuple[int, int]):
+    def camera_move_to(self, position: tuple[int, int]):
         self.camera_pos = position
         self.graph_draw()
 
