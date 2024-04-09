@@ -2,17 +2,19 @@
 
 ---
 
-### Label
+## 目录
 
-### Text
+### 	[Label](#Label)
 
-### Image
+### 	[Text](#Text)
 
-### Buttom
+### 	[Image](#Image)
+
+### 	[Buttom](#Buttom)
 
 ---
 
-## Label
+## <a id='Label'>Label</a>
 
 ​	Label 类 提供了基础的 UI 控件的函数(并且重载只用覆写 Label 就可以覆写整个 UI 系统)
 
@@ -28,9 +30,41 @@ class Label(Graphic):
         # 用实色填充
 ```
 
+### 示例程序
+
+```Python
+from GraphicComponent import MainWindows
+from GraphicComponent.UI import Label
+
+# 创建窗体
+windows = MainWindows((800, 600))
+
+# 创建 Label 对象
+Label_R = Label((10, 10), (100, 100))
+Label_G = Label((120, 10), (100, 100))
+Label_B = Label((230, 10), (100, 100))
+Label_A = Label((0, 100), (340, 20))
+
+# 给 Label 对象上色
+Label_R.set_color((255, 0, 0))
+Label_G.set_color((0, 255, 0))
+Label_B.set_color((0, 0, 255))
+Label_R.set_color((255, 255, 255, 125))
+
+# 向窗体添加 Label 对象
+windows.tree_add_son(Label_R)
+windows.tree_add_son(Label_G)
+windows.tree_add_son(Label_B)
+windows.tree_add_son(Label_R)
+
+# 显示更新
+while True:
+    windows.update()
+```
+
 ---
 
-## Text
+## <a id="Text">Text</a>
 
 ​	Text 类 能在屏幕上显示文字
 
@@ -67,7 +101,7 @@ class Text(Label):
 
 ---
 
-## Image
+## <a id="Image">Image</a>
 
 ​	Image 类 用于显示图像
 
@@ -102,6 +136,6 @@ class Image(Label):
 
 ---
 
-## Buttom
+## <a id="Buttom">Buttom</a>
 
 ​	按钮对象, 正在编写 Event 结构, 暂不做定性描述

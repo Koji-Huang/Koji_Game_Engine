@@ -87,7 +87,7 @@ Event_change.track_function = change_pos
 
 
 # 向系统添加 UI 对象
-Engine.GCM.component_add(Label_1)
+Engine.GraphicManager.component_add(Label_1)
 
 # 系统循环
 Engine.loop()

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="更新了几个碎碎念文件">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReadmeRelease/2.6.3 - Event System.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadmeRelease/2.6.3 - Event System.md" afterDir="false" />
-    </list>
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="写了很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多地Markdown" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings">{}</component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Koji-Huang"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Koji-Huang/Koji_Game_Engine.git",
+    "accountId": "24b44ab8-9c3a-43b4-b9ee-078e433dba45"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -41,31 +49,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Camera_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Camera_test_2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.GraphicManager_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Graphic_copy_test_1.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.Graphic_scale_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Graphic_test_main_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.LinkList_Test_Demo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.MarkBorder_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Mouse_test_main_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ThreadRunningMachine_test_1.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.run_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/PycharmProjects/Koji_Game_Engine&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Camera_test_1 (1).executor": "Debug",
+    "Python.Camera_test_1.executor": "Run",
+    "Python.Camera_test_2.executor": "Run",
+    "Python.GraphicManager_test_1.executor": "Run",
+    "Python.Graphic_copy_test_1.executor": "Debug",
+    "Python.Graphic_scale_test_1.executor": "Run",
+    "Python.Graphic_test_main_1.executor": "Run",
+    "Python.LinkList_Test_Demo.executor": "Run",
+    "Python.MarkBorder_test_1.executor": "Run",
+    "Python.Mouse_test_main_1.executor": "Run",
+    "Python.ThreadRunningMachine_test_1.executor": "Debug",
+    "Python.run_test_1.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Administrator/PycharmProjects/Koji_Game_Engine",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine" />
@@ -73,7 +82,29 @@
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\GraphicComponent\Effect" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Camera_test_2">
+  <component name="RunManager" selected="Python.Camera_test_1 (1)">
+    <configuration name="Camera_test_1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Koji_Game_Engine" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Demo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Demo/Camera_test_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Camera_test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Koji_Game_Engine" />
       <option name="ENV_FILES" value="" />
@@ -143,29 +174,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Graphic_copy_test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Koji_Game_Engine" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test Demo" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test Demo/Graphic_copy_test_1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="ThreadRunningMachine_test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Koji_Game_Engine" />
       <option name="ENV_FILES" value="" />
@@ -191,18 +199,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Camera_test_1 (1)" />
         <item itemvalue="Python.Camera_test_2" />
         <item itemvalue="Python.Camera_test_1" />
         <item itemvalue="Python.ThreadRunningMachine_test_1" />
         <item itemvalue="Python.GraphicManager_test_1" />
-        <item itemvalue="Python.Graphic_copy_test_1" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
       </set>
     </attachedChunks>
   </component>
@@ -444,7 +452,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712568966947</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="写了很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多地Markdown">
+      <option name="closed" value="true" />
+      <created>1712660627632</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1712660627632</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2.3 版本最后一个提交" />
     <MESSAGE value="2.4 初始化" />
     <MESSAGE value="Root 的 event 更新" />
     <MESSAGE value="Root 的 surface 更新" />
@@ -499,7 +514,8 @@
     <MESSAGE value="2.5 Update:&#10;Rebuild File Struct&#10;Fix Bug" />
     <MESSAGE value="添加了Readme文件 (没写完)" />
     <MESSAGE value="更新了几个碎碎念文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新了几个碎碎念文件" />
+    <MESSAGE value="写了很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多地Markdown" />
+    <option name="LAST_COMMIT_MESSAGE" value="写了很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多地Markdown" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
