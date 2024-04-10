@@ -1,23 +1,36 @@
 import pygame.mouse
 
 from ..Basic import Basic as BasicUIEvent, Inspector as FatherInspector
-from Functions import Point_in_Rect
+from FunctionTools.coordinate import point_in_rect
 
 
 class Basic(BasicUIEvent):
     def __init__(self, component, *args, **kwargs):
         super().__init__(component, *args, **kwargs)
-        self.event_type_name = "Event_UI_Mouse_Basic"
+        self.event_type_name = "UI Mouse Event"
         self.pos = (0, 0)
 
     def track_check(self, *args, **kwargs):
         return False if super().track_check(*args, **kwargs) \
-            else Point_in_Rect(self.pos, self.graphic_object.rect())
+            else point_in_rect(self.pos, self.graphic_object.rect())
 
     def update_info(self, pos=None, **kwargs):
         if pos is not None:
             self.pos = pos
         super().update_info(**kwargs)
+        return kwargs
+
+    def update_kwargs(self, **kwargs):
+        super().update_kwargs()
+        if self.graphic_object is None:
+            if kwargs.get('pos') is None:
+                click_pos = pygame.mouse.get_pos()
+                cost_size = self.graphic_object.real_pos()
+            else:
+                click_pos: tuple[int, int] = kwargs['pos']
+                cost_size = self.graphic_object.pos()
+            kwargs['pos'] = (click_pos[0] - cost_size[0], click_pos[1] - cost_size[1])
+        return kwargs
 
     def __copy__(self, copied: any = None):
         if copied is None:
@@ -29,26 +42,12 @@ class Basic(BasicUIEvent):
 
 
 class Inspector(FatherInspector):
-    def __init__(self, target: Basic):
-        super().__init__(target)
+    target_event_class = Basic
 
-    def check(self, **kwargs):
-        super().check(pos=self.get_click_pos())
-
-    def trigger(self, **kwargs):
-        super().trigger(pos=self.get_click_pos())
-
-    def component_spread_args(self, args: dict, component: any = None):
-        args = super().component_spread_args(args, component)
-        if component is None:
-            if args.get('pos') is None:
-                click_pos = pygame.mouse.get_pos()
-                cost_size = self.target_event.graphic_object.real_pos()
-            else:
-                click_pos: tuple[int, int] = args['pos']
-                cost_size = self.target_event.graphic_object.pos()
-            args['pos'] = (click_pos[0] - cost_size[0], click_pos[1] - cost_size[1])
-        return args
+    def update_kwargs(self, component: any = None, **kwargs: dict):
+        super().update_kwargs()
+        pos = self.get_click_pos()
+        self.__kwargs["generic"]["pos"] = pos
 
     def get_click_pos(self):
         click_pos = pygame.mouse.get_pos()

@@ -1,5 +1,5 @@
 import pygame.font
-from Functions import Surface
+from FunctionTools.graphic import cleaning_surface
 from GraphicComponent.UI.Label import Label
 
 
@@ -32,5 +32,5 @@ class Text(Label):
     def graph_draw(self) -> None:
         super().graph_draw()
         if self.graph_active:
-            Surface.cleaning_surface(self.graph_primer_surface)
+            cleaning_surface(self.graph_primer_surface)
             self.graph_primer_surface.blit(self.font.render(self.text, self.text_antialiasing, self.color), (0, 0))

@@ -34,22 +34,23 @@ class Basic(BasicEventObject):
 
 
 class Inspector(FatherInspector):
+    target_event_class = Basic
+
     def __init__(self, target: Basic):
         super().__init__(target)
-
-    def check(self, **kwargs):
-        return super().check(**kwargs)
+        self.event_type_name = "UI Event"
+        self.__kwargs["spread"] = dict()
 
     def trigger(self, **kwargs):
-        self.target_event.track_run(**kwargs)
+        super().trigger(**kwargs)
         self.spread(**kwargs)
 
     def spread(self, **kwargs):
-        if kwargs:
-            kwargs = self.component_spread_args(kwargs)
+        args = {}
+        args.update(self.__kwargs['generic'])
+        args.update(self.__kwargs['spread'])
+        args.update(kwargs) if kwargs is not None else None
         self.target_event.graphic_object.event_spread(self.target_event.event_type, **kwargs)
 
-    def component_spread_args(self, args: dict = None, component=None):
-        if args is None:
-            return dict()
-        return args
+    def update_kwargs(self, component=None):
+        pass

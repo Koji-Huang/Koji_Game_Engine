@@ -17,16 +17,17 @@ class BasicEvent:
 
     def update_info(self, **kwargs) -> None: ...
 
-    def delete(self):
-        ...
+    def update_kwargs(self, **kwargs) -> dict:...
 
-    def __copy__(self, copied: any = None):
-        ...
+    def delete(self):...
+
+    def __copy__(self, copied: any = None):...
 
 
 class Inspector:
     target_event_class = BasicEvent
     target_event: BasicEvent
+    __kwargs: dict
 
     def __init__(self, target: BasicEvent):
         """
@@ -46,3 +47,24 @@ class Inspector:
         trigger event.
         """
         pass
+
+    def record_kwargs(self, kwargs_type, **kwargs):
+        """
+        Record kwargs for check and trigger use
+        """
+
+    def get_kwargs(self, kwargs_type, **kwargs):
+        """
+        Check recorded kwargs
+        """
+        pass
+
+    def remove_kwargs(self,  kwargs_type, kwargs_key):
+        """
+        Remove a value form kwargs
+        """
+
+    def update_kwargs(self):
+        """
+        update kwargs to use
+        """

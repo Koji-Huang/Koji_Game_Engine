@@ -1,7 +1,6 @@
 import pygame
-
+from FunctionTools.coordinate import mix_point
 from GraphicComponent.UI.Label import Label
-import Functions as F
 
 
 class BesselCurve(Label):
@@ -54,7 +53,7 @@ class BesselCurve(Label):
             accuracy = self.line_drawing_accuracy
         points = list()
         for percent in (k / accuracy for k in range(accuracy + 1)):
-            start_point = F.mix_point(start_line[0], start_line[1], percent)
-            end_point = F.mix_point(end_line[0], end_line[1], percent)
-            points.append(F.mix_point(start_point, end_point, percent))
+            start_point = mix_point(start_line[0], start_line[1], percent)
+            end_point = mix_point(end_line[0], end_line[1], percent)
+            points.append(mix_point(start_point, end_point, percent))
         return tuple(points)

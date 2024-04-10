@@ -1,5 +1,5 @@
 import pygame.image
-from Functions import lock_ratio_limit
+from FunctionTools.coordinate import scale_series_proportionality_int
 from GraphicComponent.UI.Label import Label
 
 
@@ -41,12 +41,13 @@ class Image(Label):
         if self.graph_active:
             if self.layout_mode == 0:
                 if self.image_antialiasing:
-                    scale_surface = pygame.transform.smoothscale(self.image_surface,
-                                                                 lock_ratio_limit(self.image_surface.get_size(),
-                                                                                  self.size()))
+                    scale_surface = pygame.transform.smoothscale(
+                        self.image_surface,
+                        scale_series_proportionality_int(self.image_surface.get_size(), self.size()))
                 else:
-                    scale_surface = pygame.transform.scale(self.image_surface,
-                                                           lock_ratio_limit(self.image_surface.get_size(), self.size()))
+                    scale_surface = pygame.transform.scale(
+                        self.image_surface,
+                        scale_series_proportionality_int(self.image_surface.get_size(), self.size()))
                 self.graph_primer_surface.blit(scale_surface,
                                                (int((self.size()[0] - scale_surface.get_size()[0]) / 2),
                                                 int((self.size()[1] - scale_surface.get_size()[1]) / 2)))

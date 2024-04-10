@@ -53,6 +53,9 @@ class BasicEvent:
     def update_info(self, **kwargs) -> None:
         # 提供一个更新附带参数的接口, 也可以自定义为更改类参数
 
+    def update_kwargs(self, **kwargs) -> dict:
+        # 更新参数用来传递
+    
     def delete(self):
         # 删去此事件时会调用的函数, 这个函数会将自己从事件系统中抹除
 

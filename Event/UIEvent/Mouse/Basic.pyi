@@ -2,6 +2,7 @@ from ..Basic import Basic as BasicUIEvent, Inspector as FatherInspector
 
 
 class Basic(BasicUIEvent):
+
     pos: tuple[int, int]
 
     def __init__(self, component, *args, **kwargs):
@@ -18,6 +19,11 @@ class Basic(BasicUIEvent):
         pos: self.pos
         """
         pass
+
+    def update_kwargs(self, **kwargs):
+        """
+        Update pos info
+        """
 
     def __copy__(self, copied: any = None):
         """
@@ -37,17 +43,8 @@ class Inspector(FatherInspector):
         """
         pass
 
-    def check(self, **kwargs):
-        """
-        check if event can be trigger
-        """
-        pass
-
-    def trigger(self, **kwargs):
-        """
-        trigger event.
-        """
-        pass
+    def spread_kwargs(self, component: any = None, **kwargs: dict):
+        ...
 
     def get_click_pos(self):
         ...

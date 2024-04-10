@@ -1,5 +1,5 @@
 from GraphicComponent.Root import Root
-import Functions as F
+from FunctionTools.coordinate import point_in_rect
 
 
 class Surface(Root):
@@ -87,10 +87,10 @@ class Surface(Root):
         :return:
         """
         if another:
-            return bool(F.Point_in_Rect((self.x, self.y), another.rect()) or
-                        F.Point_in_Rect((self.x + self.w, self.y + self.h), another.rect()) or
-                        F.Point_in_Rect((another.x + another.w, another.y), self.rect()) or
-                        F.Point_in_Rect((another.x, another.y + another.h), self.rect())
+            return bool(point_in_rect((self.x, self.y), another.rect()) or
+                        point_in_rect((self.x + self.w, self.y + self.h), another.rect()) or
+                        point_in_rect((another.x + another.w, another.y), self.rect()) or
+                        point_in_rect((another.x, another.y + another.h), self.rect())
                         )
         else:
             return False

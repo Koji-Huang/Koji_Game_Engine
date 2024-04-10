@@ -1,15 +1,13 @@
+import pygame.mouse
+
 from Basic import Basic, Inspector as father_inspector
 
 
 class Click(Basic):
-    event_name: any
-    track_function: any
-    track_args: dict
-    event_type: int or any
-    event_type_name: str
-    id: str
+    button: tuple[bool, ...] = None
 
-    def __init__(self, *args, **kwargs):...
+    def __init__(self, component, *args, **kwargs):
+        ...
 
     def track_check(self,  *args, **kwargs) -> any:...
 
@@ -25,24 +23,6 @@ class Click(Basic):
 
 
 class Inspector(father_inspector):
-    target_event_class: types.ClassMethodDescriptorType
-    target_event: BasicEvent
+    def update_kwargs(self, component: any = None):
+        ...
 
-    def __init__(self, target: BasicEvent):
-        """
-        Inspector is used to trigger event object with args. (args won't come from space)
-        :param target: the target event to trigger
-        """
-        pass
-
-    def check(self):
-        """
-        check if event can be trigger
-        """
-        pass
-
-    def trigger(self):
-        """
-        trigger event.
-        """
-        pass

@@ -1,5 +1,4 @@
 from GraphicComponent.Surface import Surface
-import Functions as F
 import pygame
 
 
@@ -25,7 +24,7 @@ class Graphic(Surface):
     def graph_update(self, *args, **kwargs):
 
         if kwargs:
-            self.graph_kwargs = F.Mix_Kwargs(self.graph_kwargs, kwargs)
+            self.graph_kwargs.update(kwargs)
             self.graph_active = True
 
         graph_son = [son for son in self.son if isinstance(son, Graphic)]

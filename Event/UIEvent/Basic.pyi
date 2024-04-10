@@ -4,6 +4,7 @@ from GraphicComponent.UI import Label
 
 class Basic(BasicEventObject):
     graphic_object: Label
+
     def __init__(self, graphic_object: Label, *args, **kwargs):
         ...
 
@@ -58,27 +59,18 @@ class Inspector(FatherInspector):
         """
         check if event can be trigger
         """
-        pass
+        return self.target_event.track_check(**kwargs, **self.spread_kwargs())
 
     def trigger(self, **kwargs):
         """
         trigger event.
         """
-        pass
+        return self.target_event.track_run(**kwargs, **self.spread_kwargs())
 
     def spread(self, **kwargs):
         """
         Spread event check to son graphic component.
         """
 
-    def component_spread_args(self, args: dict, component: Label = None) -> dict:
-        """
-        When the Event spread to another new component, it will call this function.
-        Main used for effect and mouse event.
-        It receives args and return a fix arg for update_info()
-        Notice: event always spread by father-son-level.
-        :param component: if you want to specify a component to spread.
-        :param args: the args to fix.
-        :return: fix args.
-        """
+    def update_kwargs(self, component = None):
         pass

@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="写了很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多地Markdown" />
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="给个别 Markdown 添加了示例代码 (没添加完">
+      <change afterPath="$PROJECT_DIR$/FunctionTools/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FunctionTools/coordinate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FunctionTools/graphic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FunctionTools/parameter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadmeRelease/2.6.7 - Event System.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Basic.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/Event.md" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Event.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/Graphic.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Graphic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/Surface.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Surface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/UI/ExtraComponent/BesselCurve.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/UI/ExtraComponent/BesselCurve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/UI/Image.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/UI/Image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/UI/Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/UI/Text.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,18 +44,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Koji-Huang"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Koji-Huang&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Koji-Huang/Koji_Game_Engine.git",
-    "accountId": "24b44ab8-9c3a-43b4-b9ee-078e433dba45"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Koji-Huang/Koji_Game_Engine.git&quot;,
+    &quot;accountId&quot;: &quot;24b44ab8-9c3a-43b4-b9ee-078e433dba45&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -62,7 +84,9 @@
     "Python.MarkBorder_test_1.executor": "Run",
     "Python.Mouse_test_main_1.executor": "Run",
     "Python.ThreadRunningMachine_test_1.executor": "Debug",
+    "Python.position.executor": "Debug",
     "Python.run_test_1.executor": "Run",
+    "Python.scratch.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -72,7 +96,12 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/新建临时文件": [
+      "Python"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -82,7 +111,7 @@
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\GraphicComponent\Effect" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Camera_test_1 (1)">
+  <component name="RunManager" selected="Python.scratch">
     <configuration name="Camera_test_1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Koji_Game_Engine" />
       <option name="ENV_FILES" value="" />
@@ -151,7 +180,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="GraphicManager_test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="coordinate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Koji_Game_Engine" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,12 +189,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test Demo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FunctionTools" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test Demo/GraphicManager_test_1.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\FunctionTools\coordinate.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,7 +202,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ThreadRunningMachine_test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Koji_Game_Engine" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -183,12 +211,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test Demo" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test Demo/ThreadRunningMachine_test_1.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -199,11 +226,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.scratch" />
+        <item itemvalue="Python.coordinate" />
         <item itemvalue="Python.Camera_test_1 (1)" />
         <item itemvalue="Python.Camera_test_2" />
         <item itemvalue="Python.Camera_test_1" />
-        <item itemvalue="Python.ThreadRunningMachine_test_1" />
-        <item itemvalue="Python.GraphicManager_test_1" />
       </list>
     </recent_temporary>
   </component>
@@ -460,7 +487,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712660627632</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="给个别 Markdown 添加了示例代码 (没添加完">
+      <option name="closed" value="true" />
+      <created>1712686764607</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1712686764607</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +512,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -490,7 +525,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2.4 初始化" />
     <MESSAGE value="Root 的 event 更新" />
     <MESSAGE value="Root 的 surface 更新" />
     <MESSAGE value="Root 的 graphic 更新" />
@@ -515,7 +549,8 @@
     <MESSAGE value="添加了Readme文件 (没写完)" />
     <MESSAGE value="更新了几个碎碎念文件" />
     <MESSAGE value="写了很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多地Markdown" />
-    <option name="LAST_COMMIT_MESSAGE" value="写了很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多地Markdown" />
+    <MESSAGE value="给个别 Markdown 添加了示例代码 (没添加完" />
+    <option name="LAST_COMMIT_MESSAGE" value="给个别 Markdown 添加了示例代码 (没添加完" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
