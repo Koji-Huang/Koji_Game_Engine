@@ -46,5 +46,5 @@ class Inspector(FatherInspector):
     def spread_kwargs(self, component: any = None, **kwargs: dict):
         ...
 
-    def get_click_pos(self):
+    def get_mouse_pos(self):
         ...

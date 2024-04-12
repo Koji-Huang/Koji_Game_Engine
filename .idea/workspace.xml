@@ -4,27 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="给个别 Markdown 添加了示例代码 (没添加完">
-      <change afterPath="$PROJECT_DIR$/FunctionTools/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FunctionTools/coordinate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FunctionTools/graphic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FunctionTools/parameter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReadmeRelease/2.6.7 - Event System.md" afterDir="false" />
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="Event 的代码修补好了, 但是 GraphicComponent 的没有呢, 先提交先再说">
+      <change afterPath="$PROJECT_DIR$/Demo/EventManager_test_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EventManager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EventManager.pyi" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/Mouse_test_main_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/Mouse_test_main_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Basic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Basic.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/Event.md" beforeDir="false" afterPath="$PROJECT_DIR$/Event/Event.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event/UIEvent/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Keyboard/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Keyboard/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.pyi" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Functions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Graphic.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Graphic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/Surface.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Surface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/UI/ExtraComponent/BesselCurve.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/UI/ExtraComponent/BesselCurve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/UI/Image.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/UI/Image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Move.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Press.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Press.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Scroll.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Scroll.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Screen/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Screen/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/UIEvent/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FunctionTools/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FunctionTools/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FunctionTools/coordinate.py" beforeDir="false" afterPath="$PROJECT_DIR$/FunctionTools/coordinate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/Root.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/Root.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphicComponent/UI/Button.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/UI/Button.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GraphicComponent/UI/Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/UI/Text.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,13 +80,14 @@
     "Python.Camera_test_1 (1).executor": "Debug",
     "Python.Camera_test_1.executor": "Run",
     "Python.Camera_test_2.executor": "Run",
+    "Python.EventManager_test_1.executor": "Debug",
     "Python.GraphicManager_test_1.executor": "Run",
     "Python.Graphic_copy_test_1.executor": "Debug",
     "Python.Graphic_scale_test_1.executor": "Run",
     "Python.Graphic_test_main_1.executor": "Run",
     "Python.LinkList_Test_Demo.executor": "Run",
     "Python.MarkBorder_test_1.executor": "Run",
-    "Python.Mouse_test_main_1.executor": "Run",
+    "Python.Mouse_test_main_1.executor": "Debug",
     "Python.ThreadRunningMachine_test_1.executor": "Debug",
     "Python.position.executor": "Debug",
     "Python.run_test_1.executor": "Run",
@@ -96,7 +101,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/新建临时文件": [
@@ -106,12 +111,13 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\Event" />
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine" />
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\CustomDataType" />
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\GraphicComponent\Effect" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.scratch">
+  <component name="RunManager" selected="Python.EventManager_test_1">
     <configuration name="Camera_test_1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Koji_Game_Engine" />
       <option name="ENV_FILES" value="" />
@@ -134,7 +140,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Camera_test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="EventManager_test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Koji_Game_Engine" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -143,12 +149,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test Demo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Demo" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test Demo/Camera_test_1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Demo/EventManager_test_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,7 +162,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Camera_test_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Mouse_test_main_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Koji_Game_Engine" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -166,12 +171,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test Demo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Demo" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test Demo/Camera_test_2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Demo/Mouse_test_main_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -226,11 +230,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.EventManager_test_1" />
+        <item itemvalue="Python.Mouse_test_main_1" />
         <item itemvalue="Python.scratch" />
         <item itemvalue="Python.coordinate" />
         <item itemvalue="Python.Camera_test_1 (1)" />
-        <item itemvalue="Python.Camera_test_2" />
-        <item itemvalue="Python.Camera_test_1" />
       </list>
     </recent_temporary>
   </component>
@@ -495,7 +499,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712686764607</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Event 的代码修补好了, 但是 GraphicComponent 的没有呢, 先提交先再说">
+      <option name="closed" value="true" />
+      <created>1712752487304</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1712752487304</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Root 的 event 更新" />
     <MESSAGE value="Root 的 surface 更新" />
     <MESSAGE value="Root 的 graphic 更新" />
     <MESSAGE value="Root 的 __copy__ 修复" />
@@ -550,9 +561,36 @@
     <MESSAGE value="更新了几个碎碎念文件" />
     <MESSAGE value="写了很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多地Markdown" />
     <MESSAGE value="给个别 Markdown 添加了示例代码 (没添加完" />
-    <option name="LAST_COMMIT_MESSAGE" value="给个别 Markdown 添加了示例代码 (没添加完" />
+    <MESSAGE value="Event 的代码修补好了, 但是 GraphicComponent 的没有呢, 先提交先再说" />
+    <option name="LAST_COMMIT_MESSAGE" value="Event 的代码修补好了, 但是 GraphicComponent 的没有呢, 先提交先再说" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Demo/Mouse_test_main_1.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <condition expression="event_args.get('button') is not None and True in event_args['button'] and False" language="Python" />
+          <url>file://$PROJECT_DIR$/GraphicComponent/Root.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <condition expression="event_args.get('button') is not None and True in event_args['button'] and False" language="Python" />
+          <url>file://$PROJECT_DIR$/GraphicComponent/Root.py</url>
+          <line>103</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="Main.son" />

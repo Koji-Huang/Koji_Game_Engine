@@ -1,7 +1,9 @@
+from Event.UIEvent.Mouse.Basic import Basic as Event
+from Event.UIEvent.Mouse.Click import Click
 
 
 class Scrolling(Event):
-    event_name = EventConstant.MouseWheel
+    event_name = 'anything'
 
     def __init__(self, function: any, Component: any):
         super().__init__(Component)
@@ -29,6 +31,6 @@ class Scrolling(Event):
 
     def __copy__(self, copied: any = None):
         if copied is None:
-            copied = Press(self.track_function, 0, self.graphic_object)
+            copied = Click(self.track_function, 0, self.graphic_object)
         super().__copy__(copied)
         return copied

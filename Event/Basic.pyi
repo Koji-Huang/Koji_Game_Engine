@@ -25,9 +25,16 @@ class BasicEvent:
 
 
 class Inspector:
+    # target event object's class
     target_event_class = BasicEvent
+    # target trigger event
     target_event: BasicEvent
-    __kwargs: dict
+    # if not active, it won't be updated, check, trigger in manager
+    active: bool
+    # id after manager initialize this object
+    id: str
+    # some kwargs
+    __kwargs: dict[any, ...]
 
     def __init__(self, target: BasicEvent):
         """
@@ -67,4 +74,9 @@ class Inspector:
     def update_kwargs(self):
         """
         update kwargs to use
+        """
+
+    def is_active(self):
+        """
+        If self is active
         """

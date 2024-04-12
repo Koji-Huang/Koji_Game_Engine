@@ -1,4 +1,5 @@
 from GlobalConstant import EventConstant
+from Event.UIEvent.Mouse.Basic import Basic as Event
 
 
 class Press(Event):

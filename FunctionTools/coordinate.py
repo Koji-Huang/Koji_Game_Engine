@@ -33,14 +33,12 @@ def num_in_vector(_num: Num, _vector: Vector):
 
 
 def point_in_area(_point: Point, _area: Area):
-    return (num_in_vector(_point[0], (_area[0], _area[2]))
-            and num_in_vector(_point[1], (_area[1], _area[3])))
+    return (num_in_range(_point[0], (_area[0], _area[2]))
+            and num_in_range(_point[1], (_area[1], _area[3])))
 
 
 def point_in_rect(_point: Point, _rect: Rect):
-    _rect = _rect.copy()
-    _rect[2] += _rect[0]
-    _rect[3] += _rect[0]
+    _rect = [_rect[0], _rect[1], _rect[0] + _rect[2], _rect[1] + _rect[3]]
     return point_in_area(_point, _rect)
 
 

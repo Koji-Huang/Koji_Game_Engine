@@ -10,9 +10,9 @@ class Basic(BasicUIEvent):
         self.event_type_name = "UI Mouse Event"
         self.pos = (0, 0)
 
-    def track_check(self, *args, **kwargs):
-        return False if super().track_check(*args, **kwargs) \
-            else point_in_rect(self.pos, self.graphic_object.rect())
+    def track_check(self, pos, *args, **kwargs):
+        return False if super().track_check(*args, **kwargs) is False\
+            else point_in_rect(pos, self.graphic_object.rect())
 
     def update_info(self, pos=None, **kwargs):
         if pos is not None:
@@ -20,16 +20,17 @@ class Basic(BasicUIEvent):
         super().update_info(**kwargs)
         return kwargs
 
-    def update_kwargs(self, **kwargs):
+    def update_kwargs(self, component: any = None, **kwargs):
         super().update_kwargs()
-        if self.graphic_object is None:
-            if kwargs.get('pos') is None:
-                click_pos = pygame.mouse.get_pos()
-                cost_size = self.graphic_object.real_pos()
-            else:
-                click_pos: tuple[int, int] = kwargs['pos']
-                cost_size = self.graphic_object.pos()
-            kwargs['pos'] = (click_pos[0] - cost_size[0], click_pos[1] - cost_size[1])
+        if component is None:
+            component = self.graphic_object
+        if kwargs.get('pos') is None:
+            click_pos = pygame.mouse.get_pos()
+            cost_size = component.real_pos()
+        else:
+            click_pos: tuple[int, int] = kwargs['pos']
+            cost_size = component.pos()
+        kwargs['pos'] = (click_pos[0] - cost_size[0], click_pos[1] - cost_size[1])
         return kwargs
 
     def __copy__(self, copied: any = None):
@@ -46,10 +47,10 @@ class Inspector(FatherInspector):
 
     def update_kwargs(self, component: any = None, **kwargs: dict):
         super().update_kwargs()
-        pos = self.get_click_pos()
+        pos = self.get_mouse_pos()
         self.__kwargs["generic"]["pos"] = pos
 
-    def get_click_pos(self):
+    def get_mouse_pos(self):
         click_pos = pygame.mouse.get_pos()
         cost_size = self.target_event.graphic_object.real_pos()
         return tuple((click_pos[0] - cost_size[0], click_pos[1] - cost_size[1]))

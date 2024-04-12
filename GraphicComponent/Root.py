@@ -100,13 +100,16 @@ class Root:
                 self.event_type.remove(event_type)
                 self.event.pop(event_type)
 
-    def event_spread(self, event_name, **event_args):
+    def event_spread(self, event_name, inspector: any = None, **event_args: dict):
+        spread_event_kwargs = event_args
         if event_name in self.event.keys():
             for event in self.event[event_name]:
                 if self.event_check(event, **event_args):
                     self.event_run(event, **event_args)
+        if inspector:
+            spread_event_kwargs.update(inspector.target_event.update_kwargs(component=self, **event_args.copy()))
         for son in self.son:
-            son.event_spread(event_name, **event_args)
+            son.event_spread(event_name, inspector, **spread_event_kwargs)
         return None
 
     def event_tree_update(self, another_set):

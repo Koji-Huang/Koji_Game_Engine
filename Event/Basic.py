@@ -59,6 +59,8 @@ class Inspector:
         self.__kwargs['trigger'] = dict()
         self.__kwargs['generic'] = dict()
         self.__kwargs['generic']['inspector'] = self
+        self.active = True
+        self.id = None
         if isinstance(target, self.target_event_class):
             self.target_event = target
         else:
@@ -76,13 +78,13 @@ class Inspector:
         args.update(self.__kwargs['generic'])
         args.update(self.__kwargs['trigger'])
         args.update(kwargs) if kwargs is not None else None
-        return self.target_event.track_run(**kwargs)
+        return self.target_event.track_run(**args)
 
     def record_kwargs(self, kwargs_type, **kwargs):
         if self.__kwargs.get(kwargs_type) is not None:
             self.__kwargs[kwargs]: dict
             for key in kwargs.keys():
-                self.__kwargs[kwargs][key] = kwargs[key]
+                self.__kwargs[kwargs_type][key] = kwargs[key]
 
     def get_kwargs(self, kwargs_type):
         return self.__kwargs.get(kwargs_type)
@@ -94,3 +96,6 @@ class Inspector:
 
     def update_kwargs(self):
         pass
+
+    def is_active(self):
+        return self.active

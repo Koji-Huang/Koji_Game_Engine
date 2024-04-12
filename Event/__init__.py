@@ -1,4 +1,22 @@
-import Basic
-import UIEvent
+import Event.Basic
+import Event.UIEvent
 
-Inspector = {"Basic": Basic.Inspector, "UI_Event": UIEvent.Inspector}
+Name: dict[str: str] = {
+    "Basic": "Basic Event",
+    "UIEvent": "UI Event"
+}
+
+Inspector: dict[str: any] = {
+    "Basic": Basic.Inspector,
+    "UIEvent": UIEvent.Inspector
+}
+
+Event: dict[str: any] = {
+    "Basic": Basic.BasicEvent,
+    "UIEvent": UIEvent.Event
+}
+
+TypeID: dict[str: str] = {
+    "Basic": '000000000',
+    "UIEvent": UIEvent.TypeID
+}

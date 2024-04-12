@@ -6,12 +6,11 @@ from GraphicComponent.UI.Label import Label
 class Text(Label):
     def __init__(self, pos, size, text: str, font: pygame.font.Font, antialiasing: bool = True,
                  color: tuple[int, ...] or list[int, ...] = (255, 255, 255), *args, **kwargs):
-        super().__init__(pos, size, *args, **kwargs)
         self.text = text
         self.font = font
         self.text_antialiasing = antialiasing
         self.color = color
-        self.graph_draw()
+        super().__init__(pos, size, *args, **kwargs)
 
     def change_text_text(self, text: str):
         self.graph_active = True

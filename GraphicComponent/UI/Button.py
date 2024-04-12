@@ -1,6 +1,9 @@
-from GlobalConstant import EventConstant
 from GraphicComponent.UI.Label import Label
-from Event import *
+from Event.UIEvent.Mouse.Click import Click
+from Event.UIEvent.Mouse import TypeID
+
+
+ClickEventTypeID = TypeID['Click']
 
 
 class Button(Label):
@@ -8,21 +11,23 @@ class Button(Label):
         super().__init__(pos, size, *args, **kwargs)
 
     def bind_press_function(self, function, button, **kwargs):
-        make_event = Press(function, button, self)
-        self.event_add(EventConstant.MouseButtonUp, make_event, **kwargs)
+        make_event = Click(self, button)
+        make_event.track_function = function
+        make_event.track_args = kwargs
+        self.event_add(ClickEventTypeID, make_event, **kwargs)
 
     def unbind_press_function(self, button) -> None:
-        if EventConstant.MouseButtonPress in self.event_type:
-            for i in self.event[EventConstant.MouseButtonUp]:
-                i: Press
+        if ClickEventTypeID in self.event_type:
+            for i in self.event[ClickEventTypeID]:
+                i: Click
                 if i.event_name == button:
                     self.event_remove(button, i.id)
 
-    def search_press_function(self, button) -> tuple[Press, ...]:
+    def search_press_function(self, button) -> tuple[Click, ...]:
         ret = []
-        if EventConstant.MouseButtonUp in self.event_type:
-            for i in self.event[EventConstant.MouseButtonUp]:
-                i: Press
+        if ClickEventTypeID in self.event_type:
+            for i in self.event[ClickEventTypeID]:
+                i: Click
                 if i.event_name == button:
                     ret.append(i)
         return tuple(ret)

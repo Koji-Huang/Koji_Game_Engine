@@ -40,10 +40,16 @@ class Inspector(FatherInspector):
         super().__init__(target)
         self.event_type_name = "UI Event"
         self.__kwargs["spread"] = dict()
+        self.__kwargs['spread']['Inspector'] = self
 
     def trigger(self, **kwargs):
-        super().trigger(**kwargs)
-        self.spread(**kwargs)
+        args = {}
+        args.update(self.__kwargs['generic'])
+        args.update(self.__kwargs['trigger'])
+        args.update(kwargs) if kwargs is not None else None
+
+        self.spread(**args)
+        super().trigger(**args)
 
     def spread(self, **kwargs):
         args = {}
