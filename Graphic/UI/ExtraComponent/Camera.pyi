@@ -1,4 +1,4 @@
-from GraphicComponent.UI import Label
+from Graphic.UI import Label
 
 
 class Camera(Label):

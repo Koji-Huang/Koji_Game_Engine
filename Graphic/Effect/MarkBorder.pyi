@@ -1,5 +1,5 @@
 import pygame
-from GraphicComponent import Graphic
+from Graphic import Graphic
 
 
 class EdgeType:

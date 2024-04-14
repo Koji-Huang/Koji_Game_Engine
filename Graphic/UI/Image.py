@@ -1,6 +1,6 @@
 import pygame.image
 from Function.coordinate import scale_series_proportionality_int
-from GraphicComponent.UI.Label import Label
+from Graphic.UI.Label import Label
 
 
 class Image(Label):

@@ -1,6 +1,6 @@
 import pygame
 from Function.coordinate import mix_point
-from GraphicComponent.UI.Label import Label
+from Graphic.UI.Label import Label
 
 
 class BesselCurve(Label):

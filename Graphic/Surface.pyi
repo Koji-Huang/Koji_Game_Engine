@@ -1,4 +1,4 @@
-from GraphicComponent.Root import Root
+from Graphic.Root import Root
 
 class Surface(Root):
     x: int

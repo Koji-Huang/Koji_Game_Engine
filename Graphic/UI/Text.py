@@ -1,6 +1,6 @@
 import pygame.font
 from Function.graphic import cleaning_surface
-from GraphicComponent.UI.Label import Label
+from Graphic.UI.Label import Label
 
 
 class Text(Label):

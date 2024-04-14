@@ -1,4 +1,4 @@
-from GraphicComponent.UI.Label import Label
+from Graphic.UI.Label import Label
 from Event.UIEvent.Mouse.Click import Click
 from Event.UIEvent.Mouse import TypeID
 

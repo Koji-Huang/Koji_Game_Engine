@@ -1,6 +1,6 @@
 import pygame
 
-from GraphicComponent.UI.Label import Label
+from Graphic.UI.Label import Label
 
 
 class Camera(Label):

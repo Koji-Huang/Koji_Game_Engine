@@ -1,4 +1,4 @@
-from GraphicComponent.Graph import Graph
+from Graphic.Graph import Graph
 import pygame
 
 

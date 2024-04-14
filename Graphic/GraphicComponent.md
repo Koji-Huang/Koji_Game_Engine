@@ -107,7 +107,7 @@ class Root:
 ​	下面这个例子主要是针对与父子级关系编写的
 
 ```Python
-from GraphicComponent.Root import Root
+from Graphic.Root import Root
 
 # 创建对象
 Root_A = Root()
@@ -142,7 +142,7 @@ print(f"Root_C.goto_father(1): {Root_C.tree_goto_father(1)}")
 ​	Surface 类 实现的功能是坐标功能
 
 ```Python
-from GraphicComponent.Root import Root
+from Graphic.Root import Root
 
 
 class Surface(Root):
@@ -206,7 +206,7 @@ class Surface(Root):
 ### 实例程序
 
 ```Python
-from GraphicComponent.Surface import Surface
+from Graphic.Surface import Surface
 
 # 创建 Surface 对象
 Surface_A = Surface((0, 0), (200, 200))
@@ -309,7 +309,7 @@ class MainWindows(Graphic):
 ### 示例程序
 
 ```python
-from GraphicComponent import MainWindows, Graphic
+from Graphic import MainWindows, Graphic
 import pygame
 
 # 创建窗口对象

@@ -1,6 +1,6 @@
 import pygame
-from GraphicComponent.UI import Image, Label
-from GraphicComponent.UI.ExtraComponent import Camera
+from Graphic.UI import Image, Label
+from Graphic.UI.ExtraComponent import Camera
 from Event.UIEvent.Mouse.Scroll import Scroll
 from Event.UIEvent.Mouse import Basic
 from Manager.GraphicManager import GraphicComponentManager as Manager

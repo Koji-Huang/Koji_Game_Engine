@@ -57,7 +57,7 @@ class Inspector(FatherInspector):
 ```python
 # Sample Event_UIEvent_Basic_1
 import Engine
-from GraphicComponent.UI import Label
+from Graphic.UI import Label
 from Event.UIEvent import Basic as Event
 from random import randint
 

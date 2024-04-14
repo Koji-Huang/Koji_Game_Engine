@@ -1,4 +1,4 @@
-from GraphicComponent.Surface import Surface
+from Graphic.Surface import Surface
 import pygame
 
 

@@ -3,8 +3,8 @@ import pstats
 
 import pygame.font
 
-from GraphicComponent.UI import *
-from GraphicComponent import MainWindows
+from Graphic.UI import *
+from Graphic import MainWindows
 
 
 def main():

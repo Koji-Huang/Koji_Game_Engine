@@ -33,8 +33,8 @@ class Label(Graphic):
 ### 示例程序
 
 ```Python
-from GraphicComponent import MainWindows
-from GraphicComponent.UI import Label
+from Graphic import MainWindows
+from Graphic.UI import Label
 
 # 创建窗体
 windows = MainWindows((800, 600))
