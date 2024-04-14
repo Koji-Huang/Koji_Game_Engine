@@ -61,7 +61,7 @@ class EventManager:
             error raise had been eliminated.
         """
 
-    def run_an_inspector_id(self, inspector_id: str, event_type_id: int = None):
+    def update_an_inspector_id(self, inspector_id: str, event_type_id: int = None):
         """
         Start an inspection.
         :param inspector_id: the id of instantiation inspector
@@ -69,7 +69,7 @@ class EventManager:
         :return: bool of whether start
         """
 
-    def run_an_inspector(self, inspector: Inspector):
+    def update_an_inspector(self, inspector: Inspector):
 
         """
         Start an inspection.
@@ -127,4 +127,9 @@ class EventManager:
     def graphic_register(self, main_widows: MainWindows):
         """
         ...
+        """
+
+    def update_pygame_event(self):
+        """
+
         """

@@ -5,7 +5,7 @@ class Basic(BasicUIEvent):
 
     pos: tuple[int, int]
 
-    def __init__(self, component, *args, **kwargs):
+    def __init__(self, component, skip_track: bool = False, *args, **kwargs):
         """
         Basic Mouse Event.
         MouseEvent is always on Relative coordinates.

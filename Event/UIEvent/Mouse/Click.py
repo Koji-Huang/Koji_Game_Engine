@@ -4,18 +4,12 @@ from Event.UIEvent.Mouse.Basic import Basic, Inspector as father_inspector
 
 
 class Click(Basic):
-    def __init__(self, component, bind_button: int = None, *args, **kwargs):
-        super().__init__(component, *args, **kwargs)
+    def __init__(self, component, skip_track: bool = False, bind_button: int = None, *args, **kwargs):
+        super().__init__(component, skip_track, *args, **kwargs)
         self.event_type_name = "UI Mouse Click Event"
         self.button = bind_button
         self.pressed = False
         self.press_outside = False
-
-    def track_run(self, *args, **kwargs):
-        if self.button is None:
-            pass
-        else:
-            return super().track_run(*args, **kwargs)
 
     def track_check(self, pos, button, *args, **kwargs) -> any:
         # print(self.press_outside)

@@ -5,8 +5,8 @@ from FunctionTools.coordinate import point_in_rect
 
 
 class Basic(BasicUIEvent):
-    def __init__(self, component, *args, **kwargs):
-        super().__init__(component, *args, **kwargs)
+    def __init__(self, component, skip_track: bool = False, *args, **kwargs):
+        super().__init__(component, skip_track, *args, **kwargs)
         self.event_type_name = "UI Mouse Event"
         self.pos = (0, 0)
 
@@ -54,3 +54,5 @@ class Inspector(FatherInspector):
         click_pos = pygame.mouse.get_pos()
         cost_size = self.target_event.graphic_object.real_pos()
         return tuple((click_pos[0] - cost_size[0], click_pos[1] - cost_size[1]))
+
+

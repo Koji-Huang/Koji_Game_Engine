@@ -1,37 +1,46 @@
-from GlobalConstant import EventConstant
-from Event.UIEvent.Mouse.Basic import Basic as Event
+import pygame.mouse
+from FunctionTools.coordinate import point_in_rect
+from Event.UIEvent.Mouse.Basic import Basic, Inspector as father_inspector
 
 
-class Press(Event):
-    event_name = EventConstant.MouseButtonUp
+class Press(Basic):
+    def __init__(self, component, skip_track: bool = False, bind_button: int = None, *args, **kwargs):
+        super().__init__(component, skip_track, *args, **kwargs)
+        self.event_type_name = "UI Mouse Click Event"
+        self.button = bind_button
+        self.pressing = False
+        self.press_outside = False
 
-    def __init__(self, function: any, button: int, component: any):
-        super().__init__(component)
-        self.track_function = function
-
-    def track_check(self, event, *args, **kwargs) -> any:
-        """
-
-        :param event:
-        :param args:
-        :return:
-        """
-
-        """
-        event:
-            rel_pos: [int, int]
-            button: int
-            touch: bool
-            window: None
-        """
-
-        if F.Point_in_Rect(event.graphic_object, self.graphic_object.real_rect()):
-            return True
+    def track_check(self, pos, button, *args, **kwargs) -> any:
+        # print(self.press_outside)
+        if self.button is not None:
+            if super().track_check(pos, *args, **kwargs) is False:
+                if button[self.button] is False:
+                    self.press_outside = False
+                    if self.pressing:
+                        self.pressing = False
+                else:
+                    if self.pressing is False:
+                        self.press_outside = True
+                return False
+            else:
+                if button[self.button]:
+                    self.pressing = True
+                else:
+                    if self.pressing and self.press_outside is False:
+                        self.pressing = False
+                        return True
+                    if self.press_outside is True:
+                        self.press_outside = False
+                    self.pressing = False
+            return self.pressing
         else:
-            return False
+            return True
 
-    def __copy__(self, copied: any = None):
-        if copied is None:
-            copied = Press(self.track_function, 0, self.graphic_object)
-        super().__copy__(copied)
-        return copied
+
+class Inspector(father_inspector):
+    target_event_class = Press
+
+    def update_kwargs(self, component: any = None):
+        super().update_kwargs()
+        self.__kwargs['generic']['button'] = pygame.mouse.get_pressed()

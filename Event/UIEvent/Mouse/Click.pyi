@@ -8,7 +8,7 @@ class Click(Basic):
     pressed: bool = False
     press_outside: bool = False
 
-    def __init__(self, component, bind_button: int, *args, **kwargs):
+    def __init__(self, component, skip_track: bool = False, bind_button: int = None, *args, **kwargs):
         ...
 
     def track_check(self, pos, button, *args, **kwargs) -> any:...
