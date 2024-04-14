@@ -1,5 +1,5 @@
 from typing import Union
-from ThreadPackage import ThreadRunningMachine, ThreadPool, Thread
+from Thread import ThreadRunningMachine, ThreadPool, Thread
 
 
 # Type of list[int] and tuple[int]
@@ -10,7 +10,7 @@ ThreadOrPid = Union[list[str, ...], tuple[str, ...], list[Thread, ...], tuple[Th
 
 class ThreadManager:
     """
-    ThreadPackage Manager Class
+    Thread Manager Class
     This class is responsible for creating and managing threads
     But looping is done in a new separate object named Looper
     """

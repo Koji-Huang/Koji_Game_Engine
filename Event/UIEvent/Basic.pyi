@@ -1,5 +1,5 @@
 from ..Basic import BasicEvent as BasicEventObject, Inspector as FatherInspector
-from GraphicComponent.UI import Label
+from Graphic.UI import Label
 
 
 class Basic(BasicEventObject):

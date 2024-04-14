@@ -1,12 +1,12 @@
 from typing import Union
-from ThreadPackage import ThreadRunningMachine, Thread
+from Thread import ThreadRunningMachine, Thread
 
 strLT = Union[list[str], tuple[str]]
 
 
 class ThreadManager:
     """
-    ThreadPackage Manager Class
+    Thread Manager Class
     This class is responsible for creating and managing threads
     But looping is done in a new separate object named Looper
     """
@@ -196,15 +196,15 @@ class ThreadManager:
         if pool:
             self.match_threadpool(pool).display()
         else:
-            print("Main ThreadPackage Pool:")
+            print("Main Thread Pool:")
             self.TRMachine.MainThreadPool.display(end="\n|   ")
-            print("\nLoop ThreadPackage Pool:")
+            print("\nLoop Thread Pool:")
             self.TRMachine.LoopThreadPool.display(end="\n|   ")
-            print("\nImme ThreadPackage Pool:")
+            print("\nImme Thread Pool:")
             self.TRMachine.ImmeThreadPool.display(end="\n|   ")
-            print("\nStop ThreadPackage Pool:")
+            print("\nStop Thread Pool:")
             self.TRMachine.StopThreadPool.display(end="\n|   ")
-            print("\nExce ThreadPackage Pool:")
+            print("\nExce Thread Pool:")
             self.TRMachine.ExceThreadPool.display(end="\n|   ")
             print("\n")
 

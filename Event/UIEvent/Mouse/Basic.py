@@ -1,7 +1,7 @@
 import pygame.mouse
 
 from ..Basic import Basic as BasicUIEvent, Inspector as FatherInspector
-from FunctionTools.coordinate import point_in_rect
+from Function.coordinate import point_in_rect
 
 
 class Basic(BasicUIEvent):
