@@ -1,5 +1,5 @@
 from Event.Basic import BasicEvent as Event, Inspector
-from DataType.LinkedList import LinkedList
+from DataType.Generic.LinkedList import LinkedList
 
 
 class EventManager:

@@ -1,6 +1,6 @@
 from Event.Basic import BasicEvent as Event, Inspector
 from DataType.LinkedList import LinkedList
-from Graphic.MainWindows import MainWindows
+from GraphicComponent.MainWindows import MainWindows
 
 
 class EventManager:

@@ -2,10 +2,10 @@ from math import sin
 
 import pygame.time
 
-import GraphicManager
-from Graphic.UI import *
+import Manager.GraphicManager as GraphicManager
+from GraphicComponent.UI import *
 
-Manager = GraphicComponentManager.GraphicComponentManager()
+Manager = GraphicManager.GraphicComponentManager()
 
 Manager.set_debug(True)
 Manager.debug.textType.color = (0, 255, 230)

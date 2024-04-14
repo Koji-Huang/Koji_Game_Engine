@@ -1,2 +1,2 @@
 
-from DataType.LinkedList import LinkedList
+from DataType.Generic.LinkedList import LinkedList

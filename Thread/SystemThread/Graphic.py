@@ -1,3 +1,3 @@
-from Graphic import *
+from GraphicComponent import *
 
 

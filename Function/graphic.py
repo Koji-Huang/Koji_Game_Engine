@@ -1,6 +1,4 @@
 import pygame
-from Graphic import Graphic
-from Function.coordinate import point_in_rect
 
 
 def cleaning_surface(surface: pygame.Surface):

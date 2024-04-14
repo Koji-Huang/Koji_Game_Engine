@@ -1,9 +1,9 @@
 import pygame
-from Graphic.UI import Image, Label
-from Graphic.UI.ExtraComponent import Camera
-from Event import Scrolling
-from Event import Basic
-from GraphicManager import GraphicComponentManager as Manager
+from GraphicComponent.UI import Image, Label
+from GraphicComponent.UI.ExtraComponent import Camera
+from Event.UIEvent.Mouse.Scroll import Scroll
+from Event.UIEvent.Mouse import Basic
+from Manager.GraphicManager import GraphicComponentManager as Manager
 
 Root = Manager()
 Root.set_debug(True)
@@ -58,8 +58,8 @@ def follow_mouse(event, *args, **kwargs):
     # Direct.graph_surface.blit(scale, (0, 0))
 
 
-scrolling_event = Scrolling(scrolling_event, Camera_1)
-follow_event = Event(Camera_1)
+scrolling_event = Scroll(scrolling_event, Camera_1)
+follow_event = Basic(Camera_1)
 follow_event.track_function = follow_mouse
 
 Camera_1.event_add(pygame.MOUSEWHEEL, scrolling_event)

@@ -1,9 +1,12 @@
 import pygame
-from Graphic.UI import Label, Button
-from Graphic.UI.Text import Text
-from Graphic.MainWindows import MainWindows
-from EventManager import EventManager
+from GraphicComponent.UI import Label, Button
+from GraphicComponent.UI.Text import Text
+from GraphicComponent.MainWindows import MainWindows
+from Manager.EventManager import EventManager
 from Event.UIEvent.Mouse.Scroll import Scroll
+from Event.UIEvent.Mouse.Press import Press
+from Event.UIEvent.Mouse.Click import Click
+from Event.UIEvent.Mouse.Drag import Drag
 Main = MainWindows((900, 400))
 
 count = 0
@@ -32,9 +35,9 @@ G.tree_add_son(D)
 #
 # D.event_add('001001002', DragEvent)
 
-PressEvent = Scroll(D)
+PressEvent = Click(D, 0)
 PressEvent.track_function = say_hello
-D.event_add('001001004', PressEvent)
+D.event_add('001001001', PressEvent)
 
 
 Clock = pygame.time.Clock()

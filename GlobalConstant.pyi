@@ -1,6 +1,6 @@
-from EventManager import EventManager as __EventManager
-from GraphicManager import GraphicComponentManager as __GraphicManager
-from ThreadManager import ThreadManager as __ThreadManager
+from Manager.EventManager import EventManager as __EventManager
+from Manager.GraphicManager import GraphicComponentManager as __GraphicManager
+from Manager.ThreadManager import ThreadManager as __ThreadManager
 
 class IdPackage:
     name: str

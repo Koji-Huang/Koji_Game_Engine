@@ -1,7 +1,7 @@
 import pygame.font
 import math
-from Graphic.UI import *
-from Graphic import MainWindows
+from GraphicComponent.UI import *
+from GraphicComponent import MainWindows
 
 
 Main = MainWindows((1200, 500), pygame.NOFRAME)

@@ -1,5 +1,5 @@
 from typing import TypeVar
-from DataType.CustomGeneric import CustomGeneric
+from DataType.Generic.CustomGeneric import CustomGeneric
 
 _KT = TypeVar('_KT')
 _VT = TypeVar('_VT')

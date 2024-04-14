@@ -1,5 +1,5 @@
 from Event.UIEvent.Mouse.Basic import Basic, Inspector as father_inspector
-from Graphic.Graphic import Graphic
+from GraphicComponent.Graph import Graph
 
 
 class Drag(Basic):

@@ -1,4 +1,4 @@
-from ..Basic import BasicEvent as BasicEventObject, Inspector as FatherInspector
+from Event.Basic import BasicEvent as BasicEventObject, Inspector as FatherInspector
 
 
 class Basic(BasicEventObject):

@@ -1,7 +1,7 @@
 import pygame.display
-from Graphic import *
-from Graphic.Effect.MarkBorder import TextType, EdgeType, mark_component
-from Graphic.UI import Label
+from GraphicComponent import *
+from GraphicComponent.Effect.MarkBorder import TextType, EdgeType, mark_component
+from GraphicComponent.UI import Label
 
 
 class GraphicComponentDebug:
