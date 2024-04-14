@@ -1,7 +1,7 @@
 import pygame.font
 
-from GraphicComponent.UI import *
-from GraphicComponent import *
+from Graphic.UI import *
+from Graphic import *
 
 Main = MainWindows((1024, 600))
 pygame.font.init()

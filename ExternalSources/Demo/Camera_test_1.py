@@ -1,8 +1,8 @@
 import pygame
 
-from GraphicComponent import MainWindows
-from GraphicComponent.UI import Image, Label
-from GraphicComponent.UI.ExtraComponent import Camera
+from Graphic import MainWindows
+from Graphic.UI import Image, Label
+from Graphic.UI.ExtraComponent import Camera
 
 Main = MainWindows((800, 600))
 

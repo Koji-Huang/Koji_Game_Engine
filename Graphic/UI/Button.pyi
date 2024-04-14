@@ -1,0 +1,13 @@
+from Graphic.UI.Label import Label
+from Event import Basic
+
+
+class Button(Label):
+    def __init__(self, pos, size, *args, **kwargs):...
+
+    def bind_press_function(self, function, button, **kwargs) -> None:...
+
+    def unbind_press_function(self, button) -> None:...
+
+    def search_press_function(self) -> tuple[Event, ...]:...
+

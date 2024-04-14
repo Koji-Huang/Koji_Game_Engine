@@ -1,5 +1,5 @@
 import pygame
-from GraphicComponent import Graphic
+from Graphic import Graphic
 from FunctionTools.coordinate import point_in_rect
 
 

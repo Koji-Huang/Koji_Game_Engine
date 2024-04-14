@@ -1,7 +1,7 @@
 import pygame
-from GraphicComponent.UI import Label, Button
-from GraphicComponent.UI.Text import Text
-from GraphicComponent.MainWindows import MainWindows
+from Graphic.UI import Label, Button
+from Graphic.UI.Text import Text
+from Graphic.MainWindows import MainWindows
 from EventManager import EventManager
 from Event.UIEvent.Mouse.Scroll import Scroll
 Main = MainWindows((900, 400))

@@ -1,5 +1,5 @@
-from ThreadPackage import *
-from ThreadManager import ThreadManager
+from Thread import *
+from Manager.ThreadManager import ThreadManager
 
 
 Manager = ThreadManager()
@@ -15,5 +15,5 @@ add = FunctionThread(hello_world)
 Manager.add_thread(add, pool='Main')
 
 
-Manager.TRMachine.run()
+Manager.TRMachine.start()
 

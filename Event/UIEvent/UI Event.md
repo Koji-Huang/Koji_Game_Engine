@@ -57,7 +57,7 @@ class Inspector(FatherInspector):
 ```python
 # Sample Event_UIEvent_Basic_1
 import Engine
-from GraphicComponent.UI import Label
+from Graphic.UI import Label
 from Event.UIEvent import Basic as Event
 from random import randint
 
@@ -69,13 +69,14 @@ Label_1 = Label((200, 100), (200, 200))
 
 
 # 打印坐标
-def print_pos(graphic_object: Label, *args,  **kwargs):
+def print_pos(graphic_object: Label, *args, **kwargs):
     print(Label.get_pos())
+
 
 # 改变坐标
 def change_pos(graphic_object: Label, *args, **kwargs):
     Label.get_pos((randint(0, 800), randint(0, 600)))
-   
+
 
 # 创建事件对象
 Event_print = Event(Label_1)
@@ -84,7 +85,6 @@ Event_change = Event(Label_1)
 # 改变触发函数
 Event_print.track_function = print_pos
 Event_change.track_function = change_pos
-
 
 # 向系统添加 UI 对象
 Engine.GraphicManager.component_add(Label_1)

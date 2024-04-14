@@ -2,9 +2,9 @@ from math import sin
 
 import pygame.font
 
-from GraphicComponent.Effect.MarkBorder import EdgeType, TextType, mark_component
-from GraphicComponent.UI import *
-from GraphicComponent import MainWindows
+from Graphic.Effect.MarkBorder import EdgeType, TextType, mark_component
+from Graphic.UI import *
+from Graphic import MainWindows
 
 Main = MainWindows((1200, 500), pygame.NOFRAME)
 
