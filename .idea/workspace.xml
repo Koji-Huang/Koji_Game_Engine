@@ -4,29 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="Mouse Click Event 可用, Event Manager 与 Event 结构构建完成, 明天实现示例就可以了">
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Drag.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Drag.pyi" afterDir="false" />
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="2.6 版本完成, Event Manager 写完并且确认可用, 虽然就应用来说确实丑陋, 但是增加 事件系统的 API 确实是实现了的, 还有标准化窗体事件(超额完成了)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Basic.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Basic.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Click.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Move.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Move.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/DragEvent_test_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Press.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Press.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Press.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Press.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Scroll.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Scroll.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/Scroll.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/Scroll.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UIEvent/Mouse/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UIEvent/Mouse/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/EventManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventManager.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/EventManager.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FunctionTools/graphic.py" beforeDir="false" afterPath="$PROJECT_DIR$/FunctionTools/graphic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlobalConstant.py" beforeDir="false" afterPath="$PROJECT_DIR$/GlobalConstant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlobalConstant.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/GlobalConstant.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphicComponent/MainWindows.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphicComponent/MainWindows.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +78,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.控制台字体"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/新建临时文件": [
@@ -513,7 +492,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712926530248</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="2.6 版本完成, Event Manager 写完并且确认可用, 虽然就应用来说确实丑陋, 但是增加 事件系统的 API 确实是实现了的, 还有标准化窗体事件(超额完成了)">
+      <option name="closed" value="true" />
+      <created>1713111473929</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1713111473929</updated>
+    </task>
+    <task id="LOCAL-00032" summary="2.6 版本完成, Event Manager 写完并且确认可用, 虽然就应用来说确实丑陋, 但是增加 事件系统的 API 确实是实现了的, 还有标准化窗体事件(超额完成了)">
+      <option name="closed" value="true" />
+      <created>1713112247691</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1713112247691</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Root 的 graphic 更新" />
     <MESSAGE value="Root 的 __copy__ 修复" />
     <MESSAGE value="所有 的 __copy__ 修复, MouseEvent 重组完成" />
     <MESSAGE value="2.4 第一个补丁完成:&#10;修改了 Graphic, Surface, Root, Event 的代码, 更改了 Graphic 对于 Event 的引用, 以及把被破坏的代码修复到了 2.3 水平" />
@@ -568,7 +562,8 @@
     <MESSAGE value="给个别 Markdown 添加了示例代码 (没添加完" />
     <MESSAGE value="Event 的代码修补好了, 但是 GraphicComponent 的没有呢, 先提交先再说" />
     <MESSAGE value="Mouse Click Event 可用, Event Manager 与 Event 结构构建完成, 明天实现示例就可以了" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mouse Click Event 可用, Event Manager 与 Event 结构构建完成, 明天实现示例就可以了" />
+    <MESSAGE value="2.6 版本完成, Event Manager 写完并且确认可用, 虽然就应用来说确实丑陋, 但是增加 事件系统的 API 确实是实现了的, 还有标准化窗体事件(超额完成了)" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.6 版本完成, Event Manager 写完并且确认可用, 虽然就应用来说确实丑陋, 但是增加 事件系统的 API 确实是实现了的, 还有标准化窗体事件(超额完成了)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
