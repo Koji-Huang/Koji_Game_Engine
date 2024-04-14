@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="3.0 构建修正并构建架构" />
+    <list default="true" id="2bf609e3-80e3-462e-9968-9a132c8e0c1d" name="更改" comment="3.0 构建修正并构建架构">
+      <change afterPath="$PROJECT_DIR$/CustomDataType/File/Basic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/File/Basic.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/File/Config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/File/Config.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/File/Ini.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/File/Ini.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/File/Json.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/File/Json.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/File/Python.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/File/Python.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/File/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/Generic/LinkedList.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomDataType/Generic/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomDataType/CustomGeneric.py" beforeDir="false" afterPath="$PROJECT_DIR$/CustomDataType/CustomGeneric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomDataType/CustomGeneric.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/CustomDataType/CustomGeneric.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomDataType/LinkedList.py" beforeDir="false" afterPath="$PROJECT_DIR$/CustomDataType/LinkedList.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomDataType/LinkedList.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/CustomDataType/LinkedList.pyi" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,42 +68,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Camera_test_1 (1).executor&quot;: &quot;Debug&quot;,
-    &quot;Python.Camera_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Camera_test_2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DragEvent_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.EventManager_test_1 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.EventManager_test_1.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.GraphicManager_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Graphic_copy_test_1.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.Graphic_scale_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Graphic_test_main_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.LinkList_Test_Demo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.MarkBorder_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Mouse_test_main_1.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.ThreadRunningMachine_test_1.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.position.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.run_test_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.scratch.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/PycharmProjects/Koji_Game_Engine&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Issue.Navigation&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Camera_test_1 (1).executor": "Debug",
+    "Python.Camera_test_1.executor": "Run",
+    "Python.Camera_test_2.executor": "Run",
+    "Python.DragEvent_test_1.executor": "Run",
+    "Python.EventManager_test_1 (1).executor": "Run",
+    "Python.EventManager_test_1.executor": "Debug",
+    "Python.GraphicManager_test_1.executor": "Run",
+    "Python.Graphic_copy_test_1.executor": "Debug",
+    "Python.Graphic_scale_test_1.executor": "Run",
+    "Python.Graphic_test_main_1.executor": "Run",
+    "Python.LinkList_Test_Demo.executor": "Run",
+    "Python.MarkBorder_test_1.executor": "Run",
+    "Python.Mouse_test_main_1.executor": "Debug",
+    "Python.ThreadRunningMachine_test_1.executor": "Debug",
+    "Python.position.executor": "Debug",
+    "Python.run_test_1.executor": "Run",
+    "Python.scratch.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "正在合并 master",
+    "last_opened_file_path": "C:/Users/Administrator/PycharmProjects/Koji_Game_Engine",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Issue.Navigation"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/新建临时文件&quot;: [
-      &quot;Python&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/新建临时文件": [
+      "Python"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\Asset\StandardDataType" />
@@ -604,6 +623,7 @@
     <MESSAGE value="修正了 UI Event 中 skip_track 引起的错误" />
     <MESSAGE value="3.0 构建修正并构建架构" />
     <option name="LAST_COMMIT_MESSAGE" value="3.0 构建修正并构建架构" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
