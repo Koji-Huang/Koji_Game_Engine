@@ -1,3 +1,5 @@
+import pygame.event
+
 from Event.Basic import BasicEvent as Event, Inspector
 from CustomDataType.LinkedList import LinkedList
 
@@ -62,11 +64,11 @@ class EventManager:
         self.__instantiation_inspectors[event_type].append(new_inspector)
         return new_inspector
 
-    def run_an_inspector_id(self, inspector_id: str, event_type_id: int = None):
-        return self.run_an_inspector(self.match_inspector_id(inspector_id, event_type_id))
+    def update_an_inspector_id(self, inspector_id: str, event_type_id: int = None):
+        return self.update_an_inspector(self.match_inspector_id(inspector_id, event_type_id))
 
     @staticmethod
-    def run_an_inspector(inspector: Inspector):
+    def update_an_inspector(inspector: Inspector):
         if inspector.is_active():
             inspector.update_kwargs()
             if inspector.check() is True:
@@ -111,9 +113,11 @@ class EventManager:
     def update(self):
         for inspectors in self.__instantiation_inspectors.values():
             for inspector in inspectors:
-                inspector.update_kwargs()
-                if inspector.check():
-                    self.run_an_inspector(inspector)
+                self.update_an_inspector(inspector)
 
     def graphic_register(self, main_windows):
-        self.create_instantiation_inspector('001001001', {}, {'component': main_windows})
+        self.create_instantiation_inspector('001001001', {}, {'component': main_windows, 'skip_track': True})
+        self.create_instantiation_inspector('001001002', {}, {'component': main_windows, 'skip_track': True})
+        self.create_instantiation_inspector('001001003', {}, {'component': main_windows, 'skip_track': True})
+        self.create_instantiation_inspector('001001004', {}, {'component': main_windows, 'skip_track': True})
+

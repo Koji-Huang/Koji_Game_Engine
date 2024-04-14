@@ -3,9 +3,10 @@ from GraphicComponent.UI import Label
 
 
 class Basic(BasicEventObject):
+    skip_track: bool
     graphic_object: Label
 
-    def __init__(self, graphic_object: Label, *args, **kwargs):
+    def __init__(self, graphic_object: any, skip_track: bool = False, *args, **kwargs):
         ...
 
     def track_check(self, *args, **kwargs):

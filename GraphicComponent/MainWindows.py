@@ -18,7 +18,7 @@ class MainWindows(Graphic):
 
     def update(self):
         self.graph_update()
-        self.event_update()
+        # self.event_update()
 
     def graph_update(self, *args, **kwargs):
         super().graph_update()
