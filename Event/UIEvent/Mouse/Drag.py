@@ -4,7 +4,7 @@ from Event.UIEvent.Mouse.Basic import Basic, Inspector as father_inspector
 
 
 class Drag(Basic):
-    def __init__(self, component: any, skip_track: bool = False, button: int = None, *args, **kwargs):
+    def __init__(self, component: any,  button: int = None, skip_track: bool = False,*args, **kwargs):
         super().__init__(component, skip_track, *args, **kwargs)
         self.button = button
         self.drag_start_pos = (0, 0)

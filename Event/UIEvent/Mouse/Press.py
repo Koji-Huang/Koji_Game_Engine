@@ -4,7 +4,7 @@ from Event.UIEvent.Mouse.Basic import Basic, Inspector as father_inspector
 
 
 class Press(Basic):
-    def __init__(self, component, skip_track: bool = False, bind_button: int = None, *args, **kwargs):
+    def __init__(self, component, bind_button: int = None, skip_track: bool = False, *args, **kwargs):
         super().__init__(component, skip_track, *args, **kwargs)
         self.event_type_name = "UI Mouse Click Event"
         self.button = bind_button

@@ -1,5 +1,3 @@
-import pygame.event
-
 from Event.Basic import BasicEvent as Event, Inspector
 from CustomDataType.LinkedList import LinkedList
 

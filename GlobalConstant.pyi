@@ -1,5 +1,3 @@
-import pygame
-from functools import partial
 from EventManager import EventManager as __EventManager
 from GraphicManager import GraphicComponentManager as __GraphicManager
 from ThreadManager import ThreadManager as __ThreadManager
@@ -79,4 +77,10 @@ class ID:
 Global_ID_Manager: ID
 Global_Event_Manager: __EventManager
 Global_Graphic_Manager: __GraphicManager
-__ThreadManager: __ThreadManager
+Global_ThreadManager: __ThreadManager
+Global_Resource: dict[str: any]
+Global_Setting: dict[str: any]
+
+
+
+

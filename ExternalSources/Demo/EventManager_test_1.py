@@ -2,7 +2,7 @@ import pygame
 from GraphicComponent.UI import Label, Button
 from GraphicComponent.UI.Text import Text
 from GraphicComponent.MainWindows import MainWindows
-from EventManager import EventManager
+from Manager.EventManager import EventManager
 
 Main = MainWindows((900, 400))
 

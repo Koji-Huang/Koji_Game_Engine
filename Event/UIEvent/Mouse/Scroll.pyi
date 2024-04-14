@@ -10,7 +10,7 @@ class Scroll(Basic):
     update_time: float
     assess_time_interval: float
 
-    def __init__(self, component, skip_track: bool = False, assess_time_interval: int = 0.2, *args, **kwargs):
+    def __init__(self, component, assess_time_interval: int = 0.2, skip_track: bool = False, *args, **kwargs):
         ...
 
     def track_check(self, *args, **kwargs) -> any:...

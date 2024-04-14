@@ -14,7 +14,7 @@ class Drag(Basic):
     # if it had pressed
     dragging: bool
 
-    def __init__(self, component: any, skip_track: bool = False, button: int = None, *args, **kwargs):
+    def __init__(self, component: any,  button: int = None, skip_track: bool = False,*args, **kwargs):
         """
 
         """

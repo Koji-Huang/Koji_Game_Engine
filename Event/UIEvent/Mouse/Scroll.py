@@ -5,7 +5,7 @@ from Event.UIEvent.Mouse.Basic import Basic, Inspector as father_inspector
 
 
 class Scroll(Basic):
-    def __init__(self, component, skip_track: bool = False, assess_time_interval: int = 0.2, *args, **kwargs):
+    def __init__(self, component, assess_time_interval: int = 0.2, skip_track: bool = False, *args, **kwargs):
         super().__init__(component, skip_track, *args, **kwargs)
         self.event_type_name = "UI Mouse Scroll Event"
         self.record_scroll_x = 0
