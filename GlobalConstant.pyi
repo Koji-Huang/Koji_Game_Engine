@@ -2,6 +2,8 @@ from Manager.EventManager import EventManager as __EventManager
 from Manager.GraphicManager import GraphicComponentManager as __GraphicManager
 from Manager.ThreadManager import ThreadManager as __ThreadManager
 
+Registry: dict
+
 class IdPackage:
     name: str
     __id_limit: dict[str: int]
@@ -82,5 +84,6 @@ Global_Resource: dict[str: any]
 Global_Setting: dict[str: any]
 
 
-
-
+Engine_Path: str
+Environment_Path: str
+General_Config_File_Path: str

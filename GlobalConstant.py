@@ -2,6 +2,9 @@ import math
 from functools import partial
 
 
+Registry: dict = dict()
+
+
 class IdPackage:
     def __init__(self, name: str):
         self.name = name
@@ -73,6 +76,3 @@ class ID:
             self.__id_package[sub_type] = IdPackage(sub_type)
 
         return self.__id_package[sub_type].customized(object_type, limit_range)
-
-
-

@@ -73,11 +73,11 @@
 
 ​	This Version is mainly focus on improve engine struct and make a game asset explorer for load asset
 
-- ##### Version 3.0
+- ##### Version 3.0 - Finished!
 
   - ###### Build Framework
 
-- ##### Version 3.1
+- ##### Version 3.1 - Finished!
 
   - ###### Fix Framework
 
