@@ -1,5 +1,4 @@
 from ThreadPool import ThreadPool
-from Manager.ThreadManager import ThreadManager
 from threading import Thread as processThread
 
 

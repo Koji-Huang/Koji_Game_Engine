@@ -81,7 +81,7 @@
 
   - ###### Fix Framework
 
-- ##### Version 3.2
+- ##### Version 3.2 - Finished!
 
   - ###### File System
 

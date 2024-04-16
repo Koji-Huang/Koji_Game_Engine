@@ -9,7 +9,7 @@ _inspector_id_get: Callable[[], str]
 _inspector_id_recycle: Callable[[str], None]
 
 
-class EventManager:
+class EventAPI:
     def __init__(self, *args, **kwargs):
         self.__registered_name = dict()
         self.__registered_event_class = dict()

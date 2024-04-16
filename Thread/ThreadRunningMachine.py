@@ -1,5 +1,5 @@
 from threading import Thread as processThread
-from Thread import ThreadPool
+from Thread.ThreadPool import ThreadPool
 
 
 class ThreadRunningMachine:
@@ -30,7 +30,7 @@ class ThreadRunningMachine:
 
     def once(self) -> None:
         if self.ThreadManager is None:
-            raise "Thread Manager is not bind yet."
+            raise "Thread API is not bind yet."
         kwargs = {"TRMachine": self, "ThreadManager": self.ThreadManager}
         self.runningStatus = 1
         # Put Loop into Main

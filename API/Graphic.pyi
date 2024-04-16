@@ -5,10 +5,10 @@ from Graphic.Effect.MarkBorder import TextType, EdgeType
 from Graphic.UI import Label
 
 
-class GraphicComponentManager:
+class GraphicAPI:
     windows: MainWindows
     __debug_mode: bool
-    debug: GraphicComponentDebug | None
+    debug: GraphicDebug | None
     def __init__(self, mainWindowsObject: MainWindows = None, size: tuple[int, ...] = (800, 600), ):
         ...
 
@@ -76,10 +76,10 @@ class GraphicComponentManager:
         ...
 
 
-class GraphicComponentDebug:
+class GraphicDebug:
     __graphic_update_function: Callable
     __graphic_insert_function: list[Callable]
-    __debug_component: Graphic
+    __debug_component: GraphicAPI
     __debug_Label: Label
     one_layer: bool = True
     textType: TextType
@@ -87,7 +87,7 @@ class GraphicComponentDebug:
     windows: MainWindows
     info_alpha: int
 
-    def __init__(self, component: Graphic, windows: MainWindows):
+    def __init__(self, component: GraphicAPI, windows: MainWindows):
         ...
 
     def graphic_debug(self):
@@ -99,10 +99,10 @@ class GraphicComponentDebug:
     def graphic_update(self):
         ...
 
-    def graphic_debug_component(self, component: Graphic):
+    def graphic_debug_component(self, component: GraphicAPI):
         ...
 
-    def graphic_debug_single(self, component: Graphic):
+    def graphic_debug_single(self, component: GraphicAPI):
         ...
 
     def overwrite_graphic_core(debug, enable: bool = True):

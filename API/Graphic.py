@@ -4,7 +4,7 @@ from Graphic.Effect.MarkBorder import TextType, EdgeType, mark_component
 from Graphic.UI import Label
 
 
-class GraphicComponentDebug:
+class GraphicDebug:
     def __init__(self, component, windows: MainWindows):
         self.__graphic_update_function = None
         self.__graphic_insert_function = list()
@@ -59,9 +59,9 @@ class GraphicComponentDebug:
                 debug.__graphic_update_function(self, *args, **kwargs)
                 for insert in debug.__graphic_insert_function:
                     insert(self, *args, **kwargs)
-            Graphic.graph_update = overwrite_graph_update
+            GraphicAPI.graph_update = overwrite_graph_update
         else:
-            Graphic.graph_update = debug.__graphic_update_function
+            GraphicAPI.graph_update = debug.__graphic_update_function
             debug.__graphic_update_function = None
 
     def overwrite_add_graphic_function(self, function):
@@ -75,7 +75,7 @@ class GraphicComponentDebug:
         self.event_debug()
 
 
-class GraphicComponentManager:
+class GraphicAPI:
     def __init__(self, mainWindowsObject: MainWindows = None, size: tuple[int, int] = (800, 600), ):
         self.__debug_mode = False
         self.debug = None
@@ -254,7 +254,7 @@ class GraphicComponentManager:
         if enable:
             self.__debug_mode = True
             if self.debug is None:
-                self.debug = GraphicComponentDebug(self.windows, self.windows)
+                self.debug = GraphicDebug(self.windows, self.windows)
         else:
             self.__debug_mode = False
 

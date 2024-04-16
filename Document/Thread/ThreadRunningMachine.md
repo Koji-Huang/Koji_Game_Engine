@@ -27,7 +27,7 @@ class ThreadRunningMachine:
     runningStatus: int
     # 是否记录线程信息
     recordMode: bool
-    # 绑定的 Thread Manager (向外提供API的管理对象) 对象, 这个参数由 Thread Manager 提供
+    # 绑定的 Thread API (向外提供API的管理对象) 对象, 这个参数由 Thread API 提供
     ThreadManager: ThreadManager
 
     def __init__(self):

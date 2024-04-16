@@ -8,9 +8,9 @@ strLT = Union[list[str], tuple[str]]
 ThreadOrPid = Union[list[str, ...], tuple[str, ...], list[Thread, ...], tuple[Thread, ...]]
 
 
-class ThreadManager:
+class ThreadAPI:
     """
-    Thread Manager Class
+    Thread API Class
     This class is responsible for creating and managing threads
     But looping is done in a new separate object named Looper
     """
@@ -24,7 +24,7 @@ class ThreadManager:
 
     def __init__(self):
         """
-        Initialize the Manager
+        Initialize the API
         """
 
     def move_thread(self, thread, targetPoolName, create_new_thread=False, remove_from_old_pool=True) -> bool:
@@ -47,7 +47,7 @@ class ThreadManager:
         :return:
         """
 
-    def move_thread_thread(self, thread: Thread, targetPoolName: str, create_new_thread: bool=False, remove_from_old_pool: bool=True) -> bool:
+    def move_thread_thread(self, thread: ThreadAPI, targetPoolName: str, create_new_thread: bool=False, remove_from_old_pool: bool=True) -> bool:
         """
         move thread, match thread is thread
         :param thread:
@@ -104,7 +104,7 @@ class ThreadManager:
         :return:
         """
 
-    def remove_thread_thread(self, removeThread: Thread, targetPoolName:str=None, level:str=None) -> bool:
+    def remove_thread_thread(self, removeThread: ThreadAPI, targetPoolName:str=None, level:str=None) -> bool:
         """
 
         :param removeThread:
@@ -138,7 +138,7 @@ class ThreadManager:
         """
 
     def get_thread(self, pid: str, level: str = None,  limit: tuple[str, ...] = None,
-                   eliminate: tuple[str, ...] = None) -> tuple[Thread, str, str] or None:
+                   eliminate: tuple[str, ...] = None) -> tuple[ThreadAPI, str, str] or None:
         """
         get threadObject from the targetPoolName
         :param pid: the process id of the threads
@@ -149,7 +149,7 @@ class ThreadManager:
         """
 
     def get_threads(self, pids: ThreadOrPid,  level: str = None, limit: tuple[str, ...] = None,
-                    eliminate: tuple[str, ...] = None) -> tuple[tuple[Thread, str, str], ...]:
+                    eliminate: tuple[str, ...] = None) -> tuple[tuple[ThreadAPI, str, str], ...]:
         """
         get threadObjects from the targetPoolName
         :param pids: the process id of the threads

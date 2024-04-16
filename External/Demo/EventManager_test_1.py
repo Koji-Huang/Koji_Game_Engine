@@ -1,8 +1,14 @@
 import pygame
+
 from Graphic.UI import Label, Button
 from Graphic.UI.Text import Text
 from Graphic.MainWindows import MainWindows
-from Manager.EventManager import EventManager
+
+from API import EventAPI_type
+from API.GlobalAPI import register_global_environment
+
+
+register_global_environment()
 
 Main = MainWindows((900, 400))
 
@@ -31,7 +37,7 @@ text = Text((300, 300), (300, 300), "Hello World!",
 
 Main.tree_add_son(text)
 
-manager = EventManager()
+manager = EventAPI_type()
 manager.load_default_event()
 manager.graphic_register(Main)
 

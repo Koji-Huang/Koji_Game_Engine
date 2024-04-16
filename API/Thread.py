@@ -4,9 +4,9 @@ from Thread import ThreadRunningMachine, Thread
 strLT = Union[list[str], tuple[str]]
 
 
-class ThreadManager:
+class ThreadAPI:
     """
-    Thread Manager Class
+    Thread API Class
     This class is responsible for creating and managing threads
     But looping is done in a new separate object named Looper
     """
@@ -18,7 +18,7 @@ class ThreadManager:
         self.TRMachine.ThreadManager = self
 
     def move_thread(self, thread, targetPoolName, create_new_thread=False, remove_from_old_pool=True):
-        if isinstance(thread, Thread):
+        if isinstance(thread, ThreadAPI):
             return self.move_thread_thread(thread, targetPoolName, create_new_thread, remove_from_old_pool)
         if isinstance(thread, str):
             return self.move_thread_str(thread, targetPoolName, create_new_thread, remove_from_old_pool)
@@ -95,7 +95,7 @@ class ThreadManager:
         return tuple(ret)
 
     def remove_thread(self, removeThread, targetPoolName=None, level=None):
-        if isinstance(removeThread, Thread):
+        if isinstance(removeThread, ThreadAPI):
             return self.remove_thread_thread(removeThread, targetPoolName, level)
         if isinstance(removeThread, str):
             return self.remove_thread_str(removeThread, targetPoolName, level)
@@ -168,7 +168,7 @@ class ThreadManager:
                     return primerText + '%d' % self.ID_DATA[objectType]
 
     def get_thread_info(self, thread):
-        if isinstance(thread, Thread):
+        if isinstance(thread, ThreadAPI):
             return self.get_thread_info_thread(thread)
         if isinstance(thread, str):
             return self.get_thread_info_str(thread)

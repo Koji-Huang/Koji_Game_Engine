@@ -87,7 +87,7 @@ Event_print.track_function = print_pos
 Event_change.track_function = change_pos
 
 # 向系统添加 UI 对象
-Engine.GraphicManager.component_add(Label_1)
+Engine.GraphicAPI_type.component_add(Label_1)
 
 # 系统循环
 Engine.loop()

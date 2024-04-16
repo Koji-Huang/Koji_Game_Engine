@@ -3,7 +3,7 @@ from Graphic.UI import Image, Label
 from Graphic.UI.ExtraComponent import Camera
 from Event.UIEvent.Mouse.Scroll import Scroll
 from Event.UIEvent.Mouse import Basic
-from Manager.GraphicManager import GraphicComponentManager as Manager
+from Manager.GraphicManager import GraphicManager as Manager
 
 Root = Manager()
 Root.set_debug(True)

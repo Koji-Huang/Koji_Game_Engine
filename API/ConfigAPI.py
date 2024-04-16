@@ -1,5 +1,5 @@
 from DataType.ConfigFile import *
-import GlobalConstant
+from API import GlobalAPI
 
 
 def load_config_file(config_path: str, config_type: str = None):
@@ -20,23 +20,23 @@ def load_config_file(config_path: str, config_type: str = None):
 def register_config(config_object, keys: set[str] = None) -> None:
     if not keys:
         keys = set(config_object.keys())
-    keys -= set(GlobalConstant.Registry.keys())
+    keys -= set(GlobalAPI.Registry.keys())
     for key in keys:
-        GlobalConstant.Registry[key] = config_object[key]
+        GlobalAPI.Registry[key] = config_object[key]
 
 
 def overload_config(config_object, keys: tuple[str] = None) -> None:
     if keys is None:
-        GlobalConstant.Registry.update(config_object)
+        GlobalAPI.Registry.update(config_object)
     for key in keys:
-        GlobalConstant.Registry[key] = config_object[key]
+        GlobalAPI.Registry[key] = config_object[key]
 
 
 def unregister_config(config_object, keys: tuple[str] = None) -> None:
     if keys is None:
         keys = set(config_object.keys())
     for key in keys:
-        GlobalConstant.Registry.pop(key)
+        GlobalAPI.Registry.pop(key)
 
 
 def delete_config(config_object, keys: tuple[str] = None) -> None:

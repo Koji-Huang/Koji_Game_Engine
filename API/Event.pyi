@@ -1,9 +1,9 @@
 from Event.Basic import BasicEvent as Event, Inspector
-from DataType.LinkedList import LinkedList
+from DataType.Generic.LinkedList import LinkedList
 from Graphic.MainWindows import MainWindows
 
 
-class EventManager:
+class EventAPI:
     # event type id to Event Object
     __registered_event_class: dict[str: Event, ...]
     # event type id to Inspector Object

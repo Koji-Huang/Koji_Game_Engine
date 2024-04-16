@@ -7,5 +7,5 @@ register_config(config)
 import GlobalConstant
 
 print(GlobalConstant.Registry)
-GlobalConstant.register_global_environment_id()
+GlobalConstant.register_global_environment()
 pass

@@ -6,7 +6,7 @@ Registry: dict = dict()
 Global_ID_Register: any
 
 
-class IdPackage:
+class _IdPackage:
     def __init__(self, name: str):
         self.name = name
         self.__id_limit = dict()
@@ -23,7 +23,7 @@ class IdPackage:
             if self.__id_limit.get(object_type) is None:
                 self.__id_limit[object_type] = 7
             if self.__id_recycle.get(object_type) is None:
-                self.__id_recycle[object_type] = list()
+                self.__id_recycle[object_type] = set()
 
         if self.__id_recycle[object_type]:
             return self.__id_register.pop()
@@ -44,7 +44,7 @@ class IdPackage:
         if self.__id_limit.get(object_type) is None:
             self.__id_limit[object_type] = 10 ** 7
         if self.__id_recycle.get(object_type) is None:
-            self.__id_recycle[object_type] = list()
+            self.__id_recycle[object_type] = set()
 
     def customized(self, object_type, limit_range: int = None):
         self.__id_limit[object_type] = limit_range
@@ -60,36 +60,36 @@ class ID:
 
     def __call__(self, object_type: str, sub_type: str = 'undefined', *args, **kwargs):
         if self.__id_package.get(sub_type) is None:
-            self.__id_package[sub_type] = IdPackage(sub_type)
+            self.__id_package[sub_type] = _IdPackage(sub_type)
         return self.__id_package()
 
     def recycle(self, object_type: str, instance, sub_type: str = 'undefined'):
         if self.__id_package.get(sub_type) is None:
-            self.__id_package[sub_type] = IdPackage(sub_type)
+            self.__id_package[sub_type] = _IdPackage(sub_type)
         return self.__id_package[sub_type].recycle(object_type, instance)
 
     def reset_type(self, object_type: str, sub_type: str = 'undefined'):
         if self.__id_package.get(sub_type) is None:
-            self.__id_package[sub_type] = IdPackage(sub_type)
+            self.__id_package[sub_type] = _IdPackage(sub_type)
         return self.__id_package[sub_type].reset_type(object_type)
 
     def customized(self, object_type, sub_type: str = 'undefined', limit_range: int = None):
         if self.__id_package.get(sub_type) is None:
-            self.__id_package[sub_type] = IdPackage(sub_type)
+            self.__id_package[sub_type] = _IdPackage(sub_type)
         return self.__id_package[sub_type].customized(object_type, limit_range)
 
 
-def register_global_environment_id():
+def register_global_environment():
     global Global_ID_Register
     Global_ID_Register = ID()
 
-    from Thread import Thread as __ThreadFile
+    from Thread import ThreadPackage as __ThreadFile
     _get, _recycle, _reset = Global_ID_Register.customized('Thread', 'ThreadSystem')
-    __ThreadFile._id_get = _get
-    __ThreadFile._id_recycle = _recycle
+    __ThreadFile._thread_id_get = _get
+    __ThreadFile._thread_id_recycle = _recycle
 
     from Event import Basic as __EventFile
-    from Manager import EventManager as __EventManager
+    from API import Event as __EventManager
     _get, _recycle, _reset = Global_ID_Register.customized('Event', 'EventSystem')
     __EventFile._event_id_get = _get
     __EventFile._event_id_recycle = _recycle

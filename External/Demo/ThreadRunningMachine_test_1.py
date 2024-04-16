@@ -1,8 +1,12 @@
 from Thread import *
-from Manager.ThreadManager import ThreadManager
+from API import ThreadAPI_type
+from API import GlobalAPI
 
 
-Manager = ThreadManager()
+GlobalAPI.register_global_environment()
+
+
+Manager = ThreadAPI_type()
 
 
 def hello_world(*args, **kwargs):

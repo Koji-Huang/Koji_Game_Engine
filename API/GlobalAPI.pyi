@@ -1,13 +1,13 @@
 from typing import Callable
 
-from Manager.EventManager import EventManager as __EventManager
-from Manager.GraphicManager import GraphicComponentManager as __GraphicManager
-from Manager.ThreadManager import ThreadManager as __ThreadManager
+from API.Event import Event as __EventAPI
+from API.Graphic import GraphicAPI as __GraphicAPI
+from API.Thread import ThreadAPI as __ThreadAPI
 
 Registry: dict
 Global_ID_Register: ID
 
-class IdPackage:
+class _IdPackage:
     name: str
     __id_limit: dict[str: int]
     __id_max: dict[str: int]
@@ -47,7 +47,7 @@ class IdPackage:
 
 
 class ID:
-    __id_package: dict[str: IdPackage]
+    __id_package: dict[str: _IdPackage]
 
     def __init__(self):
         """
@@ -81,9 +81,9 @@ class ID:
 
 
 Global_ID_Manager: ID
-Global_Event_Manager: __EventManager
-Global_Graphic_Manager: __GraphicManager
-Global_ThreadManager: __ThreadManager
+Global_Event_API: __EventAPI
+Global_Graphic_API: __GraphicAPI
+Global_Thread_API: __ThreadAPI
 Global_Resource: dict[str: any]
 Global_Setting: dict[str: any]
 
@@ -93,7 +93,7 @@ Environment_Path: str
 General_Config_File_Path: str
 
 
-def register_global_environment_id():
+def register_global_environment():
     """
 
     """
