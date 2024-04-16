@@ -1,5 +1,4 @@
 from typing import TypeVar
-from DataType.Generic.CustomGeneric import CustomGeneric
 
 _KT = TypeVar('_KT')
 _VT = TypeVar('_VT')
@@ -51,13 +50,13 @@ class LinkedListNode:
             self.next.last = self.last
 
 
-class LinkedList(CustomGeneric[_KT, _VT]):
+class LinkedList:
     def __init__(self):
         super().__init__()
         self.head = None
         self.tail = None
         self.size = 0
-        self.extract_from_head = True
+        self.extract_from_head = False
 
     def append(self, value: _VT):
         if self.head is None:
@@ -125,7 +124,7 @@ class LinkedList(CustomGeneric[_KT, _VT]):
     def show(self):
         print("LinkedList: ", self.__iter__())
 
-    def extract(self, index: int = None):
+    def pop(self, index: int = None):
         if index is None:
             if self.extract_from_head:
                 get = self.head
@@ -140,6 +139,9 @@ class LinkedList(CustomGeneric[_KT, _VT]):
         else:
             self.__delitem__(index)
             return get
+
+    def extend(self, value):
+        self.append(value)
 
     def __copy__(self):
         ret = LinkedList()

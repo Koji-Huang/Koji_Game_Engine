@@ -1,8 +1,11 @@
+from typing import Callable
+
 from Manager.EventManager import EventManager as __EventManager
 from Manager.GraphicManager import GraphicComponentManager as __GraphicManager
 from Manager.ThreadManager import ThreadManager as __ThreadManager
 
 Registry: dict
+Global_ID_Register: ID
 
 class IdPackage:
     name: str
@@ -10,6 +13,7 @@ class IdPackage:
     __id_max: dict[str: int]
     __id_recycle: dict[str: list[int]]
     __id_register: set[str]
+    __is_customized: bool
 
     def __init__(self, name: str):
         """
@@ -36,7 +40,7 @@ class IdPackage:
 
         """
 
-    def customized(self, object_type) -> (..., ..., ...):
+    def customized(self, object_type) -> (Callable[[], str], Callable[[], str], Callable[[], str]):
         """
 
         """
@@ -70,7 +74,7 @@ class ID:
 
         """
 
-    def customized(self, object_type) -> (..., ...):
+    def customized(self, object_type, sub_type: str = 'undefined', limit_range: int = None) ->  (Callable[[], str], Callable[[], str], Callable[[], str]):
         """
 
         """
@@ -87,3 +91,10 @@ Global_Setting: dict[str: any]
 Engine_Path: str
 Environment_Path: str
 General_Config_File_Path: str
+
+
+def register_global_environment_id():
+    """
+
+    """
+    pass

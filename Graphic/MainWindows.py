@@ -4,7 +4,7 @@ import pygame
 
 class MainWindows(Graph):
     def __init__(self, size, *args, **kwargs):
-        self.windows_surface = pygame.display.set_mode(size, *args, **kwargs)
+        self.windows_surface = pygame.display.set_mode(size,  pygame.DOUBLEBUF, *args, **kwargs)
         self.graph_primer_surface = pygame.Surface(size)
         self.graph_primer_surface.fill((0, 0, 0))
         self.x = 0
@@ -22,7 +22,7 @@ class MainWindows(Graph):
 
     def graph_update(self, *args, **kwargs):
         super().graph_update()
-        pygame.display.update()
+        pygame.display.flip()
 
     def event_update(self, **kwargs):
         for event in pygame.event.get():

@@ -1,6 +1,8 @@
 from ThreadPool import ThreadPool
-from ThreadManager import ThreadManager
+from Manager.ThreadManager import ThreadManager
 from threading import Thread as processThread
+
+
 
 class ThreadRunningMachine:
     """

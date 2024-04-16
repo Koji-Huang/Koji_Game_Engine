@@ -17,17 +17,17 @@ class ThreadPool:
             self.threads[thread.threadLevel] = LinkedList()
             self.threads[thread.threadLevel].append(thread)
 
-    def remove(self, removeThread: str, level: str = None) -> bool:
-        if isinstance(removeThread, Thread):
-            pid = removeThread.pid
+    def remove(self, thread: str, level: str = None) -> bool:
+        if isinstance(thread, Thread):
+            pid = thread.pid
         else:
-            pid = removeThread
+            pid = thread
         if level:
-            for thread in self.threads.get(level):
+            for _thread in self.threads.get(level):
                 # Search Each Thread
-                if pid == thread.pid:
+                if pid == _thread.pid:
                     # if id is the same one
-                    self.threads[level].remove(thread)
+                    self.threads[level].remove(_thread)
                     if len(self.threads[level]) == 0:
                         # if no such type of thread remain, delete the type from the dict
                         self.threads.pop(level)
@@ -35,14 +35,14 @@ class ThreadPool:
         else:
             for threads in self.threads.values():
                 # Search Each Type of Threads
-                for thread in threads:
+                for _thread in threads:
                     # Search Each Thread
-                    if pid == thread.pid:
+                    if pid == _thread.pid:
                         # if id is the same one
-                        threads.remove(thread)
+                        threads.remove(_thread)
                         if len(threads) == 0:
                             # if no such type of thread remain, delete the type from the dict
-                            self.threads.pop(thread.threadLevel)
+                            self.threads.pop(_thread.threadLevel)
                         return True
         return False
 
@@ -88,7 +88,7 @@ class ThreadPool:
         for level in self.threadLevel:
             if self.threads.get(level):
                 # May Cause Error
-                return self.threads[level].extract(0)
+                return self.threads[level].pop(0)
 
     def insert(self, thread: Thread, index: int = 0):
         if self.threads.get(thread.threadLevel):

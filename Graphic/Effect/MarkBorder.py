@@ -56,7 +56,7 @@ class EdgeType:
 
 
 class TextType:
-    def __init__(self, size: int = 15, text: str = '', font: pygame.font.Font = None,
+    def __init__(self, size: int = 10, text: str = '', font: pygame.font.Font = None,
                  color: tuple = (0, 255, 230, 255)):
         self.size = size
         self.text = text

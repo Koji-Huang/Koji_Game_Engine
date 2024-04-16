@@ -9,6 +9,7 @@ def load_config_file(config_path: str, config_type: str = None):
                 obj = json(config_path)
             case '.ini':
                 obj = ini(config_path)
+
             case _:
                 obj = txt(config_path)
     else:

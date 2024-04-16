@@ -1,18 +1,12 @@
+from typing import Callable
 
 from DataType import LinkedList
 ID_Index = 0
 ID_Receive = LinkedList()
 
 
-def give_id() -> str:
-    global ID_Index, ID_Receive
-    if ID_Receive:
-        tmp = next(iter(ID_Receive))
-        ID_Receive.remove(tmp)
-        return str(tmp)
-    else:
-        ID_Index += 1
-        return str(ID_Index)
+_graphic_id_get: Callable[[], str]
+_graphic_id_recycle: Callable[[str], None]
 
 
 class Root:
@@ -21,7 +15,7 @@ class Root:
         self.son = LinkedList()
         self.event_type = set()
         self.event = dict()
-        self.id = give_id()
+        self.id = _graphic_id_get()
         for name, value in kwargs.items():
             if name == "father":
                 value.tree_add_son(self)
@@ -126,7 +120,7 @@ class Root:
             self.father.son.remove(self)
             self.father.event_clean()
         tmp = self.id
-        ID_Receive.append(tmp)
+        _graphic_id_recycle(tmp)
         del self
         return tmp
 
@@ -140,7 +134,6 @@ class Root:
     def __copy__(self, copied: any = None):
         if copied is None:
             copied = Root()
-            copied.id = give_id()
         for event_type in self.event.keys():
             for event in self.event[event_type]:
                 copy_event = event.__copy__()

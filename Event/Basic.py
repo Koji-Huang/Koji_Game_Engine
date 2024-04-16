@@ -1,16 +1,13 @@
+from typing import Callable
+
 ID_Index = 0
 ID_Receive = set()
 
 
-def give_id() -> str:
-    global ID_Index, ID_Receive
-    if ID_Receive:
-        tmp = next(iter(ID_Receive))
-        ID_Receive.remove(tmp)
-        return str(tmp)
-    else:
-        ID_Index += 1
-        return str(ID_Index)
+_event_id_get: Callable[[], str]
+_event_id_recycle: Callable[[str], None]
+_inspector_id_get: Callable[[], str]
+_inspector_id_recycle: Callable[[str], None]
 
 
 class BasicEvent:
@@ -18,7 +15,7 @@ class BasicEvent:
         self.event_type_name = "Event_Basic"
         self.event_name = 'undefined'
         self.track_args = dict()
-        self.id = give_id()
+        self.id = _event_id_get()
 
     def track_check(self, *args, **kwargs):
         return True
@@ -35,7 +32,7 @@ class BasicEvent:
 
     def delete(self):
         tmp = self.id
-        ID_Receive.add(self.id)
+        _event_id_recycle(self.id)
         del self
         return tmp
 
@@ -45,7 +42,7 @@ class BasicEvent:
         copied.event_name = self.event_name
         copied.track_function = self.track_function
         copied.track_args = self.track_args
-        copied.event_type = give_id()
+        copied.event_type = self.event_type
 
         return copied
 
@@ -60,7 +57,7 @@ class Inspector:
         self.__kwargs['generic'] = dict()
         self.__kwargs['generic']['inspector'] = self
         self.active = True
-        self.id = None
+        self.id = _inspector_id_get()
         if isinstance(target, self.target_event_class):
             self.target_event = target
         else:

@@ -1,4 +1,4 @@
-from typing import TypeVar, Generic
+from typing import TypeVar, Generic, Iterable
 
 _KT = TypeVar('_KT')
 _VT = TypeVar('_VT')
@@ -66,10 +66,16 @@ class CustomGeneric(Generic[_KT, _VT]):
         """
         pass
 
-    def extract(self, index: int = None) -> any or None:
+    def pop(self, index: int = None) -> any or None:
         """
         Extract a value from the generic
         :param index: index of the value to be extracted, defaults to CustomGeneric.extract_from_head
+        """
+        pass
+
+    def extend(self, value: Iterable[_T]):
+        """
+        merge another Sequence
         """
         pass
 

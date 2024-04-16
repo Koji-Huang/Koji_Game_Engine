@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, overload
 
 from DataType import LinkedList
 from Thread import Thread
@@ -25,10 +25,20 @@ class ThreadPool:
         :return: None
         """
 
-    def remove(self, pid: int or Thread, level: str = None) -> bool:
+    @overload
+    def remove(self, thread: int, level: str = None) -> bool:
         """
         Delete thread from the targetPoolName
-        :param pid: the process' id of the thread
+        :param thread: the process' id of the thread
+        :param level: the level of the threadObject
+        :return: bool
+        """
+
+    @overload
+    def remove(self, thread: Thread, level: str = None) -> bool:
+        """
+        Delete thread from the targetPoolName
+        :param thread: the process' id of the thread
         :param level: the level of the threadObject
         :return: bool
         """

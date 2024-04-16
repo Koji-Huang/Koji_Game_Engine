@@ -1,5 +1,12 @@
+from typing import Callable
 from Event.Basic import BasicEvent as Event, Inspector
 from DataType.Generic.LinkedList import LinkedList
+
+
+_event_id_get: Callable[[], str]
+_event_id_recycle: Callable[[str], None]
+_inspector_id_get: Callable[[], str]
+_inspector_id_recycle: Callable[[str], None]
 
 
 class EventManager:
@@ -27,10 +34,10 @@ class EventManager:
         return event_type_id
 
     def spare_event_type_id(self):
-        return "001"
+        return _event_id_get()
 
     def __initialize_inspector_id(self):
-        return "001"
+        return _inspector_id_get()
 
     def load_default_event(self) -> None:
         import Event
@@ -56,7 +63,6 @@ class EventManager:
         new_event = self.__registered_event_class[event_type](**event_init_kwargs)
         new_event.event_type = event_type
         new_inspector: Inspector = self.__registered_inspector_class[event_type](new_event, **inspector_init_kwargs)
-        new_inspector.id = self.__initialize_inspector_id()
         if self.__instantiation_inspectors.get(event_type) is None:
             self.__instantiation_inspectors[event_type] = LinkedList()
         self.__instantiation_inspectors[event_type].append(new_inspector)

@@ -17,7 +17,7 @@ class GraphicComponentDebug:
         self.windows = windows
 
     def graphic_debug(self):
-        self.__debug_Label.graph_surface.fill((0, 0, 0, 0))
+        self.__debug_Label.graph_surface.fill((0, 0, 0, self.info_alpha))
         if self.one_layer:
             self.graphic_debug_component(self.__debug_component)
         self.graphic_update()
@@ -53,7 +53,7 @@ class GraphicComponentDebug:
 
     def overwrite_graphic_core(debug, enable: bool = True):
         if enable:
-            debug.__graphic_update_function = Graphic.graph_update
+            debug.__graphic_update_function = Graph.graph_update
 
             def overwrite_graph_update(self, *args, **kwargs):
                 debug.__graphic_update_function(self, *args, **kwargs)
@@ -157,7 +157,7 @@ class GraphicComponentManager:
 
     def graphic_update(self):
         if self.__debug_mode:
-            Graphic.graph_update(self.windows)
+            Graph.graph_update(self.windows)
             self.windows.windows_surface.blit(self.windows.graph_surface, (0, 0))
             self.debug.graphic_debug()
         else:
@@ -188,7 +188,7 @@ class GraphicComponentManager:
         event, component, event_type = self.event_get(pid, event_type, component)
         component.event_remove(event_type, pid)
 
-    def event_add(self, event: Event, event_type: int = 0, father_component: Root = None) -> None:
+    def event_add(self, event, event_type: int = 0, father_component: Root = None) -> None:
         if father_component is None:
             father_component = self.windows
         father_component.event_add(event_type, event)
@@ -258,7 +258,7 @@ class GraphicComponentManager:
         else:
             self.__debug_mode = False
 
-    def update_component_event(self, component: Root, event_type: int, event: Event, **kwargs):
+    def update_component_event(self, component: Root, event_type: int, event, **kwargs):
         if component is None:
             component = self.windows
         component.event_spread(event_type, event=event, **kwargs)

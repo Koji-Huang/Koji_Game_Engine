@@ -1,4 +1,5 @@
-from typing import TypeVar, Generic
+from typing import TypeVar
+from DataType.Generic.CustomGeneric import CustomGeneric
 
 _KT = TypeVar('_KT')
 _VT = TypeVar('_VT')
@@ -32,7 +33,7 @@ class LinkedListNode:
         ...
 
 
-class LinkedList(Generic[_KT, _VT]):
+class LinkedList(CustomGeneric[_KT, _VT]):
     size: int
     head: LinkedListNode | None
     tail: LinkedListNode | None
@@ -62,7 +63,10 @@ class LinkedList(Generic[_KT, _VT]):
     def show(self):
         ...
 
-    def extract(self, index: int = None):
+    def pop(self, index: int = None):
+        ...
+
+    def extend(self, value):
         ...
 
     def __copy__(self) -> LinkedList:

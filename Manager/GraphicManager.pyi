@@ -1,3 +1,5 @@
+from typing import Callable
+from Event.UIEvent.Basic import Basic as Event
 from Graphic import *
 from Graphic.Effect.MarkBorder import TextType, EdgeType
 from Graphic.UI import Label
@@ -75,8 +77,8 @@ class GraphicComponentManager:
 
 
 class GraphicComponentDebug:
-    __graphic_update_function: any
-    __graphic_insert_function: list
+    __graphic_update_function: Callable
+    __graphic_insert_function: list[Callable]
     __debug_component: Graphic
     __debug_Label: Label
     one_layer: bool = True

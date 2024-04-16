@@ -1,9 +1,16 @@
+from typing import Callable
+
+
+_thread_id_get: Callable[[], str]
+_thread_id_recycle: Callable[[str], None]
+
+
 class Thread:
     def __init__(self, threadLevel: str = 'undefined', threadName: str = 'undefined', **kwargs):
         self.kwargs = kwargs
         self.threadName = threadName
         self.threadLevel = threadLevel
-        self.pid = '0000000'
+        self.pid = _thread_id_get()
 
     def start(self, **kwargs) -> None:
         print("Default Thread Running----", self.pid)
@@ -16,7 +23,7 @@ class Thread:
         return self.kwargs.get("result")
 
     def __del__(self):
-        pass
+        _thread_id_recycle(self.pid)
 
     def __call__(self, **kwargs):
         return self.start(**kwargs)
@@ -39,7 +46,7 @@ class Thread:
 
 class FunctionThread(Thread):
 
-    def __init__(self, function: (), function_kwargs: dict = None, threadLevel: str = 'undefined', **kwargs):
+    def __init__(self, function: Callable, function_kwargs: dict = None, threadLevel: str = 'undefined', **kwargs):
         super().__init__(threadLevel, **kwargs)
         self.function = function
         self.function_kwargs = function_kwargs if function_kwargs else dict()

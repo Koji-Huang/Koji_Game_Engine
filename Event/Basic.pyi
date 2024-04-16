@@ -1,9 +1,9 @@
-import types
+from typing import Callable
 
 
 class BasicEvent:
     event_name: any
-    track_function: any
+    track_function: Callable[..., any]
     track_args: dict
     event_type: int or any
     event_type_name: str
