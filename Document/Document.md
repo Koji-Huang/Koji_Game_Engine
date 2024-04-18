@@ -36,40 +36,47 @@
 
 ## Usage 使用
 
-​	每一次使用引擎时都需要 `GlobalConstant` 对 `ID` 对象进行初始化
+### 	GlobalAPI
+
+​		GlobalAPI 时一个无需实例化的 API
+
+​		每一次使用引擎时都需要 `GlobalAPI` 对 `ID` 对象进行初始化
 
 ```python
-from API import GlobalConstant
+from API import GlobalAPI
 
-print(GlobalConstant.Registry)
-GlobalConstant.register_global_environment_id()
+GlobalAPI.register_global_environment_id()
 ```
 
-​	如果需要导入外部 `Config` 文件对引擎进行参数调整, 则需要使用到 `ConfigManager` 的 `load_config_file()` 来载入数据并调用 `GlobalConstant` 的 `register_global_environment()` 函数
+​		如果需要导入外部 `Config` 文件对引擎进行参数调整, 则需要使用到 `ConfigManager` 的 `load_config_file()` 来载入数据并调用 `GlobalConstant` 的 `register_global_environment()` 函数
 
 ```Python
-from API.ConfigAPI import *
+from API import ConfigAPI
 
-config = load_config_file('../config.ini')
-register_config(config)
+config = ConfigAPI.load_config_file('../config.ini')
+ConfigAPI.register_config(config)
 ```
 
-​	如果要启用图像系统, 那么你需要导入 `Graphic` 中相对应的包, 如果你希望通过系统接口来控制, 那你需要导入 `GraphicManager` 来控制
+### 	GraphicAPI
+
+​		GraphicAPI 是一个需要实例化的 API, 实例化类为 API.GraphicAPI_type
+
+​		如果要启用图像系统, 那么你需要导入 `Graphic` 中相对应的包, 如果你希望通过系统接口来控制, 那你需要导入 `GraphicManager` 来控制
 
 ```python
-from API.Graphic import GraphicAPI
+from API import GraphicAPI_type
 
-Manager = GraphicAPI()
+Manager = GraphicAPI_type()
 ```
 
-​	如果你想要创建一个窗体, 那么你既可以通过直接创建窗体对象并传入 `GraphicManager`, 也可以通过 `GraphicManager` 来创建窗体
+​		如果你想要创建一个窗体, 那么你既可以通过直接创建窗体对象并传入 `GraphicManager`, 也可以通过 `GraphicManager` 来创建窗体
 
 ```python
-from API.Graphic import GraphicAPI
+from API import GraphicAPI_type
 from Graphic import MainWindows
 
 windows = MainWindows((600, 800))
-Manager = GraphicAPI(windows)
+Manager = GraphicAPI_type(windows)
 # it as same as next
 Manager = GraphicAPI((600, 800))
 ```
@@ -77,41 +84,49 @@ Manager = GraphicAPI((600, 800))
 ​	如果需要打开 `Debug` 那么你可以在任意时刻将 `GraphicManager` 通过 `set_debug()` 来设置, 但在没有 `debug` 状态下, 不能修改 debug 的属性
 
 ```python
-from API.Graphic import GraphicAPI
+from API import GraphicAPI_type
 
-Manager = GraphicAPI()
+Manager = GraphicAPI_type()
 Manager.set_debug(True)
 ```
 
-​	如果你想启用事件系统, 那么你需要导入 `Event` 中相应的包, 同样, `Event` 也有系统接口 `EventManager` 用于控制
+### 	EventAPI
+
+​		EventAPI 是一个需要实例化的 API	
+
+​		如果你想启用事件系统, 那么你需要导入 `Event` 中相应的包, 同样, `Event` 也有系统接口 `EventManager` 用于控制
 
 ```python
-from API.Event import Event
+from API import EventAPI_type
 
-Manager = Event()
+Manager = EventAPI_type()
 Manager.load_default_event()
 ```
 
 ​	如果你希望启用图像的事件系统, 那么你需要先载入默认事件, 再通过 `EventManaer.graphic_register()`将一个 `MainWindow` 实例绑定在 `EventManager` 上
 
 ```python
-from API.Event import Event
+from API import EventAPI_type
 from Graphic import MainWindows
 
 windows = MainWindows()
-manager = Event()
+manager = EventAPI_type()
 
 master.load_default_event()
 
 manager.graphic_register(windows)
 ```
 
-​	如果你希望启用线程系统, 那么你需要导入 `Thread` 中的包, 同样,  `Thread` 也有系统接口 `ThreadManager` 用于控制
+### 	ThreadAPI
+
+​		ThreadAPI 是一个需要实例化的 API	
+
+​		如果你希望启用线程系统, 那么你需要导入 `Thread` 中的包, 同样,  `Thread` 也有系统接口 `ThreadManager` 用于控制
 
 ```python
-from API.Thread import ThreadAPI
+from API import ThreadAPI_type
 
-Manager = ThreadAPI()
+Manager = ThreadAPI_type()
 Manager.TRMachine.start()
 ```
 

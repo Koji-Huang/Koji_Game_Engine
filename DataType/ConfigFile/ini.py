@@ -7,11 +7,11 @@ class Ini(__Basic):
         sub_title = 'undefined'
         self._translated_data.clear()
         for line in self._read_value:
-            match_object = re.match(r'\[(.*)]', line)
+            match_object = re.match(r'\[(.*)\]', line)
             if match_object is not None and match_object.groups().__len__() == 1:
-                sub_title = match_object[0]
+                sub_title = match_object.groups()[0]
             else:
-                match_object = re.match(r'(\w*)\s*=\s*(\w*)', line)
+                match_object = re.match(r'(\w*)\s*=\s*(.*)', line)
                 if match_object is not None and match_object.groups().__len__() == 2:
                     self.__setitem__(*match_object.groups(), sub_title)
 

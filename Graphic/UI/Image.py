@@ -6,7 +6,6 @@ from Graphic.UI.Label import Label
 class Image(Label):
     def __init__(self, pos, size, image: str or pygame.Surface, alpha: int = 255, layout_mode=0,
                  antialiasing: bool = True, *args, **kwargs):
-        super().__init__(pos, size, *args, **kwargs)
         if isinstance(image, str):
             self.image_surface = pygame.image.load(image).convert_alpha()
         elif isinstance(image, pygame.Surface):
@@ -15,7 +14,7 @@ class Image(Label):
             raise TypeError(image)
         self.layout_mode = layout_mode
         self.image_antialiasing = antialiasing
-        self.graph_draw()
+        super().__init__(pos, size, *args, **kwargs)
         self.graph_primer_surface.set_alpha(alpha)
 
     def change_image_object(self, image):

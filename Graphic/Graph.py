@@ -3,9 +3,11 @@ import pygame
 
 
 class Graph(Surface):
-    def __init__(self, pos, size, *args, **kwargs):
+    def __init__(self, pos, size, surface=None, *args, **kwargs):
         self.graph_surface = pygame.Surface(size).convert_alpha()
         self.graph_primer_surface = pygame.Surface(size).convert_alpha()
+        if surface:
+            self.graph_primer_surface.blit(surface, (0, 0))
         self.graph_kwargs = dict()
         self.graph_active = True
         super().__init__(pos, size, *args, **kwargs)

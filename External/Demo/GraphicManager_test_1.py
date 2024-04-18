@@ -1,32 +1,29 @@
-from math import sin, cos, log
+import sys
 import pygame.time
+from math import sin, cos, log
+
+sys.path.append(r'..\..\..\Koji_Game_Engine')
 
 from API import GlobalAPI
 from API import GraphicAPI_type
 from API import EventAPI_type
-
 from Event.UIEvent.Mouse.Click import Click
-
 from Graphic.UI import *
 
-
 GlobalAPI.register_global_environment()
+GraphicManager = GraphicAPI_type()
+EventManager = EventAPI_type()
+EventManager.load_default_event()
 
 
 def say_hello(*args, **kwargs):
     print('hello~')
 
 
-GraphicManager = GraphicAPI_type()
-EventManager = EventAPI_type()
-
 Label_collection: list[Label] = []
 Color = ((255, 0, 0), (0, 255, 0), (0, 0, 255))
 
-
-EventManager.load_default_event()
 EventManager.graphic_register(GraphicManager.windows)
-
 
 for i in range(50):
     Label_collection.append(Label((100, 100), (100, 100)))
@@ -35,7 +32,6 @@ for i in range(50):
     Event = Click(Label_collection[-1], 0)
     Event.track_function = say_hello
     Label_collection[-1].event_add('001001001', Event)
-
 
 predict_x = lambda k, i: int(int(sin(log(k, 3) * i / 300) * log(k, 5) * 20) + log(k, 8) * 50 * log(k))
 predict_y = lambda k, i: int(int(cos(log(k, 4) * i / 300) * log(k, 6) * 20) + log(k, 7) * 50 * log(k))

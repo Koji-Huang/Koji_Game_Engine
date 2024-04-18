@@ -1,5 +1,5 @@
 from Graphic.UI.Label import Label
-
+from Event.UIEvent.Basic import Basic as Event
 
 class Button(Label):
     def __init__(self, pos, size, *args, **kwargs):...

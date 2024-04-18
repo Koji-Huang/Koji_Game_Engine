@@ -8,7 +8,7 @@ class Txt(__Basic):
 
     def __translate_read__(self):
         for line in self._read_value:
-            match_object = re.match(r'(\w*)\s*=\s*(\w*)', line)
+            match_object = re.match(r'(\w*)\s*=\s*(.*)', line)
             if match_object is not None and match_object.groups().__len__() == 2:
                 self.__setitem__(*match_object.groups())
 

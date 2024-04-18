@@ -1,3 +1,8 @@
+import os.path
+
+path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
 import pygame
 
 from Graphic.UI import Label, Button
@@ -11,8 +16,6 @@ from API.GlobalAPI import register_global_environment
 register_global_environment()
 
 Main = MainWindows((900, 400))
-
-count = 0
 
 
 def say_hello(*args, **kwargs):
@@ -41,7 +44,7 @@ manager = EventAPI_type()
 manager.load_default_event()
 manager.graphic_register(Main)
 
+
 while True:
     Main.update()
     manager.update()
-

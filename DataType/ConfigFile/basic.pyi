@@ -1,4 +1,5 @@
 class CustomFile:
+    _file_type: str
     _read_value: tuple[str]
     _translated_data: dict
     _file_path: str
@@ -16,6 +17,9 @@ class CustomFile:
         :return: None
         """
         pass
+
+    def get_file_type(self):
+        ...
 
     def write(self, key: str, value: str):
         """
@@ -65,7 +69,7 @@ class CustomFile:
     def __setitem__(self, key: str, value: str):
         pass
 
-    def __getitem__(self, item: str) -> int:
+    def __getitem__(self, item: str) -> any:
         pass
 
     def __delitem__(self, key: str):

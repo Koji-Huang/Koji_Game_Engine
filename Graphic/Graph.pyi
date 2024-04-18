@@ -1,13 +1,16 @@
-from Graphic.Surface import Surface
-import pygame
+from Graphic.Surface import Surface as _Surface
+from pygame import Surface
 
-class Graph(Surface):
+class Graph(_Surface):
     graph_active: bool
-    graph_surface: pygame.Surface
-    graph_primer_surface: pygame.Surface
+    graph_surface: Surface
+    graph_primer_surface: Surface
     graph_kwargs: dict
 
-    def __init__(self, pos, size, *args, **kwargs):...
+    def __init__(self, pos, size, surface: Surface = None, *args, **kwargs):
+        """
+        :param surface: the surface as primer_surface
+        """
 
     def graph_check(self):...
 

@@ -1,6 +1,6 @@
 import pygame
 
-from Asset.StandardDataType.Graphic.Basic import Package as _Package
+from Asset.StandardDataType.Package import Package as _Package
 
 
 class Package(_Package):

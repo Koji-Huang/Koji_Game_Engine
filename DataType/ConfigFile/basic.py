@@ -1,6 +1,11 @@
+import os.path
+import re
+
+
 class CustomFile:
 
     def __init__(self, file_path: str):
+        self._file_type = None
         self._read_value = tuple()
         self._translated_data = dict()
         self._file_path = file_path
@@ -11,6 +16,16 @@ class CustomFile:
         # deal with quit.
         with open(self._file_path, 'r') as file:
             self._read_value = tuple(file.readlines())
+
+    def get_file_type(self):
+        if self._file_type is None:
+            end_str = ''
+            for char in self._file_path[::-1]:
+                if char == '.': break
+                else: end_str += char
+            return end_str[::-1]
+        else:
+            return self._file_type
 
     def write(self, key, value):
         self._translated_data[key] = value
@@ -70,3 +85,9 @@ class CustomFile:
 
     def __dict__(self):
         return self._translated_data
+
+    def __file__(self):
+        return os.path.abspath(self._file_path)
+
+    def __path__(self):
+        return os.path.dirname(self.__file__())

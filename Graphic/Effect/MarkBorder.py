@@ -23,6 +23,7 @@ class EdgeType:
                               (area[0] + area[2] + self.width, area[1] + area[3]), alpha)
 
     def draw_single_edge(self, surface: pygame.Surface, start: tuple, end: tuple, alpha=255):
+
         inverse_color = list(255 - i for i in self.color)
         inverse_color[3] = 255
 
