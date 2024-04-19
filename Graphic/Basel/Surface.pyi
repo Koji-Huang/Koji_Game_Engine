@@ -1,4 +1,4 @@
-from Graphic.Root import Root
+from Graphic.Basel.Root import Root
 
 class Surface(Root):
     x: int
@@ -31,3 +31,6 @@ class Surface(Root):
     def is_crash(self, another: Surface = None)->bool:...
 
     def scale(self, w: int, h: int):...
+
+
+__dict__ = ['MainWindows']

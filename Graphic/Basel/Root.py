@@ -1,5 +1,6 @@
-from typing import Callable
+__dict__ = ['Root']
 
+from typing import Callable
 from DataType import LinkedList
 ID_Index = 0
 ID_Receive = LinkedList()
@@ -139,3 +140,5 @@ class Root:
                 copy_event = event.__copy__()
                 copied.event_add(event_type, copy_event)
         return copied
+
+

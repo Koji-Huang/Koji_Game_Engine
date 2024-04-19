@@ -1,7 +1,7 @@
 from typing import Callable
 from Event.UIEvent.Basic import Basic as Event
 from Graphic import *
-from Graphic.Effect.MarkBorder import TextType, EdgeType
+from Graphic.EffectFunction.MarkBorder import TextType, EdgeType
 from Graphic.UI import Label
 
 

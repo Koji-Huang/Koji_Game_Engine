@@ -1,4 +1,4 @@
-import Graphic.Effect.TextureMapping.Noise.perlin as perlin
+import Graphic.EffectFunction.TextureMapping.Noise.perlin as perlin
 import pygame.event
 import pygame.time
 from API import GlobalAPI, GraphicAPI_type, ThreadAPI_type, EventAPI_type

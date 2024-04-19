@@ -102,7 +102,7 @@ def register_global_environment():
     __EventManager._inspector_id_get = _get
     __EventManager._inspector_id_recycle = _recycle
 
-    from Graphic import RootPackage as __GraphicFile
+    from Graphic.Basel import RootPackage as __GraphicFile
     _get, _recycle, _reset = Global_ID_Register.customized('Graphic', 'EventSystem')
     __GraphicFile._graphic_id_get = _get
     __GraphicFile._graphic_id_recycle = _recycle

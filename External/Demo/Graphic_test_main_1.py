@@ -2,7 +2,7 @@ from math import sin
 
 import pygame.font
 
-from Graphic.Effect.MarkBorder import EdgeType, TextType, mark_component
+from Graphic.EffectFunction.MarkBorder import EdgeType, TextType, mark_component
 from Graphic.UI import *
 from Graphic import MainWindows
 

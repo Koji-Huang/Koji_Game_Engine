@@ -1,4 +1,4 @@
-from Graphic.Graph import Graph
+from Graphic.Basel.Graph import Graph
 import pygame
 
 
@@ -18,7 +18,6 @@ class MainWindows(Graph):
 
     def update(self):
         self.graph_update()
-        # self.event_update()
 
     def graph_update(self, *args, **kwargs):
         super().graph_update()
@@ -27,3 +26,4 @@ class MainWindows(Graph):
     def event_update(self, **kwargs):
         for event in pygame.event.get():
             self.event_spread(event.type, event=event)
+

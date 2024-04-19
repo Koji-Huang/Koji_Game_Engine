@@ -9,9 +9,12 @@ EventManager = EventAPI_type()
 EventManager.load_default_event()
 
 
-TXT = Package("..\\..\\Graphic\\Effect\\TextureMapping\\Noise\\_texture_\\gradient(quadratic)(1980x1980)\\config.txt")
-INI = Package("..\\..\\Graphic\\Effect\\TextureMapping\\Noise\\_texture_\\gradient(quadratic)(1980x1980)\\config.ini")
-JSON = Package("..\\..\\Graphic\\Effect\\TextureMapping\\Noise\\_texture_\\gradient(quadratic)(1980x1980)\\config.json")
+TXT = Package(
+    "../../Graphic/EffectFunction\\TextureMapping\\Noise\\_texture_\\gradient(quadratic)(1980x1980)\\config.txt")
+INI = Package(
+    "../../Graphic/EffectFunction\\TextureMapping\\Noise\\_texture_\\gradient(quadratic)(1980x1980)\\config.ini")
+JSON = Package(
+    "../../Graphic/EffectFunction\\TextureMapping\\Noise\\_texture_\\gradient(quadratic)(1980x1980)\\config.json")
 
 
 pass

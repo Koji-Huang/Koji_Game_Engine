@@ -1,6 +1,5 @@
 from pygame.image import load as load_image
 from API.ConfigAPI import load_config_file
-from DataType.ConfigFile import ini, txt, json
 from Asset.StandardDataType.Graphic.Basic import Package as _Package
 
 
@@ -27,7 +26,7 @@ class Package(_Package):
                 self._animation_name = self._config_object['name']
                 self._sub_path = self._config_object['sub_path']
             case 'ini':
-                self._frame_size = int(self._config_object['Animation']['frame_size'])
+                self._frame_size = int(self._config_object['Customized']['frame_size'])
                 self._animation_name = self._config_object['file']['name']
                 self._sub_path = self._config_object['file']['sub_path']
             case 'json':
@@ -76,15 +75,15 @@ class Package(_Package):
                     'a': config['a']
                 }
             case _:
-                raise "File not matched to Animation"
+                raise "File not matched to Customized"
 
 """
-Animation Config File Struct
+Customized Config File Struct
 
 
 txt:
 
-config_type = Animation
+config_type = Customized
 name = str
 sub_path = str
 frame_size = int
@@ -110,11 +109,11 @@ frame_size = int
 ini:
 
 [file]
-config_type = Animation
+config_type = Customized
 name = str
 sub_path = str
 
-[Animation]
+[Customized]
 frame_size = int
 
 [1]
@@ -138,7 +137,7 @@ json:
 
 {
     file =  {
-        config_type = "Animation";
+        config_type = "Customized";
         name = "...";
         sub_path = "...";
     };

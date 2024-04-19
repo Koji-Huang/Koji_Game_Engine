@@ -1,4 +1,4 @@
-from Graphic.Graph import Graph
+from Graphic.Basel.Graph import Graph
 from typing import Iterable
 from time import time
 from DataType.Generic.LinkedList import LinkedList

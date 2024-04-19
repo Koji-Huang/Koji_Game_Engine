@@ -2,7 +2,7 @@ import pygame.font
 import math
 from Graphic.UI import *
 from Graphic import MainWindows
-from Graphic.Effect.MarkBorder import mark_component, EdgeType, TextType
+from Graphic.EffectFunction.MarkBorder import mark_component, EdgeType, TextType
 
 
 Main = MainWindows((1200, 500), pygame.NOFRAME)

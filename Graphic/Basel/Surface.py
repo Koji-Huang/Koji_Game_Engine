@@ -1,4 +1,4 @@
-from Graphic.Root import Root
+from Graphic.Basel.Root import Root
 from Function.coordinate import point_in_rect
 
 
@@ -104,3 +104,6 @@ class Surface(Root):
             copied.set_rect(self.rect())
         super().__copy__(copied)
         return copied
+
+
+__dict__ = ['MainWindows']

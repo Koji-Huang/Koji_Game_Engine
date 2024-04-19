@@ -1,6 +1,6 @@
 from typing import overload
 from typing import Iterable
-from Graphic.Graph import Graph
+from Graphic.Basel.Graph import Graph
 from DataType.Generic.LinkedList import LinkedList
 from pygame import Surface
 
@@ -33,3 +33,4 @@ class Animation(Graph):
     @overload
     def animation_add_surface(self, surfaces: Iterable[Surface]):
         pass
+

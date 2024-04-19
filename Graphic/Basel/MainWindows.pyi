@@ -1,4 +1,4 @@
-from Graphic.Graph import Graph
+from Graphic.Basel.Graph import Graph
 import pygame
 
 
@@ -18,3 +18,4 @@ class MainWindows(Graph):
 
     def event_update(self):
         ...
+
