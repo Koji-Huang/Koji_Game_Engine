@@ -1,12 +1,13 @@
 from pygame.image import load as load_image
 from API.ConfigAPI import load_config_file
-from Asset.StandardDataType.Graphic.Basic import Package as _Package
+from DataType.Asset.Graphic.Basel import Package as _Package
+from Graphic.Customized.Animation import *
 
 
 class Package(_Package):
     def __init__(self, config_path: str, name: str = 'undefined', *args, **kwargs):
         super().__init__(config_path, name=name, *args, **kwargs)
-        self.reload()
+        self.load()
 
     def __copy__(self, copied=None):
         if copied is None:
@@ -17,8 +18,8 @@ class Package(_Package):
     def __call__(self, *args, **kwargs):
         return self._surface.copy
 
-    def reload(self):
-        super().reload()
+    def load(self):
+        super().load()
         self._config_object = load_config_file(self._path)
         match self._config_object.get_file_type():
             case 'txt':
@@ -26,11 +27,11 @@ class Package(_Package):
                 self._animation_name = self._config_object['name']
                 self._sub_path = self._config_object['sub_path']
             case 'ini':
-                self._frame_size = int(self._config_object['Customized']['frame_size'])
+                self._frame_size = int(self._config_object['Animation']['frame_size'])
                 self._animation_name = self._config_object['file']['name']
                 self._sub_path = self._config_object['file']['sub_path']
             case 'json':
-                self._frame_size = self._config_object['file']['frame_size']
+                self._frame_size = self._config_object['Animation']['frame_size']
                 self._animation_name = self._config_object['file']['name']
                 self._sub_path = self._config_object['file']['sub_path']
 
@@ -76,6 +77,9 @@ class Package(_Package):
                 }
             case _:
                 raise "File not matched to Customized"
+
+    def convert(self):
+        pass
 
 """
 Customized Config File Struct

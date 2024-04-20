@@ -3,8 +3,10 @@
 
 
 
-"""
 
+
+
+"""
 Spirit Config File(Folder) Struct
 
 
@@ -18,5 +20,5 @@ Sprite_ID: ...
 animation_package_config: ...
 picture_package_config: ...
 script_package_config: ...
-
+event_package: ...
 """

@@ -1,23 +1,32 @@
-class Package:
+from abc import abstractmethod, ABCMeta
+
+
+class Asset(metaclass=ABCMeta):
     def __init__(self, name: str = 'undefined', *args, **kwargs):
         self._subtype = 'basic_package'
         self._name = name
 
     def __copy__(self, copied = None):
         if copied is None:
-            copied = Package()
+            copied = Asset()
         copied.__name = self._name
         copied.__subtype = self._subtype
         return copied
 
+    @abstractmethod
     def __call__(self, *args, **kwargs):
         pass
 
-    def reload(self):
+    @abstractmethod
+    def load(self):
+        pass
+
+    @abstractmethod
+    def convert(self):
         pass
 
 
-class PackageFolder:
+class AssetFolder:
     def __init__(self, name: str = 'undefined', *args, **kwargs):
         self._packages = dict()
         self._subfolder = dict()
@@ -30,7 +39,7 @@ class PackageFolder:
 
     def __copy__(self, copied = None):
         if copied is None:
-            copied = PackageFolder()
+            copied = AssetFolder()
         for key, value in self._packages.items():
             copied._packages[key] = value.__copy__()
         for key, value in self._subfolder.items():
@@ -39,9 +48,9 @@ class PackageFolder:
 
     def reload(self) -> None:
         for value in self._packages.values():
-            value.reload()
+            value.load()
         for value in self._subfolder.values():
-            value.reload()
+            value.load()
 
     def folder(self):
         return tuple(self._subfolder.values())
@@ -54,9 +63,9 @@ class PackageFolder:
                 item in self._packages.keys()) else self._subfolder.get(item)
 
     def __setitem__(self, key, value):
-        if isinstance(value, Package):
+        if isinstance(value, Asset):
             self._packages[key] = value
-        if isinstance(value, PackageFolder):
+        if isinstance(value, AssetFolder):
             self._subfolder[key] = value
 
     def __delitem__(self, key):

@@ -1,7 +1,8 @@
 import pygame
 from API.ConfigAPI import ConfigObject as ConfigObject
 from DataType.ConfigFile import ini, txt, json
-from Asset.StandardDataType.Graphic.Basic import Package as _Package
+from DataType.Asset.Graphic.Basel import Package as _Package
+from Graphic.Customized.Animation import BaselAnimation as AnimationObject
 
 
 class Package(_Package):
@@ -10,6 +11,7 @@ class Package(_Package):
     _frames: list[pygame.Surface]
     _frames_info: list[dict[str: [str]]]
     _animation_name = str
+    _animation_type: str
     _sub_path = str
     _config_object: [ConfigObject | ini | txt | json]
 
@@ -31,7 +33,7 @@ class Package(_Package):
         """
         pass
 
-    def reload(self):
+    def load(self):
         """
 
         """
@@ -43,7 +45,7 @@ class Package(_Package):
         """
         pass
 
-    def __pygame_Surface__(self):
+    def convert(self) -> AnimationObject:
         """
 
         """

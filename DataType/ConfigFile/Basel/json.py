@@ -1,4 +1,4 @@
-from DataType.ConfigFile.basic import CustomFile as __Basic
+from DataType.ConfigFile.Basel.basel import Basel as __Basic
 import json as _json
 
 

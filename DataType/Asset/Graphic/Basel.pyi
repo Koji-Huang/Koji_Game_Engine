@@ -1,6 +1,6 @@
 import pygame
 
-from Asset.StandardDataType.Package import Package as _Package
+from DataType.Asset.Basel import Asset as _Package
 
 
 class Package(_Package):
@@ -25,13 +25,7 @@ class Package(_Package):
         """
         pass
 
-    def reload(self):
-        """
-
-        """
-        pass
-
-    def __pygame_Surface__(self):
+    def load(self):
         """
 
         """

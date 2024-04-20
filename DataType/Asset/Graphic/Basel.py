@@ -1,6 +1,4 @@
-from pygame.image import load as load_image
-
-from Asset.StandardDataType.Package import Package as _Package
+from DataType.Asset.Basel import Asset as _Package
 
 
 class Package(_Package):
@@ -18,10 +16,4 @@ class Package(_Package):
         return copied
 
     def __call__(self, *args, **kwargs):
-        return self._surface.copy
-
-    def reload(self):
-        pass
-
-    def __pygame_Surface__(self):
         return self._surface.copy

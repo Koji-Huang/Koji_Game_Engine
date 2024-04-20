@@ -1,8 +1,14 @@
-class CustomFile:
-    _file_type: str
+from abc import abstractmethod, ABCMeta
+
+
+class Basel(metaclass=ABCMeta):
+    config_name: str
+    config_type: str
+    sub_path: str
+    file_path: str
+    config_file_format: str
     _read_value: tuple[str]
     _translated_data: dict
-    _file_path: str
 
     def __init__(self, file_path: str):
         """
@@ -40,6 +46,7 @@ class CustomFile:
         """
         pass
 
+    @abstractmethod
     def __translate_read__(self):
         """
         translate data into standard data
@@ -47,6 +54,7 @@ class CustomFile:
         """
         pass
 
+    @abstractmethod
     def __translate_write__(self):
         """
         translate data into standard data

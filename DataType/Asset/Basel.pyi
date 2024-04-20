@@ -1,7 +1,7 @@
 from typing import overload
 
 
-class Package:
+class Asset:
     _name: str
     _subtype: str
     def __init__(self, *args, **kwargs):
@@ -10,7 +10,7 @@ class Package:
         """
         pass
 
-    def __copy__(self, copied: Package = None):
+    def __copy__(self, copied: Asset = None):
         """
 
         """
@@ -22,7 +22,13 @@ class Package:
         """
         pass
 
-    def reload(self):
+    def load(self):
+        """
+
+        """
+        pass
+
+    def convert(self) -> any:
         """
 
         """
@@ -30,9 +36,9 @@ class Package:
 
 
 
-class PackageFolder:
-    _packages: dict[str, [Package]]
-    _subfolder: dict[str, [PackageFolder]]
+class AssetFolder:
+    _packages: dict[str, [Asset]]
+    _subfolder: dict[str, [AssetFolder]]
     _name: str
 
     def __init__(self, name: str = 'undefined', *args, **kwargs):
@@ -48,7 +54,7 @@ class PackageFolder:
         """
         pass
 
-    def __copy__(self, copied: PackageFolder = None) -> PackageFolder:
+    def __copy__(self, copied: AssetFolder = None) -> AssetFolder:
         """
         copy package and send back another
         :return: copy object
@@ -62,21 +68,21 @@ class PackageFolder:
         """
         pass
 
-    def folder(self) -> tuple[PackageFolder]:
+    def folder(self) -> tuple[AssetFolder]:
         """
         return son folder
         """
         pass
 
     @overload
-    def package(self, contain_son: bool = False) -> tuple[Package]:
+    def package(self, contain_son: bool = False) -> tuple[Asset]:
         """
         return tuple of packages on this folder
         """
         pass
 
     @overload
-    def package(self, id: str) -> Package:
+    def package(self, id: str) -> Asset:
         """
         return the package
         it will search in son package
@@ -84,19 +90,19 @@ class PackageFolder:
         pass
 
     @overload
-    def package(self, name: str, contain_son: bool = True) -> tuple[Package]:
+    def package(self, name: str, contain_son: bool = True) -> tuple[Asset]:
         """
         return the search package
         """
         pass
 
-    def __getitem__(self, item: str) -> Package | PackageFolder:
+    def __getitem__(self, item: str) -> Asset | AssetFolder:
         """
 
         """
         pass
 
-    def __setitem__(self, key: str, value: PackageFolder | Package):
+    def __setitem__(self, key: str, value: AssetFolder | Asset):
         """
 
         """

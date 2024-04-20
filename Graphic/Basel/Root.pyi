@@ -6,7 +6,7 @@ class Root:
     father: Root
     event: dict[str:list[Event], ...]
     event_type: set[any]
-    son: LinkedList
+    son: LinkedList[int, [...]] or list[int, [...]]
     id: str
 
     def __init__(self, *args, **kwargs) -> None:...

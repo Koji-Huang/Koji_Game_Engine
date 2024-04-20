@@ -1,4 +1,4 @@
-from DataType.ConfigFile.basic import CustomFile as ConfigObject
+from DataType.ConfigFile import CustomFile as ConfigObject
 
 
 

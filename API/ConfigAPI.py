@@ -1,4 +1,4 @@
-from DataType.ConfigFile import *
+from DataType.ConfigFile.Basel import *
 from API import GlobalAPI
 
 

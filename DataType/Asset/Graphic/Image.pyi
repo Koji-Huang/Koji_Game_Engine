@@ -1,12 +1,8 @@
 import pygame
-
-from Asset.StandardDataType.Graphic.Basic import Package as _Package
+from DataType.Asset.Graphic.Basel import Package as _Package
 
 
 class Package(_Package):
-    _path: str
-    _surface: pygame.Surface
-
     def __init__(self, image_path: str, name: str = 'undefined', *args, **kwargs):
         """
 
@@ -25,13 +21,13 @@ class Package(_Package):
         """
         pass
 
-    def reload(self):
+    def load(self):
         """
 
         """
         pass
 
-    def __pygame_Surface__(self):
+    def convert(self) -> pygame.Surface:
         """
 
         """

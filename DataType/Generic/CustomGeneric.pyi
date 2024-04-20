@@ -5,7 +5,7 @@ _VT = TypeVar('_VT')
 _T = TypeVar('_T')
 
 
-class CustomGeneric(Generic[_KT, _VT]):
+class CustomGeneric(Generic[_VT]):
     extract_from_head: bool = True
 
     def __init__(self):

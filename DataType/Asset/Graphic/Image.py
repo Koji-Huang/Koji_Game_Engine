@@ -1,6 +1,6 @@
 from pygame.image import load as load_image
 
-from Asset.StandardDataType.Graphic.Basic import Package as _Package
+from DataType.Asset.Graphic.Basel import Package as _Package
 
 
 class Package(_Package):
@@ -17,9 +17,9 @@ class Package(_Package):
     def __call__(self, *args, **kwargs):
         return self._surface.copy
 
-    def reload(self):
-        super().reload()
+    def load(self):
+        super().load()
         self._surface = load_image(self._path)
 
-    def __pygame_Surface__(self):
+    def convert(self):
         return self._surface.copy

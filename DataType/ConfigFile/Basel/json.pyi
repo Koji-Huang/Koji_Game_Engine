@@ -1,9 +1,9 @@
-from DataType.ConfigFile.basic import CustomFile as __Basic
+from DataType.ConfigFile.Basel.basel import Basel as __Basic
 
 
 class Json(__Basic):
     _translated_data: dict
-    _file_path: str
+    file_path: str
 
     def read(self):
         """

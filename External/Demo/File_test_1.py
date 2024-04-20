@@ -1,7 +1,7 @@
 
-from DataType.ConfigFile.txt import Txt
-from DataType.ConfigFile.json import Json
-from DataType.ConfigFile.ini import Ini
+from DataType.ConfigFile import Txt
+from DataType.ConfigFile import Json
+from DataType.ConfigFile import Ini
 
 A = Txt(".config")
 
