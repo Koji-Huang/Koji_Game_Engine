@@ -122,7 +122,7 @@ class Image(Label):
         
     def __init__(self, pos, size, image: str | pygame.Surface, alpha: int = 255, layout_mode=0,
                  antialiasing: bool = True, *args, **kwargs):
-		# 构造函数, 注意: image 不仅可以是文件路径, 也可以是pygame.Surface 实例, 这是个调用, 并不会产生新的 Surface 对象
+		# 构造函数, 注意: Image 不仅可以是文件路径, 也可以是pygame.Surface 实例, 这是个调用, 并不会产生新的 Surface 对象
 
     def change_image_object(self, image: str | pygame.Surface):
     	# 改变图像

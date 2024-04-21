@@ -1,0 +1,19 @@
+{
+  "__file__": {
+    "name": "undefined",
+    "sub_path": "undefined",
+    "config_type": "Script"
+  },
+  "Script": {
+    "file_path": "xxx",
+    "size": "int",
+    "1": {
+      "sub_path": "str",
+      "load_code": "str",
+      "config_sub_path": "str"
+    },
+    "...": {
+
+    }
+  }
+}

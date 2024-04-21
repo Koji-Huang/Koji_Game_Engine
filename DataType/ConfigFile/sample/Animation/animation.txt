@@ -1,0 +1,30 @@
+
+config_type = Animation
+name = undefined
+sub_path = Resource\Graphic\Animation\...
+
+frame_size = int
+
+
+1 = str
+1_x = int
+1_y = int
+1_w = int
+1_h = int
+1_a = int
+
+
+2 = str
+2_x = int
+2_y = int
+2_w = int
+2_h = int
+2_a = int
+
+
+帧序号 = 图片文件路径
+帧序号_x = 当前帧的相对 x 坐标
+帧序号_y = 当前帧的相对 y 坐标
+帧序号_w = 当前帧的宽
+帧序号_h = 当前帧的高
+帧序号_a = 当前帧的透明度

@@ -1,0 +1,38 @@
+{
+  "__file__": {
+    "name": "undefined",
+    "sub_path": "undefined",
+    "config_type": "spirit"
+  },
+  "Spirit": {
+    "__request__": {
+      "Spirit": ["sub_path", "..."],
+      "Picture": ["sub_path", "..."],
+      "Animation": ["sub_path", "..."],
+      "Script": ["sub_path", "..."],
+      "Music": ["sub_path", "..."],
+      "Event": ["sub_path", "..."]
+    },
+    "from": {
+      "size": "int",
+      "...": {
+        "Graph": "Animation's or Image's sub_path",
+        "config": "sub_path or None"
+      }
+    },
+    "Event": {
+      "size": "int",
+      "...": {
+        "event": "Event's sub_path",
+        "config": "sub_path or None"
+      }
+    },
+    "Script": {
+      "size": "int",
+      "...": {
+        "script": "Script's sub_path",
+        "config": "sub_path or None"
+      }
+    }
+  }
+}

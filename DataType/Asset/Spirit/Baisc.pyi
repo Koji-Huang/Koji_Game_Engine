@@ -10,7 +10,7 @@
 Spirit Config File(Folder) Struct
 
 
-spirit.config
+spirit.Basel
 
 config_type: Spirit
 name: ...

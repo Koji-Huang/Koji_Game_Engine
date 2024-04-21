@@ -55,7 +55,7 @@ class Inspector(FatherInspector):
 ​	首先创建一个 UI 对象, 再创建 UIEvent 对象对它经行绑定, 下面是一个示例程序
 
 ```python
-# Sample Event_UIEvent_Basic_1
+# sample Event_UIEvent_Basic_1
 import Engine
 from Graphic.UI import Label
 from Event.UIEvent import Basic as Event

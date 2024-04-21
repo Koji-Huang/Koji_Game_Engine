@@ -3,7 +3,7 @@ from DataType.ConfigFile import Txt
 from DataType.ConfigFile import Json
 from DataType.ConfigFile import Ini
 
-A = Txt(".config")
+A = Txt(".Basel")
 
 A.write('Hello', "World")
 

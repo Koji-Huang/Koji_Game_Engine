@@ -44,19 +44,19 @@
 >         pass
 > 
 >     def __setitem__(self, item):
->         # 相当于 self.config.__setitem__
+>         # 相当于 self.Basel.__setitem__
 >         pass
 >     
 >     def __getitem__(self, item):
->         # 相当于 self.config.__getitem__
+>         # 相当于 self.Basel.__getitem__
 >         pass
 >     
 >     def __delitem__(self, item):
->         # 相当于 self.config.__delitem__
+>         # 相当于 self.Basel.__delitem__
 >         pass
 >     
 >     def save_config(self, *args, **kwargs):
->         # 将当前 Config 保存, 调用 config.__save__()
+>         # 将当前 Config 保存, 调用 Basel.__save__()
 >         pass
 >     
 >     def load_config(self, config: Config):

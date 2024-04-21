@@ -1,0 +1,21 @@
+{
+  "__file__": {
+    "name": "undefined",
+    "sub_path": "undefined",
+    "config_type": "undefined"
+  },
+  "son_packages": ["sub_path", "..."],
+  "son_configs": ["sub_path", "..."],
+
+
+
+  "还有一种写包的方式, 只要读取的键值为 __file__, 则被视为一个包进行加载, 这种写法可以将子包写在同一个包内": "(≧∇≦)ﾉ",
+  "xxxx": {
+    "__file__": {
+      "name": "undefined",
+      "sub_path": "undefined",
+      "config_type": "undefined"
+    },
+    "...": "..."
+  }
+}

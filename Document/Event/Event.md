@@ -89,7 +89,7 @@ class Inspector:
 ​	首先, 你需要创造一个 Event 对象, 此时系统会查询对应的 Inspector 与其对接, 你也可以选择自己创建一个 Inspector 对象, Inspector 对象是可以被查询的, 有些 Event 可以不帮定 Inspector 对象(例如 UIEvent 中的), 在系统更新事件系统时, 会遍历所有储存的 Inspector 对象, 并检查是否有触发的对象, 有的话就触发对应的事件.
 
 ```Python
-# Sample Event_Basic_1
+# sample Event_Basic_1
 import Engine
 from Event import BasicEvent as Event
 
@@ -98,7 +98,7 @@ Engine.init()
 
 # 创建事件对象
 A = Event()
-Event.name = "Sample"
+Event.name = "undefined"
 
 
 # 触发的函数

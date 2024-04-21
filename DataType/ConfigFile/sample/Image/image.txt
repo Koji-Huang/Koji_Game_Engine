@@ -1,0 +1,10 @@
+
+config_type = image
+name = undefined
+sub_path = Resource\Graphic\Image\...
+
+image_path = str
+image_w = int
+image_h = int
+image_alpha = bool
+

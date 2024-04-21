@@ -1,0 +1,13 @@
+
+
+config_type = Package
+name = undefined
+sub_path = undefined
+
+package_resource_size = int
+
+1 = xxx.xxx
+2 = xxx.xxx
+3 = xxx.xxx
+...
+子包的序号 = 子包的路径

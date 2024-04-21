@@ -1,0 +1,39 @@
+{
+  "__file__": {
+    "name": "undefined",
+    "sub_path": "Resource\\Graphic\\Animation\\...",
+    "config_type": "Animation"
+  },
+
+  "Animation": {
+    "frame_size": "int"
+  },
+
+  "1": {
+    "x": "int",
+    "y": "int",
+    "w": "str",
+    "h": "str",
+    "a": "str",
+    "path": "str"
+  },
+
+  "2": {
+    "x": "int",
+    "y": "int",
+    "w": "str",
+    "h": "str",
+    "a": "str",
+    "path": "str"
+  },
+
+  "帧的序号": {
+    "x": "当前帧的相对 x 坐标",
+    "y": "当前帧的相对 y 坐标",
+    "w": "当前帧的宽",
+    "h": "当前帧的高",
+    "a": "当前帧的透明度",
+    "path": "图片文件路径"
+  }
+  }
+}

@@ -1,7 +1,7 @@
 from Manager.ConfigManager import *
 
 
-config = load_config_file('config.ini')
+config = load_config_file('Basel.ini')
 register_config(config)
 
 import GlobalConstant

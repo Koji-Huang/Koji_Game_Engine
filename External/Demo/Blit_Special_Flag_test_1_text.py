@@ -4,7 +4,7 @@ import pygame
 
 windows = pygame.display.set_mode((800, 600))
 
-# image = pygame.image.load(r'..\picture_2.jpg').convert_alpha()
+# Image = pygame.Image.load(r'..\picture_2.jpg').convert_alpha()
 image = pygame.Surface((800, 600))
 image.fill((127, 127, 127))
 windows.blit(image, (0, 0))

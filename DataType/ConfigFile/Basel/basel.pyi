@@ -12,7 +12,7 @@ class Basel(metaclass=ABCMeta):
 
     def __init__(self, file_path: str):
         """
-        ConfigFile is a standard class for config.ini file read.
+        ConfigFile is a standard class for Basel.ini file read.
         :param file_path: the path of file
         """
         pass

@@ -1,0 +1,23 @@
+{
+  "__file__": {
+    "name": "undefined",
+    "sub_path": "undefined",
+    "config_type": "Level"
+  },
+  "Level": {
+    "__required__": {
+      "Spirit": ["sub_path", "..."],
+      "Picture": ["sub_path", "..."],
+      "Animation": ["sub_path", "..."],
+      "Script": ["sub_path", "..."],
+      "Music": ["sub_path", "..."],
+      "Event": ["sub_path", "..."]
+    },
+    "start_script": "sub_path",
+    "update_script": "sub_path",
+    "quit_script": "sub_path"
+  },
+  "Save": {
+
+  }
+}

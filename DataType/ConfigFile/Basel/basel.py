@@ -8,10 +8,11 @@ class Basel(metaclass=ABCMeta):
         self.config_name = 'undefined'
         self.config_type = 'Basel'
         self.sub_path = 'undefined'
-        self.config_file_format = self.get_file_type()
+        self.config_file_format = None
         self._read_value = tuple()
         self._translated_data = dict()
         self.file_path = file_path
+        self.config_file_format = self.get_file_type()
         self.read()
         self.__translate_read__()
 
@@ -92,7 +93,7 @@ class Basel(metaclass=ABCMeta):
         return self._translated_data
 
     def __file__(self):
-        return os.path.abspath(self._file_path)
+        return os.path.abspath(self.file_path)
 
     def __path__(self):
         return os.path.dirname(self.__file__())
