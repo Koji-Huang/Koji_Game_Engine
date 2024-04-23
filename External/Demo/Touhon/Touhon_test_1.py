@@ -16,7 +16,7 @@ API.EventAPI.load_default_event()
 
 Barrage = Image((0, 0), (12, 12), r"C:\Users\Administrator\Pictures\Pixel Studio\Untitled 04-18-2024 03-03-55.png")
 Barrage.graph_active = True
-Barrage_num = 20
+Barrage_num = 2000
 
 
 Barrage_collection = list()
@@ -29,7 +29,7 @@ for i in range(Barrage_num):
 
 
 Clock = pygame.time.Clock()
-API.GraphicAPI.set_debug(True)
+# API.GraphicAPI.set_debug(True)
 
 
 while True:

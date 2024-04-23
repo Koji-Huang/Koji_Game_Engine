@@ -3,6 +3,7 @@ from Event.UIEvent.Basic import Basic as Event
 from Graphic import *
 from Graphic.EffectFunction.MarkBorder import TextType, EdgeType
 from Graphic.UI import Label
+from Graphic.Basel import *
 
 
 class GraphicAPI:
@@ -93,16 +94,16 @@ class GraphicDebug:
     def graphic_debug(self):
         ...
 
-    def overwrite_add_graphic_function(self, function):
+    def add_graphic_function(self, function):
         ...
 
     def graphic_update(self):
         ...
 
-    def graphic_debug_component(self, component: GraphicAPI):
+    def graphic_debug_component(self, component: Surface):
         ...
 
-    def graphic_debug_single(self, component: GraphicAPI):
+    def graphic_debug_single(self, component: Surface):
         ...
 
     def overwrite_graphic_core(debug, enable: bool = True):

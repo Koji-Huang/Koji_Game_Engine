@@ -103,9 +103,9 @@ class Root:
             for event in self.event[event_name]:
                 if self.event_check(event, **event_args):
                     self.event_run(event, **event_args)
-        if inspector:
-            spread_event_kwargs.update(inspector.target_event.update_kwargs(component=self, **event_args.copy()))
         if self.event_type_match.get(event_name):
+            if inspector:
+                spread_event_kwargs.update(inspector.target_event.update_kwargs(component=self, **event_args.copy()))
             for son in self.event_type_match[event_name]:
                 son.event_spread(event_name, inspector, **spread_event_kwargs)
         return None
