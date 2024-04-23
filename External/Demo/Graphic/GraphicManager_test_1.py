@@ -5,7 +5,7 @@ from math import sin, cos, log
 from pycallgraph import PyCallGraph
 from pycallgraph.output import GraphvizOutput
 
-sys.path.append(r'..\..\..\Koji_Game_Engine')
+sys.path.append(r'../../..')
 
 from API import GlobalAPI
 from API import GraphicAPI_type
@@ -28,7 +28,7 @@ Color = ((255, 0, 0), (0, 255, 0), (0, 0, 255))
 
 EventManager.graphic_register(GraphicManager.windows)
 
-for i in range(100):
+for i in range(200):
     Label_collection.append(Label((100, 100), (100, 100)))
     Label_collection[-1].set_color(Color[i % 3])
     GraphicManager.component_add(Label_collection[-1])

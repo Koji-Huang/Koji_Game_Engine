@@ -7,12 +7,10 @@ import pygame
 
 from Graphic.UI import Label, Button
 from Graphic.UI.Text import Text
-from Graphic.MainWindows import MainWindows
+from Graphic.Basel.MainWindows import MainWindows
 
 from API import EventAPI_type
 from API.GlobalAPI import register_global_environment
-
-
 register_global_environment()
 
 Main = MainWindows((900, 400))

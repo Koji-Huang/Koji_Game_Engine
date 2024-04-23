@@ -1,13 +1,22 @@
 import pygame
 
-from Graphic import MainWindows
+from Graphic.Basel import MainWindows
 from Graphic.UI import Image, Label
 from Graphic.UI.ExtraComponent import Camera
+from API import GlobalAPI
+from API import GraphicAPI_type
+from API import EventAPI_type
 
+
+GlobalAPI.register_global_environment()
+EventManager = EventAPI_type()
+EventManager.load_default_event()
 Main = MainWindows((800, 600))
+GraphicManager = GraphicAPI_type(Main)
+
 
 image = Image((0, 0), (400, 600),
-              r"C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\TestInfo\__klee_nahida_qiqi_diona_sayu_and_2_more_genshin_impact_drawn_by_neko_sake1__44cf20a2d68da284b66568fdf5a6972d.png")
+              r"C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\External\picture_1.png")
 
 Camera_1 = Camera((500, 200), (200, 300), image)
 
@@ -42,3 +51,5 @@ def scrolling_event(event, *args, **kwargs):
 while True:
     Camera_1.graph_active = True
     Main.update()
+    EventManager.update()
+    pygame.event.get()

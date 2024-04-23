@@ -15,7 +15,7 @@ with PyCallGraph(output=GraphvizOutput()):
 
 
     TXT = Package(
-        "../../Graphic/EffectFunction\\TextureMapping\\Noise\\_texture_\\gradient(quadratic)(1980x1980)\\config.txt")
+        "../../../Graphic/EffectFunction/TextureMapping/Noise/_texture_/gradient(quadratic)(1980x1980)/config.txt")
 
 
     Animation = TXT.convert()

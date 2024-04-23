@@ -2,9 +2,9 @@ __dict__ = ['Root']
 
 from typing import Callable
 from DataType import LinkedList
+
 ID_Index = 0
 ID_Receive = LinkedList()
-
 
 _graphic_id_get: Callable[[], str]
 _graphic_id_recycle: Callable[[str], None]
@@ -15,6 +15,7 @@ class Root:
         self.father = father
         self.son = LinkedList()
         self.event_type = set()
+        self.event_type_match = dict()
         self.event = dict()
         self.id = _graphic_id_get()
         for name, value in kwargs.items():
@@ -37,6 +38,7 @@ class Root:
 
     def tree_remove_son(self, son):
         self.son.remove(son)
+        self.spread_type_update(son, decrease=True, increase=False)
         son.father = None
 
     def tree_find_root(self):
@@ -103,14 +105,16 @@ class Root:
                     self.event_run(event, **event_args)
         if inspector:
             spread_event_kwargs.update(inspector.target_event.update_kwargs(component=self, **event_args.copy()))
-        for son in self.son:
-            son.event_spread(event_name, inspector, **spread_event_kwargs)
+        if self.event_type_match.get(event_name):
+            for son in self.event_type_match[event_name]:
+                son.event_spread(event_name, inspector, **spread_event_kwargs)
         return None
 
     def event_tree_update(self, another_set):
         self.event_type.update(another_set)
         if self.father:
             self.father.event_tree_update(self.event_type)
+            self.father.spread_type_update(self)
 
     def delete(self) -> str:
         for i in self.event.items():
@@ -132,6 +136,21 @@ class Root:
                     son.delete_with_son()
         self.delete()
 
+    def spread_type_update(self, son=None, increase: bool = True, decrease: bool = False):
+        if son:
+            if increase:
+                for event in son.event_type:
+                    if self.event_type_match.get(event) is None:
+                        self.event_type_match[event] = set()
+                    self.event_type_match[event].add(son)
+            if decrease:
+                for event in son.event_type:
+                    if self.event_type_match.get(event):
+                        self.event_type_match[event].remove(son)
+        else:
+            for son in self.son:
+                self.spread_type_update(son, increase, decrease)
+
     def __copy__(self, copied: any = None):
         if copied is None:
             copied = Root()
@@ -140,5 +159,3 @@ class Root:
                 copy_event = event.__copy__()
                 copied.event_add(event_type, copy_event)
         return copied
-
-

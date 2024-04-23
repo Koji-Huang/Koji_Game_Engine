@@ -1,7 +1,7 @@
 import pygame
 from Graphic.UI.Button import Button
 from Graphic.UI.Text import Text
-from Graphic.MainWindows import MainWindows
+from Graphic.Basel.MainWindows import MainWindows
 
 Main = MainWindows((900, 400))
 
@@ -27,4 +27,4 @@ Main.tree_add_son(text)
 
 while True:
     Main.update()
-
+    Main.event_update()

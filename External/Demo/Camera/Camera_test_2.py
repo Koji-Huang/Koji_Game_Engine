@@ -2,15 +2,24 @@ import pygame
 from Graphic.UI import Image, Label
 from Graphic.UI.ExtraComponent import Camera
 from Event.UIEvent.Mouse.Scroll import Scroll
-from Event.UIEvent.Mouse import Basic
-from Manager.GraphicManager import GraphicManager as Manager
+from Event.UIEvent.Basic import Basic
+from Graphic.Basel import MainWindows
+from API import GlobalAPI
+from API import GraphicAPI_type
+from API import EventAPI_type
 
-Root = Manager()
+
+GlobalAPI.register_global_environment()
+EventManager = EventAPI_type()
+EventManager.load_default_event()
+Main = MainWindows((800, 600))
+Root = GraphicAPI_type(Main)
+
 Root.set_debug(True)
 Root.debug.textType.color = (255, 0, 0, 255)
 
 image = Image((0, 0), (400, 600),
-              r"C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\TestInfo\__klee_nahida_qiqi_diona_sayu_and_2_more_genshin_impact_drawn_by_neko_sake1__44cf20a2d68da284b66568fdf5a6972d.png")
+              r"C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\External\picture_1.png")
 
 Camera_1 = Camera((450, 50), (300, 500), image)
 

@@ -4,11 +4,14 @@ import pygame.font
 
 from Graphic.EffectFunction.MarkBorder import EdgeType, TextType, mark_component
 from Graphic.UI import *
-from Graphic import MainWindows
+from Graphic.Basel import MainWindows
+
+from API.GlobalAPI import register_global_environment
+register_global_environment()
 
 Main = MainWindows((1200, 500), pygame.NOFRAME)
 
-image = Image((0, 0), (1200, 600), r"C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\TestInfo\__klee_nahida_qiqi_diona_sayu_and_2_more_genshin_impact_drawn_by_neko_sake1__44cf20a2d68da284b66568fdf5a6972d.png")
+image = Image((0, 0), (1200, 600), r"C:\Users\Administrator\PycharmProjects\Koji_Game_Engine\External\picture_1.png")
 # Image = Label((0, 0), (1200, 300))
 A = Label((100, 100), (120, 50))
 B = Label((200, 100), (120, 50))
@@ -172,6 +175,7 @@ for i in range(1000000):
     F3.y += int(sin(i / 40) * 5)
     Clock.tick_busy_loop(1000)
     Main.update()
+    Main.event_update()
     if not (i % 60):
         text.change_text_text(str(Clock.get_fps()))
     A.x += 1

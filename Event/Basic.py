@@ -42,7 +42,7 @@ class BasicEvent:
         copied.event_name = self.event_name
         copied.track_function = self.track_function
         copied.track_args = self.track_args
-        copied.event_type = self.event_type
+        copied.event_type_name = self.event_type_name
 
         return copied
 

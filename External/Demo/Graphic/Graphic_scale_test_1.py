@@ -1,13 +1,19 @@
 import pygame.font
 
 from Graphic.UI import *
-from Graphic import *
-from Manager.EventManager import EventManager
+from Graphic.Basel import MainWindows
+from API import EventAPI_type
+
+
+from API.GlobalAPI import register_global_environment
+register_global_environment()
+
+
 Main = MainWindows((1024, 600))
 pygame.font.init()
 Button = Button((100, 100), (300, 300))
 
-Manager = EventManager()
+Manager = EventAPI_type()
 Manager.load_default_event()
 Manager.graphic_register(Main)
 

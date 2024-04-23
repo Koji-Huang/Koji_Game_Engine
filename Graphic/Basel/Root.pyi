@@ -4,9 +4,10 @@ from DataType import LinkedList
 
 class Root:
     father: Root
-    event: dict[str:list[Event], ...]
-    event_type: set[any]
-    son: LinkedList[int, [...]] or list[int, [...]]
+    event: dict[str, list[Event]]
+    event_type: set[str]
+    event_type_match: dict[str, [set[Root]]]
+    son: LinkedList[int, [Root]] or list[int, [Root]]
     id: str
 
     def __init__(self, *args, **kwargs) -> None:...
@@ -23,9 +24,9 @@ class Root:
 
     def tree_goto_father(self, general: int) -> Root:...
 
-    def event_add(self, event_type: int, event: Event, **kwargs) -> None:...
+    def event_add(self, event_type: str, event: Event, **kwargs) -> None:...
 
-    def event_remove(self, event_type: int, event: str or Event) -> None:...
+    def event_remove(self, event_type: str, event: str or Event) -> None:...
 
     def event_spread(self, event_name, **event_args):...
 
@@ -40,6 +41,9 @@ class Root:
     def event_value(self) -> list:...
 
     def event_tree_update(self, another_set):...
+
+    def spread_type_update(self, son: Root = None, increase: bool = True, decrease: bool = False):
+        pass
 
     def delete(self)->None:...
 

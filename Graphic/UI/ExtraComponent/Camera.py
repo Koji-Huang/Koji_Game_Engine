@@ -75,5 +75,5 @@ class Camera(Label):
         self.camera_pos = position
         self.graph_draw()
 
-    def event_spread(self, event_name, **event_args):
-        super().event_spread(event_name, **event_args)
+    def event_spread(self, event_name, inspector, **event_args):
+        super().event_spread(event_name, inspector, **event_args)
