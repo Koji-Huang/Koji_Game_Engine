@@ -7,7 +7,6 @@ from abc import ABCMeta, abstractmethod
 
 
 class Animation(Graph, metaclass=ABCMeta):
-
     def __init__(self, pos, size, *args, **kwargs):
         self.animation_frame = LinkedList()
         self.animation_frame_size = 0
@@ -33,11 +32,10 @@ class Animation(Graph, metaclass=ABCMeta):
 
     def next_frame(self, cost_time):
         cost_frame = cost_time * self.animation_frame_rate
-        return (self.animation_last_update_frame + cost_frame) % self.animation_frame_size
+        return int((self.animation_last_update_frame + cost_frame) % self.animation_frame_size)
 
     def animation_add_frame(self, surface):
-        if isinstance(surface, Iterable) or isinstance(surface, Surface):
-            self.animation_frame.append(surface)
+        self.animation_frame.append(surface)
 
     def __copy__(self, copied: any = None):
         if copied is None:

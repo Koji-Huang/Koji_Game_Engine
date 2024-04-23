@@ -124,4 +124,4 @@ class EventAPI:
         self.create_instantiation_inspector('001001002', {}, {'component': main_windows, 'skip_track': True})
         self.create_instantiation_inspector('001001003', {}, {'component': main_windows, 'skip_track': True})
         self.create_instantiation_inspector('001001004', {}, {'component': main_windows, 'skip_track': True})
-
+        pass

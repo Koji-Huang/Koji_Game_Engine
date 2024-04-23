@@ -7,7 +7,7 @@ class Animation(Basel):
 
     def draw_frame(self, frame):
         frame = int(frame)
-        self.graph_primer_surface.blit(self._animation_frame[frame], (0, 0))
+        self.graph_primer_surface.blit(self.animation_frame[frame], (0, 0))
 
     def __copy__(self, copied: any = None):
         super().__copy__(copied)

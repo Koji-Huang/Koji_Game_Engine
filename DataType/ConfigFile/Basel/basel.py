@@ -22,14 +22,21 @@ class Basel(metaclass=ABCMeta):
             self._read_value = tuple(file.readlines())
 
     def get_file_type(self):
-        if self.config_file_format is None:
+        if isinstance(self, str):
             end_str = ''
-            for char in self.file_path[::-1]:
+            for char in self[::-1]:
                 if char == '.': break
                 else: end_str += char
             return end_str[::-1]
         else:
-            return self.config_file_format
+            if self.config_file_format is None:
+                end_str = ''
+                for char in self.file_path[::-1]:
+                    if char == '.': break
+                    else: end_str += char
+                return end_str[::-1]
+            else:
+                return self.config_file_format
 
     def write(self, key, value):
         self._translated_data[key] = value
@@ -97,3 +104,12 @@ class Basel(metaclass=ABCMeta):
 
     def __path__(self):
         return os.path.dirname(self.__file__())
+
+    def convert(self) -> any:
+        return self._translated_data
+
+    def info(self, *args):
+        pass
+
+    def detail_info(self, *args):
+        pass

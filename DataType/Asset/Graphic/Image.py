@@ -1,9 +1,8 @@
 from pygame.image import load as load_image
+from DataType.Asset.Basel import Asset  as AssetObject
 
-from DataType.Asset.Graphic.Basel import Package as _Package
 
-
-class Package(_Package):
+class Package(AssetObject):
     def __init__(self, image_path: str, name: str = 'undefined', *args, **kwargs):
         super().__init__(image_path, name=name, *args, **kwargs)
         self._surface = load_image(self._path)

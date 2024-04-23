@@ -8,12 +8,12 @@
 
 ​	`txt` 文件应该遵守以下几点要求:
 
-> 1. 必须包含有 `config_type`(配置文件的类型), `name` (配置文件的别名), `sub_path` (配置文件的内部储存路径) 这三个键和对应的值
+> 1. 必须包含有 `__config_type`(配置文件的类型), `__name` (配置文件的别名), `__sub_path` (配置文件的内部储存路径) 这三个键和对应的值
 >
 >    ```txt
->    config_type = undefined
->    name = undefined
->    sub_path = undefined
+>    __config_type = undefined
+>    __name = undefined
+>    __sub_path = undefined
 >    ```
 >
 > 2. 指定某个类型的值最好使用 类型_描述 的格式来命名键, 假定一个名为 `Graph` 的类, 它包含有 `image`, `surface` 这两个键
@@ -145,7 +145,7 @@
 >              }
 >    	}
 >    }
->    
+>       
 >    情况2, Son 为 Father 的子包, 同时 Son 也是一个包, Son 指向外部的一个文件, Son 和 Fahter 不构建在同一个文件下
 >    {
 >    	"Father":{
@@ -159,7 +159,7 @@
 >            }
 >    	}
 >    }
->    
+>       
 >    情况3, Son 为 Father 的子包, Son 为一个文件串的列表, Son 和 Fahter 不构建在同一个文件下
 >    {
 >    	"Father":{
@@ -173,7 +173,7 @@
 >            }
 >    	}
 >    }
->    
+>       
 >    ```
 >
 >    

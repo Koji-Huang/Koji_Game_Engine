@@ -2,23 +2,20 @@ from abc import abstractmethod, ABCMeta
 
 
 class Asset(metaclass=ABCMeta):
-    def __init__(self, name: str = 'undefined', *args, **kwargs):
-        self._subtype = 'basic_package'
-        self._name = name
+    def __init__(self, config_path: str, name: str = 'undefined', *args, **kwargs):
+        self.config_path = config_path
+        self.config_type = 'basic_package'
+        self.config_name = name
 
     def __copy__(self, copied = None):
         if copied is None:
             copied = Asset()
-        copied.__name = self._name
-        copied.__subtype = self._subtype
+        copied.__name = self.config_name
+        copied.__subtype = self.config_type
         return copied
 
     @abstractmethod
     def __call__(self, *args, **kwargs):
-        pass
-
-    @abstractmethod
-    def load(self):
         pass
 
     @abstractmethod

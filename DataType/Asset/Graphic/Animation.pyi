@@ -1,19 +1,14 @@
 import pygame
-from API.ConfigAPI import ConfigObject as ConfigObject
-from DataType.ConfigFile import ini, txt, json
-from DataType.Asset.Graphic.Basel import Package as _Package
+from DataType.ConfigFile.Asset import AnimationConfig as AnimationConfigObject
+from DataType.Asset.Basel import Asset as AssetObject
 from Graphic.Customized.Animation import BaselAnimation as AnimationObject
 
 
-class Package(_Package):
-    _path: str
-    _frame_size: int
-    _frames: list[pygame.Surface]
-    _frames_info: list[dict[str: [str]]]
-    _animation_name = str
-    _animation_type: str
-    _sub_path = str
-    _config_object: [ConfigObject | ini | txt | json]
+class Package(AssetObject):
+    configObject: AnimationConfigObject
+    animation_type: str
+    frames_info: list[dict[str: [str]]]
+    frame_size: int
 
     def __init__(self, image_path: str, name: str = 'undefined', *args, **kwargs):
         """
@@ -28,18 +23,6 @@ class Package(_Package):
         pass
 
     def __call__(self, *args, **kwargs) -> pygame.Surface:
-        """
-
-        """
-        pass
-
-    def load(self):
-        """
-
-        """
-        pass
-
-    def load_frame(self, frame):
         """
 
         """

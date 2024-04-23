@@ -3,6 +3,7 @@ import re
 
 
 class Ini(__Basic):
+
     def __translate_read__(self):
         sub_title = 'undefined'
         self._translated_data.clear()

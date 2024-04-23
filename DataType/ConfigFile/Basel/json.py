@@ -4,11 +4,11 @@ import json as _json
 
 class Json(__Basic):
     def read(self):
-        with open(self._file_path, 'r+') as file:
+        with open(self.file_path, 'r+') as file:
             self._translated_data = _json.load(file)
 
-    def save(self):
-        with open(self._file_path, 'w+') as file:
+    def save(self, file_path = None):
+        with open(self.file_path if file_path is None else file_path, 'w+') as file:
             _json.dump(self._translated_data, file)
 
     def __translate_read__(self):

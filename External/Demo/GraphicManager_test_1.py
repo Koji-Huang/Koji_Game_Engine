@@ -2,6 +2,9 @@ import sys
 import pygame.time
 from math import sin, cos, log
 
+from pycallgraph import PyCallGraph
+from pycallgraph.output import GraphvizOutput
+
 sys.path.append(r'..\..\..\Koji_Game_Engine')
 
 from API import GlobalAPI
@@ -25,7 +28,7 @@ Color = ((255, 0, 0), (0, 255, 0), (0, 0, 255))
 
 EventManager.graphic_register(GraphicManager.windows)
 
-for i in range(50):
+for i in range(100):
     Label_collection.append(Label((100, 100), (100, 100)))
     Label_collection[-1].set_color(Color[i % 3])
     GraphicManager.component_add(Label_collection[-1])
@@ -41,19 +44,20 @@ def insert_function(self, *args, **kwargs):
     print(self.id)
 
 
-GraphicManager.set_debug(True)
-GraphicManager.debug.textType.color = (0, 255, 230)
-GraphicManager.debug.one_layer = True
-GraphicManager.debug.info_alpha = 200
+# GraphicManager.set_debug(True)
+# GraphicManager.debug.textType.color = (0, 255, 230)
+# GraphicManager.debug.one_layer = True
+# GraphicManager.debug.info_alpha = 200
 
 times = pygame.time.Clock()
 
-for i in range(1, 1000000):
-    times.tick_busy_loop()
-    if i % 100 == 0:
-        print(times.get_fps())
-    for index, value in enumerate(Label_collection):
-        Label_collection[index].set_pos((predict_x(1.0 * index / Label_collection.__len__() * 45 + 10, i),
-                                         predict_y(1.0 * index / Label_collection.__len__() * 45 + 10, i)))
-    GraphicManager.graphic_update()
-    EventManager.update()
+with PyCallGraph(output=GraphvizOutput()):
+    for i in range(1, 200):
+        times.tick_busy_loop()
+        if i % 100 == 0:
+            print(times.get_fps())
+        for index, value in enumerate(Label_collection):
+            Label_collection[index].set_pos((predict_x(1.0 * index / Label_collection.__len__() * 45 + 10, i),
+                                             predict_y(1.0 * index / Label_collection.__len__() * 45 + 10, i)))
+        GraphicManager.graphic_update()
+        EventManager.update()

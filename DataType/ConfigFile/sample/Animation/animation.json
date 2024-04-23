@@ -6,7 +6,11 @@
   },
 
   "Animation": {
-    "frame_size": "int"
+    "frame_size": "int",
+    "x": "int",
+    "y": "int",
+    "w": "int",
+    "h": "int"
   },
 
   "1": {
@@ -34,6 +38,5 @@
     "h": "当前帧的高",
     "a": "当前帧的透明度",
     "path": "图片文件路径"
-  }
   }
 }

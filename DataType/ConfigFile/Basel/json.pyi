@@ -18,7 +18,7 @@ class Json(__Basic):
         """
         pass
 
-    def save(self):
+    def save(self, file_path = None):
         """
         save changes
         :return: None

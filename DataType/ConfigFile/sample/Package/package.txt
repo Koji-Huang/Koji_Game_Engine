@@ -1,8 +1,8 @@
 
 
-config_type = Package
-name = undefined
-sub_path = undefined
+___config_type = Package
+___name = undefined
+___sub_path = undefined
 
 package_resource_size = int
 

@@ -1,7 +1,7 @@
 
-config_type = image
-name = undefined
-sub_path = Resource\Graphic\Image\...
+__config_type = image
+__name = undefined
+__sub_path = Resource\Graphic\Image\...
 
 image_path = str
 image_w = int

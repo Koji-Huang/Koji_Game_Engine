@@ -1,4 +1,5 @@
 from abc import abstractmethod, ABCMeta
+from typing import overload
 
 
 class Basel(metaclass=ABCMeta):
@@ -24,7 +25,13 @@ class Basel(metaclass=ABCMeta):
         """
         pass
 
-    def get_file_type(self):
+    @overload
+    def get_file_type(self) -> str:
+        ...
+
+    @staticmethod
+    @overload
+    def get_file_type(file_path) -> str:
         ...
 
     def write(self, key: str, value: str):
@@ -103,3 +110,20 @@ class Basel(metaclass=ABCMeta):
 
         """
         pass
+
+    def convert(self) -> any:
+        pass
+
+    def info(self, *args):
+        if args is None:
+            return {
+                'len': self._translated_data.__len__(),
+                'keys': self._translated_data.keys()
+            }
+
+    def detail_info(self, *args):
+        if args is None:
+            return {
+                'len': self._translated_data.__len__(),
+                'Key - Value': self._translated_data
+            }

@@ -22,16 +22,13 @@ class Animation(Graph, metaclass=ABCMeta):
     def graph_draw(self, *args, **kwargs):...
 
     def draw_frame(self, frame):
-        """
-
-        """
         pass
 
     def next_frame(self, cost_time: float):
         pass
 
     @overload
-    def animation_add_frame(self, surface: Surface):
+    def animation_add_frame(self, surface: Surface | Iterable[Surface]):
         pass
 
     @overload

@@ -1,9 +1,13 @@
 
-config_type = Animation
-name = undefined
-sub_path = Resource\Graphic\Animation\...
+__config_type = Animation
+__name = undefined
+__sub_path = Resource\Graphic\Animation\...
 
 frame_size = int
+x = int
+y = int
+w = int
+h = int
 
 
 1 = str

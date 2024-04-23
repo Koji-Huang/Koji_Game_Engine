@@ -1,9 +1,15 @@
 from typing import overload
+from DataType.ConfigFile.Asset.BaselAssetConfig import AssetConfig
 
 
 class Asset:
-    _name: str
-    _subtype: str
+    config_file_format: str
+    config_name: str
+    config_type: str
+    sub_path: str
+    file_path: str
+    configObject: AssetConfig
+
     def __init__(self, *args, **kwargs):
         """
 
@@ -17,12 +23,6 @@ class Asset:
         pass
 
     def __call__(self, *args, **kwargs) -> any:
-        """
-
-        """
-        pass
-
-    def load(self):
         """
 
         """

@@ -1,23 +1,27 @@
+from pycallgraph import PyCallGraph
+from pycallgraph.output import GraphvizOutput
+
 from Thread import *
 from API import ThreadAPI_type
 from API import GlobalAPI
 
+with PyCallGraph(output=GraphvizOutput()):
 
-GlobalAPI.register_global_environment()
-
-
-Manager = ThreadAPI_type()
+    GlobalAPI.register_global_environment()
 
 
-def hello_world(*args, **kwargs):
-    print("Hello World")
+    Manager = ThreadAPI_type()
 
 
-add = FunctionThread(hello_world)
+    def hello_world(*args, **kwargs):
+        print("Hello World")
 
 
-Manager.add_thread(add, pool='Main')
+    add = FunctionThread(hello_world)
 
 
-Manager.TRMachine.start()
+    Manager.add_thread(add, pool='Main')
+
+
+    Manager.TRMachine.start()
 

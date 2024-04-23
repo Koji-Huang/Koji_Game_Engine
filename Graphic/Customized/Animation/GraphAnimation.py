@@ -6,8 +6,8 @@ class Animation(Basel):
         super().__init__(pos, size, *args, **kwargs)
 
     def draw_frame(self, frame):
-        self._animation_frame[frame].graph_update()
-        self.graph_primer_surface.blit(self._animation_frame[frame].graph_surface, (0, 0))
+        self.animation_frame[frame].graph_update()
+        self.graph_primer_surface.blit(self.animation_frame[frame].graph_surface, (0, 0))
 
     def __copy__(self, copied: any = None):
         super().__copy__(copied)

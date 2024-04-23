@@ -3,7 +3,7 @@ from Graphic.Customized.Animation.Basel import Animation as Basel
 from DataType.Generic.LinkedList import LinkedList
 
 class Animation(Basel):
-    _animation_frame: LinkedList[int, [pygame.Surface]]
+    animation_frame: LinkedList[int, [pygame.Surface]]
     def __init__(self, pos, size, *args, **kwargs):
         pass
 
