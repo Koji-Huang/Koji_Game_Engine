@@ -28,13 +28,15 @@ Color = ((255, 0, 0), (0, 255, 0), (0, 0, 255))
 
 EventManager.graphic_register(GraphicManager.windows)
 
-for i in range(200):
+for i in range(20):
     Label_collection.append(Label((100, 100), (100, 100)))
     Label_collection[-1].set_color(Color[i % 3])
     GraphicManager.component_add(Label_collection[-1])
+    Label_collection[-1].graph_primer_surface.set_alpha(125)
     Event = Click(Label_collection[-1], 0)
     Event.track_function = say_hello
     Label_collection[-1].event_add('001001001', Event)
+
 
 predict_x = lambda k, i: int(int(sin(log(k, 3) * i / 300) * log(k, 5) * 20) + log(k, 8) * 50 * log(k))
 predict_y = lambda k, i: int(int(cos(log(k, 4) * i / 300) * log(k, 6) * 20) + log(k, 7) * 50 * log(k))
@@ -44,20 +46,19 @@ def insert_function(self, *args, **kwargs):
     print(self.id)
 
 
-# GraphicManager.set_debug(True)
-# GraphicManager.debug.textType.color = (0, 255, 230)
-# GraphicManager.debug.one_layer = True
-# GraphicManager.debug.info_alpha = 200
-
+GraphicManager.set_debug(True)
+GraphicManager.debug.textType.color = (0, 255, 230)
+GraphicManager.debug.one_layer = True
+GraphicManager.debug.info_alpha = 200
+# GraphicManager.debug.edgeType.dashed = True
 times = pygame.time.Clock()
 
-with PyCallGraph(output=GraphvizOutput()):
-    for i in range(1, 200):
-        times.tick_busy_loop()
-        if i % 100 == 0:
-            print(times.get_fps())
-        for index, value in enumerate(Label_collection):
-            Label_collection[index].set_pos((predict_x(1.0 * index / Label_collection.__len__() * 45 + 10, i),
-                                             predict_y(1.0 * index / Label_collection.__len__() * 45 + 10, i)))
-        GraphicManager.graphic_update()
-        EventManager.update()
+for i in range(1, 40000):
+    times.tick_busy_loop()
+    if i % 100 == 0:
+        print(times.get_fps())
+    for index, value in enumerate(Label_collection):
+        Label_collection[index].set_pos((predict_x(1.0 * index / Label_collection.__len__() * 45 + 10, i),
+                                         predict_y(1.0 * index / Label_collection.__len__() * 45 + 10, i)))
+    GraphicManager.graphic_update()
+    EventManager.update()

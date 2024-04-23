@@ -4,6 +4,7 @@ from ..Basic import Basic as BasicUIEvent, Inspector as FatherInspector
 class Basic(BasicUIEvent):
 
     pos: tuple[int, int]
+    tangent_length: int
 
     def __init__(self, component, skip_track: bool = False, *args, **kwargs):
         """

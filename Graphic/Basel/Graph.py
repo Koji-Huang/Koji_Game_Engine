@@ -24,14 +24,16 @@ class Graph(Surface):
             self.graph_kwargs.update(kwargs)
             self.graph_active = True
 
-        graph_son = [son for son in self.son if isinstance(son, Graph)]
+        # graph_son = [son for son in self.son if isinstance(son, Graph)]
+        active_son = list()
 
-        for i in graph_son:
-            i.graph_update()
+        for i in self.son:
+            if isinstance(i, Graph):
+                i.graph_update()
+                if i.graph_active:
+                    active_son.append(i)
 
-        active_son = [son for son in graph_son if son.graph_active]
-
-        self.graph_active = bool(active_son) if not self.graph_active else True
+        self.graph_active = True in active_son if not self.graph_active else True
 
         if self.graph_active:
             self.graph_draw()
@@ -39,11 +41,12 @@ class Graph(Surface):
             # F.Surface.cleaning_surface(self.graph_surface)
             # self.graph_surface.blit(self.graph_primer_surface, (0, 0))
 
-            self.graph_surface = self.graph_primer_surface.copy().convert_alpha()
+            self.graph_surface = self.graph_primer_surface.copy()
 
-            for son in graph_son:
-                self.graph_surface.blit(son.graph_surface, son.pos())
-                son.graph_active = False
+            for son in self.son:
+                if isinstance(son, Graph):
+                    self.graph_surface.blit(son.graph_surface, son.pos())
+                    son.graph_active = False
 
     def graph_draw(self, *args,
                    **kwargs):

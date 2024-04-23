@@ -1,12 +1,18 @@
 import pygame
+from DataType.Generic.LinkedList import LinkedList
 
 
 class EdgeType:
-    def __init__(self, width: float = 1, solid: bool = 1, dashed: bool = False, color: tuple = (0, 255, 230, 255)):
+    def __init__(self, width: float = 1, dashed: bool = False, color: tuple = (0, 255, 230, 255)):
         self.width = width
-        self.solid = solid
         self.dashed = dashed
         self.color = color
+        self.edges = LinkedList()
+        self.save = dict()
+        for vertical in [True, False]:
+            self.save[vertical] = dict()
+            for dashed in [True, False]:
+                self.save[vertical][dashed] = dict()
 
     def draw_border(self, surface: pygame.Surface, area: tuple[int, ...], alpha=255):
         # top
@@ -22,38 +28,34 @@ class EdgeType:
         self.draw_single_edge(surface, (area[0], area[1] + area[3]),
                               (area[0] + area[2] + self.width, area[1] + area[3]), alpha)
 
-    def draw_single_edge(self, surface: pygame.Surface, start: tuple, end: tuple, alpha=255):
+    def draw_single_edge(self, surface: pygame.Surface, start: tuple, end: tuple, alpha=255, vertical_direction: bool = True):
 
-        inverse_color = list(255 - i for i in self.color)
-        inverse_color[3] = 255
-
-        if start[0] - end[0] == 0:
-            tmp_surface = pygame.Surface((abs(start[0] - end[0]) + self.width, abs(start[1] - end[1]))).convert_alpha()
-
-        else:
-            tmp_surface = pygame.Surface((abs(start[0] - end[0]), abs(start[1] - end[1]) + self.width)).convert_alpha()
-
-        tmp_surface.fill(self.color)
+        cost = (end[0] - start[0], end[1] - start[1])
+        length = abs(cost[0]) + abs(cost[1])
+        if self.save[vertical_direction][self.dashed].get(length):
+            surface.blit(self.save[vertical_direction][self.dashed].get(length), start)
+            return
+        tmp_surface = pygame.Surface((cost[0] + 1, cost[1] + 1))
 
         if self.dashed:
             segments_number = int((abs(start[0] - end[0]) + abs(start[1] - end[1])) / self.width / 2)
-            for percent in [i / segments_number for i in range(segments_number)]:
+            piece = 1 / segments_number
+            for percent in [i / segments_number for i in range(int(segments_number))][::3]:
                 x = int(start[0] * (1 - percent) + end[0] * percent)
                 y = int(start[1] * (1 - percent) + end[1] * percent)
-                pygame.draw.rect(tmp_surface, inverse_color, (x, y, self.width, self.width))
+                xx = int(start[0] * (1 - percent - piece) + end[0] * (percent + piece))
+                yy = int(start[1] * (1 - percent - piece) + end[1] * (percent + piece))
+                pygame.draw.line(surface, self.color, (x, y), (xx, yy), int(self.width))
+                pygame.draw.line(tmp_surface, self.color, (x - start[0], y - start[1]), (xx - start[0], yy - start[1]), int(self.width))
+        else:
+            pygame.draw.line(surface, self.color, start, end, int(self.width))
+            pygame.draw.line(tmp_surface, self.color, (0, 0), cost, int(self.width))
 
-        if not self.solid:
-            pygame.draw.line(tmp_surface, inverse_color, start, end,
-                             int(self.width * 0.6) if self.width * 0.6 < 4 else 4)
+        self.save[vertical_direction][self.dashed][length] = tmp_surface
 
-        if not self.dashed or not self.solid:
-            tmp_surface.set_colorkey(inverse_color)
+    def add_edge(self, start, end, direction: bool = True):
+        self.edges.append((start, end, direction))
 
-        draw_pos = (min(start[0], end[0]), min(start[1], end[1]))
-
-        tmp_surface.set_alpha(alpha)
-
-        surface.blit(tmp_surface, draw_pos, special_flags=0)
 
 
 class TextType:
@@ -64,11 +66,16 @@ class TextType:
         self.color = color
         if font is None:
             self.font = pygame.font.SysFont('arial', size)
+        self.saved = dict()
         self.change_text(self.text)
 
     def change_text(self, text: str) -> None:
         self.text = text
-        self.surface = self.font.render(self.text, False, self.color).convert_alpha()
+        if text in self.saved.keys():
+            self.surface = self.saved[text]
+        else:
+            self.surface = self.font.render(self.text, False, self.color).convert_alpha()
+            self.saved[text] = self.surface
 
 
 def mark_component(component, edge_type=None, text_type=None,

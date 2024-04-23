@@ -37,14 +37,14 @@ class GraphicDebug:
                                    (0, 0, component.w - self.edgeType.width, component.h - self.edgeType.width),
                                    alpha=self.info_alpha)
 
-                self.overwrite_add_graphic_function(draw_board)
+                self.add_graphic_function(draw_board)
             else:
                 self.windows.graph_update()
 
     def graphic_debug_component(self, component):
         self.graphic_debug_single(component)
         for son in component.son:
-            if isinstance(son, Label):
+            if isinstance(son, Surface):
                 self.graphic_debug_component(son)
 
     def graphic_debug_single(self, component):
@@ -59,12 +59,13 @@ class GraphicDebug:
                 debug.__graphic_update_function(self, *args, **kwargs)
                 for insert in debug.__graphic_insert_function:
                     insert(self, *args, **kwargs)
+
             GraphicAPI.graph_update = overwrite_graph_update
         else:
             GraphicAPI.graph_update = debug.__graphic_update_function
             debug.__graphic_update_function = None
 
-    def overwrite_add_graphic_function(self, function):
+    def add_graphic_function(self, function):
         self.__graphic_insert_function.append(function)
 
     def event_debug(self):

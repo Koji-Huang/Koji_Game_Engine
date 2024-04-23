@@ -9,9 +9,10 @@ class Basic(BasicUIEvent):
         super().__init__(component, skip_track, *args, **kwargs)
         self.event_type_name = "UI Mouse Event"
         self.pos = (0, 0)
+        self.tangent_length = component.w ** 2 + component.h ** 2
 
-    def track_check(self, pos, *args, **kwargs):
-        return False if super().track_check(*args, **kwargs) is False\
+    def track_check(self, pos, distance, *args, **kwargs):
+        return False if super().track_check(*args, **kwargs) or distance > self.tangent_length is False\
             else point_in_rect(pos, self.graphic_object.rect())
 
     def update_info(self, pos=None, **kwargs):
@@ -31,6 +32,7 @@ class Basic(BasicUIEvent):
             click_pos: tuple[int, int] = kwargs['pos']
             cost_size = component.pos()
         kwargs['pos'] = (click_pos[0] - cost_size[0], click_pos[1] - cost_size[1])
+        kwargs['distance'] = cost_size[0] ** 2 + cost_size[1] ** 2
         return kwargs
 
     def __copy__(self, copied: any = None):
