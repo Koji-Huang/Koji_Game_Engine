@@ -95,15 +95,14 @@ class Surface(Root):
         self.h = h
         return None
 
-
     def __copy__(self, copied: any = None):
         if copied is None:
             copied = Surface(self.pos(), self.size())
-        else:
-            copied: Surface
-            copied.set_rect(self.rect())
+        copied.set_rect(self.rect())
         super().__copy__(copied)
         return copied
+
+    copy = __copy__
 
 
 __dict__ = ['MainWindows']

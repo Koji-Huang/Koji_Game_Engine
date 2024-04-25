@@ -1,0 +1,15 @@
+{
+  "__file__": {
+    "name": "Global Config",
+    "path": "System",
+    "type": "Basel"
+  },
+  "Screen": {
+    "size": [1280, 720],
+    "title": "Resource Explorer - Koji"
+  },
+  "Environment": {
+    "start_up config": ["config/start_up.json"]
+  }
+
+}

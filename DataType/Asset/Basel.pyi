@@ -3,14 +3,12 @@ from DataType.ConfigFile.Asset.BaselAssetConfig import AssetConfig
 
 
 class Asset:
-    config_file_format: str
-    config_name: str
-    config_type: str
-    sub_path: str
-    file_path: str
+    name: str
+    type: str
+    path: str
     configObject: AssetConfig
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, assetConfigObject: AssetConfig, *args, **kwargs):
         """
 
         """
@@ -34,12 +32,19 @@ class Asset:
         """
         pass
 
+    def load(self, *args, **kwargs):
+        """
+
+        """
+        pass
+
 
 
 class AssetFolder:
-    _packages: dict[str, [Asset]]
-    _subfolder: dict[str, [AssetFolder]]
     _name: str
+    _assets: dict[str, [Asset]]
+    _folder: dict[str, [AssetFolder]]
+    _converted: dict[str, [any]]
 
     def __init__(self, name: str = 'undefined', *args, **kwargs):
         """

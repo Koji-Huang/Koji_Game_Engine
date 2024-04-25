@@ -6,7 +6,6 @@ from DataType.Generic.LinkedList import LinkedList
 
 
 class Animation(Basel):
-    _animation_frame: LinkedList[Basel]
 
     def __init__(self, pos, size, *args, **kwargs):
         pass
@@ -18,4 +17,7 @@ class Animation(Basel):
         pass
 
     def animation_add_frame(self, surface: Graph | Iterable[Graph]):
+        pass
+
+    def set_size(self, size):
         pass

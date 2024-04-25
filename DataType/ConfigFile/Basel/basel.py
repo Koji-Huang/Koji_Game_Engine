@@ -1,5 +1,6 @@
 import os.path
 from abc import abstractmethod, ABCMeta
+from Function.parameter import mapping_new_copy
 
 
 class Basel(metaclass=ABCMeta):
@@ -15,6 +16,11 @@ class Basel(metaclass=ABCMeta):
         self.config_file_format = self.get_file_type()
         self.read()
         self.__translate_read__()
+        self.sub_path = self._translated_data['__file__']['path']
+        self.config_type = self._translated_data['__file__']['type']
+        self.config_name = self._translated_data['__file__']['name']
+        # self._translated_data['configObject'] = self
+        pass
 
     def read(self):
         # deal with quit.
@@ -106,7 +112,10 @@ class Basel(metaclass=ABCMeta):
         return os.path.dirname(self.__file__())
 
     def convert(self) -> any:
-        return self._translated_data
+        asset = mapping_new_copy(self._translated_data)
+        asset.pop("__file__")
+        asset['ConfigObject'] = self
+        return self.config_name, asset, self.sub_path
 
     def info(self, *args):
         pass

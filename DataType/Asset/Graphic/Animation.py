@@ -6,9 +6,8 @@ from Graphic.Basel.Graph import Graph
 
 
 class Package(AssetObject):
-    def __init__(self, config_path: str, name: str = 'undefined', *args, **kwargs):
-        super().__init__(config_path, name=name, *args, **kwargs)
-        self.configObject = AnimationConfigObject(config_path)
+    def __init__(self, config: AnimationConfigObject, *args, **kwargs):
+        super().__init__(config, *args, **kwargs)
         self.animation_type = 'GraphAnimation'
 
     def __call__(self, *args, **kwargs):

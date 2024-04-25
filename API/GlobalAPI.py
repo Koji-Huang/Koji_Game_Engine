@@ -3,6 +3,7 @@ from functools import partial
 
 
 Registry: dict = dict()
+Asset: dict = dict()
 Global_ID_Register: any
 
 

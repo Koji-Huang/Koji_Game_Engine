@@ -1,4 +1,5 @@
 from DataType.ConfigFile.Basel import *
+from Function.parameter import mapping_merge, mapping_new_copy
 from API import GlobalAPI
 
 
@@ -9,7 +10,6 @@ def load_config_file(config_path: str, config_type: str = None):
                 obj = json(config_path)
             case '.ini':
                 obj = ini(config_path)
-
             case _:
                 obj = txt(config_path)
     else:
@@ -21,8 +21,10 @@ def register_config(config_object, keys: set[str] = None) -> None:
     if not keys:
         keys = set(config_object.keys())
     keys -= set(GlobalAPI.Registry.keys())
-    for key in keys:
-        GlobalAPI.Registry[key] = config_object[key]
+    if GlobalAPI.Registry.get(config_object.sub_path) is None:
+        GlobalAPI.Registry[config_object.sub_path] = mapping_new_copy(config_object._translated_data)
+    else:
+        mapping_merge(GlobalAPI.Registry[config_object.sub_path], config_object._translated_data)
 
 
 def overload_config(config_object, keys: tuple[str] = None) -> None:
@@ -51,3 +53,11 @@ def save_config(config_object) -> None:
 
 def save_as_config(config_object, output_path: str) -> None:
     config_object.save(output_path)
+
+
+def convert_to_asset(config_object):
+    name, asset, sub_path = config_object.convert()
+    if GlobalAPI.Asset.get(sub_path) is None:
+        GlobalAPI.Asset[sub_path] = dict()
+
+    GlobalAPI.Asset[sub_path][name] = mapping_new_copy(asset)

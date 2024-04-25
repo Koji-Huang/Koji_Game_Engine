@@ -6,19 +6,19 @@ with PyCallGraph(output=GraphvizOutput()):
     from API import GlobalAPI
     from API import GraphicAPI_type
     from API import EventAPI_type
-    from DataType.Asset.Graphic.Animation import Package
+    from DataType.Asset.Graphic.Animation import Package as AnimationAsset
+    from DataType.ConfigFile.Asset.Animation import Animation as AnimationConfig
 
     GlobalAPI.register_global_environment()
     GraphicManager = GraphicAPI_type(size=(1600, 900))
     EventManager = EventAPI_type()
     EventManager.load_default_event()
 
-
-    TXT = Package(
+    animation_config = AnimationConfig(
         "../../../Graphic/EffectFunction/TextureMapping/Noise/_texture_/gradient(quadratic)(1980x1980)/config.txt")
+    animation_asset = AnimationAsset(animation_config)
 
-
-    Animation = TXT.convert()
+    Animation = animation_asset.convert()
     Animation.animation_frame_size = 20
     Animation.animation_frame_rate = 100
 
@@ -46,6 +46,8 @@ with PyCallGraph(output=GraphvizOutput()):
 
     GraphicManager.component_add(Animation)
 
+    Animation.set_size((800, 600))
+
     clock = pygame.time.Clock()
     for i in range(200):
         clock.tick_busy_loop(1000)
@@ -53,5 +55,4 @@ with PyCallGraph(output=GraphvizOutput()):
         Animation.graph_active = True
         GraphicManager.graphic_update()
         pygame.event.get()
-
 pass

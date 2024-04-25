@@ -57,6 +57,30 @@
 
 ---
 
+## Asset 与 Config 与 Save
+
+​	系统读取 Config 文件时会检查是否为 Asset 对象, 如果为 Asset 对象则会转换为 Asset 对象而不是记录在 Config 中, 而 Asset 对象储存有它所属的 Config 文件中, 同时 Asset 对象应该有可以存档的机制, Config 也应该有可以存档的机制, 但是 Asset 是依托于 Config 实现的存档
+
+​	采用和 Windows 相同的结构来管理资产
+
+```python
+AssetFolder:
+	assets: dict[Asset]  # 这层所有的资产对象
+	folder: dict[AssetFolder]  # 子目录
+	converted: dict[any]  # 转化过的对象
+
+    convert(name) -> any:...  # 转化一个资产对象保存并传出
+    convert_new(name) -> any:...  # 转化一个资产对象直接传出
+    get(name) -> any:...  # 获得转化的对象, 若未转换则立即转化
+    get_asset(name) -> Asset:... # 获得资产对象
+    get_converted(name) -> any:... # 获得已转化的对象, 若未转化传出 None
+    disconverted(name) -> None:...  # 将一个已转换对象删去
+```
+
+​	每一次尝试获取 `get(name)` 资产的对象时, 都会优先从已转化对象中取得
+
+---
+
 ## Module 模块
 
 - ### 	[Global Constant 全局变量](./GlobalConstant.md)

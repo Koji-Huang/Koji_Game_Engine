@@ -11,7 +11,7 @@ class Animation(AssetConfig):
         bind = self.bind_config_file
         path = dirname(abspath(file_path)) + '\\'
         match self.config_file_format:
-            case 'json', 'ini':
+            case 'json' | 'ini':
                 self.x = int(bind['Animation']['x'])
                 self.y = int(bind['Animation']['y'])
                 self.w = int(bind['Animation']['w'])

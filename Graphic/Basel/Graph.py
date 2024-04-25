@@ -55,21 +55,17 @@ class Graph(Surface):
     def set_size(self, size):
         super().set_size(size)
         if isinstance(self, Graph):
-            if self.graph_primer_surface:
-                self.graph_primer_surface = pygame.transform.scale(self.graph_primer_surface, size)
-            if self.graph_surface:
-                self.graph_surface = pygame.transform.scale(self.graph_surface, size)
+            self.graph_primer_surface = pygame.transform.smoothscale(self.graph_primer_surface, size)
+            self.graph_surface = pygame.transform.smoothscale(self.graph_surface, size)
             self.graph_active = True
 
     def __copy__(self, copied: any = None):
         if copied is None:
             copied = Graph(self.pos(), self.size())
-        else:
-            copied: Graph
-            copied.graph_active = self.graph_active
-            copied.graph_surface = self.graph_surface.copy()
-            copied.graph_primer_surface = self.graph_primer_surface.copy()
-            copied.graph_kwargs = self.graph_kwargs.copy()
+        copied.graph_active = self.graph_active
+        copied.graph_surface = self.graph_surface.copy()
+        copied.graph_primer_surface = self.graph_primer_surface.copy()
+        copied.graph_kwargs = self.graph_kwargs.copy()
         super().__copy__(copied)
         return copied
 

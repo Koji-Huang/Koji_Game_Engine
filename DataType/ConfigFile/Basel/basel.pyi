@@ -1,5 +1,6 @@
 from abc import abstractmethod, ABCMeta
 from typing import overload
+from DataType.Asset.Basel import Asset, AssetFolder
 
 
 class Basel(metaclass=ABCMeta):
@@ -81,7 +82,7 @@ class Basel(metaclass=ABCMeta):
         :param: tuple of values
         """
 
-    def __setitem__(self, key: str, value: str):
+    def __setitem__(self, key: str, value: any):
         pass
 
     def __getitem__(self, item: str) -> any:
@@ -111,7 +112,7 @@ class Basel(metaclass=ABCMeta):
         """
         pass
 
-    def convert(self) -> any:
+    def convert(self) -> (str, Asset | AssetFolder, str):
         pass
 
     def info(self, *args):

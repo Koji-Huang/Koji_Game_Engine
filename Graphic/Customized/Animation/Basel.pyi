@@ -7,7 +7,7 @@ from pygame import Surface
 
 class Animation(Graph, metaclass=ABCMeta):
     # loaded_surface
-    animation_frame: LinkedList[int, [any or None]]
+    animation_frame: LinkedList[Graph]
     # the number of frame
     animation_frame_size: float
     # how many frames a tick play
@@ -16,6 +16,8 @@ class Animation(Graph, metaclass=ABCMeta):
     animation_last_update_frame: float
     # last_update_time
     animation_last_update_time: float
+    #  Unfixed frame
+    primer_frame: LinkedList[Graph]
 
     def __init__(self, pos, size, *args, **kwargs):...
 
@@ -34,4 +36,3 @@ class Animation(Graph, metaclass=ABCMeta):
     @overload
     def animation_add_surface(self, surfaces: Iterable[Surface]):
         pass
-

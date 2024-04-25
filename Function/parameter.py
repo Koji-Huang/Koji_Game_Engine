@@ -1,4 +1,4 @@
-from typing import TypeVar, Any
+from typing import TypeVar, Any, Mapping
 
 _KT = TypeVar('_KT')
 _VT = TypeVar('_VT')
@@ -50,3 +50,22 @@ def mix_series(series_A: tuple[_T, ...], series_B: tuple[_T, ...]):
         for i in range(series_B.__len__(), series_A.__len__()):
             ret.append(series_A[i])
     return tuple(ret)
+
+
+def mapping_merge(target: Mapping, merge_into: Mapping):
+    for key, item in merge_into.items():
+        # Double of them are mapping
+        if isinstance(item, Mapping) and isinstance(target.get(key), Mapping):
+            mapping_merge(target[key], item)
+        else:
+            target[key] = item
+
+
+def mapping_new_copy(mapping: Mapping) -> dict:
+    ret = dict()
+    for key, item in mapping.items():
+        if isinstance(item, Mapping):
+            ret[key] = mapping_new_copy(item)
+        else:
+            ret[key] = item
+    return ret

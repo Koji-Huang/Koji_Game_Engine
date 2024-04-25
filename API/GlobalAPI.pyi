@@ -5,6 +5,7 @@ from API.Graphic import GraphicAPI as __GraphicAPI
 from API.Thread import ThreadAPI as __ThreadAPI
 
 Registry: dict
+Asset: dict
 Global_ID_Register: ID
 
 class _IdPackage:

@@ -8,12 +8,12 @@
 
 ​	`txt` 文件应该遵守以下几点要求:
 
-> 1. 必须包含有 `__config_type`(配置文件的类型), `__name` (配置文件的别名), `__sub_path` (配置文件的内部储存路径) 这三个键和对应的值
+> 1. 必须包含有 `__config_type`(配置文件的类型), `__config_name` (配置文件的别名), `__config_path` (配置文件的内部储存路径) 这三个键和对应的值
 >
 >    ```txt
 >    __config_type = undefined
->    __name = undefined
->    __sub_path = undefined
+>    __config_name = undefined
+>    __config_path = undefined
 >    ```
 >
 > 2. 指定某个类型的值最好使用 类型_描述 的格式来命名键, 假定一个名为 `Graph` 的类, 它包含有 `image`, `surface` 这两个键
@@ -58,13 +58,13 @@
 
 ​	`ini` 文件应该遵守以下几点要求:
 
-> 1. 必须包含有一个名为 `__file__` 的节, 其中必须包含`config_type`(配置文件的类型), `name` (配置文件的别名), `sub_path` (配置文件的内部储存路径) 这三个键和对应的值
+> 1. 必须包含有一个名为 `__file__` 的节, 其中必须包含`type`(配置文件的类型), `name` (配置文件的别名), `path` (配置文件的内部储存路径) 这三个键和对应的值
 >
 >    ```ini
 >    [__file__]
->    config_type = undefined
+>    type = undefined
 >    name = undefined
->    sub_path = undefined
+>    path = undefined
 >    ```
 >
 > 2. 指定某个类型的值最好将类型作为节的名称,  描述作为键 的格式来命名, 假定一个名为 `Graph` 的类, 它包含有 `image`, `surface` 这两个键
@@ -97,14 +97,14 @@
 
 ​	`json` 文件应该遵守以下几点要求:
 
-> 1. 必须存在一个 `__file__` 的对象, 其中必须包含`config_type`(配置文件的类型), `name` (配置文件的别名), `sub_path` (配置文件的内部储存路径) 这三个键和对应的值
+> 1. 必须存在一个 `__file__` 的对象, 其中必须包含`type`(配置文件的类型), `name` (配置文件的别名), `path` (配置文件的内部储存路径) 这三个键和对应的值
 >
 >    ```json
 >    {  
 >        "__file__": {
 >        "name": "undefined",
->        "sub_path": "undefined",
->        "config_type": "undefined"
+>        "path": "undefined",
+>        "type": "undefined"
 >      }
 >    }
 >    ```
@@ -133,47 +133,48 @@
 >    	"Father":{
 >            "__file__": {
 >                "name": "undefined",
->                "sub_path": "undefined",
->                "config_type": "undefined"
+>                "path": "undefined",
+>                "type": "undefined"
 >             },
 >    		"Son":{
 >                "__file__": {
 >                    "name": "undefined",
->                    "sub_path": "undefined",
->                    "config_type": "undefined"
+>                    "path": "undefined",
+>                    "type": "undefined"
 >                    }
 >              }
 >    	}
 >    }
->       
+>          
 >    情况2, Son 为 Father 的子包, 同时 Son 也是一个包, Son 指向外部的一个文件, Son 和 Fahter 不构建在同一个文件下
 >    {
 >    	"Father":{
 >            "__file__": {
 >                "name": "undefined",
->                "sub_path": "undefined",
->                "config_type": "undefined"
+>                "path": "undefined",
+>                "type": "undefined"
 >             },
 >    		"Son":{
 >                "__file__": "out file path"
 >            }
 >    	}
 >    }
->       
+>          
 >    情况3, Son 为 Father 的子包, Son 为一个文件串的列表, Son 和 Fahter 不构建在同一个文件下
 >    {
 >    	"Father":{
 >            "__file__": {
 >                "name": "undefined",
->                "sub_path": "undefined",
->                "config_type": "undefined"
+>                "path": "undefined",
+>                "type": "undefined"
 >             },
 >    		"Son":{
 >                "__file__": ["file path", "file path", "..."]
 >            }
 >    	}
 >    }
->       
+>          
 >    ```
 >
->    
+
+## 

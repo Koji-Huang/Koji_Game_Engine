@@ -10,7 +10,7 @@ class Package(AssetObject):
     frames_info: list[dict[str: [str]]]
     frame_size: int
 
-    def __init__(self, image_path: str, name: str = 'undefined', *args, **kwargs):
+    def __init__(self, config: AnimationConfigObject, *args, **kwargs):
         """
 
         """

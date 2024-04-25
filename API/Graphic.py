@@ -83,7 +83,7 @@ class GraphicAPI:
         if mainWindowsObject:
             self.windows = mainWindowsObject
         else:
-            self.windows = MainWindows(size)
+            self.windows = MainWindows(size, pygame.HWSURFACE | pygame.DOUBLEBUF)
 
     def general_info(self):
         ...

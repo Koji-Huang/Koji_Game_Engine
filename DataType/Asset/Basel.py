@@ -1,17 +1,19 @@
 from abc import abstractmethod, ABCMeta
+from Function.parameter import mapping_new_copy, mapping_merge
 
 
 class Asset(metaclass=ABCMeta):
-    def __init__(self, config_path: str, name: str = 'undefined', *args, **kwargs):
-        self.config_path = config_path
-        self.config_type = 'basic_package'
-        self.config_name = name
+    def __init__(self, config, *args, **kwargs):
+        self.configObject = config
+        self.load()
 
     def __copy__(self, copied = None):
         if copied is None:
-            copied = Asset()
-        copied.__name = self.config_name
-        copied.__subtype = self.config_type
+            copied = Asset(self.configObject)
+        copied.configObject = self.configObject
+        copied.name = self.name
+        copied.path = self.path
+        copied.type = self.type
         return copied
 
     @abstractmethod
@@ -22,52 +24,61 @@ class Asset(metaclass=ABCMeta):
     def convert(self):
         pass
 
+    def load(self, *args, **kwargs):
+        self.name = self.configObject['__asset__']['name']
+        self.path = self.configObject['__asset__']['path']
+        self.type = self.configObject['__asset__']['type']
+        pass
+
 
 class AssetFolder:
     def __init__(self, name: str = 'undefined', *args, **kwargs):
-        self._packages = dict()
-        self._subfolder = dict()
         self._name = name
+        self._assets = dict()
+        self._folder = dict()
+        self._converted = dict()
 
     def __call__(self, *args, **kwargs) -> any:
-        mix = self._packages.copy()
-        mix.update(self._subfolder)
+        mix = mapping_new_copy(self._assets)
+        mix.update(self._folder)
         return mix
 
     def __copy__(self, copied = None):
         if copied is None:
             copied = AssetFolder()
-        for key, value in self._packages.items():
-            copied._packages[key] = value.__copy__()
-        for key, value in self._subfolder.items():
-            copied._subfolder[key] = value.__copy__()
+        for key, value in self._assets.items():
+            copied._assets[key] = value.__copy__()
+        for key, value in self._folder.items():
+            copied._folder[key] = value.__copy__()
+        for key, value in self._converted.items():
+            copied._folder[key] = value
         return copied
 
     def reload(self) -> None:
-        for value in self._packages.values():
+        for value in self._assets.values():
             value.load()
-        for value in self._subfolder.values():
-            value.load()
+        for value in self._folder.values():
+            value.reload()
 
     def folder(self):
-        return tuple(self._subfolder.values())
+        return tuple(self._folder.values())
 
     def package(self, *args, **kwargs):
-        return tuple(self._packages.values())
+        return tuple(self._assets.values())
 
     def __getitem__(self, item):
-        return self._packages.get(item) if (
-                item in self._packages.keys()) else self._subfolder.get(item)
+        return self._assets.get(item) if (
+                item in self._assets.keys()) else self._folder.get(item)
 
     def __setitem__(self, key, value):
         if isinstance(value, Asset):
-            self._packages[key] = value
+            self._assets[key] = value
         if isinstance(value, AssetFolder):
-            self._subfolder[key] = value
+            self._folder[key] = value
 
     def __delitem__(self, key):
-        return self._packages.__delitem__(key) if (
-                key in self._packages.keys()) else self._subfolder.__delitem__(key)
+        return self._assets.__delitem__(key) if (
+                key in self._assets.keys()) else self._folder.__delitem__(key)
 
     def __iter__(self):
-        return iter(tuple(self._packages.values()) + tuple(self._subfolder.values()))
+        return iter(tuple(self._assets.values()) + tuple(self._folder.values()))

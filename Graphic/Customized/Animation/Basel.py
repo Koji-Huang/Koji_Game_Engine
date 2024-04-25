@@ -1,13 +1,12 @@
 from Graphic.Basel.Graph import Graph
-from typing import Iterable
 from time import time
 from DataType.Generic.LinkedList import LinkedList
-from pygame import Surface
 from abc import ABCMeta, abstractmethod
 
 
 class Animation(Graph, metaclass=ABCMeta):
     def __init__(self, pos, size, *args, **kwargs):
+        self.primer_frame = LinkedList()
         self.animation_frame = LinkedList()
         self.animation_frame_size = 0
         self.animation_frame_rate = 30
