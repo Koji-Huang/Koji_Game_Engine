@@ -1,5 +1,6 @@
 from DataType.ConfigFile.Basel import *
-from Function.parameter import mapping_merge, mapping_new_copy
+from DataType.ConfigFile.Basel.basel import Basel as baselConfigObject
+from Function.parameter import mapping_merge, mapping_new_copy, filepath_set, filepath_get
 from API import GlobalAPI
 
 
@@ -14,17 +15,37 @@ def load_config_file(config_path: str, config_type: str = None):
                 obj = txt(config_path)
     else:
         obj = txt(config_path)
+    deep_search_config(obj)
     return obj
+
+
+def deep_search_config(config_object: baselConfigObject, data: dict = None, path=""):
+    if data is None:
+        data = config_object._translated_data
+    for keys, val in data.items():
+        if keys == "__file__" and path:
+            if isinstance(val, str):
+                config_object.son_config += (load_config_file(val), )
+            if isinstance(val, list):
+                for i in val:
+                    config_object.son_config += (load_config_file(i), )
+            if isinstance(val, dict):
+                deep_search_config(runtime(config_object, path))
+        elif isinstance(val, dict):
+            deep_search_config(config_object, val, path + "\\" + keys)
 
 
 def register_config(config_object, keys: set[str] = None) -> None:
     if not keys:
         keys = set(config_object.keys())
     keys -= set(GlobalAPI.Registry.keys())
+    data = mapping_new_copy(config_object._translated_data)
     if GlobalAPI.Registry.get(config_object.sub_path) is None:
-        GlobalAPI.Registry[config_object.sub_path] = mapping_new_copy(config_object._translated_data)
+        filepath_set(GlobalAPI.Registry, config_object.sub_path, mapping_new_copy(data))
     else:
-        mapping_merge(GlobalAPI.Registry[config_object.sub_path], config_object._translated_data)
+        mapping_merge(filepath_get(GlobalAPI.Registry[config_object.sub_path]), data)
+    for son in config_object.son_config:
+        register_config(son)
 
 
 def overload_config(config_object, keys: tuple[str] = None) -> None:

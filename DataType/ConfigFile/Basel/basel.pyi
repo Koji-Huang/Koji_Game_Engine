@@ -11,6 +11,7 @@ class Basel(metaclass=ABCMeta):
     config_file_format: str
     _read_value: tuple[str]
     _translated_data: dict
+    son_config: tuple[Basel]
 
     def __init__(self, file_path: str):
         """

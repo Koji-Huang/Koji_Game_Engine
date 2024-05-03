@@ -1,4 +1,6 @@
 from typing import TypeVar, Any, Mapping
+import re
+
 
 _KT = TypeVar('_KT')
 _VT = TypeVar('_VT')
@@ -69,3 +71,44 @@ def mapping_new_copy(mapping: Mapping) -> dict:
         else:
             ret[key] = item
     return ret
+
+
+def filepath_set(obj: dict, path: str, val: any):
+    if "\\" in path:
+        gets = re.findall("(\w+)", path)
+        target = obj
+        for key in gets:
+            if key != gets[-1]:
+                target[key] = dict()
+                target = target[key]
+            else:
+                target[key] = val
+        return
+    else:
+        obj[path] = val
+
+
+def filepath_get(obj: dict, path: str):
+    if "\\" in path:
+        gets = re.findall("(\w+)", path)
+        target = obj
+        for key in gets:
+            target = target[key]
+        return target
+    else:
+        return obj[path]
+
+
+def filepath_del(obj: dict, path):
+    if "\\" in path:
+        gets = re.findall("(\w+)", path)
+        target = obj
+        for key in gets:
+            if key != gets[-1]:
+                target[key] = dict()
+            else:
+                if key in target:
+                    target.__delitem__(key)
+        return
+    else:
+        obj.__delitem__(path)

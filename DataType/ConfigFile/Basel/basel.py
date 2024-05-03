@@ -1,6 +1,7 @@
 import os.path
+import re
 from abc import abstractmethod, ABCMeta
-from Function.parameter import mapping_new_copy
+from Function.parameter import mapping_new_copy, filepath_get, filepath_del, filepath_set
 
 
 class Basel(metaclass=ABCMeta):
@@ -13,6 +14,7 @@ class Basel(metaclass=ABCMeta):
         self._read_value = tuple()
         self._translated_data = dict()
         self.file_path = file_path
+        self.son_config = tuple()
         self.config_file_format = self.get_file_type()
         self.read()
         self.__translate_read__()
@@ -31,15 +33,19 @@ class Basel(metaclass=ABCMeta):
         if isinstance(self, str):
             end_str = ''
             for char in self[::-1]:
-                if char == '.': break
-                else: end_str += char
+                if char == '.':
+                    break
+                else:
+                    end_str += char
             return end_str[::-1]
         else:
             if self.config_file_format is None:
                 end_str = ''
                 for char in self.file_path[::-1]:
-                    if char == '.': break
-                    else: end_str += char
+                    if char == '.':
+                        break
+                    else:
+                        end_str += char
                 return end_str[::-1]
             else:
                 return self.config_file_format
@@ -83,15 +89,13 @@ class Basel(metaclass=ABCMeta):
         return self._translated_data.values()
 
     def __setitem__(self, key, value):
-        self._translated_data[key] = value
+        filepath_set(self._translated_data, key, value)
 
     def __getitem__(self, item):
-        if item not in self.keys():
-            self._translated_data[item] = dict()
-        return self._translated_data[item]
+        return filepath_get(self._translated_data, item)
 
     def __delitem__(self, key):
-        self._translated_data.pop(key)
+        filepath_del(self._translated_data, key)
 
     def items(self):
         return self.keys(), self.values()
