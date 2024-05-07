@@ -1,5 +1,5 @@
 from typing import Callable
-from Event.Basic import BasicEvent as Event, Inspector
+from Event.BasicEvent import BasicEvent as Event, Inspector
 from DataType.Generic.LinkedList import LinkedList
 
 

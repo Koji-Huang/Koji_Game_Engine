@@ -1,5 +1,5 @@
 import pygame
-from Graphic.Customized.Animation.Basel import Animation as Basel
+from Graphic.Customized.Animation.AbstractAnimation import Animation as Basel
 from DataType.Generic.LinkedList import LinkedList
 
 class Animation(Basel):

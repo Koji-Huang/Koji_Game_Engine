@@ -1,11 +1,11 @@
 import pygame.font
 
 from Graphic.UI import *
-from Graphic.Basel import MainWindows
+from Graphic.Basic import MainWindows
 from API import EventAPI_type
 
 
-from API.GlobalAPI import register_global_environment
+from API.Global import register_global_environment
 register_global_environment()
 
 

@@ -1,9 +1,9 @@
 from typing import Callable
-from Event.UIEvent.Basic import Basic as Event
+from Event.UIEvent.UIEvent import Basic as Event
 from Graphic import *
 from Graphic.EffectFunction.MarkBorder import TextType, EdgeType
 from Graphic.UI import Label
-from Graphic.Basel import *
+from Graphic.Basic import *
 
 
 class GraphicAPI:

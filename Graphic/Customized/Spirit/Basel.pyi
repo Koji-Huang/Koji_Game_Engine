@@ -1,5 +1,5 @@
 from Graphic.Customized.Animation import SurfaceAnimation
-from Graphic.Basel import Graph
+from Graphic.Basic import Graph
 
 
 class Spirit(Graph):

@@ -1,10 +1,10 @@
 import pygame
 from Graphic.UI import Image, Label
 from Graphic.UI.ExtraComponent import Camera
-from Event.UIEvent.Mouse.Scroll import Scroll
-from Event.UIEvent.Basic import Basic
-from Graphic.Basel import MainWindows
-from API import GlobalAPI
+from Event.UIEvent.Mouse.MouseScrollEvent import Scroll
+from Event.UIEvent.UIEvent import Basic
+from Graphic.Basic import MainWindows
+from API import Global
 from API import GraphicAPI_type
 from API import EventAPI_type
 

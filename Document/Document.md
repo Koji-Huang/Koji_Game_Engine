@@ -108,7 +108,7 @@ AssetFolder:
 ​		每一次使用引擎时都需要 `GlobalAPI` 对 `ID` 对象进行初始化
 
 ```python
-from API import GlobalAPI
+from API import Global
 
 GlobalAPI.register_global_environment_id()
 ```
@@ -116,7 +116,7 @@ GlobalAPI.register_global_environment_id()
 ​		如果需要导入外部 `Config` 文件对引擎进行参数调整, 则需要使用到 `ConfigManager` 的 `load_config_file()` 来载入数据并调用 `GlobalConstant` 的 `register_global_environment()` 函数
 
 ```Python
-from API import ConfigAPI
+from API import Config
 
 config = ConfigAPI.load_config_file('../config.ini')
 ConfigAPI.register_config(config)

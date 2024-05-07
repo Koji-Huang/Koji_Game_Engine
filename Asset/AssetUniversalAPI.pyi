@@ -1,4 +1,4 @@
-from DataType.Asset.Basel import Asset as AssetObject, AssetFolder
+from DataType.Asset.AbstractAsset import Asset as AssetObject, AssetFolder
 
 
 def generate_object(asset:AssetObject) -> any:

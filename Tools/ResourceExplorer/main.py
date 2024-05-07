@@ -2,7 +2,7 @@ import os
 
 import pygame.display
 
-import API.GlobalAPI
+import API.Global
 
 os.path.join("../../../Koji_Game_Engine")
 

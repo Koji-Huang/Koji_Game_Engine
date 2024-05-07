@@ -4,9 +4,9 @@ import pygame.font
 
 from Graphic.EffectFunction.MarkBorder import EdgeType, TextType, mark_component
 from Graphic.UI import *
-from Graphic.Basel import MainWindows
+from Graphic.Basic import MainWindows
 
-from API.GlobalAPI import register_global_environment
+from API.Global import register_global_environment
 register_global_environment()
 
 Main = MainWindows((1200, 500), pygame.NOFRAME)

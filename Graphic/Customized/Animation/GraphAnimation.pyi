@@ -1,7 +1,7 @@
 from typing import Iterable
 from pygame import Surface
-from Graphic.Customized.Animation.Basel import Animation as Basel
-from Graphic.Basel.Graph import Graph
+from Graphic.Customized.Animation.AbstractAnimation import Animation as Basel
+from Graphic.Basic.Graph import Graph
 from DataType.Generic.LinkedList import LinkedList
 
 

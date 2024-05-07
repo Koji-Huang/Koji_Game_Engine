@@ -1,2 +1,2 @@
-from .Animation import Package as AnimationAsset
-from .Image import Package as ImageAsset
+from .AnimationAsset import Package as AnimationAsset
+from .ImageAsset import Package as ImageAsset

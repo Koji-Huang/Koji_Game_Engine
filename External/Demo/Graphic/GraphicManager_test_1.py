@@ -7,10 +7,10 @@ from pycallgraph.output import GraphvizOutput
 
 sys.path.append(r'../../..')
 
-from API import GlobalAPI
+from API import Global
 from API import GraphicAPI_type
 from API import EventAPI_type
-from Event.UIEvent.Mouse.Click import Click
+from Event.UIEvent.Mouse.MouseClickEvent import Click
 from Graphic.UI import *
 
 GlobalAPI.register_global_environment()

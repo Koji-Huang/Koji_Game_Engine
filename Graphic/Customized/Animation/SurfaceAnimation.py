@@ -1,4 +1,4 @@
-from Graphic.Customized.Animation.Basel import Animation as Basel
+from Graphic.Customized.Animation.AbstractAnimation import Animation as Basel
 
 
 class Animation(Basel):

@@ -1,4 +1,4 @@
-from Graphic.Basel.Graph import Graph
+from Graphic.Basic.Graph import Graph
 
 
 class Label(Graph):

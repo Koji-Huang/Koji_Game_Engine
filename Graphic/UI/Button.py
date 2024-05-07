@@ -1,5 +1,5 @@
 from Graphic.UI.Label import Label
-from Event.UIEvent.Mouse.Click import Click
+from Event.UIEvent.Mouse.MouseClickEvent import Click
 from Event.UIEvent.Mouse import TypeID
 
 

@@ -1,10 +1,10 @@
 import pygame.font
 import math
 from Graphic.UI import *
-from Graphic.Basel import MainWindows
+from Graphic.Basic import MainWindows
 from Graphic.EffectFunction.MarkBorder import mark_component, EdgeType, TextType
 
-from API import GlobalAPI
+from API import Global
 GlobalAPI.register_global_environment()
 
 Main = MainWindows((1200, 500), pygame.NOFRAME)

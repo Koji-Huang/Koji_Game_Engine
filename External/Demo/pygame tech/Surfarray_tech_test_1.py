@@ -1,7 +1,7 @@
 import Graphic.EffectFunction.TextureMapping.Noise.perlin as perlin
 import pygame.event
 import pygame.time
-from API import GlobalAPI, GraphicAPI_type, ThreadAPI_type, EventAPI_type
+from API import Global, GraphicAPI_type, ThreadAPI_type, EventAPI_type
 from Graphic.UI.Label import Label
 import API
 

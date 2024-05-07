@@ -1,0 +1,102 @@
+# Folder Struct
+
+```
+Koji_Game_Engine
+|--- API
+	 |--- Asset.py
+	 |--- Config.py *****
+	 |--- Event.py
+	 |--- Global.py *****
+	 |--- Graphic.py
+	 |--- Thread.py
+|--- Asset
+	 |--- AssetReader.py
+	 |--- AssetWritter.py
+	 |--- AssetUniversalAPI.py
+|--- DataType *****
+	 |--- Asset
+	 	 |--- Graphic
+	 	 	 |--- AnimationAsset
+	 	 	 |--- ImageAsset
+	 	 |--- Level
+	 	 	 |--- LevelAsset
+	 	 |--- Music
+	 	 	 |--- MusicAsset
+	 	 |--- Script
+	 	 	 |--- ScriptAsset
+	 	 |--- Spirit
+	 	 	 |--- SpiritAsset
+	 	 |--- BasicAsset.py
+	 |--- Config
+	 	 |--- Asset
+	 	 	 |--- BaselAssetConfig.py
+	 	 	 |--- AnimationAssetConfig.py
+	 	 	 |--- ImageAssetConfig.py
+	 	 	 |--- LevelAssetConfig.py
+	 	 	 |--- PackageAssetConfig.py
+	 	 	 |--- ScriptAssetConfig.py
+	 	 	 |--- SpiritAssetConfig.py
+	 	 |--- Basel
+	 	 	 |--- BaselConfig.py
+	 	 	 |--- IniConfig.py
+	 	 	 |--- JsonConfig.py
+	 	 	 |--- TxtConfig.py
+	 	 	 |--- RuntimeConfig.py
+	 |--- Generic
+	 	 |--- LinkedList.py
+|--- Event
+	 |--- BaiscEvent.py
+	 |--- UIEvent
+	 	 |--- UIEvent.py
+	 	 |--- Mouse
+	 	 	 |--- MouseDragEvent.py
+	 	 	 |--- MousePressEvent.py
+	 	 	 |--- MouseBasicEvent.py
+	 	 	 |--- MouseClickEvent.py
+	 	 	 |--- MouseScrollEvent.py
+	 	 |--- Keyboard
+	 	 	 |--- ...
+	 	 |--- Screen
+	 	 	 |--- ...
+|--- Function
+	|--- coordinate.py
+	|--- parameter.py
+	|--- graphic.py
+|--- Graphic
+	|--- Basel
+		 |--- Root.py
+		 |--- Surface.py
+		 |--- Graph.py
+		 |--- MainWindows.py
+	|--- Customized
+		 |--- Animation
+		 	 |--- BasicAnimation.py
+		 	 |--- GraphAnimation
+		 	 |--- SurfaceAnimation
+		 |--- Effect
+		 	 |--- ...
+		 |--- Spirit
+		 	 |--- ...
+	|--- EffectFunction
+		 |--- frame.py
+		 |--- Markboard.py
+	|--- UI
+		 |--- Label.py
+		 |--- Image.py
+		 |--- Text.py
+		 |--- Button.py
+		 |--- ExtreComponent
+		 	 |--- BesselCurve.py
+		 	 |--- Camera.py
+|--- Thread
+	 |--- Thread.py
+	 |--- ThreadPool.py
+	 |--- ThreaedRunningMachine.py
+	 |--- SystemThread
+	 	 |--- SystemEventThread.py
+	 	 |--- SystemFileThread.py
+	 	 |--- SystemGraphicThread.py
+	 	 |--- SystemInitThread.py
+	 	 |--- SystemSoundThread.py
+```
+

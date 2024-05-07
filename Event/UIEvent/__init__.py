@@ -1,7 +1,8 @@
 import Event.UIEvent.Keyboard
 import Event.UIEvent.Mouse
 import Event.UIEvent.Screen
-import Event.UIEvent.Basic
+import Event.UIEvent.UIEvent
+import Event.BasicEvent as BasicEvent
 
 Name: dict[str: str] = {
     "Basic": "Basic UI Event",
@@ -11,14 +12,14 @@ Name: dict[str: str] = {
 }
 
 Inspector: dict[str: any] = {
-    "Basic": Basic.Inspector,
+    "Basic": BasicEvent.Inspector,
     "Keyboard": Keyboard.Inspector,
     "Mouse": Mouse.Inspector,
     "Screen": Screen.Inspector
 }
 
 Event: dict[str: any] = {
-    "Basic": Basic.Basic,
+    "Basic": BasicEvent.BasicEvent,
     "Keyboard": Keyboard.Event,
     "Mouse": Mouse.Event,
     "Screen": Screen.Event,

@@ -1,5 +1,5 @@
-from Graphic.Basel import Graph
-import Graphic.Customized.Animation.Basel as Animation
+from Graphic.Basic import Graph
+import Graphic.Customized.Animation.AbstractAnimation as Animation
 
 
 class Spirit(Graph):

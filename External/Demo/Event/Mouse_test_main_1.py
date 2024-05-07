@@ -1,7 +1,7 @@
 import pygame
 from Graphic.UI.Button import Button
 from Graphic.UI.Text import Text
-from Graphic.Basel.MainWindows import MainWindows
+from Graphic.Basic.MainWindows import MainWindows
 
 Main = MainWindows((900, 400))
 

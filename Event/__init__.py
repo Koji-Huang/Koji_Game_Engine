@@ -1,4 +1,4 @@
-import Event.Basic
+import Event.BasicEvent
 import Event.UIEvent
 
 Name: dict[str: str] = {
@@ -7,12 +7,12 @@ Name: dict[str: str] = {
 }
 
 Inspector: dict[str: any] = {
-    "Basic": Basic.Inspector,
+    "Basic": BasicEvent.Inspector,
     "UIEvent": UIEvent.Inspector
 }
 
 Event: dict[str: any] = {
-    "Basic": Basic.BasicEvent,
+    "Basic": BasicEvent.BasicEvent,
     "UIEvent": UIEvent.Event
 }
 

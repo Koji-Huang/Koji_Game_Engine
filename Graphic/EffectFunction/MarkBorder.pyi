@@ -1,5 +1,5 @@
 import pygame
-from Graphic.Basel import Graph
+from Graphic.Basic import Graph
 
 
 class EdgeType:

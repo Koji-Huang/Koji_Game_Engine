@@ -3,7 +3,7 @@ from pycallgraph.output import GraphvizOutput
 
 from Thread import *
 from API import ThreadAPI_type
-from API import GlobalAPI
+from API import Global
 
 with PyCallGraph(output=GraphvizOutput()):
 

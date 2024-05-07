@@ -1,4 +1,4 @@
-from Event.UIEvent.Mouse import Basic, Click, Drag, Press, Scroll
+from Event.UIEvent.Mouse import MouseBasicEvent, MouseClickEvent, MouseDragEvent, MousePressEvent, MouseScrollEvent
 
 
 Name: dict[str: str] = {
@@ -10,19 +10,19 @@ Name: dict[str: str] = {
 }
 
 Inspector: dict[str: any] = {
-    "Basic": Basic.Inspector,
-    "Click": Click.Inspector,
-    "Drag": Drag.Inspector,
-    "Press": Press.Inspector,
-    "Scroll": Scroll.Inspector
+    "Basic": MouseBasicEvent.Inspector,
+    "Click": MouseClickEvent.Inspector,
+    "Drag": MouseDragEvent.Inspector,
+    "Press": MousePressEvent.Inspector,
+    "Scroll": MouseScrollEvent.Inspector
 }
 
 Event: dict[str: any] = {
-    "Basic": Basic.Basic,
-    "Click": Click.Click,
-    "Drag": Drag.Drag,
-    "Press": Press.Press,
-    "Scroll": Scroll.Scroll
+    "Basic": MouseBasicEvent.Basic,
+    "Click": MouseClickEvent.Click,
+    "Drag": MouseDragEvent.Drag,
+    "Press": MousePressEvent.Press,
+    "Scroll": MouseScrollEvent.Scroll
 }
 
 

@@ -1,9 +1,9 @@
 import pygame
 
-from Graphic.Basel import MainWindows
+from Graphic.Basic import MainWindows
 from Graphic.UI import Image, Label
 from Graphic.UI.ExtraComponent import Camera
-from API import GlobalAPI
+from API import Global
 from API import GraphicAPI_type
 from API import EventAPI_type
 

@@ -1,5 +1,5 @@
 import pygame.display
-from Graphic.Basel import *
+from Graphic.Basic import *
 from Graphic.EffectFunction.MarkBorder import TextType, EdgeType, mark_component
 from Graphic.UI import Label
 
