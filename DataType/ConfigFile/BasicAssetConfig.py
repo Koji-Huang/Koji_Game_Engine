@@ -1,6 +1,6 @@
 import pygame
-from ..Basel import *
-from ..Basel.AbstractConfig import Basel
+from DataType.ConfigFile.Basel import *
+from DataType.ConfigFile.Basel.AbstractConfig import Basel
 from abc import abstractmethod
 
 

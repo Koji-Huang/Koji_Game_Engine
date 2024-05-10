@@ -1,7 +1,7 @@
 import pygame
-from ..Basel import ini, txt
+from DataType.ConfigFile.Basel import ini, txt
 from .BasicAssetConfig import AssetConfig
-from ..Basel.AbstractConfig import Basel
+from DataType.ConfigFile.Basel.AbstractConfig import Basel
 
 
 class Image(AssetConfig):

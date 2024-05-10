@@ -1,6 +1,6 @@
 from os.path import abspath, dirname
 from .BasicAssetConfig import AssetConfig
-from ..Basel.AbstractConfig import Basel
+from DataType.ConfigFile.Basel.AbstractConfig import Basel
 
 
 class Animation(AssetConfig):

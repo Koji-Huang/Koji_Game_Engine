@@ -1,6 +1,6 @@
 from pygame.image import load as load_image
 from DataType.Asset.AbstractAsset import Asset as AssetObject
-from DataType.ConfigFile.Asset import AnimationConfig as AnimationConfigObject
+from DataType.ConfigFile.AnimationAssetConfig import Animation as AnimationConfigObject
 from Graphic.Customized.Animation import GraphAnimation as GraphAnimationObject
 from Graphic.Basic.Graph import Graph
 
