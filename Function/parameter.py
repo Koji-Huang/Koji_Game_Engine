@@ -112,3 +112,9 @@ def filepath_del(obj: dict, path):
         return
     else:
         obj.__delitem__(path)
+
+def filepath_analysis(path):
+    if "\\" in path:
+        return re.findall("(\w+)\\\\", path)
+    else:
+        return path

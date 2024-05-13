@@ -1,0 +1,490 @@
+[33mcommit 78008d2502c384e4b57fa7fdb9c9230bd48fbd0c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Koji <1447396418@qq.com>
+Date:   Fri May 10 20:40:21 2024 +0800
+
+    Script Struct Fix
+    明确了 Script 的编写和调用方式, 写出 Script 基础对象
+
+[33mcommit 90b8c26ec66cfca4699f66ebba8e1a52078fb627[m
+Author: Koji <1447396418@qq.com>
+Date:   Wed May 8 01:32:57 2024 +0800
+
+    Folder Struct Fix
+    改进目录结构, 修正个别代码
+
+[33mcommit 4af8d757cf850d80eb42e60c1dce4c26c3e271a4[m
+Author: Koji <1447396418@qq.com>
+Date:   Fri May 3 14:46:24 2024 +0800
+
+    Global Config Fix
+    给 Config 系统增加了以路径形式读取
+    可以将 "Father\\Son\\GrandSon" 解析为 [Father][Son][GrandSon] 的功能
+    增加了 Runtime 的功能, 用来解析子 Config 对象
+
+[33mcommit 30236ff41e7f0e5c3c03e25c7e5d1558bf00905a[m
+Author: Koji <1447396418@qq.com>
+Date:   Fri Apr 26 05:38:27 2024 +0800
+
+    Config File Struct Fix
+    修改了 Config 文件的架构, 并对 Asset 对象的使用和实现提出了更多的设计
+    修改了 Animation 的结构来支持 Config 与 Asset 的架构
+    修正了 Graph __copy__ 函数的一个恶性 BUG
+
+[33mcommit 994be58c280a8806a7ea05c0412f401e0770005c[m
+Merge: 56f7f34 5374870
+Author: Koji <1447396418@qq.com>
+Date:   Wed Apr 24 04:22:13 2024 +0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       External/Demo/Touhon/Touhon_test_1.py
+
+[33mcommit 56f7f34c3c604e0857221bb5e51c1422adf61e64[m
+Author: Koji <1447396418@qq.com>
+Date:   Wed Apr 24 04:17:56 2024 +0800
+
+    修正了多个性能问题, 包括了:
+    
+    Debug 的性能问题 - EdgeType - Dash 开启情况下 14s -> 4s 提升 250%
+    Debug 性能问题 - 总体修正 7.75s -> 5s 提升55%
+    Graph 中 surface 的 copy 后不再 convert 1.9s -> 1.4s 提升 35%
+    Root 的 spread 大量空集查询被去除 1.9s -> 1.48s 提升 提升 28%
+    Click 添加了以半径来进行一次筛选的机制 0.76s -> 0.39s 提升 94%
+    
+    整体帧数由 60  帧(关闭 Debug) 提升至 140 帧(开启 Debug)
+    弹幕测试 400 弹幕(Debug)下帧数由 50 帧提升至 80 帧
+    弹幕测试 1000 弹幕(关闭Debug)下帧数由 90 提升至 130 帧
+    弹幕测试 2000 弹幕(关闭Debug)下帧数由 55 提升至 68 帧
+    
+    pycallgraph 真好用
+
+[33mcommit 5374870d9186597f509ee929bdf76085ca3bac1f[m
+Author: Koji <1447396418@qq.com>
+Date:   Wed Apr 24 04:17:56 2024 +0800
+
+    修正了多个性能问题, 包括了:
+    
+    Debug 的性能问题 - EdgeType - Dash 开启情况下 14s -> 4s 提升 250%
+    Debug 性能问题 - 总体修正 7.75s -> 5s 提升55%
+    Graph 中 surface 的 copy 后不再 convert 1.9s -> 1.4s 提升 35%
+    Root 的 spread 大量空集查询被去除 1.9s -> 1.48s 提升 提升 28%
+    Click 添加了以半径来进行一次筛选的机制 0.76s -> 0.39s 提升 94%
+    
+    整体帧数由 60  帧(关闭 Debug) 提升至 140 帧(开启 Debug)
+    弹幕测试 400 弹幕(Debug)下帧数由 50 帧提升至 80 帧
+    弹幕测试 1000 弹幕(关闭Debug)下帧数由 90 提升至 130 帧
+    
+    pycallgraph 真好用
+
+[33mcommit a04fca0cede843b48835cbb929db4d465aea3135[m
+Author: Koji <1447396418@qq.com>
+Date:   Tue Apr 23 17:21:36 2024 +0800
+
+    Graphic Event Fix
+    修正了 Root 对象造成的巨大性能消耗问题
+    为 Demo 增加了 Document 和 pycallgraph
+    也正是因此才发现这个性能问题
+
+[33mcommit 743e20107137c11a345ec15e93b336921bfdfd3e[m
+Author: Koji <1447396418@qq.com>
+Date:   Tue Apr 23 10:16:33 2024 +0800
+
+    Asset System Build
+    将 Animation 类型的资产成功使用 Config + Asset 的系统读取出来, 修改了部分标准和源码 ( 主要都是与数据类型有关的更新
+    给两个 Demo 添加了 pycallgraph 来检测性能
+
+[33mcommit c6f8ba9fde8f0cba0e07e15466c6e48f61a3a637[m
+Author: Koji <1447396418@qq.com>
+Date:   Sun Apr 21 08:36:12 2024 +0800
+
+    Config File Standard Format
+    对 Config 文件的格式进行了统一的规定, 并给出了对照的文件, 还写了个 Markdown 来说明
+    顺便修复了个隐形 Bug -- Config 改变了几个值的命名方式导致的
+
+[33mcommit d84211a417c22012e6ae6062c2e10f36e81c52f1[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Apr 20 21:39:14 2024 +0800
+
+    Folder Struct Fix
+    添加了对抽象类的标识 `@abstractmethod`
+    将 Asset 下的 DataType 移动到了 Engine.DataType.Asset 中
+    将 部分文件 的调用修改
+
+[33mcommit 27e3e8146d6dd211c3290146793c85587332c942[m
+Author: Koji <1447396418@qq.com>
+Date:   Fri Apr 19 21:56:16 2024 +0800
+
+    Markdown Update & Folder Struct Fix
+    增加了三个叙述性的Markdown, 规定了 Spirit, Animation, Level 的相关规定, 修改了 Graph 的目录结构
+
+[33mcommit 8ddea8fee8d171a11b8a5d3f21254924537f199e[m
+Author: Koji <1447396418@qq.com>
+Date:   Fri Apr 19 03:11:37 2024 +0800
+
+    .gitignore 更新
+
+[33mcommit aaf7ab84491ac0faa92410d14eff8f6dd7dec548[m
+Author: Koji <1447396418@qq.com>
+Date:   Fri Apr 19 03:09:37 2024 +0800
+
+    Asset-Graph Fix
+    资产对象与 Graphic 有关的 Image 和 Animation 测试通过, 并通过 Blender 渲染了部分图像( 但不上传至 git, 因为太大了)
+    在初中设想的动态读取没有做, 但是现在主要的功能已经可以用
+    顺手修了 DataType-Config 里的错误
+
+[33mcommit be03d2f80f3dbaabd0f7fb8346fb5769bb9e3f95[m
+Author: Koji <1447396418@qq.com>
+Date:   Wed Apr 17 02:15:04 2024 +0800
+
+    Folder Struct Fix
+    针对 Manager 的名字引起的歧义, 将名称全部改为 API, 并且将 GlobalConstant.py 更名为 GlobalAPI.py, 让名字更加标准, 新增的特性对得起 API 这个名字
+
+[33mcommit 1070f3348cbb264ef153558628ded39f2c5c6fb2[m
+Author: Koji <1447396418@qq.com>
+Date:   Tue Apr 16 16:48:11 2024 +0800
+
+    ID System Fix.
+    将 GlobalConstant 的 ID 系统接入至各个模块中 (Thread, Graphic, Event), 测试并通过
+
+[33mcommit 9fe75168f15ed4a9e7c33a30d53944e75738ac40[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 19:28:45 2024 +0800
+
+    Config File IO Update
+    增加了对 Config 文件的支持 (ini, config, json), 并且完成了对 GlobalConstant 的API
+
+[33mcommit 9ef01cd083bdd3d0d4d2bb3399889b30f4bb18c3[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 04:11:54 2024 +0800
+
+    删除了 __pycache__ 文件夹
+
+[33mcommit 1589fe666a2294ab7e67760998d573554e230da8[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 04:00:34 2024 +0800
+
+    将 GraphicComponent 修改名字 为 Graphic, 测试结构已稳定 (就是 __pycache__ 引起的)
+
+[33mcommit 80e81ac1cd6f7126872e30d979be64411d602577[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 03:40:15 2024 +0800
+
+    修正了 GraphicComponent 中 修改名字 引起的错误, 修改了大量包名
+
+[33mcommit 96793a18b8e52ec04d490562fca32ff27597846a[m
+Merge: b0aba52 319730c
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 02:02:44 2024 +0800
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit b0aba523afdd65d7dc2e9cd80a8a478c41063b74[m
+Merge: f39e58e 42119aa
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 02:00:33 2024 +0800
+
+    3.0 构建修正并构建架构
+
+[33mcommit 319730c6dfad2f1fad5bc58bedd1ac791a024d26[m
+Merge: f39e58e 42119aa
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 02:00:33 2024 +0800
+
+    3.0 构建修正并构建架构
+
+[33mcommit f39e58e6b97dc5af5ded2c37129d9c3890c56223[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 01:56:58 2024 +0800
+
+    'Fix'
+
+[33mcommit d711dfeecaa67a0392996da0b5dba7b88dec5e1e[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 01:48:37 2024 +0800
+
+    3.0 构建修正并构建架构
+
+[33mcommit 42119aa0ac25ed699412b18f9f826b125b441485[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 01:48:37 2024 +0800
+
+    3.0 构建修正并构建架构
+
+[33mcommit 89ca1d60eaa979ef1a52d063583bd12a8372fbf9[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 01:09:47 2024 +0800
+
+    修正了 UI Event 中 skip_track 引起的错误
+
+[33mcommit 0cd6c201f73e140b398b8871418462ae020bb14a[m
+Merge: 0a94d6e 8f9b143
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 00:48:47 2024 +0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       .idea/workspace.xml
+
+[33mcommit 0a94d6ec7b2d822af1c163481b1811cc80b92193[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 00:36:07 2024 +0800
+
+    更新 README.md
+
+[33mcommit 0181c456d563a23ce4fb03468d9572f0d831ce5a[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 00:35:02 2024 +0800
+
+    2.6 版本完成, Event Manager 写完并且确认可用, 虽然就应用来说确实丑陋, 但是增加 事件系统的 API 确实是实现了的, 还有标准化窗体事件(超额完成了)
+
+[33mcommit 6692bbeb36cb042fe180427a854437e08f3e655e[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 00:17:53 2024 +0800
+
+    2.6 版本完成, Event Manager 写完并且确认可用, 虽然就应用来说确实丑陋, 但是增加 事件系统的 API 确实是实现了的, 还有标准化窗体事件(超额完成了)
+
+[33mcommit 8f9b1434b61f6ea6299a6746a0c8bfc43342a1cf[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 15 00:17:53 2024 +0800
+
+    2.6 版本完成, Event Manager 写完并且确认可用, 虽然就应用来说确实丑陋, 但是增加 事件系统的 API 确实是实现了的, 还有标准化窗体事件(超额完成了)
+
+[33mcommit 6605bed27b6990d80d3c558c1150329f3a87004f[m
+Author: Koji <1447396418@qq.com>
+Date:   Fri Apr 12 20:55:25 2024 +0800
+
+    Mouse Click Event 可用, Event Manager 与 Event 结构构建完成, 明天实现示例就可以了
+
+[33mcommit dde89c51ba5d6e83d4605413a84475edfbea93d3[m
+Author: Koji <1447396418@qq.com>
+Date:   Wed Apr 10 20:34:36 2024 +0800
+
+    Event 的代码修补好了, 但是 GraphicComponent 的没有呢, 先提交先再说
+
+[33mcommit 7af60b8450f7c93c018ffa87c3cc1be454e7a15d[m
+Author: Koji <1447396418@qq.com>
+Date:   Wed Apr 10 02:19:23 2024 +0800
+
+    给个别 Markdown 添加了示例代码 (没添加完
+
+[33mcommit 3152280140258d29a4e7c62e054d881e3d8bf90a[m
+Author: Koji <1447396418@qq.com>
+Date:   Tue Apr 9 19:03:43 2024 +0800
+
+    写了很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多地Markdown
+
+[33mcommit f36221c720663893d83ef04eed466c6f1557a278[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 8 17:36:04 2024 +0800
+
+    更新了几个碎碎念文件
+
+[33mcommit b02d330476d35a405d5db89651ac1d004c771c52[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 8 17:15:49 2024 +0800
+
+    添加了Readme文件 (没写完)
+
+[33mcommit b4113e8aca257cb072ca9f38650816f551e53a27[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 8 13:21:21 2024 +0800
+
+    Event System Rebuild Fix Package - 1
+    Used to change develop driver
+
+[33mcommit 930c0d11a5d2adc2a10fddd94bb618b1ed1ed218[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Apr 1 23:36:25 2024 +0800
+
+    2.5 Final Fix
+
+[33mcommit 8cc5a1dc8fa53838bd27bc101b974a3df62adb5a[m
+Author: Koji <1447396418@qq.com>
+Date:   Wed Mar 27 14:58:36 2024 +0800
+
+    2.5 Update:
+    Rebuild File Struct
+    Fix Bug
+
+[33mcommit 382b11d1a8df58b910dad80c63cec1406c820d86[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Mar 25 07:32:37 2024 +0800
+
+    Update Readme
+
+[33mcommit c6a2c3a218087b2731ab210a418e936a383e6cb8[m
+Author: Koji <1447396418@qq.com>
+Date:   Sun Mar 24 03:08:30 2024 +0800
+
+    常规提交
+
+[33mcommit bf053a7932e598e0ed273c44726c8f8540b2e6cc[m
+Author: Koji <1447396418@qq.com>
+Date:   Sun Mar 24 02:56:55 2024 +0800
+
+    CAMERA 大彻大悟了 - Camera_test_2.py
+
+[33mcommit fb620ce1bc8245287bb8d82fd5bdfac3a26851ff[m
+Author: Koji <1447396418@qq.com>
+Date:   Sun Mar 24 02:05:19 2024 +0800
+
+    存档
+
+[33mcommit 78e8e5ed753e47110c91cba9f01cd5a22ec156b6[m
+Author: Koji <1447396418@qq.com>
+Date:   Sun Mar 24 01:49:27 2024 +0800
+
+    Camera 以中心为坐标写好并通过测试
+
+[33mcommit 699b5067e0d11f2c2e9179cce9766486109fb203[m
+Author: Koji <1447396418@qq.com>
+Date:   Sun Mar 24 01:21:29 2024 +0800
+
+    存档 - Camera
+
+[33mcommit 71fc32d8e2070525fba9b731591285bc7e9bfe54[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 23 23:12:43 2024 +0800
+
+    Camera 编写完毕
+
+[33mcommit bee6be9e0508ae39ef9fe8b68658900756381a55[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 23 04:50:12 2024 +0800
+
+    Camera 修复存档
+
+[33mcommit d21e22b480886cbdc58247c42cf6f5c086e59ed5[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 23 02:59:13 2024 +0800
+
+    ThreadPackage 验证没问题
+
+[33mcommit f38fd5477b9ce76704d625473b3e128a393ea701[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 23 02:40:00 2024 +0800
+
+    完成了链表对象并整合进 Root 里的 son, 和 ThreadPool.py 的 thread 中替换了 list 之类的对象
+
+[33mcommit 06b0680f2fcb50862fb42fca073652b2512bf380[m
+Author: Koji <1447396418@qq.com>
+Date:   Tue Mar 19 18:43:44 2024 +0800
+
+    修改代码，确保格式工整
+
+[33mcommit ae07bfda7acbed7c085fe15c052159f22b1d8e9d[m
+Author: Koji <1447396418@qq.com>
+Date:   Tue Mar 19 18:37:27 2024 +0800
+
+    GraphicComponentDebug 完成
+
+[33mcommit 64f35ec734b0fdc40921a1e12fde584fa2fc6d32[m
+Author: Koji <1447396418@qq.com>
+Date:   Tue Mar 19 16:54:38 2024 +0800
+
+    GraphicComponentManager 完成
+
+[33mcommit 8d174e5b4a5c822d26e854c84b63d2f55d272292[m
+Author: Koji <1447396418@qq.com>
+Date:   Tue Mar 19 03:21:41 2024 +0800
+
+    2.4 第二个补丁完成:
+    增加了一个特效组件: MarkBorder 并规范了 Effect 的文件夹调用, 初始定义了 GraphicComponentManager.py 的 API
+
+[33mcommit 203b7e9035e5af52c34d28390b3ec6a6504c1064[m
+Author: Koji <1447396418@qq.com>
+Date:   Tue Mar 19 00:34:36 2024 +0800
+
+    2.4 第一个补丁完成:
+    修改了 Graphic, Surface, Root, Event 的代码, 更改了 Graphic 对于 Event 的引用, 以及把被破坏的代码修复到了 2.3 水平
+
+[33mcommit 5eca8350c73cc551ba12eb886d5ceeddd314f1e3[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Mar 18 23:36:32 2024 +0800
+
+    所有 的 __copy__ 修复, MouseEvent 重组完成
+
+[33mcommit fddf9c5e87037556d6dc8d247df37e5ce7081c58[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Mar 18 23:02:28 2024 +0800
+
+    Root 的 __copy__ 修复
+
+[33mcommit 529b53f94503e1b9d5961f5b8e7cf247fac3d9db[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Mar 18 22:56:44 2024 +0800
+
+    Root 的 graphic 更新
+
+[33mcommit 90d307b8fc8598a737661c7e35897af4b9a6d8f9[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Mar 18 22:54:25 2024 +0800
+
+    Root 的 surface 更新
+
+[33mcommit 459764b886ef3098bc2a6982a9167d543452406e[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Mar 18 22:40:29 2024 +0800
+
+    Root 的 event 更新
+
+[33mcommit 47333ea4a4478494501f591fc201cec53928cd1c[m
+Author: Koji <1447396418@qq.com>
+Date:   Mon Mar 18 22:12:03 2024 +0800
+
+    2.4 初始化
+
+[33mcommit ec01fbd3f300a804d4bd1663a8fc4e35c3c359d6[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 16 20:26:20 2024 +0800
+
+    2.3 版本最后一个提交
+
+[33mcommit 7c58f4779c2c4a3f8504888d7b234db496f820b6[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 9 16:26:57 2024 +0800
+
+    Strange IDE error, so I push
+
+[33mcommit bd30cec81356865d1c1e7811bb06f26a35ea4f34[m
+Merge: 5fd48a0 d2833d6
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 9 16:25:38 2024 +0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       .idea/workspace.xml
+    #       README.md
+
+[33mcommit 5fd48a07620faae574b841f947a757d00dd291d7[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 9 14:01:18 2024 +0800
+
+    README.md FIX
+
+[33mcommit d2833d62913bf390e604041a2f2c6d60e6b19ced[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 9 14:01:18 2024 +0800
+
+    README.md FIX
+
+[33mcommit c5c38e41c24053c93e0bf1a58c170f5b6d6d98ab[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 9 13:22:49 2024 +0800
+
+    Add v2.2 Files
+
+[33mcommit bc0384e95174394519ee8f253cfbc5ca9d416560[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 9 13:21:05 2024 +0800
+
+    FIX TO VERSION 2.3
+
+[33mcommit ae5ff341ea1d49192e245a233d1e9477e40297b6[m
+Author: Koji <1447396418@qq.com>
+Date:   Sat Mar 9 12:54:41 2024 +0800
+
+    合并完成
