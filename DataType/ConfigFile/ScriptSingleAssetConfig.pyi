@@ -1,8 +1,14 @@
 from Basel import *
 from .BasicAssetConfig import AssetConfig
 from Graphic.Customized.Animation.AbstractAnimation import Animation as GraphicAnimationObject
-from ScriptSingleAssetConfig import Script as SingleScript
+import ScriptAssetConfig
 
 
 class Script(AssetConfig):
-    script: tuple[SingleScript]
+    bind_config_file: ScriptAssetConfig
+    script: dict[str, [...]]
+
+    def __init__(self, father_script, script_name):
+        """
+
+        """

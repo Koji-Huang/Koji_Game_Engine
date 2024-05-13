@@ -7,7 +7,7 @@ from Graphic.UI.Image import Image
 import API
 
 
-GlobalAPI.register_global_environment()
+Global.register_global_environment()
 API.GraphicAPI = GraphicAPI_type()
 API.EventAPI = EventAPI_type()
 API.ThreadAPI = ThreadAPI_type()

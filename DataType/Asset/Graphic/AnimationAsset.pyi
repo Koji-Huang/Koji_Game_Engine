@@ -1,5 +1,5 @@
 import pygame
-from DataType.ConfigFile.Asset import AnimationConfig as AnimationConfigObject
+from DataType.ConfigFile.AnimationAssetConfig import GraphicAnimationObject as AnimationConfigObject
 from DataType.Asset.AbstractAsset import Asset as AssetObject
 from Graphic.Customized.Animation import BaselAnimation as AnimationObject
 

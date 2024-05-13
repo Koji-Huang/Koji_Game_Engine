@@ -40,35 +40,33 @@ class Script:
 
 """
     Asset Config Environment Be like:
-        txt:
-            name:
-            path:
-            sub:
-            
-            environment: ....
-            
-            @@@
-            ... ( Write Code here)
-            @@@
-
-
-        ini:
-            [asset]:
-                ...
-            
-            [script_name]:
-                environment = ...
-                code = @@@
-                ...
-                @@@
-
         json:
             json format cannot record code. It can only used as control machine
             
-            "__asset__" = {
-                ...
-            },
+            {
+              "__file__": {
+                "name": "undefined",
+                "path": "undefined",
+                "type": "Script"
+              },
+              "asset": {
+                "name": "undefined",
+                "path": "undefined",
+                "type": "Script"
+              },
+              "Script": {
             
-            "ScriptName" = file: str = ...
+                "name": ["1"],
+            
+                "1": {
+                  "name": "str",
+                  "path": "str",
+                  "flags": "str"
+                },
+                "...": {
+            
+                }
+              }
+            }
             
 """

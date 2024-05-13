@@ -1,6 +1,5 @@
 from os.path import abspath, dirname
 from .BasicAssetConfig import AssetConfig
-from DataType.ConfigFile.Basel.AbstractConfig import Basel
 
 
 class Animation(AssetConfig):
@@ -45,7 +44,7 @@ class Animation(AssetConfig):
                 raise TypeError(name)
 
     def info(self, *args):
-        ret = Basel.info(self)
+        ret = super().info()
         ret['frame_size'] = self.frame_size
         ret['w'] = self.w
         ret['h'] = self.h
