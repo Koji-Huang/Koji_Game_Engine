@@ -1,5 +1,5 @@
-from ..Algorithms.FolderStruct_Hash import Folder
-from ..Asset.AbstractAsset import Asset
+from DataType.Algorithms.FolderStruct_Hash import Folder
+from DataType.Asset.AbstractAsset import Asset
 
 
 class AssetManager(Folder[Asset]):

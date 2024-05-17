@@ -1,4 +1,4 @@
-from DataType.ConfigFile.Basel.AbstractConfig import Basel
+from .AbstractConfig import Basel
 
 class Runtime(Basel):
     bind_object: Basel

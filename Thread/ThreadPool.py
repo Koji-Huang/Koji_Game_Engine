@@ -1,4 +1,4 @@
-from Thread.Thread import Thread
+from .Thread import Thread
 from DataType import LinkedList
 
 

@@ -8,13 +8,13 @@ def load_config_file(config_path: str, config_type: str = None):
     if config_type is None:
         match config_path[-4:]:
             case 'json':
-                obj = json(config_path)
+                obj = Json(config_path)
             case '.ini':
-                obj = ini(config_path)
+                obj = Ini(config_path)
             case _:
-                obj = txt(config_path)
+                obj = Txt(config_path)
     else:
-        obj = txt(config_path)
+        obj = Txt(config_path)
     deep_search_config(obj)
     return obj
 

@@ -1,5 +1,5 @@
-from DataType.ConfigFile.Basel import *
-from DataType.ConfigFile.Basel.AbstractConfig import Basel
+from .Basel import *
+from .Basel.AbstractConfig import Basel
 
 
 class AssetConfig:
@@ -11,7 +11,7 @@ class AssetConfig:
         self.config_file_format = Basel.get_file_type(file_path)
         match self.config_file_format:
             case 'txt':
-                self.bind_config_file = txt(file_path)
+                self.bind_config_file = Txt(file_path)
 
                 self.bind_config_file["__asset__"] = dict()
 
@@ -23,12 +23,12 @@ class AssetConfig:
                 self.config_type = self.bind_config_file['__file__']['type']
                 self.config_path = self.bind_config_file['__file__']['path']
             case 'json':
-                self.bind_config_file = json(file_path)
+                self.bind_config_file = Json(file_path)
                 self.config_name = self.bind_config_file['__file__']['name']
                 self.config_type = self.bind_config_file['__file__']['type']
                 self.config_path = self.bind_config_file['__file__']['path']
             case 'ini':
-                self.bind_config_file = ini(file_path)
+                self.bind_config_file = Ini(file_path)
                 self.config_name = self.bind_config_file['__file__']['name']
                 self.config_type = self.bind_config_file['__file__']['type']
                 self.config_path = self.bind_config_file['__file__']['path']

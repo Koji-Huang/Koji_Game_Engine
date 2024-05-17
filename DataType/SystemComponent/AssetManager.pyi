@@ -1,13 +1,13 @@
 from typing import overload
 
-from ..Algorithms.FolderStruct_Hash import Folder, folderPath
-from ..Asset.AbstractAsset import Asset
+from DataType.Algorithms.FolderStruct_Hash import Folder, folderPath
+from DataType.Asset.AbstractAsset import Asset
 
 
 class AssetManager(Folder):
     def __init__(self):...
     @overload
-    def __getitem__(self, __key, folder_path: folderPath = None, get_source: bool = False) -> any:...
+    def __getitem__(self, __key, folder_path: folderPath = None, get_source: bool = False) -> Asset | any:...
     @overload
     def __getitem__(self, __key, folder_path: folderPath = None, get_source: bool = True) -> AssetManager:...
     def __setitem__(self, key, value=AssetManager, folder_path: folderPath = None) -> None:...

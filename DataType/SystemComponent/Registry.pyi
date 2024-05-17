@@ -1,7 +1,4 @@
-from typing import overload
-
-from ..Algorithms.FolderStruct_Hash import Folder, folderPath
-from ..Asset.AbstractAsset import Asset
+from DataType.Algorithms.FolderStruct_Hash import Folder, folderPath
 
 
 class Registry(Folder):

@@ -1,5 +1,5 @@
 from threading import Thread as processThread
-from Thread.ThreadPool import ThreadPool
+from .ThreadPool import ThreadPool
 
 
 class ThreadRunningMachine:

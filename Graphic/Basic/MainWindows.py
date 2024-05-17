@@ -1,4 +1,4 @@
-from Graphic.Basic.Graph import Graph
+from .Graph import Graph
 import pygame
 
 

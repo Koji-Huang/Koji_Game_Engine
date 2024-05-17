@@ -1,6 +1,6 @@
 import pygame
 
-from Event.UIEvent.Mouse.MouseBasicEvent import Basic, Inspector as father_inspector
+from .MouseBasicEvent import Basic, Inspector as father_inspector
 
 
 class Drag(Basic):

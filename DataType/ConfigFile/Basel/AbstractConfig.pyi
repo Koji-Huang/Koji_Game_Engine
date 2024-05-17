@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABCMeta
 from typing import overload
-from DataType.Asset.AbstractAsset import Asset, AssetFolder
+from DataType.Asset.AbstractAsset import  AssetFolder
 
 
 class Basel(metaclass=ABCMeta):

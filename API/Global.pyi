@@ -4,9 +4,9 @@ from API.Event import Event as __EventAPI
 from API.Graphic import GraphicAPI as __GraphicAPI
 from API.Thread import ThreadAPI as __ThreadAPI
 
-Registry: Registry
-AssetManager: AssetManager
-ID_Register: IDRegister
+Registry: RegistryObject
+AssetManager: AssetManagerObject
+ID_Register: IDRegisterObject
 
 
 Global_Event_API: __EventAPI

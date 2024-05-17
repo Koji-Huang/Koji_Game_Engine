@@ -1,4 +1,4 @@
-from DataType.ConfigFile.Basel.AbstractConfig import Basel as __Basic
+from .AbstractConfig import Basel as __Basic
 import json as _json
 
 

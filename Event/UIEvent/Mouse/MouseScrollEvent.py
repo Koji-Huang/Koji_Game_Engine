@@ -1,7 +1,7 @@
 import time
 
 import pygame.mouse
-from Event.UIEvent.Mouse.MouseBasicEvent import Basic, Inspector as father_inspector
+from .MouseBasicEvent import Basic, Inspector as father_inspector
 
 
 class Scroll(Basic):

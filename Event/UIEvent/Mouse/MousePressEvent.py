@@ -1,6 +1,5 @@
 import pygame.mouse
-from Function.coordinate import point_in_rect
-from Event.UIEvent.Mouse.MouseBasicEvent import Basic, Inspector as father_inspector
+from .MouseBasicEvent import Basic, Inspector as father_inspector
 
 
 class Press(Basic):

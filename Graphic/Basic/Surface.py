@@ -1,4 +1,4 @@
-from Graphic.Basic.Root import Root
+from .Root import Root
 from Function.coordinate import point_in_rect
 
 

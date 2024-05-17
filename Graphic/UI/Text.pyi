@@ -1,6 +1,6 @@
 import pygame.font
 
-from Graphic.UI.Label import Label
+from .Label import Label
 
 class Text(Label):
     text: str

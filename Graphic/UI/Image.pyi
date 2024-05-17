@@ -1,6 +1,6 @@
 from typing import overload
 from pygame import Surface
-from Graphic.UI.Label import Label
+from .Label import Label
 
 
 class Image(Label):

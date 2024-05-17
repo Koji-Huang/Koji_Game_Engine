@@ -1,5 +1,4 @@
 import os.path
-import re
 from abc import abstractmethod, ABCMeta
 from Function.parameter import mapping_new_copy, filepath_get, filepath_del, filepath_set
 

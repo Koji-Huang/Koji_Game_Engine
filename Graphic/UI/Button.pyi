@@ -1,4 +1,4 @@
-from Graphic.UI.Label import Label
+from .Label import Label
 from Event.UIEvent.UIEvent import Basic as Event
 
 class Button(Label):
