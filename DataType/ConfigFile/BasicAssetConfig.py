@@ -1,7 +1,5 @@
-import pygame
 from DataType.ConfigFile.Basel import *
 from DataType.ConfigFile.Basel.AbstractConfig import Basel
-from abc import abstractmethod
 
 
 class AssetConfig:

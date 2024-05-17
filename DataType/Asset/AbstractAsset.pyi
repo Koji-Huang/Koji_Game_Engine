@@ -1,11 +1,13 @@
 from typing import overload
-from DataType.ConfigFile.Asset.BasicAssetConfig import AssetConfig
+from DataType.ConfigFile.BasicAssetConfig import AssetConfig
+from abc import abstractmethod, ABCMeta
 
 
-class Asset:
+class Asset(metaclass=ABCMeta):
     name: str
     type: str
     path: str
+    active: bool
     configObject: AssetConfig
 
     def __init__(self, assetConfigObject: AssetConfig, *args, **kwargs):
@@ -20,13 +22,22 @@ class Asset:
         """
         pass
 
+    @abstractmethod
     def __call__(self, *args, **kwargs) -> any:
         """
 
         """
         pass
 
+    @abstractmethod
     def convert(self) -> any:
+        """
+
+        """
+        pass
+
+    @abstractmethod
+    def is_active(self) -> bool:
         """
 
         """
@@ -38,6 +49,8 @@ class Asset:
         """
         pass
 
+    def delete(self):
+        pass
 
 
 class AssetFolder:

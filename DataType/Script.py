@@ -9,7 +9,7 @@ import Function
 
 BasicEnvironment = {'API': API, "Function": Function}
 GraphicEnvironment = {"Graphic": Graphic}
-AssetEnvironment = {'Asset': Asset}
+AssetEnvironment = {'Asset': AssetManager}
 DataTypeEnvironment = {'DataType': DataType}
 EventEnvironment = {'Event': Event}
 ThreadEnvironment = {'Thread': Thread}

@@ -4,7 +4,7 @@ from ..AbstractAsset import Asset
 from ...ConfigFile.ScriptSingleAssetConfig import Script
 
 
-class BasicScriptObject(Asset):
+class BasicScriptObject(AssetManager):
     script_file: str
     script_code: str
     script_flags: dict

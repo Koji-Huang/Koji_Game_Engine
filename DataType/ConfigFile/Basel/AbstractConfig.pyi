@@ -113,7 +113,7 @@ class Basel(metaclass=ABCMeta):
         """
         pass
 
-    def convert(self) -> (str, Asset | AssetFolder, str):
+    def convert(self) -> (str, AssetManager | AssetFolder, str):
         pass
 
     def info(self, *args):

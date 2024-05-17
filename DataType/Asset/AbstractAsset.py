@@ -1,19 +1,23 @@
 from abc import abstractmethod, ABCMeta
-from Function.parameter import mapping_new_copy, mapping_merge
+from Function.parameter import mapping_new_copy
 
 
 class Asset(metaclass=ABCMeta):
-    def __init__(self, config, *args, **kwargs):
+    def __init__(self, config):
         self.configObject = config
-        self.load()
+        self.name = self.configObject['__asset__']['name']
+        self.path = self.configObject['__asset__']['path']
+        self.type = self.configObject['__asset__']['type']
+        self.active = False
 
-    def __copy__(self, copied = None):
+    def __copy__(self, copied=None):
         if copied is None:
             copied = Asset(self.configObject)
         copied.configObject = self.configObject
         copied.name = self.name
         copied.path = self.path
         copied.type = self.type
+        copied.active = self.active
         return copied
 
     @abstractmethod
@@ -24,15 +28,20 @@ class Asset(metaclass=ABCMeta):
     def convert(self):
         pass
 
-    def load(self, *args, **kwargs):
+    @abstractmethod
+    def is_active(self):
+        pass
+
+    def load(self):
         self.name = self.configObject['__asset__']['name']
         self.path = self.configObject['__asset__']['path']
         self.type = self.configObject['__asset__']['type']
+        self.active = False
         pass
 
 
 class AssetFolder:
-    def __init__(self, name: str = 'undefined', *args, **kwargs):
+    def __init__(self, name: str = 'undefined'):
         self._name = name
         self._assets = dict()
         self._folder = dict()
@@ -43,7 +52,7 @@ class AssetFolder:
         mix.update(self._folder)
         return mix
 
-    def __copy__(self, copied = None):
+    def __copy__(self, copied=None):
         if copied is None:
             copied = AssetFolder()
         for key, value in self._assets.items():
@@ -63,7 +72,7 @@ class AssetFolder:
     def folder(self):
         return tuple(self._folder.values())
 
-    def package(self, *args, **kwargs):
+    def package(self):
         return tuple(self._assets.values())
 
     def __getitem__(self, item):

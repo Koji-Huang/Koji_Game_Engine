@@ -1,9 +1,9 @@
 
+import API.Global
 import API.Event
 import API.Thread
 import API.Graphic
 import API.Config
-import API.Global
 
 EventAPI_type = Event.EventAPI
 ThreadAPI_type = Thread.ThreadAPI

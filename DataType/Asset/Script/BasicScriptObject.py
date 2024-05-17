@@ -2,7 +2,8 @@ from ..AbstractAsset import Asset
 from ...PackagedCallable import PackagedCallable
 
 
-class BasicScriptObject(Asset):
+class BasicScriptObject(AssetManager):
+
     def __init__(self, config, *args, **kwargs):
         super().__init__(config, *args, **kwargs)
         self.script_file = config['path']
@@ -33,3 +34,6 @@ class BasicScriptObject(Asset):
 
     def __getattr__(self, item):
         return self.script_local.get(item)
+
+    def is_active(self):
+        return self.compile_code is not None

@@ -5,7 +5,9 @@ from Graphic.Customized.Animation import BaselAnimation as AnimationObject
 
 
 class Package(AssetObject):
+
     configObject: AnimationConfigObject
+    saved_animation: AnimationObject
     animation_type: str
     frames_info: list[dict[str: [str]]]
     frame_size: int

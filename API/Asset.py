@@ -19,6 +19,7 @@ def load_asset(config):
     else:
         return None
 
+
 def match_asset_type(config):
     pass
 

@@ -5,11 +5,12 @@ from Function.parameter import filepath_analysis
 class CustomizedPath:
     _convert_path: tuple
 
-    def __init__(self, path: str or Iterable):
+    def __init__(self, path: str or Iterable, is_folder: bool = None):
         if isinstance(path, str):
             self._convert_path = filepath_analysis(path)
         else:
             self._convert_path = tuple(path)
+        self.is_folder = path[-1] == "\\" if is_folder is None else is_folder
 
     def __str__(self):
         ret = ''
@@ -67,3 +68,6 @@ class CustomizedPath:
 
     def __repr__(self):
         return self.__str__()
+
+    def folder(self):
+        return self._convert_path if self.is_folder else self._convert_path[:-1]

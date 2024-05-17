@@ -3,8 +3,9 @@ from typing import Iterable
 
 class CustomizedPath:
     _convert_path: tuple
+    is_folder: bool
 
-    def __init__(self, path: str or Iterable):
+    def __init__(self, path: str or Iterable, is_folder: bool = False):
         pass
 
     def __str__(self):
@@ -50,4 +51,7 @@ class CustomizedPath:
         pass
 
     def __repr__(self):
+        pass
+
+    def folder(self):
         pass

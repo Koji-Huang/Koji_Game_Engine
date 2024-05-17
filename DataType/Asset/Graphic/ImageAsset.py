@@ -17,8 +17,12 @@ class Package(AssetObject):
         return self._surface.copy
 
     def load(self):
-        super().load()
-        self._surface = load_image(self._path)
+        if self.is_active() is False:
+            super().load()
+            self._surface = load_image(self._path)
 
     def convert(self):
         return self._surface.copy
+
+    def is_active(self):
+        return True

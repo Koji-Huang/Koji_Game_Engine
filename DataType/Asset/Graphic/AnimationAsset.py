@@ -6,15 +6,19 @@ from Graphic.Basic.Graph import Graph
 
 
 class Package(AssetObject):
+
     def __init__(self, config: AnimationConfigObject, *args, **kwargs):
         super().__init__(config, *args, **kwargs)
         self.animation_type = 'GraphAnimation'
+        self.saved_animation = None
 
     def __call__(self, *args, **kwargs):
-        return self.convert()
+        if self.is_active() is False:
+            self.saved_animation = self.convert()
+        return self.saved_animation
 
     def convert(self):
-        animation = GraphAnimationObject((self.configObject.x, self.y), (self.configObject.w, self.configObject.h))
+        animation = GraphAnimationObject((self.configObject.x, self.configObject.y), (self.configObject.w, self.configObject.h))
         for i in range(self.configObject.frame_size):
             info = self.configObject.frame_info[i]
             surface = Graph((info['x'], info['y']), (info['w'], info['h']), load_image(info['path']))
@@ -24,3 +28,6 @@ class Package(AssetObject):
 
     def __getattr__(self, item):
         return self.configObject.__getattribute__(item)
+
+    def is_active(self):
+        return self.saved_animation is not None
