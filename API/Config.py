@@ -1,6 +1,7 @@
 from DataType.ConfigFile.Basel import *
 from DataType.ConfigFile.Basel.AbstractConfig import Basel as baselConfigObject
-from Function.parameter import mapping_merge, mapping_new_copy, filepath_set, filepath_get
+import DataType.ConfigFile as SystemConfigFile
+from Function.parameter import mapping_merge, mapping_new_copy
 from .Global import Registry, AssetManager
 
 
@@ -16,6 +17,10 @@ def load_config_file(config_path: str, config_type: str = None):
     else:
         obj = Txt(config_path)
     deep_search_config(obj)
+
+    matched = match_config_object(obj.config_type)
+    if matched != obj.__class__ and matched != None:
+        obj = matched(obj)
     return obj
 
 
@@ -30,7 +35,7 @@ def deep_search_config(config_object: baselConfigObject, data: dict = None, path
                 for i in val:
                     config_object.son_config += (load_config_file(i), )
             if isinstance(val, dict):
-                deep_search_config(runtime(config_object, path))
+                deep_search_config(Runtime(config_object, path))
         elif isinstance(val, dict):
             deep_search_config(config_object, val, path + "\\" + keys)
 
@@ -41,9 +46,9 @@ def register_config(config_object, keys: set[str] = None) -> None:
     keys -= set(Registry.keys())
     data = mapping_new_copy(config_object._translated_data)
     if Registry.get(config_object.sub_path) is None:
-        filepath_set(Registry, config_object.sub_path, mapping_new_copy(data))
+        Registry[config_object.sub_path] = mapping_new_copy(data)
     else:
-        mapping_merge(filepath_get(Registry[config_object.sub_path]), data)
+        mapping_merge(Registry[config_object.sub_path], data)
     for son in config_object.son_config:
         register_config(son)
 
@@ -59,7 +64,7 @@ def unregister_config(config_object, keys: tuple[str] = None) -> None:
     if keys is None:
         keys = set(config_object.keys())
     for key in keys:
-        Registry.pop(key)
+        Registry.remove(key)
 
 
 def delete_config(config_object, keys: tuple[str] = None) -> None:
@@ -82,3 +87,19 @@ def convert_to_asset(config_object):
         AssetManager[sub_path] = dict()
 
     AssetManager[sub_path][name] = mapping_new_copy(asset)
+
+
+def match_config_object(config_type: str):
+    match config_type:
+        case "Animation" | "animation":
+            return SystemConfigFile.AnimationAssetConfigObject
+        case "Image" | "image":
+            return SystemConfigFile.ImageAssetConfigObject
+        case "Script" | "script":
+            return SystemConfigFile.ScriptAssetConfigObject
+        case "Ini" | "ini":
+            return SystemConfigFile.Basel.Ini
+        case "Json" | "json":
+            return SystemConfigFile.Basel.Json
+        case "Txt" | "txt":
+            return SystemConfigFile.Basel.Txt

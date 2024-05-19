@@ -96,5 +96,8 @@ class Folder(Mapping[_T]):
     def create_folder(self, path) -> Folder:
         pass
 
-    def keys(self) -> tuple(str):
+    def keys(self) -> tuple[str]:
+        pass
+
+    def update(self, another: Mapping) -> Folder:
         pass

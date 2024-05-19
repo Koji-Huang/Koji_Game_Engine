@@ -1,8 +1,8 @@
 from DataType.ConfigFile.ScriptAssetConfig import Script
-from DataType.Asset.Script.BasicScriptObject import BasicScriptObject
+from DataType.Asset.Script.BasicScriptAsset import BasicScriptAsset
 
 A = Script(".json")
-B = BasicScriptObject(A.script[0])
+B = BasicScriptAsset(A.script[0])
 D = B.convert()
 D()
 D()

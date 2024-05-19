@@ -1,5 +1,6 @@
 from os.path import abspath, dirname
 from .BasicAssetConfig import AssetConfig
+from .Basel.AbstractConfig import Basel
 
 
 class Animation(AssetConfig):
@@ -8,7 +9,12 @@ class Animation(AssetConfig):
         self.config_type = 'Animation'
         self.frame_info = dict()
         bind = self.bind_config_file
-        path = dirname(abspath(file_path)) + '\\'
+        if isinstance(file_path, str):
+            path = dirname(abspath(file_path)) + '\\'
+        elif isinstance(file_path, Basel):
+            path = dirname(abspath(file_path.file_path)) + '\\'
+        else:
+            raise "Config Type Error"
         match self.config_file_format:
             case 'json' | 'ini':
                 self.x = int(bind['Animation']['x'])

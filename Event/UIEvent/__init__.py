@@ -1,8 +1,8 @@
-import Event.UIEvent.Keyboard
-import Event.UIEvent.Mouse
-import Event.UIEvent.Screen
-import Event.UIEvent.UIEvent
-import Event.BasicEvent as BasicEvent
+from . import Keyboard
+from . import Mouse
+from . import Screen
+from . import UIEvent
+from .. import BasicEvent as BasicEvent
 
 Name: dict[str: str] = {
     "Basic": "Basic UI Event",

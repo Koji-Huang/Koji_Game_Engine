@@ -1,4 +1,4 @@
-from Event.UIEvent.Mouse import MouseBasicEvent, MouseClickEvent, MouseDragEvent, MousePressEvent, MouseScrollEvent
+from . import MouseBasicEvent, MouseClickEvent, MouseDragEvent, MousePressEvent, MouseScrollEvent
 
 
 Name: dict[str: str] = {

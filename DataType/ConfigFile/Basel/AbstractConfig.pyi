@@ -1,9 +1,9 @@
 from abc import abstractmethod, ABCMeta
-from typing import overload
-from DataType.Asset.AbstractAsset import  AssetFolder
+from typing import overload, Mapping
+from DataType.Asset.AbstractAsset import  AssetFolder, Asset
 
 
-class Basel(metaclass=ABCMeta):
+class Basel(metaclass=ABCMeta, Mapping):
     config_name: str
     config_type: str
     sub_path: str
@@ -113,7 +113,7 @@ class Basel(metaclass=ABCMeta):
         """
         pass
 
-    def convert(self) -> (str, AssetManager | AssetFolder, str):
+    def convert(self) -> (str, Asset | AssetFolder, str):
         pass
 
     def info(self, *args):

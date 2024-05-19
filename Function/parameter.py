@@ -73,7 +73,7 @@ def mapping_new_copy(mapping: Mapping) -> dict:
     return ret
 
 
-def filepath_set(obj: dict, path: str, val: any):
+def filepath_set(obj: Mapping, path: str, val: any):
     if "\\" in path:
         gets = re.findall("(\w+)", path)
         target = obj
@@ -88,7 +88,7 @@ def filepath_set(obj: dict, path: str, val: any):
         obj[path] = val
 
 
-def filepath_get(obj: dict, path: str):
+def filepath_get(obj: Mapping, path: str):
     if "\\" in path:
         gets = re.findall("(\w+)", path)
         target = obj
@@ -99,7 +99,7 @@ def filepath_get(obj: dict, path: str):
         return obj[path]
 
 
-def filepath_del(obj: dict, path):
+def filepath_del(obj: Mapping, path):
     if "\\" in path:
         gets = re.findall("(\w+)", path)
         target = obj

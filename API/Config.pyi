@@ -26,3 +26,7 @@ def save_as_config(config_object: ConfigObject, output_path: str, keys: set[str]
 
 def convert_to_asset(config_object: ConfigObject):
     ...
+
+
+def match_config_object(config_type: str) -> type(ConfigObject):
+    ...

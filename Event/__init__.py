@@ -1,5 +1,5 @@
-import Event.BasicEvent
-import Event.UIEvent
+from . import BasicEvent
+from . import UIEvent
 
 Name: dict[str: str] = {
     "Basic": "Basic Event",

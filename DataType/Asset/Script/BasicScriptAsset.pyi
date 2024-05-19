@@ -4,7 +4,7 @@ from ..AbstractAsset import Asset
 from ...ConfigFile.ScriptSingleAssetConfig import Script
 
 
-class BasicScriptObject(AssetManager):
+class BasicScriptAsset(Asset):
     script_file: str
     script_code: str
     script_flags: dict
@@ -17,7 +17,7 @@ class BasicScriptObject(AssetManager):
         """
         pass
 
-    def __copy__(self, copied: BasicScriptObject = None):
+    def __copy__(self, copied: BasicScriptAsset = None):
         """
 
         """

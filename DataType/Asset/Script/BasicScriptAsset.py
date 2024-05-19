@@ -2,7 +2,7 @@ from ..AbstractAsset import Asset
 from ...PackagedCallable import PackagedCallable
 
 
-class BasicScriptObject(AssetManager):
+class BasicScriptAsset(Asset):
 
     def __init__(self, config, *args, **kwargs):
         super().__init__(config, *args, **kwargs)
@@ -16,7 +16,7 @@ class BasicScriptObject(AssetManager):
 
     def __copy__(self, copied=None):
         if copied is None:
-            copied = BasicScriptObject(self.configObject)
+            copied = BasicScriptAsset(self.configObject)
         super().__copy__(copied)
         copied.script_file = self.script_file
         copied.script_code = self.script_code

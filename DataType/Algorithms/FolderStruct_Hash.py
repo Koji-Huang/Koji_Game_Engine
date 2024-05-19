@@ -124,7 +124,10 @@ class Folder(Mapping):
                 self._values[index].pop(key)
 
     def hash_index(self, item):
-        return hash(item) % self._hash
+        try:
+            return hash(item) % self._hash
+        except TypeError:
+            return hash(id(item)) % self._hash
 
     def match_son_folder(self, folder_path):
         if self._son_folder is None:
@@ -163,3 +166,11 @@ class Folder(Mapping):
         for line in self._values:
             x += line.keys()
         return tuple(x)
+
+    def update(self, another):
+        for key, value in another.items():
+            if isinstance(value, Mapping):
+                self[key] = Folder(key)
+                self[key].update(value)
+            else:
+                self[key] = value

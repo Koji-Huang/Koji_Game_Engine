@@ -1,5 +1,5 @@
 from pygame.image import load as load_image
-from DataType.Asset.AbstractAsset import Asset  as AssetObject
+from DataType.Asset.AbstractAsset import Asset as AssetObject
 
 
 class Package(AssetObject):

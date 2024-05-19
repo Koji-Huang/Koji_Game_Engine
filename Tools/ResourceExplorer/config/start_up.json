@@ -2,7 +2,7 @@
   "__file__": {
     "name": "Start Up Json",
     "path": "System",
-    "type": "Asset"
+    "type": "Config"
   },
   "Screen": {
     "size": [800, 600]

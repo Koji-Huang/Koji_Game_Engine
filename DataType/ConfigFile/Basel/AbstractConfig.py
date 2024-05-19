@@ -1,10 +1,11 @@
 import os.path
 from abc import abstractmethod, ABCMeta
+from typing import Mapping
+
 from Function.parameter import mapping_new_copy, filepath_get, filepath_del, filepath_set
 
 
-class Basel(metaclass=ABCMeta):
-
+class Basel(Mapping, metaclass=ABCMeta):
     def __init__(self, file_path: str):
         self.config_name = 'undefined'
         self.config_type = 'Basel'
@@ -20,6 +21,9 @@ class Basel(metaclass=ABCMeta):
         self.sub_path = self._translated_data['__file__']['path']
         self.config_type = self._translated_data['__file__']['type']
         self.config_name = self._translated_data['__file__']['name']
+        self.__iter__ = self._translated_data.__iter__
+        self.__len__ = self._translated_data.__len__
+        self.items = self._translated_data.items
         # self._translated_data['configObject'] = self
         pass
 
@@ -97,7 +101,7 @@ class Basel(metaclass=ABCMeta):
         filepath_del(self._translated_data, key)
 
     def items(self):
-        return self.keys(), self.values()
+        pass
 
     def __enter__(self):
         return self.keys(), self.values()
@@ -124,4 +128,10 @@ class Basel(metaclass=ABCMeta):
         pass
 
     def detail_info(self, *args):
+        pass
+
+    def __iter__(self):
+        pass
+
+    def __len__(self):
         pass
