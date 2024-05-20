@@ -4,19 +4,19 @@
 
 ## Resource Manager
 
-- [ ] Script System
-  - [ ] ...
+- [x] Script System
+  - [x] ...
 - [ ] UI Component
   - [ ] Scroll Map
   - [ ] Hyper Text
   - [ ] Text Input
   - [ ] Choose Bar
 - [ ] Resource Standard
-  - [ ] Config
+  - [x] Config
   - [ ] Addon
   - [ ] Asset
 - [ ] Standard Data
-  - [ ] Script
+  - [x] Script
   - [ ] Music
   - [ ] Spirit
   - [ ] Graphic
