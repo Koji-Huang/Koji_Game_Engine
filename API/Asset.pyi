@@ -1,6 +1,6 @@
 from typing import overload
-from DataType.ConfigFile.BasicAssetConfig import AssetConfig
-from DataType.Asset.AbstractAsset import Asset as AssetObject
+from DataType.ConfigFile import AssetConfig
+from Asset.AbstractAsset import Asset as AssetObject
 
 
 @overload

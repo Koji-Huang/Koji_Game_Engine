@@ -174,3 +174,11 @@ class Folder(Mapping):
                 self[key].update(value)
             else:
                 self[key] = value
+
+    def clear(self):
+        for line in self._values:
+            line.clear()
+        for folder in self._son_folder:
+            folder.clear()
+        for line in self._son_folder:
+            line.clear()

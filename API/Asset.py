@@ -1,5 +1,5 @@
 from typing import overload
-from DataType.ConfigFile.BasicAssetConfig import AssetConfig
+from Config.BasicAssetConfig import AssetConfig
 from API import GlobalAPI
 from Function.parameter import filepath_set
 

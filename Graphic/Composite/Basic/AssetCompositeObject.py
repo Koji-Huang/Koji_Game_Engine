@@ -1,5 +1,4 @@
-from typing import overload
-from DataType.Asset.AbstractAsset import Asset as AssetObject
+from Asset.AbstractAsset import Asset as AssetObject
 from .BasicCompositeObject import CompositeObject
 import API.Asset as AssetAPI
 

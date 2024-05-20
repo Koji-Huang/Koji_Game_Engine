@@ -1,5 +1,5 @@
 from ..AbstractAsset import Asset
-from ...PackagedCallable import PackagedCallable
+from DataType.PackagedCallable import PackagedCallable
 
 
 class BasicScriptAsset(Asset):

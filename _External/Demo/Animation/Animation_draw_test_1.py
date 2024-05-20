@@ -1,14 +1,13 @@
 import pygame.time
-from pycallgraph import PyCallGraph
-from pycallgraph.output import GraphvizOutput
+
 #
 # with PyCallGraph(output=GraphvizOutput()):
 while True:
     from API import GlobalAPI
     from API import GraphicAPI_type
     from API import EventAPI_type
-    from DataType.Asset.Graphic.AnimationAsset import Package as AnimationAsset
-    from DataType.ConfigFile.AnimationAssetConfig import Animation as AnimationConfig
+    from Asset.Graphic import Package as AnimationAsset
+    from DataType.ConfigFile import Animation as AnimationConfig
 
     GlobalAPI.register_global_environment()
     GraphicManager = GraphicAPI_type(size=(1600, 900))

@@ -1,5 +1,5 @@
 import pygame
-from DataType.Asset.Graphic.Basel import Package as _Package
+from Asset.Graphic import Package as _Package
 
 
 class Package(_Package):

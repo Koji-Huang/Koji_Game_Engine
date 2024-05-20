@@ -101,3 +101,6 @@ class Folder(Mapping[_T]):
 
     def update(self, another: Mapping) -> Folder:
         pass
+
+    def clear(self):
+        pass

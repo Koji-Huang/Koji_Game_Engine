@@ -1,5 +1,4 @@
-from DataType.ConfigFile.Basel import *
-from DataType.ConfigFile.Basel.AbstractConfig import Basel as baselConfigObject
+from Config.Basel import Basel as baselConfigObject
 import DataType.ConfigFile as SystemConfigFile
 from Function.parameter import mapping_merge, mapping_new_copy
 from .Global import Registry, AssetManager

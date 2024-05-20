@@ -1,5 +1,5 @@
 from typing import overload
-from DataType.ConfigFile.BasicAssetConfig import AssetConfig
+from Config.BasicAssetConfig import AssetConfig
 from abc import abstractmethod, ABCMeta
 
 

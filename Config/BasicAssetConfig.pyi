@@ -1,6 +1,6 @@
 from typing import overload
 
-from .Basel.AbstractConfig import Basel
+from Config.Basel import Basel
 
 
 class AssetConfig(Basel):

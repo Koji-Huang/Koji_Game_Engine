@@ -1,4 +1,4 @@
-from DataType.ConfigFile.Basel.AbstractConfig import Basel as ConfigObject
+from Config.Basel import Basel as ConfigObject
 
 
 

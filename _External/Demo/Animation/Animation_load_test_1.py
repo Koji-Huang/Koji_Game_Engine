@@ -1,8 +1,7 @@
-from API import Global
 from API import GraphicAPI_type
 from API import EventAPI_type
-from DataType.Asset.Graphic.AnimationAsset import Package as AnimationAsset
-from DataType.ConfigFile.Asset.AnimationAssetConfig import Animation as AnimationConfig
+from Asset.Graphic import Package as AnimationAsset
+from DataType.ConfigFile import Animation as AnimationConfig
 
 GlobalAPI.register_global_environment()
 GraphicManager = GraphicAPI_type()
