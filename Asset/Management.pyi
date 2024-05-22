@@ -1,10 +1,11 @@
 from typing import overload
 from Config.BasicAssetConfig import AssetConfig
 from Asset.AbstractAsset import Asset as AssetObject
+from DataType.SystemComponent.AssetRegister import AssetManager
 
 
 RegisteredAssetType: dict[str, [AssetObject]]
-
+RegisteredAsset: AssetManager
 
 @overload
 def load_asset(configObject: AssetConfig):...

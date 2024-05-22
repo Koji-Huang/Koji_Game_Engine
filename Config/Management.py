@@ -84,14 +84,17 @@ def save_as_config(config_object, output_path: str) -> None:
 
 
 def convert_to_asset(config_object):
-    from API.Global import AssetManager
-    name, asset, sub_path = config_object.convert()
-    if AssetManager.get(sub_path) is None:
-        AssetManager[sub_path] = dict()
+    from api import AssetAPI
+    asset_manager = AssetAPI.RegisteredAsset
 
-    AssetManager[sub_path][name] = mapping_new_copy(asset)
+    name, asset, sub_path = config_object.convert()
+    if asset_manager.get(sub_path) is None:
+        asset_manager[sub_path] = dict()
+
+    asset_manager[sub_path][name] = mapping_new_copy(asset)
 
 
 def match_config_object(config_type: str):
-    from API.Global import Registry
-    return Registry[config_type]
+    from api import ConfigAPI
+    registry = ConfigAPI.ConfigObject
+    return registry[config_type]

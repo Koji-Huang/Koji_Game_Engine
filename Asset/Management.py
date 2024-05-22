@@ -12,7 +12,7 @@ def load_asset(config):
         asset = match_asset_type(config)
         load_asset(asset)
     elif isinstance(config, AssetConfig):
-        from API import GlobalAPI
+        from api import GlobalAPI
         filepath_set(GlobalAPI.AssetManager, config.sub_path, config)
     else:
         return None
