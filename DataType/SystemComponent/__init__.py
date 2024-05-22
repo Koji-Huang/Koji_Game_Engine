@@ -1,3 +1,3 @@
-from .AssetManager import AssetManager as AssetManagerObject
-from .Registry import Registry as RegistryObject
+from .AssetRegister import AssetManager as AssetManagerObject
+from .ConfigRegistry import Registry as RegistryObject
 from .IDRegister import IDRegister as IDRegisterObject

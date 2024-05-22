@@ -1,5 +1,4 @@
 from abc import abstractmethod, ABCMeta
-from Function.parameter import mapping_new_copy
 
 
 class Asset(metaclass=ABCMeta):
@@ -39,6 +38,9 @@ class Asset(metaclass=ABCMeta):
         self.active = False
         pass
 
+
+"""
+from Function.parameter import mapping_new_copy
 
 class AssetFolder:
     def __init__(self, name: str = 'undefined'):
@@ -91,3 +93,4 @@ class AssetFolder:
 
     def __iter__(self):
         return iter(tuple(self._assets.values()) + tuple(self._folder.values()))
+"""

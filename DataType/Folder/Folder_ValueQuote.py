@@ -42,6 +42,12 @@ class ValueQuote(QuoteDataType):
         self.__quote_key = None
         self.__tmp_attr.clear()
 
+    def get_quote(self) -> any:
+        if self.readable:
+            return self.__quote_Folder[self.__quote_key]
+        else:
+            raise "This quote is disable to read"
+
     def get_quote_key(self) -> QuoteDataType:
         if self.disable_outer_get:
             return self.__quote_key

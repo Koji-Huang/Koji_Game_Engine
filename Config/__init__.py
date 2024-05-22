@@ -2,6 +2,8 @@
 from .AnimationAssetConfig import Animation as AnimationAssetConfigObject
 from .ImageAssetConfig import Image as ImageAssetConfigObject
 from .ScriptAssetConfig import Script as ScriptAssetConfigObject
+from . import Basel
+from . import Management as ConfigManagement
 
 
 def get_file_type(file_name):
@@ -11,6 +13,3 @@ def get_file_type(file_name):
             if char == '.': break
             else: end_str += char
         return end_str[::-1]
-
-
-

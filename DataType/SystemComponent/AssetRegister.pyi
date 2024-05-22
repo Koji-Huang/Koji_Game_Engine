@@ -1,6 +1,6 @@
 from typing import overload
 
-from DataType.Algorithms.FolderStruct_Hash import Folder, folderPath
+from DataType.Folder.FolderStruct_Hash import Folder, folderPath
 from DataType.Asset.AbstractAsset import Asset
 
 

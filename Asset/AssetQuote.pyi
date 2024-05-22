@@ -1,72 +1,73 @@
-from typing import overload, Union, Iterable
+from typing import overload, Union
 from .AbstractAsset import Asset
-from DataType.Algorithms.FolderStruct_Hash import Folder, folderPath
-
+from DataType.Folder.FolderStruct_Hash import Folder, folderPath
+from DataType.Folder.Folder_ValueQuote import ValueQuote
 
 QuoteDataType = Union[Folder, AssetQuote, folderPath]
 
 
-class AssetQuote(Folder[str, [Asset, any]]):
-    __readable = tuple[bool]
-    __writeable = tuple[bool]
-    __savable = tuple[bool]
-    __tmp_asset_poor: Folder
-    __quotes: tuple[QuoteDataType]
-
+class AssetQuote(ValueQuote):
     @overload
     def __init__(self,
                  readable: bool = True,
                  writeable: bool = True,
-                 savable: bool = True): pass
+                 savable: bool = True,
+                 disable_outer_get: bool = False): pass
+    @overload
+    def __init__(self,
+                 path: str,
+                 readable: bool = True,
+                 writeable: bool = True,
+                 savable: bool = True,
+                 disable_outer_get: bool = False): pass
+    @overload
+    def __init__(self,
+                 asset: Asset,
+                 readable: bool = True,
+                 writeable: bool = True,
+                 savable: bool = True,
+                 disable_outer_get: bool = False): pass
     @overload
     def __init__(self,
                  path: QuoteDataType,
+                 key: any,
                  readable: bool = True,
                  writeable: bool = True,
-                 savable: bool = True): pass
-    @overload
-    def __init__(self,
-                 path: Iterable[QuoteDataType],
-                 readable: tuple[bool] | bool = True,
-                 writeable: tuple[bool] | bool = True,
-                 savable: tuple[bool] | bool = True): pass
-    def __init__(self, folder_info, readable = True, writeable = True, savable = True):
+                 savable: bool = True,
+                 disable_outer_get: bool = False): pass
+    def __init__(self, folder = None, key = None, readable = True, writeable = True, savable = True,
+                 disable_outer_get: bool = False):
         pass
 
     @overload
-    def add_quote(self, asset_info: QuoteDataType,
+    def set_quote(self,
+                  path: str,
+                  key: str,
                   readable: bool = True,
                   writeable: bool = True,
-                  savable: bool = True) -> None: pass
+                  savable: bool = True) -> None:...
     @overload
-    def add_quote(self, asset_info: Iterable[QuoteDataType],
-                  readable: tuple[bool] | bool = True,
-                  writeable: tuple[bool] | bool = True,
-                  savable: tuple[bool] | bool = True) -> None: pass
-    def add_quote(self, asset_info):
+    def set_quote(self,
+                  path: str,
+                  readable: bool = True,
+                  writeable: bool = True,
+                  savable: bool = True, *args) -> None:...
+
+    @overload
+    def set_quote(self,
+                  asset: Asset,
+                  readable: bool = True,
+                  writeable: bool = True,
+                  savable: bool = True, *args) -> None:...
+
+    def set_quote(self,
+                  folder: QuoteDataType,
+                  key: str,
+                  readable: bool = True,
+                  writeable: bool = True,
+                  savable: bool = True) -> None:
         pass
 
-    @overload
-    def remove_quote(self,
-                     asset_info: QuoteDataType) -> None: pass
-    @overload
-    def remove_quote(self,
-                     asset_info: Iterable[QuoteDataType]) -> None: pass
-    def remove_quote(self, asset_info) -> None: pass
-
-    def get_quote(self) -> tuple[QuoteDataType]:
+    def get_quote(self) -> Asset or None:
         pass
 
-    def get_quote_folder(self) -> tuple[Folder]:
-        pass
-
-
-@overload
-def customize_path(
-        asset_path: QuoteDataType) -> AssetQuote: pass
-@overload
-def customize_path(
-        asset_folder: Iterable[QuoteDataType]) -> AssetQuote: pass
-def customize_path(
-        asset_info) -> AssetQuote:
-    pass

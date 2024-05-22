@@ -3,8 +3,8 @@ __pycache__
 *.pyc
 TextureMapping
 build
-/External/AnimationDemoPicture/
-/External/Demo/Graphic/root inspector fixless pycallgraph.png
+/External/AnimationDemoPicture/.*
+*pycallgraph.png
 /External/Demo/Graphic/Click check fixless pycallgraph.png
 /External/Demo/Event/fixless_pycallgraph.png
 /External/Demo/Graphic/convert disable pycallgraph.png
@@ -21,3 +21,10 @@ build
 /External/Demo/Graphic/Fix_Less_pycallgraph.png
 /External/Demo/Graphic/root inspector fix pycallgraph.png
 /External/Demo/Graphic/Debug Edge Fixed.png
+/_External/AnimationDemoPicture/*
+/_External/Demo/Graphic/Debug Edge Fixed.png
+/_External/Demo/Graphic/Debug Fixless.png
+/_External/Demo/Graphic/EdgeType Fixed.png
+/_External/Demo/Graphic/EdgeType Fixless.png
+/_External/Demo/Graphic/UIEvent - Mouse - Basic Fixed.png
+/_External/Demo/Graphic/UIEvent - Mouse - Basic Fixless.png

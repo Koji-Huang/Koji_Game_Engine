@@ -1,6 +1,9 @@
 from typing import overload
-from DataType.ConfigFile import AssetConfig
+from Config.BasicAssetConfig import AssetConfig
 from Asset.AbstractAsset import Asset as AssetObject
+
+
+RegisteredAssetType: dict[str, [AssetObject]]
 
 
 @overload
@@ -41,3 +44,7 @@ def create_asset(config) -> type(AssetConfig):...
 @overload
 def create_asset(file_path) -> type(AssetConfig):...
 def create_asset(config) -> type(AssetConfig):...
+
+
+def load_system_asset_type():
+    pass

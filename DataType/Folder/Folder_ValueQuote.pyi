@@ -50,6 +50,9 @@ class ValueQuote(QuoteDataType):
     def remove_quote(self) -> None:
         pass
 
+    def get_quote(self) -> any:
+        pass
+
     def get_quote_key(self) -> QuoteDataType:
         pass
 

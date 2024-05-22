@@ -1,5 +1,7 @@
 from . import BasicEvent
 from . import UIEvent
+from .main import *
+from .Management import EventManagement as EventManagementType
 
 Name: dict[str: str] = {
     "Basic": "Basic Event",
@@ -20,3 +22,6 @@ TypeID: dict[str: str] = {
     "Basic": '000000000',
     "UIEvent": UIEvent.TypeID
 }
+
+
+EventManagement = EventManagementType()

@@ -1,4 +1,3 @@
-from typing import overload
 from Config.BasicAssetConfig import AssetConfig
 from abc import abstractmethod, ABCMeta
 
@@ -52,7 +51,8 @@ class Asset(metaclass=ABCMeta):
     def delete(self):
         pass
 
-
+'''
+from typing import overload
 class AssetFolder:
     _name: str
     _assets: dict[str, [Asset]]
@@ -136,3 +136,4 @@ class AssetFolder:
         """
         return package and folder iter
         """
+'''

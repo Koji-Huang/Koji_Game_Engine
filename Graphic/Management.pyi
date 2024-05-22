@@ -1,12 +1,10 @@
-from typing import Callable
 from Event.UIEvent.UIEvent import Basic as Event
-from Graphic import *
-from Graphic.EffectFunction.MarkBorder import TextType, EdgeType
-from Graphic.UI import Label
-from Graphic.Basic import *
+from . import *
+from .Basic import *
+from .Debug import GraphicDebug
 
 
-class GraphicAPI:
+class GraphicManagement:
     windows: MainWindows
     __debug_mode: bool
     debug: GraphicDebug | None
@@ -76,42 +74,3 @@ class GraphicAPI:
     def update_component_graphic(self, component: Root, *args, **kwargs) -> any:
         ...
 
-
-class GraphicDebug:
-    __graphic_update_function: Callable
-    __graphic_insert_function: list[Callable]
-    __debug_component: Management
-    __debug_Label: Label
-    one_layer: bool = True
-    textType: TextType
-    edgeType: EdgeType
-    windows: MainWindows
-    info_alpha: int
-
-    def __init__(self, component: Management, windows: MainWindows):
-        ...
-
-    def graphic_debug(self):
-        ...
-
-    def add_graphic_function(self, function):
-        ...
-
-    def graphic_update(self):
-        ...
-
-    def graphic_debug_component(self, component: Surface):
-        ...
-
-    def graphic_debug_single(self, component: Surface):
-        ...
-
-    def overwrite_graphic_core(debug, enable: bool = True):
-        ...
-
-
-    def event_debug(self):
-        ...
-
-    def debug(self):
-        ...

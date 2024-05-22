@@ -35,6 +35,5 @@ def register_global_environment():
     __GraphicFile._graphic_id_recycle = _recycle
 
     # Asset Type
-    from .Asset import load_system_asset_type
-    load_system_asset_type()
-    
+    from .Asset import AssetManagement
+    AssetManager.load_system_asset_type()

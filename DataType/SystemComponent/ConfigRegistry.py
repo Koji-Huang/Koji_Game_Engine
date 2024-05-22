@@ -1,4 +1,4 @@
-from DataType.Algorithms.FolderStruct_Hash import Folder
+from DataType.Folder.FolderStruct_Hash import Folder
 
 
 class Registry(Folder):
