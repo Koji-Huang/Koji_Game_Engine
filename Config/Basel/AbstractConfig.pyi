@@ -6,7 +6,7 @@ from DataType.Asset.AbstractAsset import  AssetFolder, Asset
 class Basel(metaclass=ABCMeta, Mapping):
     config_name: str
     config_type: str
-    sub_path: str
+    config_path: str
     file_path: str
     config_file_format: str
     _read_value: tuple[str]
@@ -28,13 +28,11 @@ class Basel(metaclass=ABCMeta, Mapping):
         pass
 
     @overload
-    def get_file_type(self) -> str:
-        ...
+    def get_file_type(self) -> str:  ...
 
     @staticmethod
     @overload
-    def get_file_type(file_path) -> str:
-        ...
+    def get_file_type(file_path) -> str: ...
 
     def write(self, key: str, value: str):
         """
@@ -92,40 +90,17 @@ class Basel(metaclass=ABCMeta, Mapping):
     def __delitem__(self, key: str):
         pass
 
-    def items(self):
-        """
-
-        """
-        pass
-
-    def __enter__(self):
-        """
-
-        """
-        pass
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        pass
-
     def __dict__(self):
-        """
+        pass
 
-        """
+    def items(self):
         pass
 
     def convert(self) -> (str, Asset | AssetFolder, str):
         pass
 
     def info(self, *args):
-        if args is None:
-            return {
-                'len': self._translated_data.__len__(),
-                'keys': self._translated_data.keys()
-            }
+        pass
 
     def detail_info(self, *args):
-        if args is None:
-            return {
-                'len': self._translated_data.__len__(),
-                'Key - Value': self._translated_data
-            }
+        pass

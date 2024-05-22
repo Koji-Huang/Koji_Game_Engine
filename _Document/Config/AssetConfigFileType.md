@@ -25,21 +25,21 @@
 
 >  `__file__` 节中的 `type`  一定为  `Asset`, 同时必须存在一个名为 `__asset__` ,包含有 `type`(资产文件的类型), `name` (资产文件的别名), `path` (资产文件的内部储存路径) 这三个键和对应的值的节
 >
-> ```ini
-> [__file__]
-> type = Asset
-> 
-> [__asset__]
-> type = undefined
-> name = undefined
-> path = undefined
-> ```
+>  ```ini
+>  [__file__]
+>  type = Asset
+>  
+>  [__asset__]
+>  type = undefined
+>  name = undefined
+>  path = undefined
+>  ```
 
 ## .json
 
 ​	`json` 文件应该遵守以下几点要求:
 
-> 1.  `__file__` 的对象中的`type`一定为 `Asset`, 同时必须存在一个名为 `__asset__` ,包含有 `type`(资产文件的类型), `name` (资产文件的别名), `path` (资产文件的内部储存路径) 这三个键和对应的值的对象
+> 1. `__file__` 的对象中的`type`一定为 `Asset`, 同时必须存在一个名为 `__asset__` ,包含有 `type`(资产文件的类型), `name` (资产文件的别名), `path` (资产文件的内部储存路径) 这三个键和对应的值的对象
 >
 >    ```json
 >    {  
@@ -65,16 +65,16 @@
 >    	"__asset__": {
 >            ...
 >        },
->            
+>    
 >        "作为配置文件出现的子项": {
 >            "__file__": {...},
 >            "__asset__": {...}
 >        },
->                         
+>    
 >        "作为附属资产出现的子项": {
 >            "__asset__": {...}
 >        }
 >    }
 >    ```
 >
->    
+> 

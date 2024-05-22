@@ -1,5 +1,9 @@
 
 import Management as AssetManagement
+from .AssetRegister import AssetManager as AssetManagerType
+
+RegisteredAssetType = dict()
+AssetRegistry = AssetManagerType()
 
 
 try:

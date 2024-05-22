@@ -1,8 +1,8 @@
 from DataType.SystemComponent import *
 
-from API.Event import Event as __EventAPI
-from API.Graphic import Management as __GraphicAPI
-from API.Thread import ThreadAPI as __ThreadAPI
+from api import EventAPI as __EventAPI
+from api import GraphicAPI as __GraphicAPI
+from api import ThreadAPI as __ThreadAPI
 
 Registry: RegistryObject
 AssetManager: AssetManagerObject

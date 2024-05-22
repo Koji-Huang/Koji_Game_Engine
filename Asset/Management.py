@@ -1,9 +1,5 @@
 
 from Function.parameter import filepath_set
-from DataType.SystemComponent.AssetRegister import AssetManager
-
-RegisteredAssetType = dict()
-RegisteredAsset = AssetManager()
 
 
 def load_asset(config):
@@ -35,8 +31,8 @@ def get_asset(key=None, path=None):
 
 
 def load_system_asset_type():
-    global RegisteredAssetType
     import Config as SystemConfigFile
+    from . import RegisteredAssetType
     RegisteredAssetType["Animation"] = SystemConfigFile.AnimationAssetConfigObject
     RegisteredAssetType["animation"] = SystemConfigFile.AnimationAssetConfigObject
     RegisteredAssetType["Image"] = SystemConfigFile.ImageAssetConfigObject

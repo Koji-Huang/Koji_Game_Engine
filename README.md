@@ -10,7 +10,7 @@
 
 - A Middle High School Student made
 
-- Update at 2024-04-15
+- Update at 2024-05-22
 
 ---
 
@@ -69,7 +69,7 @@
 
 ---
 
-### Version 3.x
+### Version 3.x - Finished!
 
 ​	This Version is mainly focus on improve engine struct and make a game asset explorer for load asset
 
@@ -85,25 +85,43 @@
 
   - ###### File System
 
-- ##### Version 3.3
+- ##### Version 3.3 - Finished!
 
   - ###### Formulate data package standard
 
-- ##### Version 3.4
+---
 
-  - ###### Make Explorer and UI
+### Version 4.x
 
-- ##### Version 3.5
+​	This version is mainly focus on new file struct and reform Config System & Asset System 
 
-  - ###### Asset Maker and UI
+- ##### Version 4.0
 
-- ##### Version 3.6
+  - ###### New file Struct Fix
 
-  - ###### System setting config file
+- ##### Version 4.1
+
+  - ###### Asset System Reform
+
+- ##### Version 4.2
+
+  - ###### Asset Interpreter System
+
+- ##### Version 4.3
+
+  - ###### Config System & Asset System Improve
+
+- ##### Version 4.4
+
+  - ###### More Asset & Config Standard
+
+- ##### Version 4.5
+
+  - ###### Asset & Config (Folder DataType) Resource Explorer
 
 ---
 
 ## Update Plans
-- ##### Version 4.x
+- ##### Version 5.x
   
   - Add World Environment Editor

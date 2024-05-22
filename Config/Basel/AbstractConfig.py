@@ -9,21 +9,24 @@ class Basel(Mapping, metaclass=ABCMeta):
     def __init__(self, file_path: str):
         self.config_name = 'undefined'
         self.config_type = 'Basel'
-        self.sub_path = 'undefined'
+        self.config_path = 'undefined'
         self.config_file_format = None
         self._read_value = tuple()
         self._translated_data = dict()
         self.file_path = file_path
         self.son_config = tuple()
         self.config_file_format = self.get_file_type()
+
         self.read()
-        self.__translate_read__()
-        self.sub_path = self._translated_data['__file__']['path']
+
+        self.config_path = self._translated_data['__file__']['path']
         self.config_type = self._translated_data['__file__']['type']
         self.config_name = self._translated_data['__file__']['name']
         self.__iter__ = self._translated_data.__iter__
         self.__len__ = self._translated_data.__len__
         self.items = self._translated_data.items
+        self.keys = self._translated_data.keys
+        self.values = self._translated_data.values
         # self._translated_data['configObject'] = self
         pass
 
@@ -31,7 +34,9 @@ class Basel(Mapping, metaclass=ABCMeta):
         # deal with quit.
         with open(self.file_path, 'r') as file:
             self._read_value = tuple(file.readlines())
+        self.__translate_read__()
 
+    @staticmethod
     def get_file_type(self):
         if isinstance(self, str):
             end_str = ''
@@ -86,10 +91,10 @@ class Basel(Mapping, metaclass=ABCMeta):
         pass
 
     def keys(self):
-        return self._translated_data.keys()
+        pass
 
     def values(self):
-        return self._translated_data.values()
+        pass
 
     def __setitem__(self, key, value):
         filepath_set(self._translated_data, key, value)
@@ -100,29 +105,14 @@ class Basel(Mapping, metaclass=ABCMeta):
     def __delitem__(self, key):
         filepath_del(self._translated_data, key)
 
-    def items(self):
-        pass
-
-    def __enter__(self):
-        return self.keys(), self.values()
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        pass
-
     def __dict__(self):
         return self._translated_data
-
-    def __file__(self):
-        return os.path.abspath(self.file_path)
-
-    def __path__(self):
-        return os.path.dirname(self.__file__())
 
     def convert(self) -> any:
         asset = mapping_new_copy(self._translated_data)
         asset.pop("__file__")
         asset['ConfigObject'] = self
-        return self.config_name, asset, self.sub_path
+        return self.config_name, asset, self.config_path
 
     def info(self, *args):
         pass

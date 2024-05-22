@@ -4,6 +4,10 @@ from .ImageAssetConfig import Image as ImageAssetConfigObject
 from .ScriptAssetConfig import Script as ScriptAssetConfigObject
 from . import Basel
 from . import Management as ConfigManagement
+from .ConfigRegistry import Registry as RegistryObject
+
+
+ConfigRegistry = RegistryObject()
 
 
 def get_file_type(file_name):

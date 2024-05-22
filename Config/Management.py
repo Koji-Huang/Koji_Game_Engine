@@ -1,10 +1,8 @@
 from .Basel.AbstractConfig import Basel as baselConfigObject
 from .Basel import *
-from DataType.SystemComponent.ConfigRegistry import Registry as RegistryObject
 from Function.parameter import mapping_merge, mapping_new_copy
+from . import ConfigRegistry
 
-
-ConfigRegistry = RegistryObject()
 
 
 def load_config_file(config_path: str, config_type: str = None):
@@ -47,10 +45,10 @@ def register_config(config_object, keys: set[str] = None) -> None:
         keys = set(config_object.keys())
     keys -= set(ConfigRegistry.keys())
     data = mapping_new_copy(config_object._translated_data)
-    if ConfigRegistry.get(config_object.sub_path) is None:
-        ConfigRegistry[config_object.sub_path] = mapping_new_copy(data)
+    if ConfigRegistry.get(config_object.config_path) is None:
+        ConfigRegistry[config_object.config_path] = mapping_new_copy(data)
     else:
-        mapping_merge(ConfigRegistry[config_object.sub_path], data)
+        mapping_merge(ConfigRegistry[config_object.config_path], data)
     for son in config_object.son_config:
         register_config(son)
 
