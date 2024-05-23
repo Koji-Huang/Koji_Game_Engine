@@ -1,5 +1,5 @@
 from typing import Mapping, Union, Iterable
-from ..CustomizedPath import CustomizedPath
+from DataType.Folder.CustomizedPath import CustomizedPath
 from random import randint
 
 folderPath = Union[str, list, tuple, CustomizedPath]

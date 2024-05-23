@@ -1,8 +1,7 @@
 from .Basel.AbstractConfig import Basel as baselConfigObject
 from .Basel import *
 from Function.parameter import mapping_merge, mapping_new_copy
-from . import ConfigRegistry
-
+from . import ConfigRegistry, ConfigRegistryType
 
 
 def load_config_file(config_path: str, config_type: str = None):
@@ -93,6 +92,5 @@ def convert_to_asset(config_object):
 
 
 def match_config_object(config_type: str):
-    from api import ConfigAPI
-    registry = ConfigAPI.ConfigObject
+    registry = ConfigRegistryType
     return registry[config_type]

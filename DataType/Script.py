@@ -1,4 +1,4 @@
-import API
+import api
 import Graphic
 import Asset
 import DataType
@@ -7,7 +7,7 @@ import Thread
 import Function
 
 
-BasicEnvironment = {'API': API, "Function": Function}
+BasicEnvironment = {'API': api, "Function": Function}
 GraphicEnvironment = {"Graphic": Graphic}
 AssetEnvironment = {'Asset': Asset}
 DataTypeEnvironment = {'DataType': DataType}

@@ -1,5 +1,6 @@
 
 from Function.parameter import filepath_set
+from . import RegisteredAssetType
 
 
 def load_asset(config):
@@ -9,13 +10,16 @@ def load_asset(config):
         load_asset(asset)
     elif isinstance(config, AssetConfig):
         from api import GlobalAPI
-        filepath_set(GlobalAPI.AssetManager, config.sub_path, config)
+        filepath_set(GlobalAPI.AssetManager, config.pat, config)
     else:
         return None
 
 
 def match_asset_type(config):
-    pass
+    from Config.BasicAssetConfig import AssetConfig
+    if isinstance(config, AssetConfig):
+        config = config.config_file_format
+    return RegisteredAssetType.get(config)
 
 
 def save_asset(config):
@@ -32,7 +36,6 @@ def get_asset(key=None, path=None):
 
 def load_system_asset_type():
     import Config as SystemConfigFile
-    from . import RegisteredAssetType
     RegisteredAssetType["Animation"] = SystemConfigFile.AnimationAssetConfigObject
     RegisteredAssetType["animation"] = SystemConfigFile.AnimationAssetConfigObject
     RegisteredAssetType["Image"] = SystemConfigFile.ImageAssetConfigObject

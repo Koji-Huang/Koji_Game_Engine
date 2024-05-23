@@ -1,5 +1,5 @@
 
-import Management as AssetManagement
+from . import Management as AssetManagement
 from .AssetRegister import AssetManager as AssetManagerType
 
 RegisteredAssetType = dict()

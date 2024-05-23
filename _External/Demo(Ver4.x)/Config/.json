@@ -1,0 +1,24 @@
+{
+  "__file__": {
+    "name": "undefined",
+    "path": "undefined",
+    "type": "Script"
+  },
+  "__asset__": {
+    "name": "undefined",
+    "path": "undefined",
+    "type": "Script"
+  },
+  "Script": {
+
+    "name": ["1"],
+
+    "1": {
+      "name": "Test Script",
+      "path": "hello world",
+      "flags": {
+        "anything": "Yi'Wei'Shen"
+      }
+    }
+  }
+}

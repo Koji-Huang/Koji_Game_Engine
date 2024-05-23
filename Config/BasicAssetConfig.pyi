@@ -1,9 +1,19 @@
-from typing import overload
+from typing import overload, Iterator
 
-from Config.Basel import Basel
+from Config.Basel.AbstractConfig import Basel
 
 
 class AssetConfig(Basel):
+    asset_name: str
+    asset_path: str
+    asset_type: str
+
+    def __len__(self) -> int:
+        pass
+
+    def __iter__(self) -> Iterator:
+        pass
+
     bind_config_file: Basel
 
     @overload

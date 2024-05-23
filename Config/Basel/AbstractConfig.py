@@ -15,7 +15,7 @@ class Basel(Mapping, metaclass=ABCMeta):
         self._translated_data = dict()
         self.file_path = file_path
         self.son_config = tuple()
-        self.config_file_format = self.get_file_type()
+        self.config_file_format = self.get_file_type(self)
 
         self.read()
 
@@ -115,10 +115,16 @@ class Basel(Mapping, metaclass=ABCMeta):
         return self.config_name, asset, self.config_path
 
     def info(self, *args):
-        pass
+        info = dict()
+        info['config_type'] = self.config_type
+        info['config_path'] = self.config_path
+        info['config_name'] = self.config_name
+        info['config_file_format'] = self.config_file_format
+        info['config_type'] = self.config_type
+        return info
 
     def detail_info(self, *args):
-        pass
+        return dict()
 
     def __iter__(self):
         pass
