@@ -3,8 +3,9 @@ import pygame
 
 
 class MainWindows(Graph):
-    def __init__(self, size, *args, **kwargs):
-        self.windows_surface = pygame.display.set_mode(size,  pygame.DOUBLEBUF, *args, **kwargs)
+    def __init__(self, size: tuple[int, int], pygame_parament: tuple or list = (), *args, **kwargs):
+        pygame_parament = tuple() if pygame_parament is None else pygame_parament
+        self.windows_surface = pygame.display.set_mode(size,  pygame.DOUBLEBUF, *pygame_parament, *args, **kwargs)
         self.graph_primer_surface = pygame.Surface(size)
         self.graph_primer_surface.fill((0, 0, 0))
         self.x = 0

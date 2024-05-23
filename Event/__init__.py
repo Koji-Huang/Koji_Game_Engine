@@ -1,6 +1,5 @@
 from . import BasicEvent
 from . import UIEvent
-from .main import *
 from .Management import EventManagement as EventManagementType
 
 Name: dict[str: str] = {
