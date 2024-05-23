@@ -16,6 +16,8 @@ class ThreadRunningMachine:
         self.loopProcess = processThread(target=self.loop)
         self.runningStatus = 0
         self.recordMode = False
+        from . import Management as ThreadManager
+        self.ThreadManager = ThreadManager
 
     def start(self) -> None:
         self.runningStatus = 1
@@ -30,7 +32,8 @@ class ThreadRunningMachine:
 
     def once(self) -> None:
         if self.ThreadManager is None:
-            raise "Thread API is not bind yet."
+            from . import Management
+            self.ThreadManager = Management
         kwargs = {"TRMachine": self, "ThreadManager": self.ThreadManager}
         self.runningStatus = 1
         # Put Loop into Main
