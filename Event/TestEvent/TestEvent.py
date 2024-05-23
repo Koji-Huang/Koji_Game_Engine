@@ -13,7 +13,7 @@ _inspector_id_recycle: Callable[[str], None]
 class BasicEvent:
     def __init__(self, *args, **kwargs):
         self.event_type_name = "Event_Basic"
-        self.event_name = 'undefined'
+        self.event_name = 'TestEvent'
         self.track_args = dict()
         self.id = _event_id_get()
 
@@ -51,15 +51,14 @@ class Inspector:
     target_event_class = BasicEvent
 
     def __init__(self, target: BasicEvent):
+        self.__kwargs = dict()
+        self.__kwargs['check'] = dict()
+        self.__kwargs['trigger'] = dict()
+        self.__kwargs['generic'] = dict()
+        self.__kwargs['generic']['inspector'] = self
+        self.active = True
+        self.id = _inspector_id_get()
         if isinstance(target, self.target_event_class):
-            self.__kwargs = dict()
-            self.__kwargs['check'] = dict()
-            self.__kwargs['trigger'] = dict()
-            self.__kwargs['generic'] = dict()
-            self.__kwargs['generic']['inspector'] = self
-            self.__kwargs['generic']['event'] = target
-            self.active = True
-            self.id = _inspector_id_get()
             self.target_event = target
         else:
             raise f"Error Event Type for inspect\nTarget Event: {self.target_event_class}\nInput Event: {target}\n"
