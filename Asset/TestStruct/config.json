@@ -1,0 +1,14 @@
+{
+  "__file__": {
+    "name": "Asset Config Test File - Json File",
+    "type": "config",
+    "path": "TestEnvironment\\Json"
+  },
+  "__asset__": {
+    "name": "Asset Test",
+    "type": "undefined",
+    "path": "TestEnvironment\\Json"
+  },
+  "parament_1": 1,
+  "parament_2": 2
+}

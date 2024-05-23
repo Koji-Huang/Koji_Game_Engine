@@ -36,12 +36,12 @@ def get_asset(key=None, path=None):
 
 def load_system_asset_type():
     import Config as SystemConfigFile
-    RegisteredAssetType["Animation"] = SystemConfigFile.AnimationAssetConfigObject
-    RegisteredAssetType["animation"] = SystemConfigFile.AnimationAssetConfigObject
-    RegisteredAssetType["Image"] = SystemConfigFile.ImageAssetConfigObject
-    RegisteredAssetType["image"] = SystemConfigFile.ImageAssetConfigObject
-    RegisteredAssetType["Script"] = SystemConfigFile.ScriptAssetConfigObject
-    RegisteredAssetType["script"] = SystemConfigFile.ScriptAssetConfigObject
+    RegisteredAssetType["Animation"] = SystemConfigFile.AnimationAssetConfig.Animation
+    RegisteredAssetType["animation"] = SystemConfigFile.AnimationAssetConfig.Animation
+    RegisteredAssetType["Image"] = SystemConfigFile.ImageAssetConfig.Image
+    RegisteredAssetType["image"] = SystemConfigFile.ImageAssetConfig.Image
+    RegisteredAssetType["Script"] = SystemConfigFile.ScriptAssetConfig.Script
+    RegisteredAssetType["script"] = SystemConfigFile.ScriptAssetConfig.Script
     RegisteredAssetType["Ini"] = SystemConfigFile.Basel.Ini
     RegisteredAssetType["ini"] = SystemConfigFile.Basel.Ini
     RegisteredAssetType["Json"] = SystemConfigFile.Basel.Json

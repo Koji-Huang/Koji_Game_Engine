@@ -1,10 +1,10 @@
-
-from . import Management as AssetManagement
 from .AssetRegister import AssetManager as AssetManagerType
 
-RegisteredAssetType = dict()
 AssetRegistry = AssetManagerType()
+RegisteredAssetType = dict()
 
+from .Management import *
+from . import Management as AssetManagement
 
 try:
     AssetManagement.load_system_asset_type()
